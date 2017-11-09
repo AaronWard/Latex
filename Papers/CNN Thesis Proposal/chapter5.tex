@@ -1,0 +1,15 @@
+\prefacesection{Proposed Methodologies}
+
+The following proposed methodology will list the technologies used and how they shall be incorporated with each other, and shall also provide reason as to why they are believed to be the best option. 
+
+\begin{itemize}
+\item The convolutional neural network shall be implemented in Python because it's fast, highly supported and provides excellent libraries for machine learning. 
+\item The TensorFlow library shall be utilised for developing the CNN as it gives great flexibility and tools for the proposed software.
+\item Datasets of human facial expression shall be acquired, possibly from Kaggle.com.
+\item TensorPort shall be used for training. The model and dataset shall be pushed to the cloud and trained. This approach considerably more suited for this project as it can be difficult to allocate machines to training on campus repeatedly for training.
+\item For graphical visualisation, TensorBoard will be used as it is integrated to TensorPort and allows for in depth analysis of the neural network. 
+\item A web application shall be developed with Node.JS and Express as is provided asynchronous programming, it is lightweight and easy to implement. The web app shall provide a simple interface for webcam recording and result displaying. This application shall be hosted on Heroku as it provides a free tier plan and is allows for effortless deployment.
+\item The application shall record the users face, and shall splice the video stream in intervals. These still images taken from the video stream shall be sent to the model and their emotion/facial expression shall be classified accordingly. A result shall be sent back to the application and displayed.
+
+\end{itemize}
+
