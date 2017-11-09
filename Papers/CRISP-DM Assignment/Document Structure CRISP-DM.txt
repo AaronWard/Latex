@@ -1,0 +1,36 @@
+dataset allocation - go to moodle to see what dataset 
+you need to work with.
+
+Report template is on moodle
+Work flow diagram will help with what to do
+with your dataset
+
+using crisp-dm 
+
+	1) business understanding (half a page)
+		business objective - one sentence (building a model to predict..)
+		data mining - more detailed + jargan. =
+
+	2) data understanding (like lab 1)
+		summary statistics - copy into report
+		look for outliers, quality issues (show you understand what you are looking out)
+		just comment on what the significant attributes.
+			
+		atleast 3 times of charts( scatter plot, histogram etc)
+		
+	3) data preperation (last 2 labs)
+		use atleat 3 techniques
+		show you understand the techniques (sampling, scaling, binning...) and justify why.
+		
+	4) Data mining
+		use atleast 2 algorithms
+		(Neural networks, KNN, decision tree)
+
+	5) Evaluation
+		How successful you were at modeling the data set
+		the overall accuracy
+		discuss limitations of the data
+	
+
+		
+		
