@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  9 NOV 2017 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  10 NOV 2017 11:33
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -534,35 +534,42 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 8.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [4
+)
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+ [4
 
 
-])
+] [5])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [5] (Thesis.lot)
+ [6]
+(Thesis.lot)
 \tf@lot=\write5
 \openout5 = `Thesis.lot'.
 
-
-[6
+ [7
 
 ] (Thesis.lof)
 \tf@lof=\write6
 \openout6 = `Thesis.lof'.
 
- [7
+ [8
 
 ]
 Abbreviations
 \openout2 = `abbreviations.aux'.
 
 (abbreviations.tex
-Underfull \vbox (badness 10000) detected at line 17
+Underfull \vbox (badness 10000) detected at line 22
  []
 
-) [8
+) [9
 
 
 ]
@@ -590,18 +597,69 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 
  (chapter2.tex
 Chapter 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-) [2
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+[2
 
 
 
 ]
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 15.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1bch.fd"
+File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
+)
+Missing character: There is no œ in font bchb7t!
+Missing character: There is no å in font bchb7t!
+Missing character: There is no Å in font bchb7t!
+ [3]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+Missing character: There is no œ in font bchb7t!
+Missing character: There is no å in font bchb7t!
+Missing character: There is no Å in font bchb7t!
+ [4]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 24.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 20.50102pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] [6]
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+ [7]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+ [8]) [9]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
 Chapter 3.
-) [3
+) [10
 
 
 
@@ -610,7 +668,7 @@ Chapter 3.
 
  (chapter4.tex
 Chapter 4.
-) [4
+) [11
 
 
 
@@ -619,7 +677,7 @@ Chapter 4.
 
  (chapter5.tex
 Chapter 5.
-) [5
+) [12
 
 
 
@@ -628,7 +686,7 @@ Chapter 5.
 
  (chapter6.tex
 Chapter 6.
-) [6
+) [13
 
 
 
@@ -637,7 +695,7 @@ Chapter 6.
 
  (chapter7.tex
 Chapter 7.
-) [7
+) [14
 
 
 
@@ -646,56 +704,73 @@ Chapter 7.
 
  (chapter8.tex
 Chapter 8.
-) [8
+) [15
 
 
 
 ] (Thesis.bbl
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 13.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 5771) in paragraph at lines 9--14
+[]\OT1/ptm/m/n/12 Christopher Arth-mann and I-Ping Li.  Neu-ro-mar-ket-ing  the
+ art and sci-ence
+ []
 
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [9
+Underfull \hbox (badness 6094) in paragraph at lines 9--14
+\OT1/ptm/m/n/12 of mar-ket-ing and neu-ro-sciences en-abled by iot tech-nolo-gi
+es, 2017.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
+[]$\OT1/pcr/m/n/12 https : / / www . iiconsortium . org / pdf / 2017 _ JoI _ Ne
+uromarketing _
+ []
+
+) [16
 
 
 ]
 \openout2 = `appendix.aux'.
 
- (appendix.tex [10
+ (appendix.tex [17
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (Thesis.aux (abstract.aux) (acknowledgement.aux)
 (abbreviations.aux) (chapter1.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux)
 (chapter5.aux) (chapter6.aux) (chapter7.aux) (chapter8.aux) (appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 0682FC742BD54B75A9DAB130AADD2B73;1949
-(rerunfilecheck)             After:  4DDA1E81FEDC8F376DC363E16C9713CB;1953.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: A005867AF2FF3AD874203D6932D26283;2589.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 7677 strings out of 493333
- 107318 string characters out of 3139194
- 207818 words of memory out of 3000000
- 10940 multiletter control sequences out of 15000+200000
- 23539 words of font info for 54 fonts, out of 3000000 for 9000
+ 7802 strings out of 493333
+ 109028 string characters out of 3139194
+ 211019 words of memory out of 3000000
+ 11033 multiletter control sequences out of 15000+200000
+ 27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,43p,263b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,1566b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/urw/times/utmr8a.pfb>
-Output written on Thesis.pdf (19 pages, 65189 bytes).
+KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
+mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Thesis.pdf (27 pages, 145202 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 399 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 
