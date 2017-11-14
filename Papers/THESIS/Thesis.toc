@@ -11,26 +11,28 @@
 \contentsline {subsection}{\numberline {2.2.1}Image-Based Video Classiﬁcation using CNN's and LSTM's}{5}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Subject independent facial expression recognition with robust face detection using a convolutional neural network}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Neuromarketing - The Art and Science of Marketing and Neurosciences Enabled by IoT Technologies}{7}{section.2.4}
-\contentsline {section}{\numberline {2.5}Relevant Work and Critical Analysis}{8}{section.2.5}
-\contentsline {section}{\numberline {2.6}Conclusion}{10}{section.2.6}
-\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}section header 1}{11}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Subsection header 1}{11}{subsection.3.1.1}
-\contentsline {chapter}{\numberline {4}System Design}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}section header 1}{12}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Subsection header 1}{12}{subsection.4.1.1}
-\contentsline {chapter}{\numberline {5}Implementation}{13}{chapter.5}
-\contentsline {section}{\numberline {5.1}section header 1}{13}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Subsection header 1}{13}{subsection.5.1.1}
-\contentsline {chapter}{\numberline {6}Testing and Evaluation}{14}{chapter.6}
-\contentsline {section}{\numberline {6.1}section header 1}{14}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Subsection header 1}{14}{subsection.6.1.1}
-\contentsline {chapter}{\numberline {7}Discussion}{15}{chapter.7}
-\contentsline {section}{\numberline {7.1}section header 1}{15}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Subsection header 1}{15}{subsection.7.1.1}
-\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{16}{chapter.8}
-\contentsline {section}{\numberline {8.1}section header 1}{16}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Subsection header 1}{16}{subsection.8.1.1}
-\contentsline {chapter}{Bibliography}{17}{subsection.8.1.1}
-\contentsline {chapter}{Appendices}{19}{chapter*.8}
-\contentsline {section}{\numberline {A} sample section header }{19}{section.0.1}
+\contentsline {section}{\numberline {2.5}Facial expression recognition with Convolutional Neural Networks: Coping with few data and the training sample order}{8}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Facial Expression Recognition System}{9}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Relevant Work and Critical Analysis}{9}{section.2.6}
+\contentsline {section}{\numberline {2.7}Conclusion}{12}{section.2.7}
+\contentsline {chapter}{\numberline {3}Methodology}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}section header 1}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Subsection header 1}{13}{subsection.3.1.1}
+\contentsline {chapter}{\numberline {4}System Design}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}section header 1}{14}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Subsection header 1}{14}{subsection.4.1.1}
+\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}section header 1}{15}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Subsection header 1}{15}{subsection.5.1.1}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{16}{chapter.6}
+\contentsline {section}{\numberline {6.1}section header 1}{16}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Subsection header 1}{16}{subsection.6.1.1}
+\contentsline {chapter}{\numberline {7}Discussion}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}section header 1}{17}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Subsection header 1}{17}{subsection.7.1.1}
+\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{18}{chapter.8}
+\contentsline {section}{\numberline {8.1}section header 1}{18}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Subsection header 1}{18}{subsection.8.1.1}
+\contentsline {chapter}{Bibliography}{19}{subsection.8.1.1}
+\contentsline {chapter}{Appendices}{21}{chapter*.8}
+\contentsline {section}{\numberline {A} sample section header }{21}{section.0.1}

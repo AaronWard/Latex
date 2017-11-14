@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -48,6 +48,18 @@ Mohammad Havaei, Axel Davy, David Warde{-}Farley, Antoine Biard, Aaron~C.
 \newblock Brain tumor segmentation with deep neural networks.
 \newblock \emph{CoRR}, abs/1505.03540, 2015.
 \newblock URL \url{http://arxiv.org/abs/1505.03540}.
+
+\bibitem[Lopes et~al.(2017)Lopes, de~Aguiar, Souza, and Oliveira-Santos]{LOPES}
+André~Teixeira Lopes, Edilson de~Aguiar, Alberto F.~De Souza, and Thiago
+  Oliveira-Santos.
+\newblock Facial expression recognition with convolutional neural networks:
+  Coping with few data and the training sample order.
+\newblock \emph{Pattern Recognition}, 61\penalty0 (Supplement C):\penalty0 610
+  -- 628, 2017.
+\newblock ISSN 0031-3203.
+\newblock \doi{https://doi.org/10.1016/j.patcog.2016.07.026}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0031320316301753}.
 
 \bibitem[Matsugu et~al.(2003)Matsugu, Mori, Mitari, and Kaneda]{MATSUGU}
 Masakazu Matsugu, Katsuhiko Mori, Yusuke Mitari, and Yuji Kaneda.
