@@ -41,7 +41,16 @@ Furthermore, they make their belief clear of retailers benefiting from this when
 A related work section is then brought forward to explain similar models that have been developed. Much progress has been made in the field of neural networks have come about in recent years. This is due to advances in GPU technologies and computing power \cite{LOPES}. One example of relevant work they provide is the work done by Song et al., in which a CNN was developed for a mobile phone application for facial expression recognition. This CNN used image augmentation techniques, due to the lack of public data for their network, to prevent over-fitting. This increases the amount of data available for training the network \citep{LOPES}. Song et al. received and accuracy of 99.2 percent using the CK+ dataset. A CNN with 15 layers was developed by Burkert et al that achieved similar result, of 99.6 percent. They point out that although this network achieved high results, they may prove to be misleading as is it not made clear that their training and test datasets were different \citep{LOPES}. They then go on to compare the related works by expressing the flaws of using over-lapping data and the lack of emotion expressions classified.  
 
 \subsection{Facial Expression Recognition System}
-Following the introduction and related work, \citeauthor{LOPES} provide a prerequisite understanding for their model. Their model has two stages: the training stage and the testing stage. The training stage consists of consists of training that data 
+Following the introduction and related work, \citeauthor{LOPES} provide a prerequisite understanding for their model. Their model has two stages: the training stage and the testing stage. The training stage consists of a few preliminary steps. Firstly, new images are made from existing ones in the dataset to increase the trainable data. This is done using a method proposed by Simard et al. called "synthetic sample generation", which involves rotating and skewing the existing images. For every photograph that exist, and additional 70 are made, adding noise to the data. This synthetic data is only used in the training stage and advantageous as it allows the model to handle variance in an image \citep{LOPES}. Secondly, to address the problem in alignment with of facial features, the notion of rotation correction is introduced that aligned the images using the eyes as the horizontal axis. Image cropping is then used to reduce the amount of background noise as it is said to decrease the accuracy and overall performance of the CNN. This is done by detecting only features that are valid of expression classification and croping th image around them, excluding the neck, ears and background from the image.
+Down sampling is then applied for reducing the size of the image, making it 32 x 32 pixels in size. Brightness and contrast can cause problems with images, therefore intensity normalisation is applied to lower these aspects of the image \citep{LOPES}. \\
+As for the testing stage, the same methods are used as the training stage. The CNN outputs the predicted emotional expression with the following number ID's:\\
+\textbf{0} - Angry\\
+\textbf{1} - Disgust\\
+\textbf{2} - Fear\\
+\textbf{3} - Happy\\
+\textbf{4} - Sad\\
+\textbf{5} - Surprise\\
+
 
 \section{Relevant Work and Critical Analysis}
 

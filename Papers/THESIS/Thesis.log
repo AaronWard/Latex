@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  14 NOV 2017 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  14 NOV 2017 13:47
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -647,11 +647,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] [7] [8] [9] [10]
+[6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 44--53
+
+ []
+
+[9] [10] [11]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-) [11] [12]
+) [12]
 \openout2 = `chapter3.aux'.
 
  (chapter3.tex
@@ -824,16 +829,16 @@ Here is how much of TeX's memory you used:
  11052 multiletter control sequences out of 15000+200000
  27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,11n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (31 pages, 167241 bytes).
+Output written on Thesis.pdf (31 pages, 169403 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
+ 476 PDF objects out of 1000 (max. 8388607)
  80 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
