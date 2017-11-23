@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  14 NOV 2017 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  23 NOV 2017 15:50
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -544,22 +544,22 @@ Missing character: There is no Å in font ptmr7t!
  [4
 
 
-] [5])
+] [5] [6])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [6]
+ [7]
 (Thesis.lot)
 \tf@lot=\write5
 \openout5 = `Thesis.lot'.
 
- [7
+ [8
 
 ] (Thesis.lof)
 \tf@lof=\write6
 \openout6 = `Thesis.lof'.
 
- [8
+ [9
 
 ]
 Abbreviations
@@ -569,7 +569,7 @@ Abbreviations
 Underfull \vbox (badness 10000) detected at line 22
  []
 
-) [9
+) [10
 
 
 ]
@@ -661,16 +661,20 @@ Missing character: There is no ì in font ptmr7t!
 
  (chapter3.tex
 Chapter 3.
-) [13
+[13
 
 
 
 ]
+Overfull \vbox (149.80714pt too high) has occurred while \output is active []
+
+
+[14]) [15]
 \openout2 = `chapter4.aux'.
 
  (chapter4.tex
 Chapter 4.
-) [14
+) [16
 
 
 
@@ -679,7 +683,7 @@ Chapter 4.
 
  (chapter5.tex
 Chapter 5.
-) [15
+) [17
 
 
 
@@ -688,7 +692,7 @@ Chapter 5.
 
  (chapter6.tex
 Chapter 6.
-) [16
+) [18
 
 
 
@@ -697,7 +701,7 @@ Chapter 6.
 
  (chapter7.tex
 Chapter 7.
-) [17
+) [19
 
 
 
@@ -706,7 +710,7 @@ Chapter 7.
 
  (chapter8.tex
 Chapter 8.
-) [18
+) [20
 
 
 
@@ -798,16 +802,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--42
 l . com /
  []
 
-[19
+[21
 
 
 ]
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-) [20]
+) [22]
 \openout2 = `appendix.aux'.
 
- (appendix.tex [21
+ (appendix.tex [23
 
 
 ])
@@ -818,27 +822,34 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
 ) (chapter7.aux) (chapter8.aux) (appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BECDA0DE8632FBD6A928A2E0653DD6C5;2780.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: A16F042E04143785664340C2FF0CA2F0;4147
+(rerunfilecheck)             After:  A574D5CB90B83F716C7197B054963425;4214.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 7832 strings out of 493333
- 109400 string characters out of 3139194
+ 7880 strings out of 493333
+ 110089 string characters out of 3139194
  211434 words of memory out of 3000000
- 11052 multiletter control sequences out of 15000+200000
+ 11074 multiletter control sequences out of 15000+200000
  27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,11n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (31 pages, 169403 bytes).
+Output written on Thesis.pdf (34 pages, 185384 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

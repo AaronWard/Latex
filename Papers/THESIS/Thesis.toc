@@ -1,9 +1,9 @@
 \contentsline {chapter}{Abstract}{ii}{chapter*.1}
 \contentsline {chapter}{Acknowledgements}{iii}{chapter*.2}
 \contentsline {chapter}{Table of Contents}{iv}{chapter*.3}
-\contentsline {chapter}{List of Tables}{vii}{chapter*.3}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.4}
-\contentsline {chapter}{Abbreviations}{ix}{chapter*.6}
+\contentsline {chapter}{List of Tables}{viii}{chapter*.3}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.4}
+\contentsline {chapter}{Abbreviations}{x}{chapter*.6}
 \contentsline {chapter}{\numberline {1}Introduction and Background}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Analyzing and Detecting Employee's Emotion for Amelioration of Organizations}{3}{section.2.1}
@@ -16,23 +16,46 @@
 \contentsline {section}{\numberline {2.6}Relevant Work and Critical Analysis}{10}{section.2.6}
 \contentsline {section}{\numberline {2.7}Conclusion}{12}{section.2.7}
 \contentsline {chapter}{\numberline {3}Methodology}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}section header 1}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Subsection header 1}{13}{subsection.3.1.1}
-\contentsline {chapter}{\numberline {4}System Design}{14}{chapter.4}
-\contentsline {section}{\numberline {4.1}section header 1}{14}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Subsection header 1}{14}{subsection.4.1.1}
-\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}section header 1}{15}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Subsection header 1}{15}{subsection.5.1.1}
-\contentsline {chapter}{\numberline {6}Testing and Evaluation}{16}{chapter.6}
-\contentsline {section}{\numberline {6.1}section header 1}{16}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Subsection header 1}{16}{subsection.6.1.1}
-\contentsline {chapter}{\numberline {7}Discussion}{17}{chapter.7}
-\contentsline {section}{\numberline {7.1}section header 1}{17}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Subsection header 1}{17}{subsection.7.1.1}
-\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{18}{chapter.8}
-\contentsline {section}{\numberline {8.1}section header 1}{18}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Subsection header 1}{18}{subsection.8.1.1}
-\contentsline {chapter}{Bibliography}{19}{subsection.8.1.1}
-\contentsline {chapter}{Appendices}{21}{chapter*.8}
-\contentsline {section}{\numberline {A} sample section header }{21}{section.0.1}
+\contentsline {section}{\numberline {3.1}Languages}{14}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Java}{14}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Python}{14}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Node.JS}{14}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Framework}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Tensorflow}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Theano}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Keras}{14}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Training}{14}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Training Locally}{14}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Cloud Training Platforms}{14}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}AWS}{14}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Tensorport}{14}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}FlyodHub}{14}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Containerization}{14}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Docker}{14}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Kubernetes}{14}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Deployment Platform}{15}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Google Cloud}{15}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}AWS}{15}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}System Design}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}System Architecture}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Machine Learning Model}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Dataset}{16}{section.4.3}
+\contentsline {section}{\numberline {4.4}Node.JS App}{16}{section.4.4}
+\contentsline {section}{\numberline {4.5}Image Preprocessing}{16}{section.4.5}
+\contentsline {section}{\numberline {4.6}Tone Analyzing}{16}{section.4.6}
+\contentsline {section}{\numberline {4.7}Neural Network}{16}{section.4.7}
+\contentsline {chapter}{\numberline {5}Implementation}{17}{chapter.5}
+\contentsline {section}{\numberline {5.1}section header 1}{17}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Subsection header 1}{17}{subsection.5.1.1}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{18}{chapter.6}
+\contentsline {section}{\numberline {6.1}section header 1}{18}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Subsection header 1}{18}{subsection.6.1.1}
+\contentsline {chapter}{\numberline {7}Results and Discussion}{19}{chapter.7}
+\contentsline {section}{\numberline {7.1}section header 1}{19}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Subsection header 1}{19}{subsection.7.1.1}
+\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{20}{chapter.8}
+\contentsline {section}{\numberline {8.1}section header 1}{20}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Subsection header 1}{20}{subsection.8.1.1}
+\contentsline {chapter}{Bibliography}{21}{subsection.8.1.1}
+\contentsline {chapter}{Appendices}{23}{chapter*.8}
+\contentsline {section}{\numberline {A} sample section header }{23}{section.0.1}
