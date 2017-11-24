@@ -51,8 +51,42 @@ As for the testing stage, the same methods are used as the training stage. The C
 \textbf{4} - Sad\\
 \textbf{5} - Surprise\\
 
+Their model is comprised of 2 convolution layers, 2 sub-sampling layers and 1 fully-connected layer. The sub-sampling layers use max pooling with a 2x2 kernel. This halves the size of the image. The fully connected layer consists of 256 neurons and provides 6 prediction outputs. Stochastic gradient descent is applied for back propagation and the Loss is calculated using soft-max. They also use the rectified linear unit (ReLU) for their activation function.
 
-/************ finish ***********/
+\subsection{Experiments}
+\citeauthor{LOPES}'s experiments include a number of different test cases. These test cases utilize the the CK+ database that has images of a hundred students ages from 18 to 30. An average accuracy is given for each of the test cases. See table \ref{table:testcases} on page \pageref{table:testcases} for results.
+
+\begin{table}
+\begin{tabular}{ |p{10cm}||p{3cm}|}
+	\hline
+	\multicolumn{2}{|c|}{Test Case Averages} \\
+	\hline
+ 	\textbf{Test Case}& \textbf{Average}\\
+	\hline
+		no preprocessing  & 53.57\% \\
+	\hline
+		just cropping  & 71.67\%\\
+	\hline
+		just rotation correction  & 61.55\%\\
+	\hline
+		cropping and rotation  & 87.86\%\\
+	\hline	
+		intensity normalisation  & 57\%\\
+	\hline
+		both normalisations & 86.67\%\\
+	\hline
+		spatial normalisation and synthetic data & 87.1\%\\
+	\hline
+		both normalisations and synthetic data & 89.76\%\\
+	\hline
+\end{tabular}
+\caption{Test cases by \citeauthor{LOPES}}
+\label{table:testcases}
+\end{table}
+
+
+\newpage
+In summary, it can be seen from the table above that by applying the synthetic and normalized data to the training dataset, a higher accuracy can be achieved when testing.
 
 \section{Relevant Work and Critical Analysis}
 
@@ -65,5 +99,5 @@ Subject independent facial expression recognition with robust face detection usi
 
  \citeauthor{arthmann}'s paper titled Neuromarketing – The Art and Science of Marketing and Neurosciences Enabled by IoT Technologies is a promising insight to the field of neuromarketing. They recognize the association of online shopping and loss of sale for retail stores, and give example of how neuro-linguistic programming and IoT technologies can be used as a combination to understand their customers sentiment. Furthermore, it's heavily argued that the integration of AI and machine learning will evolve this concept to understand the thoughts of consumers and further tackle loss in productivity. This proves relevant to the proposed project as it is very similar. They both aim to gain a deeper understanding of human sentiment that may not be express verbally. Although this is possibly the most interesting paper of this review, it is severally lacking citations. Also, there are a lot of assumption brought forward with no clear indication as to how this knowledge is known. Additionally, it is also assumed that people will adopt these "always on" IoT devices and agree for their physical aspects to be used for consumer targeted marketing. 
 
- \section{Conclusion}
+ \section{Conclusion of Literature Review}
  In conclusion, the five papers reviewed topics in relation to convolutional neural networks, facial sentiment analysis, emotion detection and current applications in the real world. Relevant aspects include detecting employees emotions in a work environment, implementing a score fusion algorithm for achieve a summation of two sentiment detecting technologies, the idea of segmenting facial features while training to accommodate for variability and the notion using human emotion understanding for a business solution.
