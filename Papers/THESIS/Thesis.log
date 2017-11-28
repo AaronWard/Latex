@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  6 NOV 2017 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  28 NOV 2017 09:55
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -372,25 +372,27 @@ LaTeX Warning: Unused global option(s):
     [ITBthesis].
 
 (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux)
-(chapter1.aux))
+(chapter1.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux) (chapter5.aux)
+(chapter6.aux) (chapter7.aux) (chapter8.aux) (appendix.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -454,7 +456,7 @@ G,.JBIG2,.JB2,.eps]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 31.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -463,9 +465,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
 
 (Thesis.out) (Thesis.out)
 \@outlinefile=\write3
@@ -482,109 +484,417 @@ Ignore all them. If uncorrectable errors occur, notify staff.
 
 {C:/Users/aaron/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 157.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 141.
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
 
  []
 
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
 
  []
 
 [2]
 \openout2 = `abstract.aux'.
 
+ (abstract.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.141 \setcounter{page}{1} \beforepreface
+                                          [2
 
-No file abstract.tex.
+
+]
 Acknowledgements
 \openout2 = `acknowledgement.aux'.
 
-No file acknowledgement.tex.
-(Thesis.lot)
-\tf@lot=\write4
-\openout4 = `Thesis.lot'.
-
- (Thesis.lot)
-\tf@lot=\write5
-\openout5 = `Thesis.lot'.
-
-
-Abbreviations
-\openout2 = `abbreviations.aux'.
-
-No file abbreviations.tex.
-Dalthesis preface pages completed.
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 186.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 187.
-
-\openout2 = `chapter1.aux'.
-
-(chapter1.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 9.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
-)
-[1
-
-
-
-
-
+(acknowledgement.tex) [3
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 192.
+\@defbaselineskip=\skip75
+ (Thesis.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+ [4
+
+
+] [5] [6])
+\tf@toc=\write4
+\openout4 = `Thesis.toc'.
+
+ [7]
+(Thesis.lot)
+\tf@lot=\write5
+\openout5 = `Thesis.lot'.
+
+ [8
+
+] (Thesis.lof)
+\tf@lof=\write6
+\openout6 = `Thesis.lof'.
+
+ [9
+
+]
+Abbreviations
+\openout2 = `abbreviations.aux'.
+
+(abbreviations.tex
+Underfull \vbox (badness 10000) detected at line 22
+ []
+
+) [10
+
+
+]
+Dalthesis preface pages completed.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 170.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 171.
+
+\openout2 = `chapter1.aux'.
+
+(chapter1.tex
+Chapter 1.
+[1
+
+
+
+])
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 176.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1bch.fd"
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 ) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
- (Thesis.aux
-(abstract.aux) (acknowledgement.aux) (abbreviations.aux) (chapter1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4DABC458485D8EF42DC1DB297AB1EE24;183.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
- )
-(\end occurred when \iftrue on line 157 was incomplete) 
+\openout2 = `chapter2.aux'.
+
+
+(chapter2.tex
+Chapter 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+[3
+
+
+
+]
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+Missing character: There is no œ in font bchb7t!
+Missing character: There is no å in font bchb7t!
+Missing character: There is no Å in font bchb7t!
+[4]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+Missing character: There is no œ in font bchb7t!
+Missing character: There is no å in font bchb7t!
+Missing character: There is no Å in font bchb7t!
+ [5]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 24.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 20.50102pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 44--53
+
+ []
+
+[9] [10] [11] [12]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+ [13]) [14]
+\openout2 = `chapter3.aux'.
+
+ (chapter3.tex
+Chapter 3.
+[15
+
+
+
+]
+Chapter 4.
+) [16
+
+]
+\openout2 = `chapter4.aux'.
+
+ (chapter4.tex
+Chapter 5.
+) [17
+
+
+
+]
+\openout2 = `chapter5.aux'.
+
+ (chapter5.tex
+Chapter 6.
+) [18
+
+
+
+]
+\openout2 = `chapter6.aux'.
+
+ (chapter6.tex
+Chapter 7.
+) [19
+
+
+
+]
+\openout2 = `chapter7.aux'.
+
+ (chapter7.tex
+Chapter 8.
+) [20
+
+
+
+]
+\openout2 = `chapter8.aux'.
+
+ (chapter8.tex
+Chapter 9.
+) [21
+
+
+
+] (Thesis.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 12.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+[]\OT1/ptm/m/n/12 Ahmad Ab-dulka-der, Aparna Lak-sh-mi-ratan, and Joy Zhang.  I
+n-tro-duc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+\OT1/ptm/m/n/12 ing deep-text: Face-book's text un-der-stand-ing en-gine, 2017.
+  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+[]$\OT1/pcr/m/n/12 https : / / code . facebook . com / posts / 181565595577955 
+/
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+
+Underfull \hbox (badness 5771) in paragraph at lines 15--20
+[]\OT1/ptm/m/n/12 Christopher Arth-mann and I-Ping Li.  Neu-ro-mar-ket-ing  the
+ art and sci-ence
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 15--20
+\OT1/ptm/m/n/12 of mar-ket-ing and neu-ro-sciences en-abled by iot tech-nolo-gi
+es, 2017.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--20
+[]$\OT1/pcr/m/n/12 https : / / www . iiconsortium . org / pdf / 2017 _ JoI _ Ne
+uromarketing _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+[]\OT1/ptm/m/n/12 Adit Desh-pande.  A be-gin-ner's guide to un-der-stand-ing co
+n-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+\OT1/ptm/m/n/12 vo-lu-tional neu-ral net-works.  []$\OT1/pcr/m/n/12 https : / /
+ adeshpande3 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+\OT1/pcr/m/n/12 github . io / adeshpande3 . github . io / A-[]Beginner %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+\OT1/pcr/m/n/12 27s-[]Guide-[]To-[]Understanding-[]Convolutional-[]Neural-[]Net
+works/$[]\OT1/ptm/m/n/12 ,
+ []
+
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ¥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ß in font ptmr7t!
+
+Underfull \hbox (badness 1152) in paragraph at lines 36--42
+\OT1/ptm/m/n/12 Hekis, and Ri-cardo Valen-tim.  Computer-aided de-tec-tion sys-
+tem for lung can-cer
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 36--42
+\OT1/ptm/m/n/12 in com-puted to-mog-ra-phy scans: Re-view and fu-ture prospects
+, Apr 2014.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--42
+[]$\OT1/pcr/m/n/12 https : / / biomedical-[]engineering-[]online . biomedcentra
+l . com /
+ []
+
+[22
+
+
+]
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+) [23]
+\openout2 = `appendix.aux'.
+
+ (appendix.tex [24
+
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+ (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux) (chapter1
+.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux) (chapter5.aux) (chapter6.aux
+) (chapter7.aux) (chapter8.aux) (appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: 7DBEBB55E05F3C929CB91FB16ABD069F;4579
+(rerunfilecheck)             After:  90CBDF133F3DF9798DF5D60A3C83BB2F;4624.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+ ) 
 Here is how much of TeX's memory you used:
- 7536 strings out of 493333
- 105618 string characters out of 3139194
- 204644 words of memory out of 3000000
- 10917 multiletter control sequences out of 15000+200000
- 21062 words of font info for 37 fonts, out of 3000000 for 9000
+ 7907 strings out of 493333
+ 110327 string characters out of 3139194
+ 211482 words of memory out of 3000000
+ 11080 multiletter control sequences out of 15000+200000
+ 27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,593b,328s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX
- 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bitst
-rea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Thesis.pdf (4 pages, 48657 bytes).
+ 28i,10n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsection.7.1.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.7.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.6.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.6.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Thesis.pdf (35 pages, 194819 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
 

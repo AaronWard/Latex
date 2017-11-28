@@ -1,0 +1,94 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdulkader et~al.(2017)Abdulkader, Lakshmiratan, and Zhang]{DeepText}
+Ahmad Abdulkader, Aparna Lakshmiratan, and Joy Zhang.
+\newblock Introducing deeptext: Facebook's text understanding engine, 2017.
+\newblock URL
+  \url{https://code.facebook.com/posts/181565595577955/introducing-deeptext-facebook-s-text-understanding-engine/}.
+
+\bibitem[Arthmann and Li(2017)]{arthmann}
+Christopher Arthmann and I-Ping Li.
+\newblock Neuromarketing – the art and science of marketing and neurosciences
+  enabled by iot technologies, 2017.
+\newblock URL
+  \url{https://www.iiconsortium.org/pdf/2017_JoI_Neuromarketing_IoT_Technologies.pdf}.
+
+\bibitem[Bhargava and Gupta(2017)]{geocities}
+Nikhil Bhargava and Manik Gupta.
+\newblock Application of artificial neural networks in business applications.
+\newblock \emph{GEOCITIES}, 1:\penalty0 3--4, 2017.
+
+\bibitem[Deshpande(2016)]{adit}
+Adit Deshpande.
+\newblock A beginner's guide to understanding convolutional neural networks.
+\newblock
+  \url{https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks/},
+  2016.
+\newblock [20th July 2016].
+
+\bibitem[Firmino et~al.(2014)Firmino, Morais, Mendoça, Dantas, Hekis, and
+  Valentim]{CADe}
+Macedo Firmino, Antônio~H Morais, Roberto~M Mendoça, Marcel~R Dantas, Helio~R
+  Hekis, and Ricardo Valentim.
+\newblock Computer-aided detection system for lung cancer in computed
+  tomography scans: Review and future prospects, Apr 2014.
+\newblock URL
+  \url{https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/1475-925X-13-41}.
+
+\bibitem[Havaei et~al.(2015)Havaei, Davy, Warde{-}Farley, Biard, Courville,
+  Bengio, Pal, Jodoin, and Larochelle]{DBLP}
+Mohammad Havaei, Axel Davy, David Warde{-}Farley, Antoine Biard, Aaron~C.
+  Courville, Yoshua Bengio, Chris Pal, Pierre{-}Marc Jodoin, and Hugo
+  Larochelle.
+\newblock Brain tumor segmentation with deep neural networks.
+\newblock \emph{CoRR}, abs/1505.03540, 2015.
+\newblock URL \url{http://arxiv.org/abs/1505.03540}.
+
+\bibitem[Lopes et~al.(2017)Lopes, de~Aguiar, Souza, and Oliveira-Santos]{LOPES}
+André~Teixeira Lopes, Edilson de~Aguiar, Alberto F.~De Souza, and Thiago
+  Oliveira-Santos.
+\newblock Facial expression recognition with convolutional neural networks:
+  Coping with few data and the training sample order.
+\newblock \emph{Pattern Recognition}, 61\penalty0 (Supplement C):\penalty0 610
+  -- 628, 2017.
+\newblock ISSN 0031-3203.
+\newblock \doi{https://doi.org/10.1016/j.patcog.2016.07.026}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0031320316301753}.
+
+\bibitem[Matsugu et~al.(2003)Matsugu, Mori, Mitari, and Kaneda]{MATSUGU}
+Masakazu Matsugu, Katsuhiko Mori, Yusuke Mitari, and Yuji Kaneda.
+\newblock Subject independent facial expression recognition with robust face
+  detection using a convolutional neural network.
+\newblock \emph{Neural Networks}, 16\penalty0 (5):\penalty0 555 -- 559, 2003.
+\newblock ISSN 0893-6080.
+\newblock \doi{https://doi.org/10.1016/S0893-6080(03)00115-1}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0893608003001151}.
+\newblock Advances in Neural Networks Research: IJCNN '03.
+
+\bibitem[Subhashini and Niveditha(2015)]{SUBHASHINI}
+R.~Subhashini and P.R. Niveditha.
+\newblock Analyzing and detecting employee's emotion for amelioration of
+  organizations.
+\newblock \emph{Procedia Computer Science}, 48\penalty0 (Supplement
+  C):\penalty0 530 -- 536, 2015.
+\newblock ISSN 1877-0509.
+\newblock \doi{https://doi.org/10.1016/j.procs.2015.04.131}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1877050915006407}.
+\newblock International Conference on Computer, Communication and Convergence
+  (ICCC 2015).
+
+\bibitem[Wu et~al.(2016)Wu, Yao, Fu, and Jiang]{Wu}
+Zuxuan Wu, Ting Yao, Yanwei Fu, and Yu{-}Gang Jiang.
+\newblock Deep learning for video classification and captioning.
+\newblock \emph{CoRR}, abs/1609.06782, 2016.
+\newblock URL \url{http://arxiv.org/abs/1609.06782}.
+
+\end{thebibliography}

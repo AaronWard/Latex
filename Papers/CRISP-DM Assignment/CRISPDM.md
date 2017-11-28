@@ -24,7 +24,6 @@
     
 
 # Data Understanding
-
 1) Gathering Data
     - verify you have the right data (Dunno how this will be relevant because we were given the fucking thing)
     - Load the data into rapidminer and check its compatible
