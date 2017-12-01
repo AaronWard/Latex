@@ -16,50 +16,49 @@
 \BOOKMARK [2][-]{subsection.2.5.2}{Experiments}{section.2.5}% 16
 \BOOKMARK [1][-]{section.2.6}{Relevant Work and Critical Analysis}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.7}{Conclusion of Literature Review}{chapter.2}% 18
-\BOOKMARK [0][-]{chapter.3}{Analysis}{}% 19
-\BOOKMARK [0][-]{chapter.4}{Methodology}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Programming Language}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{Machine Learning Framework}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{Training Platform}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.3.1}{Training Locally}{section.4.3}% 24
-\BOOKMARK [2][-]{subsection.4.3.2}{Cloud Training}{section.4.3}% 25
-\BOOKMARK [1][-]{section.4.4}{Containerization}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.5}{Deployment Platform}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.6}{Datasets}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.6.1}{Public Datasets}{section.4.6}% 29
-\BOOKMARK [2][-]{subsection.4.6.2}{Creating a Dataset}{section.4.6}% 30
-\BOOKMARK [1][-]{section.4.7}{Concluding Analysis of Methodology}{chapter.4}% 31
-\BOOKMARK [0][-]{chapter.5}{System Design}{}% 32
-\BOOKMARK [1][-]{section.5.1}{System Architecture}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{Machine Learning Model}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.3}{User Interface}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.4}{Database}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.5}{Image Preprocessor}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.6}{Tone Analysis}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.7}{Deployment}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.8}{Concluding Analysis of System Design}{chapter.5}% 40
-\BOOKMARK [0][-]{chapter.6}{Implementation}{}% 41
-\BOOKMARK [1][-]{section.6.1}{Implementing the Machine Learning Model}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.2}{Deploying the Trained Model}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.3}{Implementing the Node.JS Application}{chapter.6}% 44
-\BOOKMARK [2][-]{subsection.6.3.1}{Database Integration}{section.6.3}% 45
-\BOOKMARK [1][-]{section.6.4}{Result Weighting Algorithm}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.5}{Integrating Third Party Services}{chapter.6}% 47
-\BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 48
-\BOOKMARK [0][-]{chapter.7}{Testing and Evaluation}{}% 49
-\BOOKMARK [1][-]{section.7.1}{Testing Model with Testing Data}{chapter.7}% 50
-\BOOKMARK [1][-]{section.7.2}{API Testing}{chapter.7}% 51
-\BOOKMARK [1][-]{section.7.3}{Testing Model with New Data}{chapter.7}% 52
-\BOOKMARK [0][-]{chapter.8}{Results and Discussion}{}% 53
-\BOOKMARK [1][-]{section.8.1}{Results}{chapter.8}% 54
-\BOOKMARK [2][-]{subsection.8.1.1}{Model Accuracy}{section.8.1}% 55
-\BOOKMARK [2][-]{subsection.8.1.2}{Usability}{section.8.1}% 56
-\BOOKMARK [1][-]{section.8.2}{Discussion}{chapter.8}% 57
-\BOOKMARK [0][-]{chapter.9}{Conclusion and Further Work}{}% 58
-\BOOKMARK [1][-]{section.9.1}{Conclusion}{chapter.9}% 59
-\BOOKMARK [2][-]{subsection.9.1.1}{Further Work}{section.9.1}% 60
-\BOOKMARK [0][-]{subsection.9.1.1}{Bibliography}{}% 61
-\BOOKMARK [0][-]{chapter*.8}{Appendices}{}% 62
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.8}% 63
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.8}% 64
-\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.8}% 65
+\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Programming Language}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Machine Learning Framework}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.3}{Training Platform}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Training Locally}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.2}{Cloud Training}{section.3.3}% 24
+\BOOKMARK [1][-]{section.3.4}{Containerization}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.5}{Deployment Platform}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.6}{Datasets}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.6.1}{Public Datasets}{section.3.6}% 28
+\BOOKMARK [2][-]{subsection.3.6.2}{Creating a Dataset}{section.3.6}% 29
+\BOOKMARK [1][-]{section.3.7}{Concluding Analysis of Methodology}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{System Design}{}% 31
+\BOOKMARK [1][-]{section.4.1}{System Architecture}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Machine Learning Model}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{User Interface}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Database}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Image Preprocessor}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.6}{Tone Analysis}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.7}{Deployment}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.8}{Concluding Analysis of System Design}{chapter.4}% 39
+\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 40
+\BOOKMARK [1][-]{section.5.1}{Implementing the Machine Learning Model}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.2}{Deploying the Trained Model}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.3}{Implementing the Node.JS Application}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.3.1}{Database Integration}{section.5.3}% 44
+\BOOKMARK [1][-]{section.5.4}{Result Weighting Algorithm}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.5}{Integrating Third Party Services}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.6}{Conclusion}{chapter.5}% 47
+\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 48
+\BOOKMARK [1][-]{section.6.1}{Testing Model with Testing Data}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.2}{API Testing}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 52
+\BOOKMARK [1][-]{section.7.1}{Results}{chapter.7}% 53
+\BOOKMARK [2][-]{subsection.7.1.1}{Model Accuracy}{section.7.1}% 54
+\BOOKMARK [2][-]{subsection.7.1.2}{Usability}{section.7.1}% 55
+\BOOKMARK [1][-]{section.7.2}{Discussion}{chapter.7}% 56
+\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 57
+\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 58
+\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 59
+\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 60
+\BOOKMARK [0][-]{chapter*.8}{Appendices}{}% 61
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.8}% 62
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.8}% 63
+\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.8}% 64

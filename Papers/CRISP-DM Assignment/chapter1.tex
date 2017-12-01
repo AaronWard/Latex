@@ -1,7 +1,7 @@
 \prefacesection{Business Understanding and Data Understanding}
 
 \section*{Business Understanding}
-This dataset provides data on subjects that with and without meningitis. It contains information such as age, gender, location, sum of health problems such as headaches, fevers and seizures. Additionally, is provides an attribute that indicate if the subject does or doesn't have meningitis, with a negative or positive value. 
+This dataset provides data on subjects with and without meningitis. It contains information such as age, gender, location, sum of health problems such as headaches, fevers and seizures. Additionally, is provides an attribute that indicate if the subject does or doesn't have meningitis, with a negative or positive value. 
 
 \subsection*{Business Objective}
 
@@ -26,7 +26,7 @@ This dataset provides data on subjects that with and without meningitis. It cont
 %- 3 charts
 
 \subsection*{Describing Data}
-In this section the allocated dataset is explained in terms of informational content, data quality and usability. The data set itself consists of attributes in relation to meningitis, a neuroligical infectious disease that can cause brain inflammation due to bacteria or viruses infecting that brain. As seen in tables below, the attributes have been segregated from numeric and nominal data. The numeric data given a description and a data type. Additionally, the mean, minimum, maximum and standard deviation values are given. Please refer to table \ref{table: numeric1} for information of the numeric data.
+In this section the allocated dataset is explained in terms of informational content, data quality and usability. The data set itself consists of attributes in relation to meningitis, a neuroligical infectious disease that can cause brain inflammation due to bacteria or viruses infecting that brain. As seen in tables below, the attributes have been segregated from numeric and categorical data. The numeric data given a description and a data type. Additionally, the mean, minimum, maximum and standard deviation values are given. Please refer to table \ref{table: numeric1} for information of the numeric data.
 
 
  \begin{longtable}{|c|>{\raggedright\arraybackslash}p{3cm}|c|c|c|c|c|}
@@ -87,7 +87,7 @@ The categorical dataset is given a description to the attribute labels and given
 
  \begin{longtable}{|c|>{\raggedright\arraybackslash}p{4cm}|c|c|c|}
 	\hline
-	\multicolumn{5}{| c |}{Nominal Attributes}\\
+	\multicolumn{5}{| c |}{Categorical Attributes}\\
 	\hline
 	\textbf{Name} & \textbf{Description} &\textbf{Data type} &\textbf{Value 1} &\textbf{Value 2}\\
 	\hline
@@ -119,27 +119,127 @@ The categorical dataset is given a description to the attribute labels and given
 	\hline	
 		RISK(Grouped) & Class label - at risk  & Nominal & n (121) & p (19) \\	
 	\hline		
-	\caption{Nominal Attribute Description.\label{long}}
+	\caption{Categorical Attribute Description.\label{long}}
 	\label{table: nominal1}		
 \end{longtable}
 
 The data above could be divided into a number of sections. Attributes such as AGE and SEX can be categorized as \textit{personal information}. COLD, HEADACHE, NAUSEA LOC etc. can be described as \textit{subject history} as they provide some information on the commencement of the symptoms. BT, STIFF, KERNIG, GCS can be assigned to a category of \textit{physical examination} as they attribute values obtained during investigation. Further more, \textit{laboratory investigation} used to describe the attributes such as WBC, EEG\_WAVE, CULT\_FIND, ESR etc. These are values collected during further investigate of the bodily anomalies. Lastly, \textit{postliminary treatment} if used to describe THERAPY2, CSF\_CELL3 and CSF\_CELL7 as they are attributes describing values after a subject has been treated for meningitis. 
-
-
+The dimensionality of the dataset is a total of 36 attributes and there are 141 instances.
 \subsection*{Data Exploration}
+The following section will utilize the Exploratory Data Analysis (EDA) techniques to further analyze the data. This will give insight on how to improve the quality of the data and reduce dimensionality among the dataset. It shall also provide a number of charts to visually represent the data in regards to attributes that may prove to be predictive, show indication of correlations, and data with low variability. \\
+As seen in Figure\ref{symp} a histogram is used to plot out the main symptoms of meningitis. This consists of the attributes COLD, HEADACHE, FEVER, NAUSEA. The values are attributed to the amount of days since these sensations have been felt. Therefore they are applicable to the mining objectives as they appear to be very predictive.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/symptoms.jpg}
+		\caption{Main symptoms for meningitis}
+		\label{symp}
+	\end{center}
+\end{figure}
+\newpage
+Furthermore, a high correlation between the attributes ONSET and CSF\_CELL3 can be seen in Figure \ref{onset}. Due to this high correlation one of these attributes can be removed from the dataset as they are redundant. Furthermore. They are scarce in values so they may not prove beneficial to the mining objectives.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/onset_csf_cell3.jpg}
+		\caption{Scatter plot for ONSET and CSF\_CELL3}
+		\label{onset}
+	\end{center}
+\end{figure}
 
+\newpage
+
+The following histogram displays the values for positive (P) and negative (N) in the class label RISK(Grouped).This unbalance in inequitable group of values may prove to cause some difficulties as it may falsely predict everyone to be negative(n) for risk of having meningitis.
+See Figure \ref{risk} below.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/risk.jpg}
+		\caption{Histogram for class label RISK(Grouped)}
+		\label{risk}
+	\end{center}
+\end{figure}
+
+\newpage
+Figure \ref{box}  shows a box plot of CSF\_PRO the distribution of data. Although these values may prove beneficial in distinguishing between at risk and not at risk for meningitis, there are some outlier values seen which can skew the data.  
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/boxplot.jpg}
+		\caption{Protein in Cerebulospinal Fluid}
+		\label{box}
+	\end{center}
+\end{figure}
+
+%WBC count would be good to use as the variance of data isn't too big
+%-- box plot this
+
+
+%CSF_CELL3 correlates with ONSET so it can go
+\newpage
 
 \subsection*{Verifying Data Quality}
 
+\textbf{Missing Values}\\
+Some missing values can be found in this data set. For example, row 122 contains no values at all. Additionally, CSF\_CELL3 has a lot of missing data. There are a total of 119 out of the 141 instances of CSF\_CELL3 that a missing values. This means that there are only 22 rows in the entire dataset that do not contain any missing data. \\
+\textbf{Noise, Bias and Outlier Values}\\
+Many outlier values can be seen. For instance, the FEVER attribute has a mean value of 6.343. But this value may be skewed as there is a high outlier value, 63, at row 8. Furthermore, the value 90009.0 in the white blood cell count (WBC). This may be an erroneous value as the next highest value in the column is only 19500. This outlier value may disrupt the accuracy of prediction in the model.\\
+\textbf{Sufficient Attributes}\\
+There are some redundant attributes found in the dataset. One example of this is the SEIZURE attribute. There are only 8 individual and 4 distinct instances therefore it would be insufficient for representation of a class. Secondly, the CULT\_FIND and CULTURE represent the same data. CULTURE would be more sufficient for prediction as it contain more varied values of bacteria/viruses found such as influenza, tb, herpes, strepto etc. rather than the true or false values of CULT\_FIND. Therefore CULT\_FIND can be removed from the dataset.
+
+%Row 122 has no values
+%CSF_CELL3 has a lot of missing values
+%CSF_CELL7 has a lot of 0 
+%SEIZURE only has 8 individual instances which isn't
+% sufficient to represent the class
+%Insufficient class label distribution of data
+
 
 \prefacesection{Data Preparation}
+Firstly, the model was tested using a decision tree without any data preprocessing. Firstly, the attribute RISK(Grouped) was assigned as the class label. As many rows contain missing values, a filter was applied to ignore this row of data using the \textit{no\_missing\_attribute} condition class. The split validation operator was then used for splitting the dataset in a training and testing data set with a split ratio of 0.7. Initially, linear sampling was used for testing the model. This gave an accuracy result of 57.14\%. Shuffled sampling was used, which randomly selects 70\% of the rows in the dataset as training data.This returned a result of 85.71\% percent. Lastly, stratified sampling was used to select 70\% of the rows from each class and this gave a result of 83.33\%. Secondly, the k-Nearest Neighbor (k-NN) algorithm was used. Linear sampling and shuffled sampling with k-NN both provided an accuracy of 57.14\% and stratified sampling gave an accuracy of 66.67\%.
+\\Although these accuracies are relatively high, they are only trained on 22 rows of values. This provides a false accuracy as the dataset is not large enough. Therefore, further preprocessing measures are needed to give a fairer accuracy result.
 
--  three data preparation techniques to use
-- Justify the choices made: Discuss why your chosen techniques are appropriate/required for this data set and mining objective. 
-- Document the improvements,
 
+
+%  three data preparation techniques to use
+%Justify the choices made: Discuss why your chosen techniques are appropriate/required for this data set and mining objective. 
+% Document the improvements,
 \subsection*{Select Data}
+There is not a high number rows need to be removed from the dataset as there should be at least 20 times more rows that columns in a dataset. However, some of the rows or columns may be transformed due to missing values, which shall be addressed in the following section.
 \subsection*{Clean Data}
+Due to missing data in a number of cells in the dataset a number of transformational steps must be taken to ensure an increase in the overall accuracy of the final model. As row 122 is the only row in the dataset that has a large amount of missing data, it shall be removed from the dataset as it makes up less then 5\% of the number of rows, therefore it will not significantly affect the final result. This was implemented using the \textit{Filter Example Range}, which was used to filter out row 122 from the dataset. Using stratified sampling with a decision tree, this produced an accuracy of 73.81\%. Please refer to Figure \ref{122}
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/122Filter.jpg}
+		\caption{Stratified Sampling Using a Decision Tree}
+		\label{122}
+	\end{center}
+\end{figure}
+
+The attribute CSF\_CELL3 lacks a lot of values. There are a total of 119 rows out of 141 that contain no value at all which means there is an  84.4\% value absence. This column shall be removed as it is missing more 40\% of it's values. This is applied using the \textit{Select Attributes} Filter and exclude CSF\_CELL3 from the dataset. There are other attribute that should also be removed. For example, attributes such as LASUGUE, and GCS should be removed because to provide too little variance in values to the dataset. Following the application of these steps, the accuracy of the model has risen from 73.81\% to 78.57\%, as seen in Figure \ref{filtering}. \\ 
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/gcsfilter.jpg}
+		\caption{Results After Filtering Useless Attributes}
+		\label{filtering}
+	\end{center}
+\end{figure}
+\\\\\\\\\\\\
+More ever, WBC possibly has a very high value outlier value of 90009. To accommodate for this \textit{outlier detection} is used to 
+
+
+
+
 \subsection*{Construct Data}
 
 
