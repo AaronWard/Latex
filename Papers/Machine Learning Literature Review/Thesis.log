@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  3 DEC 2017 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  2 DEC 2017 21:02
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -372,17 +372,7 @@ LaTeX Warning: Unused global option(s):
     [ITBthesis].
 
 (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux)
-(chapter1.aux
-
-LaTeX Warning: Label `long' multiply defined.
-
-
-LaTeX Warning: Label `long' multiply defined.
-
-
-LaTeX Warning: Label `long' multiply defined.
-
-) (chapter2.aux))
+(chapter1.aux) (chapter2.aux) (chapter3.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -400,7 +390,8 @@ LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -498,9 +489,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--157
 
  []
 
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
+
+Overfull \hbox (14.15997pt too wide) in paragraph at lines 157--157
+\OT1/ptm/b/n/12 In-for-ma-tion Tech-nol-ogy \OT1/ptm/m/n/12 in the In-sti-tute 
+of Tech-nol-ogy Blan-chard-stown, is en-tirely
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 157--157
 
@@ -509,52 +503,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--157
 [2]
 \openout2 = `abstract.aux'.
 
-
-No file abstract.tex.
-Acknowledgements
-\openout2 = `acknowledgement.aux'.
-
-No file acknowledgement.tex.
+ (abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 157.
-\@defbaselineskip=\skip75
-(Thesis.toc)
-\tf@toc=\write4
-\openout4 = `Thesis.toc'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
- been already used, duplicate ignored
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.157 \setcounter{page}{1} \beforepreface
                                           [2
 
 
+]
+Acknowledgements
+\openout2 = `acknowledgement.aux'.
 
+No file acknowledgement.tex.
+(Thesis.lot)
+\tf@lot=\write4
+\openout4 = `Thesis.lot'.
 
-
-] (Thesis.lot
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+lasy on input line 1.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-))
+ (Thesis.lot)
 \tf@lot=\write5
 \openout5 = `Thesis.lot'.
-
- [3] (Thesis.lot)
-\tf@lot=\write6
-\openout6 = `Thesis.lot'.
 
 
 Abbreviations
@@ -575,185 +546,142 @@ less on input line 187.
 (chapter1.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 9.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
 
 [1
 
 
 
 
-]
-Underfull \vbox (badness 10000) detected at line 73
- []
 
-[2
+
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 84.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1bch.fd"
-File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
-) [3]
-Overfull \hbox (2.75607pt too wide) in paragraph at lines 106--106
-[]|\OT1/ptm/m/n/12 Electroencephalography 
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
  []
 
-
-Overfull \hbox (38.57544pt too wide) in alignment at lines 88--124
- [] [] [] [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 124
- []
-
-[4] <__resources/symptoms.jpg, id=93, 670.00313pt x 382.93062pt>
-File: __resources/symptoms.jpg Graphic file (type jpg)
-
-<use __resources/symptoms.jpg>
-Package pdftex.def Info: __resources/symptoms.jpg used on input line 135.
-(pdftex.def)             Requested size: 402.00497pt x 229.76013pt.
- [5]
-<__resources/onset_csf_cell3.jpg, id=102, 677.02937pt x 383.4325pt>
-File: __resources/onset_csf_cell3.jpg Graphic file (type jpg)
-
-<use __resources/onset_csf_cell3.jpg>
-Package pdftex.def Info: __resources/onset_csf_cell3.jpg used on input line 146
-.
-(pdftex.def)             Requested size: 406.22075pt x 230.06126pt.
- [6 <./__resources/symptoms.jpg>]
-<__resources/risk.jpg, id=109, 678.03313pt x 380.42125pt>
-File: __resources/risk.jpg Graphic file (type jpg)
-
-<use __resources/risk.jpg>
-Package pdftex.def Info: __resources/risk.jpg used on input line 160.
-(pdftex.def)             Requested size: 406.82301pt x 228.2545pt.
- [7 <./__resources/onset_csf_cell3.jpg>]
-<__resources/boxplot.jpg, id=116, 798.48312pt x 374.39874pt>
-File: __resources/boxplot.jpg Graphic file (type jpg)
-
-<use __resources/boxplot.jpg>
-Package pdftex.def Info: __resources/boxplot.jpg used on input line 173.
-(pdftex.def)             Requested size: 479.09357pt x 224.64098pt.
- [8 <./__resources/risk.jpg>]
-Overfull \hbox (2.88231pt too wide) in paragraph at lines 188--194
-\OT1/ptm/m/n/12 There are some re-dun-dant at-tributes found in the dataset. On
-e ex-am-ple of this is the SEIZURE
- []
-
-[9 <./__resources/boxplot.jpg>] [10]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 212.
- [11
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
+Missing character: There is no Ô in font ptmb7t!
+Missing character: There is no ¨ in font ptmb7t!
+Missing character: There is no Å in font ptmb7t!
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 15.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1bch.fd"
+File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
+) [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 22.
 
-]
-<__resources/122Filter.jpg, id=138, 568.1225pt x 155.58125pt>
-File: __resources/122Filter.jpg Graphic file (type jpg)
-
-<use __resources/122Filter.jpg>
-Package pdftex.def Info: __resources/122Filter.jpg used on input line 221.
-(pdftex.def)             Requested size: 340.87611pt x 93.34946pt.
-
-<__resources/gcsfilter.jpg, id=140, 535.50063pt x 138.5175pt>
-File: __resources/gcsfilter.jpg Graphic file (type jpg)
-
-<use __resources/gcsfilter.jpg>
-Package pdftex.def Info: __resources/gcsfilter.jpg used on input line 232.
-(pdftex.def)             Requested size: 321.30284pt x 83.11113pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--240
-
- []
-
-[12 <./__resources/122Filter.jpg>] [13 <./__resources/gcsfilter.jpg>]
-<__resources/balance.jpg, id=154, 716.6775pt x 128.98187pt>
-File: __resources/balance.jpg Graphic file (type jpg)
-
-<use __resources/balance.jpg>
-Package pdftex.def Info: __resources/balance.jpg used on input line 250.
-(pdftex.def)             Requested size: 430.00983pt x 77.38971pt.
- [14 <./__resources/balance.jpg>]
-Underfull \vbox (badness 10000) detected at line 295
- []
-
-[15
-
-] <__resources/tree.jpg, id=171, 644.90938pt x 309.65688pt>
-File: __resources/tree.jpg Graphic file (type jpg)
-
-<use __resources/tree.jpg>
-Package pdftex.def Info: __resources/tree.jpg used on input line 303.
-(pdftex.def)             Requested size: 386.94861pt x 185.79555pt.
- [16]
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
-
- []
-
-
-Underfull \vbox (badness 10000) detected at line 333
- []
-
-[17 <./__resources/tree.jpg>] [18]) [19
-
-]
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
+ [4]) [5]
 \openout2 = `chapter2.aux'.
 
- (chapter2.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
- (Thesis.aux
-(abstract.aux) (acknowledgement.aux) (abbreviations.aux) (chapter1.aux)
-(chapter2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+
+(chapter2.tex
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+ [6
+
+
+
+]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+ [7]) [8]
+\openout2 = `chapter3.aux'.
+
+ (chapter3.tex) [9
+
+
+
+] (Thesis.bbl
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 13.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Underfull \hbox (badness 5771) in paragraph at lines 9--14
+[]\OT1/ptm/m/n/12 Christopher Arth-mann and I-Ping Li.  Neu-ro-mar-ket-ing  the
+ art and sci-ence
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 9--14
+\OT1/ptm/m/n/12 of mar-ket-ing and neu-ro-sciences en-abled by iot tech-nolo-gi
+es, 2017.  URL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
+[]$\OT1/pcr/m/n/12 https : / / www . iiconsortium . org / pdf / 2017 _ JoI _ Ne
+uromarketing _
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+ [10
+
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
+ (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux)
+(chapter1.aux) (chapter2.aux) (chapter3.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 45575B83C24636C01FD32E36D81F1193;419.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
- ) 
+(rerunfilecheck)             Checksum: C0A581A94FC9BE7795E7FFFC0795C928;368.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
+ )
+(\end occurred when \iftrue on line 157 was incomplete) 
 Here is how much of TeX's memory you used:
- 7706 strings out of 493333
- 108223 string characters out of 3139194
- 230195 words of memory out of 3000000
- 11004 multiletter control sequences out of 15000+200000
- 27154 words of font info for 58 fonts, out of 3000000 for 9000
+ 7672 strings out of 493333
+ 107533 string characters out of 3139194
+ 208041 words of memory out of 3000000
+ 10994 multiletter control sequences out of 15000+200000
+ 27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,10n,43p,1335b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (23 pages, 560038 bytes).
+ 28i,10n,43p,1566b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX
+ 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bitst
+rea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on Thesis.pdf (13 pages, 106121 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
