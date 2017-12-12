@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  1 DEC 2017 13:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  12 DEC 2017 00:38
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -661,16 +661,23 @@ Missing character: There is no “ in font ptmr7t!
 
  (chapter3.tex
 Chapter 3.
-) [15
+[15
 
 
 
-]
+] [16] <__resources/top_lang.jpg, id=558, 755.82375pt x 553.06625pt>
+File: __resources/top_lang.jpg Graphic file (type jpg)
+
+<use __resources/top_lang.jpg>
+Package pdftex.def Info: __resources/top_lang.jpg used on input line 52.
+(pdftex.def)             Requested size: 453.49774pt x 331.8423pt.
+ [17 <./__resources/top_lang.jpg>]) [18]
 \openout2 = `chapter4.aux'.
 
- (chapter4.tex
+
+(chapter4.tex
 Chapter 4.
-) [16
+) [19
 
 
 
@@ -679,7 +686,7 @@ Chapter 4.
 
  (chapter5.tex
 Chapter 5.
-) [17
+) [20
 
 
 
@@ -688,7 +695,7 @@ Chapter 5.
 
  (chapter6.tex
 Chapter 6.
-) [18
+) [21
 
 
 
@@ -697,7 +704,7 @@ Chapter 6.
 
  (chapter7.tex
 Chapter 7.
-) [19
+) [22
 
 
 
@@ -706,7 +713,7 @@ Chapter 7.
 
  (chapter8.tex
 Chapter 8.
-) [20
+) [23
 
 
 
@@ -754,24 +761,36 @@ uromarketing _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+[]\OT1/ptm/m/n/12 Jason Brown-lee.  Best pro-gram-ming lan-guage for ma-chine l
+earn-ing,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+\OT1/ptm/m/n/12 Sep 2016.  URL []$\OT1/pcr/m/n/12 https : / / machinelearningma
+stery . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
 []\OT1/ptm/m/n/12 Adit Desh-pande.  A be-gin-ner's guide to un-der-stand-ing co
 n-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
 \OT1/ptm/m/n/12 vo-lu-tional neu-ral net-works.  []$\OT1/pcr/m/n/12 https : / /
  adeshpande3 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
 \OT1/pcr/m/n/12 github . io / adeshpande3 . github . io / A-[]Beginner %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
 \OT1/pcr/m/n/12 27s-[]Guide-[]To-[]Understanding-[]Convolutional-[]Neural-[]Net
 works/$[]\OT1/ptm/m/n/12 ,
  []
@@ -781,64 +800,111 @@ Missing character: There is no ´ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no § in font ptmr7t!
 
-Underfull \hbox (badness 1152) in paragraph at lines 36--42
+Underfull \hbox (badness 1152) in paragraph at lines 42--48
 \OT1/ptm/m/n/12 Hekis, and Ri-cardo Valen-tim.  Computer-aided de-tec-tion sys-
 tem for lung can-cer
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 36--42
+Underfull \hbox (badness 1062) in paragraph at lines 42--48
 \OT1/ptm/m/n/12 in com-puted to-mog-ra-phy scans: Re-view and fu-ture prospects
 , Apr 2014.  URL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
 []$\OT1/pcr/m/n/12 https : / / biomedical-[]engineering-[]online . biomedcentra
 l . com /
  []
 
-[21
+[24
 
 
 ]
+Underfull \hbox (badness 5563) in paragraph at lines 65--73
+[]\OT1/ptm/m/n/12 Keith Kirk-patrick.  Ai in con-tact cen-ters: Ar-ti-fi-cial i
+n-tel-li-gence tech-nolo-gies
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 65--73
+\OT1/ptm/m/n/12 are be-ing de-ployed to im-prove the cus-tomer ser-vice ex-pe-r
+i-ence.  \OT1/ptm/m/it/12 Com-mu-ni-
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 65--73
+\OT1/ptm/m/it/12 ca-tions of the ACM\OT1/ptm/m/n/12 , 60(8):18 -- 19, 2017.  IS
+SN 00010782.  URL []$\OT1/pcr/m/n/12 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+\OT1/pcr/m/n/12 / / search . ebscohost . com / login . aspx ? direct = true & A
+uthType =
+ []
+
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-) [22]
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 111--116
+[]\OT1/ptm/m/n/12 Adarsh Verma.  Most pop-u-lar pro-gram-ming lan-guages for ma
+-chine learn-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--116
+\OT1/ptm/m/n/12 ing and data sci-ence, Jan 2017.  URL []$\OT1/pcr/m/n/12 https 
+: / / fossbytes . com /
+ []
+
+
+Overfull \hbox (38.03197pt too wide) in paragraph at lines 111--116
+\OT1/pcr/m/n/12 popular-[]top-[]programming-[]languages-[]machine-[]learning-[]
+data-[]science/$[]\OT1/ptm/m/n/12 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
+\OT1/ptm/m/n/12 URL []$\OT1/pcr/m/n/12 https : / / www . customerthermometer . 
+com / customer-[]surveys /
+ []
+
+) [26]
 \openout2 = `appendix.aux'.
 
- (appendix.tex [23
+ (appendix.tex [27
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
- (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux) (chapter1
-.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux) (chapter5.aux) (chapter6.aux
-) (chapter7.aux) (chapter8.aux) (appendix.aux))
+ (Thesis.aux (abstract.aux) (acknowledgement.aux)
+(abbreviations.aux) (chapter1.aux) (chapter2.aux) (chapter3.aux) (chapter4.aux)
+(chapter5.aux) (chapter6.aux) (chapter7.aux) (chapter8.aux) (appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7DBEBB55E05F3C929CB91FB16ABD069F;4579.
+(rerunfilecheck)             Checksum: CC36A21D729DC771EE5273895455A9DC;4460.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 7890 strings out of 493333
- 110111 string characters out of 3139194
- 211482 words of memory out of 3000000
- 11080 multiletter control sequences out of 15000+200000
+ 7919 strings out of 493333
+ 110556 string characters out of 3139194
+ 212732 words of memory out of 3000000
+ 11098 multiletter control sequences out of 15000+200000
  27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,1705b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,10n,43p,1705b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (34 pages, 192694 bytes).
+Output written on Thesis.pdf (38 pages, 283788 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 513 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 696 PDF objects out of 1000 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 502 words of extra memory for PDF output out of 10000 (max. 10000000)
 
