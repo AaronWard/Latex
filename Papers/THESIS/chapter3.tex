@@ -2,7 +2,7 @@
 
 The following section will give an analytic insight to the steps required for designing the proposed software in relation to a business use case, Identify some of the problems that may arise and outline objectives for implementation.
 
-An article by \citeauthor{hague} for the B2B international states that understanding a customers satisifaction rate is important as it can show where is the business is doing well or where it needs improvements. It also can give indication to business owners where a further staff training is needed, or how there may be a need for cultural change. In light of this, seeing your business through the eyes of provides understanding of its downfalls. This in turn prevents more customer churn and can prove to be financially beneficial \citep{hague}. They state that the downfalls of customer service surveys is the that they survey must "ask the right question of the right person". \citeauthor{hague} give two reasons why this is difficult: they may know what to ask the customer in respect to their specific interaction with the business, also they may not have the contact details of the customer to further inquire into satisfaction of the individual. A main reason why customer surveys result may be misleading is the fact that an average of only 10\% percent of online surveys sent to customers are responded to, meaning that these results are not representative of an entire customer base \citep{willott} . Furthermore, surveys are described by \citeauthor{hague} as a "snapshot at one point in time", and do not accurately represent the feelings of the customer during transaction process, and measuring the satisfaction of customers should "be a continuous process".
+An article by \citeauthor{hague} for the B2B international states that understanding a customers satisfaction rate is important as it can show where is the business is doing well or where it needs improvements. It also can give indication to business owners where a further staff training is needed, or how there may be a need for cultural change. In light of this, seeing your business through the eyes of provides understanding of its downfalls. This in turn prevents more customer churn and can prove to be financially beneficial \citep{hague}. They state that the downfalls of customer service surveys is the that they survey must "ask the right question of the right person". \citeauthor{hague} give two reasons why this is difficult: they may know what to ask the customer in respect to their specific interaction with the business, also they may not have the contact details of the customer to further inquire into satisfaction of the individual. A main reason why customer surveys result may be misleading is the fact that an average of only 10\% percent of online surveys sent to customers are responded to, meaning that these results are not representative of an entire customer base \citep{willott} . Furthermore, surveys are described by \citeauthor{hague} as a "snapshot at one point in time", and do not accurately represent the feelings of the customer during transaction process, and measuring the satisfaction of customers should "be a continuous process".
 
 
 \citeauthor{keith} describes the use of artificial intelligence technologies in customer service as a beneficial factor for businesses, as it can automate the tasks that are "too time consuming".
@@ -41,6 +41,10 @@ In order to achieve the end goal of this project, a number of factors should be 
 \section{The Machine Learning Model}
 
 
+\subsection{Algorithm}
+When dealing with image a classification problem such as facial sentiment analysis, there are two machine learning algorithms that deem worthy. Deep Belief Networks (DBN's) were developed as an alternative to back propagation by Geoff Hinton. The idea behind DBN's involves stacking of a Restricted Boltzmann Machines in order to train in a "greedy manner" \citep{dbn}. This model learns to excerpt hierarchical representations of training data. The other algorithm is convolutional neural networks (CNN's). CNN's consist of a number of convolution and sub-sampling layers. It is then followed by a dense or otherwise known as a fully-connected layer. It also uses back-propagation to adjust the weights of the network during training \citep{gupta}. 
+
+
 \subsection{Programming Language}
 There are many programming languages that can used for machine learning and artificial intelligence. \citeauthor{brownlee} describes the quest for choosing a programming language to be rather difficult, as the choice should be tailored around "your own requirements" and entirely depends on the project being undertaken. However, a opinions on popular machine learning languages are given. Firstly, MATLAB/Octave is described as being "excellent" for dealing with matrices and linear algebra \citep{brownlee}. The R language is shown to be a main choice for machine learning as it provides many machine learning algorithms and it is a great choice for developing advanced models. \citeauthor{brownlee} states, although it is a good choice, it is seen as having a hard learning curve at first use. Python is said to be competition to MATLAB and R as it's large range of libraries and abilities as widely used in the field of data science \citep{brownlee}.
 An article by \citeauthor{verma_2017} sheds light on most popular programming languages in terms job listings for the year of 2016. Coming in first place was Python, as it's popularity is unmatched by any other programming language. Secondly is Java, and after that R is seen to be the third most popular \citep{verma_2017}. See Figure \ref{verma} for graphical representation \citeauthor{verma_2017}'s findings.
@@ -57,32 +61,43 @@ An article by \citeauthor{verma_2017} sheds light on most popular programming la
 
 In light of the proclamations made above, it is clear that the preferred languages should be easy to learn, are backed by a large community, and is capable of complex mathematical operations. Also, it is desirable that the languages chosen for the proposed language is fast and efficient because of the complex computations that will occur during training.
 
+\newpage
 
-\subsection{Machine Learning Framework}
-
+\subsection{Machine Learning Library}
+To speed up the process of implementation, a machine learning (ML) should be used. This will speed up the process of the project as many ML libraries have API's to help eliminate tedious tasks. Also these can be use to reduce the complexity of the length of the program \citep{jain}.
+TensorFlow is an open source ML library developed by the Google Brain team. It can be run on CPUs, GPUs and mobile platforms. For machine learning algorithms, such as gradient descent, TensorFlow provides automatic differentiation which can prove to be very advantageous in comparison to other ML libraries. It also supports multiple languages such as Python, Java and C++ and Go \citep{jain}. Graph visualisation is also supported. Multi-threading is also achievable with the use of TensorFlow \citep{jain}. Higher level wrapper libraries such as Keras can use back-end API's such as TensorFlow provide easier implementation with minimalistic coding but also giving the same efficiency and accuracy \citep{lee_keras}. Scikit Learn is an open source ML library built on top of other libraries such as Matplotlib, SciPy and NumPy. A good feature that Scikit Learn incorporates is the ability of evaluating, chaining and adjusting model hyper parameters \citep{jain}.
+other ML libraries such as Caffe focuses on speed and modularity and is mainly utilized for convolutional neural networks and computer-vision. Another selling point for Caffe is it’s pre-trained models that do not require any coding or training and it supports GPU and CPU computations. A disadvantage of this library is thats it's specifically designed for application implementation, not for research and development \citep{jain}
 
 \section{Data Preparation}
+For this project, the machine learning model will require a large image dataset. This dataset will be used to train the model on certain facial feature expressions with supervised learning, therefore a labelled dataset is needed. This phase in implementation is the most important part of the project, as the model only as good as the data you train it with.
 
 \subsection{Public Datasets}
+As seen in the literature review, there are many datasets publicly available for use on the Internet that provide labelled data. For example, the CK+ dataset was used by \citeauthor{LOPES} used labelled data to train their model. The dataset included facial expressions such as sadness, surprise, happiness, anger,fear and disgust, which would be are emotional expressions that are ideal for the proposed project.
+
 \subsection{Creating a Dataset}
-
-
+Creating a dataset is another option for training the model. A number of images could be batch downloaded from image search engines such as Bing and Google, and split into training and testing sets. As for labelling, the name of the folder the type of picture is in will serve as the label for validation.
 
 \section{Training}
+Training is a vital part of the project and will be the most time consuming. The model will use the chosen data preparation method and use that data as input to the model. There are two ways the model can be trained: Locally and on an Infrastructure as a Service (IaaS).
 \subsection{Training Locally}
+Training locally involves running code on your own machine to train the model. A main advantage to this is that it is low cost. There are no fees in this approach besides the electricity used by the machine. However, this approach may be harmful to the machine as the high rate of computations produces a lot of height, which may prove to be detrimental to your hardware. Also, should the setup not have the sufficient hardware, such as a high performing graphical processing unit (GPU), the training elapse time will be significantly larger.
+
 \subsection{Cloud Training}
+Training in the cloud involved pushing the model code and dataset to a cloud platform service. These infrastructures provide dedicated hardware for machine learning training such as high performance GPU's and CPU's. They usually provide container environments to run the training. For example, should a model be implemented in Keras or Caffe, the platforms have dedicated runtime environments with these libraries pre-installed. Notable platforms for machine learning training are TensorPort, FloydHub and Amazon's AWS. Although it is faster to train a model on one of these platforms, they can be expensive, as the free tiers only provide a certain amount of server usage time.
 
 \section{Hosting/Deployment}
+Deployment of the trained model is required to serve it as a web service. This model should be hosted as an API to enable use from devices besides the machine it was trained on. The API will require a platform that containerizes and supports the machine learning libraries it was used to train with. Additionally, the API should be lightweight and fast for accurate classifications. There are many Platforms as a Service (PaaS) that can be used for this project, notably Heroku, AWS, Azure and Google App Engine all provide a free tier basis for deployment.
+
 
 \section{Concluding Objective}
-In conclusion, this section will outlines the objectives for the proposed project sequentially from the initial steps to the end product. The objectives are as follows:
+In conclusion, this section outlines the objectives for the proposed project sequentially from the initial steps to the end product. The objectives are as follows:
 
 \begin{itemize}
 	\item Build a convolutional neural network for facial expression classification.
 	\item Train the model on a large image data set.
-	\item Save the train model and deploy it to a Python API.
-	\item Develop a web application that is enabled to record a users facials expressions and send snapshots of the users face to the Python API in intervals.
-	\item Use image preprocessing API on the webcam images for more accurate predictions.
+	\item Save the trained model and deploy it to a Python API.
+	\item Develop a web application that is enabled to record a user's facials expressions and send snapshots of the users face to the Python API in intervals.
+	\item Use image pre-processing API on the web cam images for more accurate predictions.
 	\item Use tone analyzer API for voice sentiment recognition.
 	\item Weigh scores from the train model and tone analyzer accordingly and store them in a database
 \end{itemize}

@@ -18,23 +18,23 @@
 \BOOKMARK [1][-]{section.2.7}{Conclusion of Literature Review}{chapter.2}% 18
 \BOOKMARK [0][-]{chapter.3}{Analysis }{}% 19
 \BOOKMARK [1][-]{section.3.1}{The Machine Learning Model}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.1.1}{Programming Language}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.2}{Machine Learning Framework}{section.3.1}% 22
-\BOOKMARK [1][-]{section.3.2}{Data Preparation}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Public Datasets}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{Creating a Dataset}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Training}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.1}{Training Locally}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{Cloud Training}{section.3.3}% 28
-\BOOKMARK [1][-]{section.3.4}{Hosting/Deployment}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.5}{Concluding Objective}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{System Design}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Machine Learning Model}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{Data Preparation}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.3}{Training}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.4}{Deployment}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.5}{System Architecture}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.6}{Concluding Analysis of System Design}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.3.1.1}{Algorithm}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.2}{Programming Language}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.3}{Machine Learning Library}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Data Preparation}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Public Datasets}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{Creating a Dataset}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Training}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{Training Locally}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{Cloud Training}{section.3.3}% 29
+\BOOKMARK [1][-]{section.3.4}{Hosting/Deployment}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.5}{Concluding Objective}{chapter.3}% 31
+\BOOKMARK [0][-]{chapter.4}{System Design}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Machine Learning Model}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{Data Preparation}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.3}{Training}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{Deployment}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.5}{Concluding Remarks of System Architecture Design}{chapter.4}% 37
 \BOOKMARK [0][-]{chapter.5}{Implementation}{}% 38
 \BOOKMARK [1][-]{section.5.1}{Implementing the Machine Learning Model}{chapter.5}% 39
 \BOOKMARK [1][-]{section.5.2}{Deploying the Trained Model}{chapter.5}% 40
