@@ -39,7 +39,7 @@ There are a number of steps taken in relation to this project.
 %Eliminate rare words
 %Identify phrases
 
-As previously mentioned, thirteen texts have been obtain online according to three categories: machine learning, deep learning and robotics.
+As previously mentioned, thirteen texts have been obtain online according to three categories: machine learning, deep learning and robotics. Additionally, 3 of these texts were sources through the use of web crawling on Rapid Miner using the \textbf{Crawl Web} operator.
 In order to obtain a better insight to the commonly occurring word in the files of each category, word clouds were made. As seen in Figure \ref{mlfig}, Figure \ref{dlfig} and Figure \ref{robfig} three word images were made to visualise the frequent terms. The larger the word appears in the image, the more often it appears in the documents that have been collected.
 For machine learning, it is clear that the terms \textbf{knn}, \textbf{training}, \textbf{decision tree}, \textbf{naive bayes} and \textbf{classification}.
 
@@ -91,6 +91,45 @@ Furthermore, potential synonyms can be found in these word clouds. To reduce dim
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Data Preparation}
+The initial step in the preprocessing phase consists of making a stop word list based on the word clouds. This if followed by the creation of a synonyms lists to group relating terms under the one word. In terms of Rapid Miner processes a number of steps are taken in order to prepare the data for mining. \\ \\
+\textbf{Process Documents from Files}: this operator generates word vectors based on text from multiple files, in this case, the texts that have been collected initially.  Within the \textit{Process Documents from Files} operator, a number of other techniques are used to cleanse the data.\\
+\textbf{Tokenizing}: to split the text into tokens.\\ \textbf{Transform cases}: which changes everything to the letter case you specify.\\
+\textbf{Filter Stopwords (English)}: This operator filters out all the commonly occurring words in the English language which are not useful for text analysis.\\
+\textbf{Filter Tokens by Length}: Upon inspection of the word vector that was generated, it was noted that some characters where not filtered by the \textit{Filter Stopwords (by length)} operator as there was still word like "a" and "on" still being seen, therefore this operator was utilized in order to remove these terms. A range between 3 and 25 characters was set for this.\\
+
+After these initial steps, the documents were processed and a number of 690 attributes where generated before pruning. Absolute pruning was implemented. The parameters set for this were between 3 and 15. Many of the attributes were lost as a result of this, with a number of just 45 attributes. In response to this, the parameters where adjusted to be between 2 and 15. This resulted in 155 attributes.\\
+The \textbf{Filter Stopwords (Dictionary)} was applied to remove out the words that were unrelated or unimportant in the word clouds. After the stop word filtering, 120 attributes remained. Example of a few of these stop words can be seen in Figure .
+
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.7]{__resources/stop.JPG}
+		\caption{Some of the Dictionary Stop Words}
+		\label{stop}
+	\end{center}
+\end{figure}
+\newpage
+Following inspection of the terms generated, new stop words were added to the list, bringing it down to 107 attributes. \\ \\
+\textbf{Stemming}\\
+In order to derive words down to their root stem, two algorithms were utilized, Lovins Stemmer and Port Stemmer. 122 attributes were a result of using Lovins stemmer, reduces the quality as it transforms words like "action" to "act" or completely transforms certain terms into words that do not make any sense, for example: the word "activation" became "activ".
+
+Secondly, Porters stemmer produced 118 attributes, which is a minor improvement as it produced less malformations of worlds. Also to be noticed, it picked up on synonyms of certain words. For example, words like "robotics" and "robot's" all became robot. However, some words were have been completely transformed. Therefore, it is a better approach to apply a stem dictionary. 
+
+A dictionary was created using not only with the words noticed in the word clouds, but the words that appeared in the file processing steps. The application of this list of synonyms reduced the dimensionality to 86 attributes. It can be seen that applying words like "LSTM", "CNN", "network" under a more generalized term such as \textbf{neural-network}, 41 occurrences appear in the document for Deep Learning. 
+This trend can be also be seen with terms like "nearest-neighbor" "k-nn" to simply fall under the term \textbf{knn}, which appears 21 times in the documents for machine learning and 1 time in the document for deep learning.
+Furthermore, the word "humanoid" is a descriptive term that is used in the phrase "humanoid robot" appears entirely within the category of robotics at a cardinality of 13.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.8]{__resources/1.JPG}
+		\caption{Results of Word Generated Using Synonym List}
+		\label{stop}
+	\end{center}
+\end{figure}
+
 
 
 
