@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  14 FEB 2018 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  14 MAR 2018 23:45
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -543,7 +543,7 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
-)
+
 [1
 
 
@@ -554,15 +554,36 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 192.
-
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 45.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1bch.fd"
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
 ) [2]
+<__resources/machine_learning.png, id=50, 1027.84pt x 770.88pt>
+File: __resources/machine_learning.png Graphic file (type png)
+
+<use __resources/machine_learning.png>
+Package pdftex.def Info: __resources/machine_learning.png used on input line 50
+.
+(pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
+ [3 <./__resources/machine_learning.png>] <__resources/deep_learning.png, id=61
+, 1027.84pt x 770.88pt>
+File: __resources/deep_learning.png Graphic file (type png)
+
+<use __resources/deep_learning.png>
+Package pdftex.def Info: __resources/deep_learning.png used on input line 64.
+(pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
+ [4 <./__resources/deep_learning.png>]
+<__resources/robotics.png, id=67, 1027.84pt x 770.88pt>
+File: __resources/robotics.png Graphic file (type png)
+
+<use __resources/robotics.png>
+Package pdftex.def Info: __resources/robotics.png used on input line 79.
+(pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
+ [5 <./__resources/robotics.png>]) [6]
 \openout2 = `appendix.aux'.
 
 
-(appendix.tex [3
+(appendix.tex [7
 
 
 
@@ -579,21 +600,21 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  )
 (\end occurred when \iftrue on line 157 was incomplete) 
 Here is how much of TeX's memory you used:
- 7551 strings out of 493333
- 105788 string characters out of 3139194
- 205120 words of memory out of 3000000
- 10920 multiletter control sequences out of 15000+200000
+ 7580 strings out of 493333
+ 106343 string characters out of 3139194
+ 206313 words of memory out of 3000000
+ 10937 multiletter control sequences out of 15000+200000
  21062 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,593b,328s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,618b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX
  2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bitst
 rea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Thesis.pdf (5 pages, 51492 bytes).
+Output written on Thesis.pdf (9 pages, 867904 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

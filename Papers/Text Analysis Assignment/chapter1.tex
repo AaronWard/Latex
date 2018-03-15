@@ -5,21 +5,32 @@
 This following sections shall describe the business objectives, the mining objectives, a analysis and plan for the proposed project.
 
 \subsection*{Business Objective}
-The objective of this project is to mine non-structured data using Rapid Miner.
+The objective of this project is to mine unstructured data using Rapid Miner.
 
 \subsection*{Data Mining objective}
 \begin{itemize}
 	\item The main objective is to mine articles about Machine Learning, Deep Learning and Robotics. 
 	\item Web crawling will be implemented to find related text on the topics.
+	\item Preprocessing steps shall be put in place in order to produce the most predictive words for modeling.
 	\item Multiple clustering and classification models will be used to identify the texts.
 \end{itemize}
 
 \subsection*{Project analysis}
 % (cost benifit analysis; risk assessment; resouces needed; assumptions)
+In terms of a cost benefit analysis, this project deems relatively efficient due to the benefits out weighing the costs. The proposed assignment poses minimal risk as only a few events may delay the production of the project, such as unavailable texts and misclassification, which are very unlikely. The resources required for this project include: The RapidMiner software and all it's operators related to the data mining objective, articles from online resources, 13 documents based on 3 categories and a online word cloud service for visualisation of predictive words or phrases. 
 
  
 \subsection*{Project plan}
-
+There are a number of steps taken in relation to this project.
+\begin{itemize}
+	\item Initially, Three categories are decided on. Two topics should be relatively similar, and the last on will be unrelated. In this case, they are based on Deep Learning, Machine Learning and robitics.
+	\item Thirteen texts are sourced online for each category. Ten shall be used for training datasets and three shall be used for testing. Web crawling will be implemented using RapidMiner for three of those texts. The steps taken will be documented 
+	\item These source articles will be downloaded into their respective folders based on their class label.
+	\item A word cloud will be creating to visualise the frequently occurring terms.
+	\item Preprocessing steps shall be experimented with to compare stemmers, determine which words are predominantly more predictive, apply pruning and comparing accuracy based on different vectors and documenting the results.
+	\item Apply two algorithms for clustering and classification and discuss the accuracy of them.
+	\item Lastly, an evaluation of the project will be performed, which will assess the overall result in relation with the business objectives. 
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -28,12 +39,66 @@ The objective of this project is to mine non-structured data using Rapid Miner.
 %Eliminate rare words
 %Identify phrases
 
+As previously mentioned, thirteen texts have been obtain online according to three categories: machine learning, deep learning and robotics.
+In order to obtain a better insight to the commonly occurring word in the files of each category, word clouds were made. As seen in Figure \ref{mlfig}, Figure \ref{dlfig} and Figure \ref{robfig} three word images were made to visualise the frequent terms. The larger the word appears in the image, the more often it appears in the documents that have been collected.
+For machine learning, it is clear that the terms \textbf{knn}, \textbf{training}, \textbf{decision tree}, \textbf{naive bayes} and \textbf{classification}.
 
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.4]{__resources/machine_learning.png}
+		\caption{Word cloud for the machine learning category}
+		\label{mlfig}
+	\end{center}
+\end{figure}
+
+\newpage
+
+A more concise description of deep learning can be seen in Figure 2. Although the two categories are related, these terms seem to focus more so on words like \textbf{networks}, \textbf{neural}, \textbf{CNN's}, \textbf{model} and \textbf{recurrent} to name a few.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.4]{__resources/deep_learning.png}
+		\caption{Word cloud for the deep learning category}
+		\label{dlfig}
+	\end{center}
+\end{figure}
+
+Lastly, we see the terms generated for the robotics category. Evidently, these words are not related to machine learning or deep learning as they share very few words to the documents in the other two categories. The prominent words found here are \textbf{robots}, \textbf{humans} or \textbf{humanoid} and  \textbf{robotics}
+
+\newpage
+
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.4]{__resources/robotics.png}
+		\caption{Word cloud for the robotics category}
+		\label{robfig}
+	\end{center}
+\end{figure}
+
+
+Not only do these word clouds help determine predictive words, but also provide certain words that are not useful for the mining objects,also known as stop words. Certain stop words in these figures are "I'm", "thing",  "makes" for example. These words can be ambiguous depending on the sentiment of the article being read or just common English phrases, therefore they should not be included in the working model. \\
+Furthermore, potential synonyms can be found in these word clouds. To reduce dimensionality, it is beneficial to specify words that may hold the same meaning. For instance, it can be seen that in the category of robotics, the terms "robot" and "robotics" are in interchangeable, therefore they can be classes as synonyms of one another. Another example of this could be the phase "neural network" and "ANN", which the latter is a acronym for "neural network" therefore that can also be classed as a synonym.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section*{Data Preparation}
+
+
+
 %Generate a document vector based on
 %selected concepts (terms and phrases)
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Modeling}
 
 \subsection*{Modeling techniques}
@@ -46,12 +111,13 @@ The objective of this project is to mine non-structured data using Rapid Miner.
 
 \subsection*{Build and Assess the Model}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Evaluation}
 %Assessment of data mining reults with
 %respect to original business objectives
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Project review}
 
 \subsection*{Project deployment}
