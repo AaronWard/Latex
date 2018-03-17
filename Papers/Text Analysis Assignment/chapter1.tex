@@ -92,6 +92,8 @@ Furthermore, potential synonyms can be found in these word clouds. To reduce dim
 \newpage
 \section*{Data Preparation}
 The initial step in the preprocessing phase consists of making a stop word list based on the word clouds. This if followed by the creation of a synonyms lists to group relating terms under the one word. In terms of Rapid Miner processes a number of steps are taken in order to prepare the data for mining. \\ \\
+
+\subsection*{Generating a Bag of Words}
 \textbf{Process Documents from Files}: this operator generates word vectors based on text from multiple files, in this case, the texts that have been collected initially.  Within the \textit{Process Documents from Files} operator, a number of other techniques are used to cleanse the data.\\
 \textbf{Tokenizing}: to split the text into tokens.\\ \textbf{Transform cases}: which changes everything to the letter case you specify.\\
 \textbf{Filter Stopwords (English)}: This operator filters out all the commonly occurring words in the English language which are not useful for text analysis.\\
@@ -119,7 +121,7 @@ Secondly, Porters stemmer produced 118 attributes, which is a minor improvement 
 
 A dictionary was created using not only with the words noticed in the word clouds, but the words that appeared in the file processing steps. The application of this list of synonyms reduced the dimensionality to 86 attributes. It can be seen that applying words like "LSTM", "CNN", "network" under a more generalized term such as \textbf{neural-network}, 41 occurrences appear in the document for Deep Learning. 
 This trend can be also be seen with terms like "nearest-neighbor" "k-nn" to simply fall under the term \textbf{knn}, which appears 21 times in the documents for machine learning and 1 time in the document for deep learning.
-Furthermore, the word "humanoid" is a descriptive term that is used in the phrase "humanoid robot" appears entirely within the category of robotics at a cardinality of 13.
+Furthermore, the word "humanoid", a descriptive term that is used in the phrase "humanoid robot", appears entirely within the category of robotics at a cardinality of 13. \\ \\
 \begin{figure}[ht]
 	\begin{center}
 		\advance\leftskip-3cm
@@ -128,9 +130,49 @@ Furthermore, the word "humanoid" is a descriptive term that is used in the phras
 		\caption{Results of Word Generated Using Synonym List}
 		\label{stop}
 	\end{center}
-\end{figure}
+\end{figure} 
+\newpage 
+
+\textbf{Generate N-Grams}\\
+Experimentation was conducted on using N-Gram generation instead of tokenizing because of certain combinations of words like "artificial neural network" or "restricted boltzmann machine". Initially, the \textbf{Generate N-Grams (Characters)} operator was used and the length was set to 25 as there are 25 characters in the phrase \textit{artifical neural network}. Upon evaluation it was noted that there were 365 attributes in the dataset, along with certain phrases that did not seem predictive or relevant to the categories of the documents. Therefore N-gram generation will not be used through the remaining phases of this project.
 
 
+\subsection*{Creating a Document Vector}
+The previous section focuses mostly on the terms that appear in the documents. This section will dwell on the cardinality of the terms within the documents. A document vector will be generated, which will be the data for the clustering and classification algorithms to be trained on. Firstly, a cross validation building block with a decision tree operator was added in order test the accuracy of different vector types, in this case: \textbf{Term Occurance} and \textbf{TD-IDF}. \\ 
+
+
+\subsubsection*{TD-IDF}
+With TD-IDF, using absolute pruning between 2 and 15, an accuracy of 86.67\% was achieved. See Figure 6 for the RapidMiner confusion matrix.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/tdidf.JPG}
+		\caption{Accuracy using }
+		\label{stop}
+	\end{center}
+\end{figure} 
+\newpage
+
+Secondly, pruning by rank was applied with a below rank of 0.5 and 0.95. However, this showed pour results as the accuracy only 20.00\% and number of 495 attribute generated.
+Percentual Pruning was applied to the model with a prune below percentage of 3.0 and a prune above percentage of 30.0. This resulted in an accuracy of 46.67\%.
+
+\subsubsection*{Term Occurence}
+With Term Occurrence, a better score was achieved, with a 90.00\% accuracy which can be seen in Figure 7. This was achieved using absolute pruning with a range between 2 and 15.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/to.JPG}
+		\caption{Accuracy using }
+		\label{stop}
+	\end{center}
+\end{figure} 
+
+Similar to TD-IDF, the ranking prune method was used with the same metrics, which returned a slightly higher accuracy score of 23.33\%.\\
+Overall, it is evident that term occurrence using the absolute pruning method proves to be the most accurate for vector creation. Furthermore, in order to use this data for training when using clustering or classification algorithms, it needs to be saved. Therefore, the \textbf{store} operator is used within the process.
 
 
 %Generate a document vector based on
@@ -141,7 +183,35 @@ Furthermore, the word "humanoid" is a descriptive term that is used in the phras
 \section*{Modeling}
 
 \subsection*{Modeling techniques}
-\subsubsection*{Clustering}
+To test the data that has been prepared two approaches will be taken. Firstly, two clustering algorithms will be used to see if they can identify groups in which the documents resides. It will be evaluated whether or not does the cosine numerical measure improve accuracy of the model and seen whether minimum or maximum linkage is better suited for the dataset that has been generated. Additionally, two classification algorithms applied and evaluated on which returned the most better results on the testing documents.
+In terms of algorithms, for clustering K-Means and Self-Organizing-Map shall be used. For classification, K-NN and naive bays shall be used. 
+\subsection*{Clustering}
+\subsubsection*{K-Means}
+The k-means algorithm was first applied for evaluation. The initial configurations are as follows. K (the amount of clusters) was set to 3, 10 max runs were used, the measurement type was set to numerical and the \textbf{EuclideanDistance} was used as a symmetric distance measurement. The model performs rather poorly, misgrouping some of the documents into the wrong classes, with majority of the documents being grouped into \textit{cluster\_2}. See Figure 8 for a scatter plot of K-means.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/kmeans1.JPG}
+		\caption{K-means Clustering Scatter Plot}
+		\label{stop}
+	\end{center}
+\end{figure} 
+
+After this the \textbf{CosineSimilarity} asymmetric similarity measure was applied. This improved the performance of the model with majority of the documents being grouped in their respective classes. See Figure 9. for visualisation of improved performance.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/kmeans2.JPG}
+		\caption{K-means Clustering Scatter Plot Using Cosine Similarity}
+		\label{stop}
+	\end{center}
+\end{figure} 
+
+
 
 \subsubsection*{Classification}
 
@@ -153,8 +223,14 @@ Furthermore, the word "humanoid" is a descriptive term that is used in the phras
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Evaluation}
+
+\subsection*{Clustering}
+\subsubsection*{Subjective Evaluation}
+\subsubsection*{Objective Evaluation}
 %Assessment of data mining reults with
 %respect to original business objectives
+
+\subsection*{Classification}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Project review}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  15 MAR 2018 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  17 MAR 2018 20:38
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -376,6 +376,18 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `stop' multiply defined.
 
+
+LaTeX Warning: Label `stop' multiply defined.
+
+
+LaTeX Warning: Label `stop' multiply defined.
+
+
+LaTeX Warning: Label `stop' multiply defined.
+
+
+LaTeX Warning: Label `stop' multiply defined.
+
 ) (appendix.aux))
 \openout1 = `Thesis.aux'.
 
@@ -583,12 +595,17 @@ File: __resources/robotics.png Graphic file (type png)
 Package pdftex.def Info: __resources/robotics.png used on input line 79.
 (pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
  [5 <./__resources/robotics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 94--99
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--99
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
 
  []
 
@@ -596,36 +613,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--99
 File: __resources/stop.JPG Graphic file (type jpg)
 
 <use __resources/stop.JPG>
-Package pdftex.def Info: __resources/stop.JPG used on input line 108.
+Package pdftex.def Info: __resources/stop.JPG used on input line 110.
 (pdftex.def)             Requested size: 338.31163pt x 207.27295pt.
  [6]
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
 
  []
 
-<__resources/1.JPG, id=81, 547.04375pt x 317.185pt>
+<__resources/1.JPG, id=82, 547.04375pt x 317.185pt>
 File: __resources/1.JPG Graphic file (type jpg)
  <use __resources/1.JPG>
-Package pdftex.def Info: __resources/1.JPG used on input line 127.
+Package pdftex.def Info: __resources/1.JPG used on input line 129.
 (pdftex.def)             Requested size: 437.63559pt x 253.74832pt.
 
-[7 <./__resources/stop.JPG>]) [8 <./__resources/1.JPG>] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 122--134
+
+ []
+
+[7 <./__resources/stop.JPG>] [8 <./__resources/1.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Overfull \hbox (2.05591pt too wide) in paragraph at lines 145--146
+\OT1/ptm/m/n/12 With TD-IDF, us-ing ab-so-lute prun-ing be-tween 2 and 15, an a
+c-cu-racy of 86.67% was achieved.
+ []
+
+<__resources/tdidf.JPG, id=93, 678.03313pt x 176.15813pt>
+File: __resources/tdidf.JPG Graphic file (type jpg)
+
+<use __resources/tdidf.JPG>
+Package pdftex.def Info: __resources/tdidf.JPG used on input line 151.
+(pdftex.def)             Requested size: 406.82301pt x 105.69568pt.
+ [9 <./__resources/tdidf.JPG>]
+<__resources/to.JPG, id=101, 677.53125pt x 161.60374pt>
+File: __resources/to.JPG Graphic file (type jpg)
+
+<use __resources/to.JPG>
+Package pdftex.def Info: __resources/to.JPG used on input line 168.
+(pdftex.def)             Requested size: 406.52188pt x 96.96298pt.
+ [10 <./__resources/to.JPG>]
+<__resources/kmeans1.JPG, id=110, 628.3475pt x 387.4475pt>
+File: __resources/kmeans1.JPG Graphic file (type jpg)
+
+<use __resources/kmeans1.JPG>
+Package pdftex.def Info: __resources/kmeans1.JPG used on input line 196.
+(pdftex.def)             Requested size: 377.0114pt x 232.47029pt.
+ [11 <./__resources/kmeans1.JPG>]
+<__resources/kmeans2.JPG, id=119, 632.3625pt x 393.47pt>
+File: __resources/kmeans2.JPG Graphic file (type jpg)
+
+<use __resources/kmeans2.JPG>
+Package pdftex.def Info: __resources/kmeans2.JPG used on input line 208.
+(pdftex.def)             Requested size: 379.42043pt x 236.0838pt.
+) [12 <./__resources/kmeans2.JPG>] [13]
 \openout2 = `appendix.aux'.
 
- (appendix.tex
-[10
+
+(appendix.tex [14
 
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
- (Thesis.aux (abstract.aux) (acknowledgement.aux) (abbreviations.aux)
-(chapter1.aux) (appendix.aux))
+ (Thesis.aux (abstract.aux) (acknowledgement.aux)
+(abbreviations.aux) (chapter1.aux) (appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6F7BD4D8BA5DE45246C0064742D89B12;295.
+(rerunfilecheck)             Checksum: AB310603EF7D2D114A9AED4D90BB70AC;295.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -634,22 +693,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  )
 (\end occurred when \iftrue on line 157 was incomplete) 
 Here is how much of TeX's memory you used:
- 7599 strings out of 493333
- 106616 string characters out of 3139194
- 207422 words of memory out of 3000000
- 10947 multiletter control sequences out of 15000+200000
+ 7636 strings out of 493333
+ 107252 string characters out of 3139194
+ 207412 words of memory out of 3000000
+ 10964 multiletter control sequences out of 15000+200000
  22746 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,618b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,10n,43p,685b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX
  2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/bitst
 rea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (12 pages, 1007076 bytes).
+Output written on Thesis.pdf (16 pages, 1315666 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
