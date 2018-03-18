@@ -184,7 +184,7 @@ Overall, it is evident that term occurrence using the absolute pruning method pr
 
 \subsection*{Modeling techniques}
 To test the data that has been prepared two approaches will be taken. Firstly, two clustering algorithms will be used to see if they can identify groups in which the documents resides. It will be evaluated whether or not does the cosine numerical measure improve accuracy of the model and seen whether minimum or maximum linkage is better suited for the dataset that has been generated. Additionally, two classification algorithms applied and evaluated on which returned the most better results on the testing documents.
-In terms of algorithms, for clustering K-Means and Self-Organizing-Map shall be used. For classification, K-NN and naive bays shall be used. 
+In terms of algorithms, for clustering K-Means and Agglomerative Clustering algorithms shall be used. For classification, K-NN and naive bays shall be used. 
 \subsection*{Clustering}
 \subsubsection*{K-Means}
 The k-means algorithm was first applied for evaluation. The initial configurations are as follows. K (the amount of clusters) was set to 3, 10 max runs were used, the measurement type was set to numerical and the \textbf{EuclideanDistance} was used as a symmetric distance measurement. The model performs rather poorly, misgrouping some of the documents into the wrong classes, with majority of the documents being grouped into \textit{cluster\_2}. See Figure 8 for a scatter plot of K-means.
@@ -211,9 +211,29 @@ After this the \textbf{CosineSimilarity} asymmetric similarity measure was appli
 	\end{center}
 \end{figure} 
 
+\subsection*{Agglomerative Clustering}
+For agglomerative clustering the parameter configurations are as follows: the measurement type was set to numeric, the measurement was set to \textbf{CosineSimilarity}, the number of clusters is equal to three and the minimum (single) linkage was applied initially. The model performed very well, identifying all the documents into the appropriate clusters.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.7]{__resources/agg1.JPG}
+		\caption{Agglomerative Clustering Using Minimum Linkage}
+		\label{stop}
+	\end{center}
+\end{figure} 
+\newpage
+
+Complete linkage was then applied to the model, this did not make any increase or decrease in performance. However, due to a bug with RapidMiner, the dendrogram was unenviable as it cut off have of the diagram, therefore it is uncertain to comment on which method is more desirable. 
+
 
 
 \subsubsection*{Classification}
+This section deals with classification of the document vector. Two models shall be used to assess the accuracy. Ideally, a support vector machine would be used, as it is known to be the most accurate of predictive models, but as it only supports a binary class input and we have three, K-NN and Naive Bayes shall be used.
+\subsection*{K-NN}
+
+
 
 \subsection*{Test Design}
 %e.g. split documents into training set and test set
