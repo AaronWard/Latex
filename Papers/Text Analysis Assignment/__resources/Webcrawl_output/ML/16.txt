@@ -1,0 +1,878 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Need help with Python Machine Learning? Take the FREE Mini-Course
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                               
+
+	
+	Spot-Check Regression Machine Learning Algorithms in Python with scikit-learn	
+By Jason Brownlee on May 30, 2016  in Python Machine Learning  
+	
+
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+				Spot-checking is a way of discovering which algorithms perform well on your machine learning problem.
+You cannot know which algorithms are best suited to your problem before hand. You must trial a number of methods and focus attention on those that prove themselves the most promising.
+In this post you will discover 6 machine learning algorithms that you can use when spot checking your regression problem in Python with scikit-learn.
+Let’s get started.
+Update Jan/2017: Updated to reflect changes to the scikit-learn API in version 0.18.Update Mar/2018: Added alternate link to download the dataset as the original appears to have been taken down.
+Spot-Check Regression Machine Learning Algorithms in Python with scikit-learnPhoto by frankieleon, some rights reserved.
+Algorithms Overview
+We are going to take a look at 7 classification algorithms that you can spot check on your dataset.
+4 Linear Machine Learning Algorithms:
+Linear RegressionRidge RegressionLASSO Linear RegressionElastic Net Regression
+3 Nonlinear Machine Learning Algorithms:
+K-Nearest NeighborsClassification and Regression TreesSupport Vector Machines
+Each recipe is demonstrated on a Boston House Price dataset. This is a regression problem where all attributes are numeric (update: download data from here).
+Each recipe is complete and standalone. This means that you can copy and paste it into your own project and start using it immediately.
+A test harness with 10-fold cross validation is used to demonstrate how to spot check each machine learning algorithm and mean squared error measures are used to indicate algorithm performance. Note that mean squared error values are inverted (negative). This is a quirk of the cross_val_score() function used that requires all algorithm metrics to be sorted in ascending order (larger value is better).
+The recipes assume that you know about each machine learning algorithm and how to use them. We will not go into the API or parameterization of each algorithm.
+
+
+Need help with Machine Learning in Python?
+Take my free 2-week email course and discover data prep, algorithms and more (with sample code).
+Click to sign-up now and also get a free PDF Ebook version of the course.
+Start Your FREE Mini-Course Now! 
+
+
+
+Linear Machine Learning Algorithms
+This section provides examples of how to use 4 different linear machine learning algorithms for regression in Python with scikit-learn.
+1. Linear Regression
+Linear regression assumes that the input variables have a Gaussian distribution. It is also assumed that input variables are relevant to the output variable and that they are not highly correlated with each other (a problem called collinearity).
+You can construct a linear regression model using the LinearRegression class.
+
+		
+		
+			
+			
+			
+			
+# Linear Regression
+import pandas
+from sklearn import model_selection
+from sklearn.linear_model import LinearRegression
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = LinearRegression()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# Linear Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.linear_model import LinearRegressionurl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = LinearRegression()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of mean squared error.
+
+		
+		
+			
+			
+			
+			
+-34.7052559445
+			
+				
+					1
+				-34.7052559445
+			
+		
+
+
+2. Ridge Regression
+Ridge regression is an extension of linear regression where the loss function is modified to minimize the complexity of the model measured as the sum squared value of the coefficient values (also called the l2-norm).
+You can construct a ridge regression model by using the Ridge class.
+
+		
+		
+			
+			
+			
+			
+# Ridge Regression
+import pandas
+from sklearn import model_selection
+from sklearn.linear_model import Ridge
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = Ridge()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# Ridge Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.linear_model import Ridgeurl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = Ridge()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-34.0782462093
+			
+				
+					1
+				-34.0782462093
+			
+		
+
+
+3. LASSO Regression
+The Least Absolute Shrinkage and Selection Operator (or LASSO for short) is a modification of linear regression, like ridge regression, where the loss function is modified to minimize the complexity of the model measured as the sum absolute value of the coefficient values (also called the l1-norm).
+You can construct a LASSO model by using the Lasso class.
+
+		
+		
+			
+			
+			
+			
+# Lasso Regression
+import pandas
+from sklearn import model_selection
+from sklearn.linear_model import Lasso
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = Lasso()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# Lasso Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.linear_model import Lassourl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = Lasso()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-34.4640845883
+			
+				
+					1
+				-34.4640845883
+			
+		
+
+
+4. ElasticNet Regression
+ElasticNet is a form of regularization regression that combines the properties of both Ridge Regression and LASSO regression. It seeks to minimize the complexity of the regression model (magnitude and number of regression coefficients) by penalizing the model using both the l2-norm (sum squared coefficient values) and the l1-norm (sum absolute coefficient values).
+You can construct an ElasticNet model using the ElasticNet class.
+
+		
+		
+			
+			
+			
+			
+# ElasticNet Regression
+import pandas
+from sklearn import model_selection
+from sklearn.linear_model import ElasticNet
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = ElasticNet()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# ElasticNet Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.linear_model import ElasticNeturl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = ElasticNet()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-31.1645737142
+			
+				
+					1
+				-31.1645737142
+			
+		
+
+
+Nonlinear Machine Learning Algorithms
+This section provides examples of how to use 3 different nonlinear machine learning algorithms for regression in Python with scikit-learn.
+1. K-Nearest Neighbors
+K-Nearest Neighbors (or KNN) locates the K most similar instances in the training dataset for a new data instance. From the K neighbors, a mean or median output variable is taken as the prediction. Of note is the distance metric used (the metric argument). The Minkowski distance is used by default, which is a generalization of both the Euclidean distance (used when all inputs have the same scale) and Manhattan distance (for when the scales of the input variables differ).
+You can construct a KNN model for regression using the KNeighborsRegressor class.
+
+		
+		
+			
+			
+			
+			
+# KNN Regression
+import pandas
+from sklearn import model_selection
+from sklearn.neighbors import KNeighborsRegressor
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = KNeighborsRegressor()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# KNN Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.neighbors import KNeighborsRegressorurl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = KNeighborsRegressor()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-107.28683898
+			
+				
+					1
+				-107.28683898
+			
+		
+
+
+2. Classification and Regression Trees
+Decision trees or the Classification and Regression Trees (CART as they are known) use the training data to select the best points to split the data in order to minimize a cost metric. The default cost metric for regression decision trees is the mean squared error, specified in the criterion parameter.
+You can create a CART model for regression using the DecisionTreeRegressor class.
+
+		
+		
+			
+			
+			
+			
+# Decision Tree Regression
+import pandas
+from sklearn import model_selection
+from sklearn.tree import DecisionTreeRegressor
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = DecisionTreeRegressor()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# Decision Tree Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.tree import DecisionTreeRegressorurl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = DecisionTreeRegressor()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-35.4906027451
+			
+				
+					1
+				-35.4906027451
+			
+		
+
+
+3. Support Vector Machines
+Support Vector Machines (SVM) were developed for binary classification. The technique has been extended for the prediction real-valued problems called Support Vector Regression (SVR). Like the classification example, SVR is built upon the LIBSVM library.
+You can create an SVM model for regression using the SVR class.
+
+		
+		
+			
+			
+			
+			
+# SVM Regression
+import pandas
+from sklearn import model_selection
+from sklearn.svm import SVR
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = SVR()
+scoring = 'neg_mean_squared_error'
+results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+			
+				
+					12345678910111213141516
+				# SVM Regressionimport pandasfrom sklearn import model_selectionfrom sklearn.svm import SVRurl = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/housing.data"names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']dataframe = pandas.read_csv(url, delim_whitespace=True, names=names)array = dataframe.valuesX = array[:,0:13]Y = array[:,13]seed = 7kfold = model_selection.KFold(n_splits=10, random_state=seed)model = SVR()scoring = 'neg_mean_squared_error'results = model_selection.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)print(results.mean())
+			
+		
+
+Running the example provides an estimate of the mean squared error.
+
+		
+		
+			
+			
+			
+			
+-91.0478243332
+			
+				
+					1
+				-91.0478243332
+			
+		
+
+
+Summary
+In this post you discovered machine learning recipes for regression in Python using scikit-learn.
+Specifically, you learned about:
+4 Linear Machine Learning Algorithms:
+Linear RegressionRidge RegressionLASSO Linear RegressionElastic Net Regression
+3 Nonlinear Machine Learning Algorithms:
+K-Nearest NeighborsClassification and Regression TreesSupport Vector Machines
+Do you have any questions about regression machine learning algorithms or this post? Ask your questions in the comments and I will do my best to answer them.
+
+			
+
+Frustrated With Python Machine Learning?
+
+Develop Your Own Models in Minutes
+…with just a few lines of scikit-learn code
+Discover how in my new Ebook:
+Machine Learning Mastery With Python
+Covers self-study tutorials and end-to-end projects like:Loading data, visualization, modeling, tuning, and much more…
+Finally Bring Machine Learning ToYour Own Projects
+Skip the Academics. Just Results.
+Click to learn more.
+
+
+
+		
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+					
+	
+
+	
+	
+		About Jason Brownlee
+		Jason Brownlee, Ph.D. is a machine learning specialist who teaches developers how to get results with modern machine learning methods via hands-on tutorials.				
+			
+				View all posts by Jason Brownlee →			
+		
+			
+	
+
+
+
+	        
+	             Spot-Check Classification Machine Learning Algorithms in Python with scikit-learn
+	            Use Keras Deep Learning Models with Scikit-Learn in Python 
+	            
+	        
+
+				 	7 Responses to Spot-Check Regression Machine Learning Algorithms in Python with scikit-learn
+		 	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Joe Dorocak
+	                October 30, 2016 at 5:11 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, Jason. 
+I got a message when i ran [LinearRegression, mean_squared_error|  that said, ” Scoring method mean_squared_error was renamed to neg_mean_squared_error in version 0.18 and will be removed in 0.20.”
+Love and peace,
+Joe
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 30, 2016 at 8:57 am
+	                #
+	                
+
+				
+
+		   		
+
+				Yes, I need to update the examples for v0.18 of sklearn.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Joe Dorocak
+	                October 30, 2016 at 5:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason.
+Here’s the Values i got.
+Scoring:	neg_mean_squared_error		
+Dataset	Group	Model	Value
+———-    ——–      ——–        ——-
+Boston	Linear	LinRegr	-34.705
+Boston	Linear	Ridge	-34.078
+Boston	Linear	Lasso	-34.464
+Boston	Linear	ElastN	-31.165
+Boston	Non-Lin	KNRegr	-107.287
+Boston	Clas+Tr	DecTrRg	-36.348
+Boston	SpVMs	SVR 	-91.048
+Thanks for everything.
+Love and peace,
+Joe
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aniket Saxena
+	                October 25, 2017 at 3:51 am
+	                #
+	                
+
+				
+
+		   		
+
+				As we have multiple regression algorithms, so my question is, if we want to spot check the accurate algorithm which we have to use in order to solve the problem, so is it necessary to have checked all the algorithms one by one before making predictions to the problem or is there any best alternative you know for this linear work(any fast and accurate work to identify accurate algorithm for the problem)?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 25, 2017 at 6:53 am
+	                #
+	                
+
+				
+
+		   		
+
+				When spot checking, we would evaluate each algorithm on the data, one at a time.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aniket Saxena
+	                January 15, 2018 at 4:17 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hello Jason,
+I have got these solutions to above problem:-
+1. KNRegressor: -107.286839 as mean and 79.839530 as standard deviation.
+2. RANSAC (robustness regression): -213.964101 as mean and 354.784695 as standard deviation
+So, my question is, should I take into account KNregressor or RANSAC as albeit I have got a huge standard deviation in RANSAC, I also got big mean squared error(negative) which indicates better performance?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 16, 2018 at 7:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Algorithm selection really comes down to the goals of your project.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+		 		
+		Leave a Reply Click here to cancel reply.			
+				Comment Name (required) 
+Email (will not be published) (required) 
+Website
+ 
+
+			
+			
+	     
+            
+                
+            
+Welcome to Machine Learning Mastery
+Hi, I'm Jason Brownlee, Ph.D.
+
+My goal is to make practitioners like YOU awesome at applied machine learning.
+Read More
+
+			
+Develop Predictive Models With Python
+Want to develop your own models in scikit-learn?
+Want step-by-step tutorials?
+Looking for sample code and templates?
+Get Started With Machine Learning in Python Today!
+
+
+
+		
+		 		
+
+            Popular
+
+            
+
+            
+
+	            
+                                
+				Your First Machine Learning Project in Python Step-By-Step
+		June 10, 2016
+		
+	
+				Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras
+		July 21, 2016
+		
+	
+				Multivariate Time Series Forecasting with LSTMs in Keras
+		August 14, 2017
+		
+	
+				How to Setup a Python Environment for Machine Learning and Deep Learning with Anaconda
+		March 13, 2017
+		
+	
+				Develop Your First Neural Network in Python With Keras Step-By-Step
+		May 24, 2016
+		
+	
+				Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras
+		July 26, 2016
+		
+	
+				Time Series Forecasting with the Long Short-Term Memory Network in Python
+		April 7, 2017
+		
+	
+				Regression Tutorial with the Keras Deep Learning Library in Python
+		June 9, 2016
+		
+	
+				Multi-Class Classification Tutorial with the Keras Deep Learning Library
+		June 2, 2016
+		
+	
+				How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras
+		August 9, 2016
+		
+	
+                                                                
+            
+
+        
+
+                 
+
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

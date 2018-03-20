@@ -1,0 +1,6883 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Need help with machine learning? Take the FREE Crash-Course.
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                               
+
+	
+	Tutorial To Implement k-Nearest Neighbors in Python From Scratch	
+By Jason Brownlee on September 12, 2014  in Algorithms From Scratch  
+	
+
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+				The k-Nearest Neighbors algorithm (or kNN for short) is an easy algorithm to understand and to implement, and a powerful tool to have at your disposal.
+In this tutorial you will implement the k-Nearest Neighbors algorithm from scratch in Python (2.7). The implementation will be specific for classification problems and will be demonstrated using the Iris flowers classification problem.
+This tutorial is for you if you are a Python programmer, or a programmer who can pick-up python quickly, and you are interested in how to implement the k-Nearest Neighbors algorithm from scratch.
+k-Nearest Neighbors algorithmImage from Wikipedia, all rights reserved
+What is k-Nearest Neighbors
+The model for kNN is the entire training dataset. When a prediction is required for a unseen data instance, the kNN algorithm will search through the training dataset for the k-most similar instances. The prediction attribute of the most similar instances is summarized and returned as the prediction for the unseen instance.
+The similarity measure is dependent on the type of data. For real-valued data, the Euclidean distance can be used. Other other types of data such as categorical or binary data, Hamming distance can be used.
+In the case of regression problems, the average of the predicted attribute may be returned. In the case of classification, the most prevalent class may be returned.
+How does k-Nearest Neighbors Work
+The kNN algorithm is belongs to the family of instance-based, competitive learning and lazy learning algorithms.
+Instance-based algorithms are those algorithms that model the problem using data instances (or rows) in order to make predictive decisions. The kNN algorithm is an extreme form of instance-based methods because all training observations are retained as part of the model.
+It is a competitive learning algorithm, because it internally uses competition between model elements (data instances) in order to make a predictive decision. The objective similarity measure between data instances causes each data instance to compete to “win” or be most similar to a given unseen data instance and contribute to a prediction.
+Lazy learning refers to the fact that the algorithm does not build a model until the time that a prediction is required. It is lazy because it only does work at the last second. This has the benefit of only including data relevant to the unseen data, called a localized model. A disadvantage is that it can be computationally expensive to repeat the same or similar searches over larger training datasets.
+Finally, kNN is powerful because it does not assume anything about the data, other than a distance measure can be calculated consistently between any two instances. As such, it is called non-parametric or non-linear as it does not assume a functional form.
+Get your FREE Algorithms Mind Map
+Sample of the handy machine learning algorithms mind map.
+I've created a handy mind map of 60+ algorithms organized by type.
+Download it, print it and use it. 
+Download For Free
+Also get exclusive access to the machine learning algorithms email mini-course.
+
+ 
+ 
+Classify Flowers Using Measurements
+The test problem we will be using in this tutorial is iris classification.
+The problem is comprised of 150 observations of iris flowers from three different species. There are 4 measurements of given flowers: sepal length, sepal width, petal length and petal width, all in the same unit of centimeters. The predicted attribute is the species, which is one of setosa, versicolor or virginica.
+It is a standard dataset where the species is known for all instances. As such we can split the data into training and test datasets and use the results to evaluate our algorithm implementation. Good classification accuracy on this problem is above 90% correct, typically 96% or better.
+You can download the dataset for free from iris.data, see the resources section for further details.
+How to implement k-Nearest Neighbors in Python
+This tutorial is broken down into the following steps:
+Handle Data: Open the dataset from CSV and split into test/train datasets.Similarity: Calculate the distance between two data instances.Neighbors: Locate k most similar data instances.Response: Generate a response from a set of data instances.Accuracy: Summarize the accuracy of predictions.Main: Tie it all together.
+1. Handle Data
+The first thing we need to do is load our data file. The data is in CSV format without a header line or any quotes. We can open the file with the open function and read the data lines using the reader function in the csv module.
+
+		
+		
+			Read a CSV File in Python
+			Python
+			
+			
+import csv
+with open('iris.data', 'rb') as csvfile:
+	lines = csv.reader(csvfile)
+	for row in lines:
+		print ', '.join(row)
+			
+				
+					12345
+				import csvwith open('iris.data', 'rb') as csvfile:	lines = csv.reader(csvfile)	for row in lines:		print ', '.join(row)
+			
+		
+
+Next we need to split the data into a training dataset that kNN can use to make predictions and a test dataset that we can use to evaluate the accuracy of the model.
+We first need to convert the flower measures that were loaded as strings into numbers that we can work with. Next we need to split the data set randomly into train and datasets. A ratio of 67/33 for train/test is a standard ratio used.
+Pulling it all together, we can define a function called loadDataset that loads a CSV with the provided filename and splits it randomly into train and test datasets using the provided split ratio.
+
+		
+		
+			Load a dataset and spit into train and test sets in Python
+			Python
+			
+			
+import csv
+import random
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+	with open(filename, 'rb') as csvfile:
+	    lines = csv.reader(csvfile)
+	    dataset = list(lines)
+	    for x in range(len(dataset)-1):
+	        for y in range(4):
+	            dataset[x][y] = float(dataset[x][y])
+	        if random.random() < split:
+	            trainingSet.append(dataset[x])
+	        else:
+	            testSet.append(dataset[x])
+			
+				
+					12345678910111213
+				import csvimport randomdef loadDataset(filename, split, trainingSet=[] , testSet=[]):	with open(filename, 'rb') as csvfile:	    lines = csv.reader(csvfile)	    dataset = list(lines)	    for x in range(len(dataset)-1):	        for y in range(4):	            dataset[x][y] = float(dataset[x][y])	        if random.random() < split:	            trainingSet.append(dataset[x])	        else:	            testSet.append(dataset[x])
+			
+		
+
+Download the iris flowers dataset CSV file to the local directory. We can test this function out with our iris dataset, as follows:
+
+		
+		
+			Test the loadDataset function in Python
+			Python
+			
+			
+trainingSet=[]
+testSet=[]
+loadDataset('iris.data', 0.66, trainingSet, testSet)
+print 'Train: ' + repr(len(trainingSet))
+print 'Test: ' + repr(len(testSet))
+			
+				
+					12345
+				trainingSet=[]testSet=[]loadDataset('iris.data', 0.66, trainingSet, testSet)print 'Train: ' + repr(len(trainingSet))print 'Test: ' + repr(len(testSet))
+			
+		
+
+
+2. Similarity
+In order to make predictions we need to calculate the similarity between any two given data instances. This is needed so that we can locate the k most similar data instances in the training dataset for a given member of the test dataset and in turn make a prediction.
+Given that all four flower measurements are numeric and have the same units, we can directly use the Euclidean distance measure. This is defined as the square root of the sum of the squared differences between the two arrays of numbers (read that again a few times and let it sink in).
+Additionally, we want to control which fields to include in the distance calculation. Specifically, we only want to include the first 4 attributes. One approach is to limit the euclidean distance to a fixed length, ignoring the final dimension.
+Putting all of this together we can define the euclideanDistance function as follows:
+
+		
+		
+			Calculate Euclidean distance in Python
+			Python
+			
+			
+import math
+def euclideanDistance(instance1, instance2, length):
+	distance = 0
+	for x in range(length):
+		distance += pow((instance1[x] - instance2[x]), 2)
+	return math.sqrt(distance)
+			
+				
+					123456
+				import mathdef euclideanDistance(instance1, instance2, length):	distance = 0	for x in range(length):		distance += pow((instance1[x] - instance2[x]), 2)	return math.sqrt(distance)
+			
+		
+
+We can test this function with some sample data, as follows:
+
+		
+		
+			Test the euclideanDistance function in Python
+			Python
+			
+			
+data1 = [2, 2, 2, 'a']
+data2 = [4, 4, 4, 'b']
+distance = euclideanDistance(data1, data2, 3)
+print 'Distance: ' + repr(distance)
+			
+				
+					1234
+				data1 = [2, 2, 2, 'a']data2 = [4, 4, 4, 'b']distance = euclideanDistance(data1, data2, 3)print 'Distance: ' + repr(distance)
+			
+		
+
+
+3. Neighbors
+Now that we have a similarity measure, we can use it collect the k most similar instances for a given unseen instance.
+This is a straight forward process of calculating the distance for all instances and selecting a subset with the smallest distance values.
+Below is the getNeighbors function that returns k most similar neighbors from the training set for a given test instance (using the already defined euclideanDistance function)
+
+		
+		
+			Locate most similar neighbours in Python
+			Python
+			
+			
+import operator 
+def getNeighbors(trainingSet, testInstance, k):
+	distances = []
+	length = len(testInstance)-1
+	for x in range(len(trainingSet)):
+		dist = euclideanDistance(testInstance, trainingSet[x], length)
+		distances.append((trainingSet[x], dist))
+	distances.sort(key=operator.itemgetter(1))
+	neighbors = []
+	for x in range(k):
+		neighbors.append(distances[x][0])
+	return neighbors
+			
+				
+					123456789101112
+				import operator def getNeighbors(trainingSet, testInstance, k):	distances = []	length = len(testInstance)-1	for x in range(len(trainingSet)):		dist = euclideanDistance(testInstance, trainingSet[x], length)		distances.append((trainingSet[x], dist))	distances.sort(key=operator.itemgetter(1))	neighbors = []	for x in range(k):		neighbors.append(distances[x][0])	return neighbors
+			
+		
+
+We can test out this function as follows:
+
+		
+		
+			Test the getNeighbors function in Python
+			Python
+			
+			
+trainSet = [[2, 2, 2, 'a'], [4, 4, 4, 'b']]
+testInstance = [5, 5, 5]
+k = 1
+neighbors = getNeighbors(trainSet, testInstance, 1)
+print(neighbors)
+			
+				
+					12345
+				trainSet = [[2, 2, 2, 'a'], [4, 4, 4, 'b']]testInstance = [5, 5, 5]k = 1neighbors = getNeighbors(trainSet, testInstance, 1)print(neighbors)
+			
+		
+
+
+4. Response
+Once we have located the most similar neighbors for a test instance, the next task is to devise a predicted response based on those neighbors.
+We can do this by allowing each neighbor to vote for their class attribute, and take the majority vote as the prediction.
+Below provides a function for getting the majority voted response from a number of neighbors. It assumes the class is the last attribute for each neighbor.
+
+		
+		
+			Summarize a prediction from neighbours in Python
+			Python
+			
+			
+import operator
+def getResponse(neighbors):
+	classVotes = {}
+	for x in range(len(neighbors)):
+		response = neighbors[x][-1]
+		if response in classVotes:
+			classVotes[response] += 1
+		else:
+			classVotes[response] = 1
+	sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+	return sortedVotes[0][0]
+			
+				
+					1234567891011
+				import operatordef getResponse(neighbors):	classVotes = {}	for x in range(len(neighbors)):		response = neighbors[x][-1]		if response in classVotes:			classVotes[response] += 1		else:			classVotes[response] = 1	sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)	return sortedVotes[0][0]
+			
+		
+
+We can test out this function with some test neighbors, as follows:
+
+		
+		
+			Test the getResponse function in Python
+			Python
+			
+			
+neighbors = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]
+response = getResponse(neighbors)
+print(response)
+			
+				
+					123
+				neighbors = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]response = getResponse(neighbors)print(response)
+			
+		
+
+This approach returns one response in the case of a draw, but you could handle such cases in a specific way, such as returning no response or selecting an unbiased random response.
+5. Accuracy
+We have all of the pieces of the kNN algorithm in place. An important remaining concern is how to evaluate the accuracy of predictions.
+An easy way to evaluate the accuracy of the model is to calculate a ratio of the total correct predictions out of all predictions made, called the classification accuracy.
+Below is the getAccuracy function that sums the total correct predictions and returns the accuracy as a percentage of correct classifications.
+
+		
+		
+			Calculate accuracy of predictions in Python
+			Python
+			
+			
+def getAccuracy(testSet, predictions):
+	correct = 0
+	for x in range(len(testSet)):
+		if testSet[x][-1] is predictions[x]:
+			correct += 1
+	return (correct/float(len(testSet))) * 100.0
+			
+				
+					123456
+				def getAccuracy(testSet, predictions):	correct = 0	for x in range(len(testSet)):		if testSet[x][-1] is predictions[x]:			correct += 1	return (correct/float(len(testSet))) * 100.0
+			
+		
+
+We can test this function with a test dataset and predictions, as follows:
+
+		
+		
+			Test the getAccuracy function in Python
+			Python
+			
+			
+testSet = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]
+predictions = ['a', 'a', 'a']
+accuracy = getAccuracy(testSet, predictions)
+print(accuracy)
+			
+				
+					1234
+				testSet = [[1,1,1,'a'], [2,2,2,'a'], [3,3,3,'b']]predictions = ['a', 'a', 'a']accuracy = getAccuracy(testSet, predictions)print(accuracy)
+			
+		
+
+
+6. Main
+We now have all the elements of the algorithm and we can tie them together with a main function.
+Below is the complete example of implementing the kNN algorithm from scratch in Python.
+
+		
+		
+			Example of kNN implemented from Scratch in Python
+			Python
+			
+			
+# Example of kNN implemented from Scratch in Python
+
+import csv
+import random
+import math
+import operator
+
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+	with open(filename, 'rb') as csvfile:
+	    lines = csv.reader(csvfile)
+	    dataset = list(lines)
+	    for x in range(len(dataset)-1):
+	        for y in range(4):
+	            dataset[x][y] = float(dataset[x][y])
+	        if random.random() < split:
+	            trainingSet.append(dataset[x])
+	        else:
+	            testSet.append(dataset[x])
+
+
+def euclideanDistance(instance1, instance2, length):
+	distance = 0
+	for x in range(length):
+		distance += pow((instance1[x] - instance2[x]), 2)
+	return math.sqrt(distance)
+
+def getNeighbors(trainingSet, testInstance, k):
+	distances = []
+	length = len(testInstance)-1
+	for x in range(len(trainingSet)):
+		dist = euclideanDistance(testInstance, trainingSet[x], length)
+		distances.append((trainingSet[x], dist))
+	distances.sort(key=operator.itemgetter(1))
+	neighbors = []
+	for x in range(k):
+		neighbors.append(distances[x][0])
+	return neighbors
+
+def getResponse(neighbors):
+	classVotes = {}
+	for x in range(len(neighbors)):
+		response = neighbors[x][-1]
+		if response in classVotes:
+			classVotes[response] += 1
+		else:
+			classVotes[response] = 1
+	sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+	return sortedVotes[0][0]
+
+def getAccuracy(testSet, predictions):
+	correct = 0
+	for x in range(len(testSet)):
+		if testSet[x][-1] == predictions[x]:
+			correct += 1
+	return (correct/float(len(testSet))) * 100.0
+	
+def main():
+	# prepare data
+	trainingSet=[]
+	testSet=[]
+	split = 0.67
+	loadDataset('iris.data', split, trainingSet, testSet)
+	print 'Train set: ' + repr(len(trainingSet))
+	print 'Test set: ' + repr(len(testSet))
+	# generate predictions
+	predictions=[]
+	k = 3
+	for x in range(len(testSet)):
+		neighbors = getNeighbors(trainingSet, testSet[x], k)
+		result = getResponse(neighbors)
+		predictions.append(result)
+		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
+	accuracy = getAccuracy(testSet, predictions)
+	print('Accuracy: ' + repr(accuracy) + '%')
+	
+main()
+			
+				
+					12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576
+				# Example of kNN implemented from Scratch in Python import csvimport randomimport mathimport operator def loadDataset(filename, split, trainingSet=[] , testSet=[]):	with open(filename, 'rb') as csvfile:	    lines = csv.reader(csvfile)	    dataset = list(lines)	    for x in range(len(dataset)-1):	        for y in range(4):	            dataset[x][y] = float(dataset[x][y])	        if random.random() < split:	            trainingSet.append(dataset[x])	        else:	            testSet.append(dataset[x])  def euclideanDistance(instance1, instance2, length):	distance = 0	for x in range(length):		distance += pow((instance1[x] - instance2[x]), 2)	return math.sqrt(distance) def getNeighbors(trainingSet, testInstance, k):	distances = []	length = len(testInstance)-1	for x in range(len(trainingSet)):		dist = euclideanDistance(testInstance, trainingSet[x], length)		distances.append((trainingSet[x], dist))	distances.sort(key=operator.itemgetter(1))	neighbors = []	for x in range(k):		neighbors.append(distances[x][0])	return neighbors def getResponse(neighbors):	classVotes = {}	for x in range(len(neighbors)):		response = neighbors[x][-1]		if response in classVotes:			classVotes[response] += 1		else:			classVotes[response] = 1	sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)	return sortedVotes[0][0] def getAccuracy(testSet, predictions):	correct = 0	for x in range(len(testSet)):		if testSet[x][-1] == predictions[x]:			correct += 1	return (correct/float(len(testSet))) * 100.0	def main():	# prepare data	trainingSet=[]	testSet=[]	split = 0.67	loadDataset('iris.data', split, trainingSet, testSet)	print 'Train set: ' + repr(len(trainingSet))	print 'Test set: ' + repr(len(testSet))	# generate predictions	predictions=[]	k = 3	for x in range(len(testSet)):		neighbors = getNeighbors(trainingSet, testSet[x], k)		result = getResponse(neighbors)		predictions.append(result)		print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))	accuracy = getAccuracy(testSet, predictions)	print('Accuracy: ' + repr(accuracy) + '%')	main()
+			
+		
+
+Running the example, you will see the results of each prediction compared to the actual class value in the test set. At the end of the run, you will see the accuracy of the model. In this case, a little over 98%.
+
+		
+		
+			Example output
+			
+			
+			
+...
+> predicted='Iris-virginica', actual='Iris-virginica'
+> predicted='Iris-virginica', actual='Iris-virginica'
+> predicted='Iris-virginica', actual='Iris-virginica'
+> predicted='Iris-virginica', actual='Iris-virginica'
+> predicted='Iris-virginica', actual='Iris-virginica'
+Accuracy: 98.0392156862745%
+			
+				
+					1234567
+				...> predicted='Iris-virginica', actual='Iris-virginica'> predicted='Iris-virginica', actual='Iris-virginica'> predicted='Iris-virginica', actual='Iris-virginica'> predicted='Iris-virginica', actual='Iris-virginica'> predicted='Iris-virginica', actual='Iris-virginica'Accuracy: 98.0392156862745%
+			
+		
+
+
+Ideas For Extensions
+This section provides you with ideas for extensions that you could apply and investigate with the Python code you have implemented as part of this tutorial.
+Regression: You could adapt the implementation to work for regression problems (predicting a real-valued attribute). The summarization of the closest instances could involve taking the mean or the median of the predicted attribute.Normalization: When the units of measure differ between attributes, it is possible for attributes to dominate in their contribution to the distance measure. For these types of problems, you will want to rescale all data attributes into the range 0-1 (called normalization) before calculating similarity. Update the model to support data normalization.Alternative Distance Measure: There are many distance measures available, and you can even develop your own domain-specific distance measures if you like. Implement an alternative distance measure, such as Manhattan distance or the vector dot product.
+There are many more extensions to this algorithm you might like to explore. Two additional ideas include support for distance-weighted contribution for the k-most similar instances to the prediction and more advanced data tree-based structures for searching for similar instances.
+Resource To Learn More
+This section will provide some resources that you can use to learn more about the k-Nearest Neighbors algorithm in terms of both theory of how and why it works and practical concerns for implementing it in code.
+Problem
+Iris flowers dataset on WikipediaUCI Machine Learning Repository Iris Dataset
+Code
+This section links to open source implementations of kNN in popular machine learning libraries. Review these if you are considering implementing your own version of the method for operational use.
+Implementation kNN in scikit-learnImplementation of kNN in Weka (unofficial)
+Books
+You may have one or more books on applied machine learning. This section highlights the sections or chapters in common applied books on machine learning that refer to k-Nearest Neighbors.
+Applied Predictive Modeling, pages 159 and 350.Data Mining: Practical Machine Learning Tools and Techniques, Third Edition (The Morgan Kaufmann Series in Data Management Systems), pages 76, 128 and 235.Machine Learning for Hackers, Chapter 10.Machine Learning in Action, Chapter 2.Programming Collective Intelligence: Building Smart Web 2.0 Applications, Chapters 2 and 8 and page 293.
+Tutorial Summary
+In this tutorial you learned about the k-Nearest Neighbor algorithm, how it works and some metaphors that you can use to think about the algorithm and relate it to other algorithms. You implemented the kNN algorithm in Python from scratch in such a way that you understand every line of code and can adapt the implementation to explore extensions and to meet your own project needs.
+Below are the 5 key learnings from this tutorial:
+k-Nearest Neighbor: A simple algorithm to understand and implement, and a powerful non-parametric method.Instanced-based method: Model the problem using data instances (observations).Competitive-learning: Learning and predictive decisions are made by internal competition between model elements.Lazy-learning: A model is not constructed until it is needed in order to make a prediction.Similarity Measure: Calculating objective distance measures between data instances is a key feature of the algorithm.
+Did you implement kNN using this tutorial? How did you go? What did you learn?
+
+			
+
+Want to Code Algorithms in Python Without Math?
+
+Code Your First Algorithm in Minutes
+…with step-by-step tutorials on real-world datasets
+Discover how in my new Ebook:
+Machine Learning Algorithms From Scratch
+It covers 18 tutorials with all the code for 12 top algorithms, like:Linear Regression, k-Nearest Neighbors, Stochastic Gradient Descent and much more…
+Finally, Pull Back the Curtain on Machine Learning Algorithms
+Skip the Academics. Just Results.
+Click to learn more.
+
+
+
+		
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+					
+	
+
+	
+	
+		About Jason Brownlee
+		Jason Brownlee, Ph.D. is a machine learning specialist who teaches developers how to get results with modern machine learning methods via hands-on tutorials.				
+			
+				View all posts by Jason Brownlee →			
+		
+			
+	
+
+
+
+	        
+	             Benefits of Implementing Machine Learning Algorithms From Scratch
+	            Caret R Package for Applied Predictive Modeling 
+	            
+	        
+
+				 	204 Responses to Tutorial To Implement k-Nearest Neighbors in Python From Scratch
+		 	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Damian Mingle
+	                September 12, 2014 at 10:22 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Jason –
+I appreciate your step-by-step approach. Your explanation makes this material accessible for a wide audience. 
+Keep up the great contributions.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 13, 2014 at 7:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Damian!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Amresh Kumar
+	                March 11, 2018 at 7:41 pm
+	                #
+	                
+
+				
+
+		   		
+
+				A few changes for python 3
+1.
+	print ‘Train set: ‘ + repr(len(trainingSet))
+	print ‘Test set: ‘ + repr(len(testSet))
+print needs to be used with brackets 
+    print (“Train set:” + repr(len(trainingSet)))
+    print (“Test set:”+ repr(len(testSet)))
+2. iteritems() changed to items()
+    sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+should be:
+    sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 12, 2018 at 6:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for sharing.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Pete Fry
+	                September 13, 2014 at 6:56 am
+	                #
+	                
+
+				
+
+		   		
+
+				A very interesting and clear article. I haven’t tried it out yet but will over the weekend.
+Thanks.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 13, 2014 at 7:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Pete, let me know how you go.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Alan
+	                September 13, 2014 at 3:40 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hey Jason, I’ve ploughed through multiple books and tutorials but your explanation helped me to finally understand what I was doing.
+Looking forward to more of your tutorials.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 13, 2014 at 5:04 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Alan!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Vadim
+	                September 15, 2014 at 8:16 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hey Jason!
+Thank you for awesome article!
+Clear and straight forward explanation. I finaly understood the background under kNN.
+p.s.
+There’s some code errors in the article.
+1) in getResponse it should be “return sortedVote[0]” instead sortedVotes[0][0]
+2) in getAccuracy it should be “testSet[x][-1] IN predictions[x]” instead of IS.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 16, 2014 at 8:04 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Vadim!
+I think the code is right, but perhaps I misunderstood your comments.
+If you change getResponse to return sortedVote[0] you will get the class and the count. We don’t want this, we just want the class. 
+In getAccuracy, I am interested in an equality between the class strings (is), not a set operation (in).
+Does that make sense?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mario
+	                September 19, 2014 at 12:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you very much for this example!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 19, 2014 at 5:33 am
+	                #
+	                
+
+				
+
+		   		
+
+				You’re welcome Mario.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                PVA
+	                September 25, 2014 at 4:27 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you for the post on kNN implementation..
+Any pointers on normalization will be greatly appreciated ?
+What if the set of features includes fields like name, age, DOB, ID ? What are good algorithms to normalize such features ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 26, 2014 at 5:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hey PVA, great question.
+Notmalization is just the rescaling of numerical attributes between 0-1. Tools like scikit-learn can do it for you if you like, here’s a recipe: http://machinelearningmastery.com/rescaling-data-for-machine-learning-in-python-with-scikit-learn/
+You can compute distances between strings using methods like edit distance, learn more here: http://en.wikipedia.org/wiki/Edit_distance
+DOB – well the distance between two dates could be in days, hours or whatever makes sense in your domain.
+ID might just be useful as some kind of indirect marker of “when the entry was added to the database” if you don’t have a “record create time”.
+I hope this helps.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Landry
+	                September 26, 2014 at 4:46 am
+	                #
+	                
+
+				
+
+		   		
+
+				A million thanks ! 
+I’ve had so many starting points for my ML journey, but few have been this clear.
+Merci !
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                September 26, 2014 at 5:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				Glad to here it Landry!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                kumaran
+	                November 7, 2014 at 7:37 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+when i run the code it shows 
+ValueError: could not convert string to float: ‘sepallength’
+what should i do to run the program.
+please help me out as soon as early….
+thanks in advance…
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jasonb
+	                November 8, 2014 at 2:50 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi kumaran, 
+I believe the example code still works just fine. If I copy-paste the code from the tutorial into a new file called knn.py and download iris.data into the same directory, the example runs fine for me using Python 2.7.
+Did you modify the example in some way perhaps?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ankit
+	                March 14, 2018 at 3:06 am
+	                #
+	                
+
+				
+
+		   		
+
+				it is because the first line in your code may contain info about each columns,
+convert
+for x in range(len(dataset)-1):
+to
+for x in range(1,len(dataset)-1):
+it will skip the first line and start reading the data from 2nd line
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ankit
+	                March 14, 2018 at 3:17 am
+	                #
+	                
+
+				
+
+		   		
+
+				use 
+for x in range(1,len(dataset)):
+if you skipped the last line also
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                kumaran
+	                November 11, 2014 at 3:51 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi jabson ,
+Thanks for your reply..
+I am using Anaconda IDE 3.4 .
+yes it works well for the iris dataset If i try to put some other dataset it shows value error because those datasets contains strings along with the integers..
+ example forestfire datasets.
+X	Y	month	day	FFMC	DMC	DC	ISI	temp	RH	wind	rain	area
+7	5	mar	fri	86.2	26.2	94.3	5.1	8.2	51	6.7	0	0
+7	4	oct	tue	90.6	35.4	669.1	6.7	18	33	0.9	0	0
+7	4	oct	sat	90.6	43.7	686.9	6.7	14.6	33	1.3	0	0
+8	6	mar	fri	91.7	33.3	77.5	9	8.3	97	4	0.2	0
+8	6	mar	sun	89.3	51.3	102.2	9.6	11.4	99	1.8	0	0
+Is it possible to classify these datasets also with your code??
+please provide me if some other classifer code example in python…
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hari
+	                February 4, 2017 at 12:54 am
+	                #
+	                
+
+				
+
+		   		
+
+				HI KUMARAN
+did you get the solution for the problem mentioned in your comment. I am also facing the same problem. Please help me or provide me the solution if you have..
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                sanksh
+	                November 30, 2014 at 9:09 am
+	                #
+	                
+
+				
+
+		   		
+
+				Excellent article on knn. It made the concepts so clear.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 30, 2014 at 11:14 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks sanksh!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                rvaquerizo
+	                December 5, 2014 at 3:18 am
+	                #
+	                
+
+				
+
+		   		
+
+				I like how it is explained, simply and clear. Great job.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                December 5, 2014 at 7:46 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Lakshminarasu Chenduri
+	                December 31, 2014 at 7:00 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Great article Jason !! Crisp and Clear.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Raju Neve
+	                January 16, 2015 at 4:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Nice artical Jason. I am a software engineer new to ML. Your step by step approach made learning easy and fun. Though Python was new to me, it became very easy since I could run small small snippet instead of try to understand the entire program in once.
+Appreciate your hardwork. Keep it up.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 16, 2015 at 7:42 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Raju.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                ZHANG CHI
+	                January 29, 2015 at 2:33 pm
+	                #
+	                
+
+				
+
+		   		
+
+				It’s really fantastic for me. I can’t find a better one
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                ZHANG CHI
+	                January 29, 2015 at 7:34 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I also face the same problem with Kumaran. After checking, I think the problem “can’t convert string into float” is that the first row is “sepal_length” and so on. Python can’t convert it since it’s totally string. So just delete it or change the code a little.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                RK
+	                March 1, 2015 at 2:28 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+Many thanks for this details article. Any clue for the extension Ideas?
+Thanks,
+RK
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Andy
+	                March 17, 2015 at 9:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi – I was wondering how we can have the data fed into the system without randomly shuffling as I am trying to make a prediction on the final line of data? 
+Do we remove:
+if random.random() < split
+and replace with something like:
+if len(trainingSet)/len(dataset) < split
+# if < 0.67 then append to the training set, otherwise append to test set
+The reason I ask is that I know what data I want to predict and with this it seems that it could use the data I want to predict within the training set due to the random selection process.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Gerry
+	                May 26, 2015 at 2:22 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I also have the same dilemma as you, I performed trial and error, right now I cant seem to make things right which code be omitted to create a prediction.
+I am not a software engineer nor I have a background in computer science. I am pretty new to data science and ML as well, I just started learning Python and R but the experience is GREAT!
+Thanks so much for this Jason!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Brian
+	                April 9, 2015 at 11:00 am
+	                #
+	                
+
+				
+
+		   		
+
+				This article was absolutely gorgeous. As a computational physicist grad student who has taken an interest in machine learning this was the perfect level to skim, get my hands dirty and have some fun. 
+Thank you so much for the article on this. I’m excited to see the rest of your site.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Clinton
+	                May 22, 2015 at 12:09 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the article!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Vitali
+	                July 3, 2015 at 7:26 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I wished to write my own knn python program, and that was really helpful !
+Thanks a lot for sharing this.
+One thing you didn’t mention though is how you chose k=3.
+To get a feeling of how sensitive is the accuracy % to k, i wrote a “screening” function that iterates over k on the training set using leave-one-out cross validation accuracy % as a ranking.
+Would you have any other suggestions ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Pacu Ignis
+	                July 27, 2015 at 9:50 pm
+	                #
+	                
+
+				
+
+		   		
+
+				This is really really helpful. Thanks man !!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mark
+	                September 4, 2015 at 9:17 pm
+	                #
+	                
+
+				
+
+		   		
+
+				An incredibly useful tutorial, Jason. Thank you for this.
+Please could you show me how you would modify your code to work with a data set which comprises strings (i.e. text) and not numerical values?
+I’m really keen to try this algorithm on text data but can’t seem to find a decent article on line.
+Your help is much appreciated.
+Mark
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Max Buck
+	                October 3, 2015 at 7:38 am
+	                #
+	                
+
+				
+
+		   		
+
+				Nice tutorial! Very helpful in explaining KNN — python is so much easier to understand than the mathematical operations.  One thing though — the way the range function works for Python is that the final element is not included.  
+In loadDataset() you have 
+for x in range(len(dataset)-1):
+This should simply be:
+for x in range(len(dataset)):
+otherwise the last row of data is omitted!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ashley
+	                January 28, 2017 at 7:39 am
+	                #
+	                
+
+				
+
+		   		
+
+				this gets an index out of range..
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Azi
+	                November 5, 2015 at 9:26 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you so much
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                mulkan
+	                November 7, 2015 at 1:56 pm
+	                #
+	                
+
+				
+
+		   		
+
+				great
+thank very much
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Gleb
+	                November 17, 2015 at 1:11 am
+	                #
+	                
+
+				
+
+		   		
+
+				That’s great! I’ve tried so many books and articles to start learning ML. Your article is the first clear one! Thank you a lot! Please, keep teaching us!)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 17, 2015 at 7:53 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Gleb!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jakob
+	                November 29, 2015 at 3:25 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason,
+Thanks for this amazing introduction! I have two questions that relate to my study on this.
+First is, how is optimization implemented in this code? 
+Second is, what is the strength of the induction this algorithm is making as explained above, will this is be a useful induction for a thinking machine?
+Thank you so much!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                erlik
+	                December 1, 2015 at 4:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				HI jason;
+it is great tutorial it help me alot thanks for great effort but i have queastion what if i want to split the data in to   randomly 100 training set and  50 test set and i want to generate in separate file  with there values instead of printing  total numbers? becaouse i want to  test  them in hugin
+thank you so much!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                İdil
+	                December 3, 2015 at 8:36 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason, 
+It is a really great tutorial. Your article is so clear, but I have a problem.
+When I run code, I see the right classification.
+> predicted=’Iris-virginica’, actual=’Iris-virginica’
+> predicted=’Iris-virginica’, actual=’Iris-virginica’
+> predicted=’Iris-virginica’, actual=’Iris-virginica’
+> predicted=’Iris-virginica’, actual=’Iris-virginica’
+…
+However, accuracy is 0%. I run accuracy test but there is no problem with code.
+How can I fix  the accuracy? Where do I make mistake? 
+Thanks for reply and your helps.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                jxprat
+	                January 14, 2016 at 12:11 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, I solved this doing this:
+Originaly, on the step 5, in the function getAccuracy you have:
+…
+    for x in range(len(testSet)):
+	if testSet[x][-1] is predictions[x]:
+	    correct += 1
+…
+The key here is in the IF statement:
+    if testSet[x][-1] is predictions[x]:
+Change “IS” to “==” so the getAccuracy now is:
+…
+    for x in range(len(testSet)):
+	if testSet[x][-1] == predictions[x]:
+	    correct += 1
+…
+That solve the problem and works ok!!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Renjith Madhavan
+	                December 9, 2015 at 7:26 am
+	                #
+	                
+
+				
+
+		   		
+
+				I think setting the value of K plays an important role in the accuracy of the prediction. How to determine the best value of ‘K’ . Please suggest some best practices ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Sagar kumar
+	                February 9, 2016 at 5:33 am
+	                #
+	                
+
+				
+
+		   		
+
+				Dear, How to do it for muticlass classifcation with data in excelsheet: images of digits(not handwritten) and label of that image in corresponding next column of excel ??
+Your this tutorial is totally on numeric data, just gave me the idea with images.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jack
+	                February 24, 2016 at 8:59 am
+	                #
+	                
+
+				
+
+		   		
+
+				Very clear explanation and step by step working make this very understandable. I am not sure why the list sortedVotes within the function getResponse is reversed, I thought getResponse is meant to return the most common key in the dictionary classVotes. If you reverse the list, doesn’t this return the least common key in the dictionary?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                kamal
+	                March 9, 2016 at 3:07 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I do not know how to take the k nearest neighbour for 3 classes for ties vote for example [1,1,2,2,0]. Since for two classes, with k=odd values, we do find the maximum vote for the two classes but ties happens if we choose three classes.
+Thanks in advance
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                I.T.Cheema
+	                March 11, 2016 at 11:31 pm
+	                #
+	                
+
+				
+
+		   		
+
+				hi
+thanks for this great effort buddy
+i have some basic questions:
+1: i opened “iris.data’ file and it is simply in html window. how to download?
+2: if do a copy paste technique from html page. where to copy paste?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 12, 2016 at 8:41 am
+	                #
+	                
+
+				
+
+		   		
+
+				You can use  File->Save as in your browser to save the file or copy the text and paste it int a new file and save it as the file “iris.data” expected by the tutorial.
+I hope that helps.
+Jason.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hrishikesh Kulkarni
+	                March 21, 2016 at 5:00 pm
+	                #
+	                
+
+				
+
+		   		
+
+				This is a really simple but thorough explaination. Thanks for the efforts.
+Could you suggest me how to draw a scatter plot for the 3 classes. It will be really great if you could upload the code. Thanks in advance!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mohammed Farhan
+	                April 22, 2016 at 1:34 am
+	                #
+	                
+
+				
+
+		   		
+
+				What if we want to classify text into categories using KNN,
+e.g a given paragraph of text defines {Politics,Sports,Technology}
+I’m Working on a project to Classify RSS Feeds
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Lyazzat
+	                May 19, 2016 at 1:41 pm
+	                #
+	                
+
+				
+
+		   		
+
+				How to download the file without using library csv at the first stage?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Avinash
+	                June 8, 2016 at 7:00 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Nice explanation Jason.. Really appreciate your work..
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                June 14, 2016 at 8:21 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Avinash.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Agnes
+	                July 10, 2016 at 1:08 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi! Really comprehensive tutorial, i loved it!
+What will you do if some features are more important than others to determine the right class ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 10, 2016 at 6:35 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Agnes.
+Often it is a good idea to perform feature selection before building your model:
+http://machinelearningmastery.com/an-introduction-to-feature-selection/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Dev
+	                July 10, 2016 at 10:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hello,
+I get this error message.
+Train set: 78
+Test set: 21
+—————————————————————————
+TypeError                                 Traceback (most recent call last)
+ in ()
+     72         print(‘Accuracy: ‘ + repr(accuracy) + ‘%’)
+     73
+—> 74 main()
+ in main()
+     65         k = 3
+     66         for x in range(len(testSet)):
+—> 67                 neighbors = getNeighbors(trainingSet, testSet[x], k)
+     68                 result = getResponse(neighbors)
+     69                 predictions.append(result)
+ in getNeighbors(trainingSet, testInstance, k)
+     27         length = len(testInstance)-1
+     28         for x in range(len(trainingSet)):
+—> 29                 dist = euclideanDistance(testInstance, trainingSet[x], length)
+     30                 distances.append((trainingSet[x], dist))
+     31         distances.sort(key=operator.itemgetter(1))
+ in euclideanDistance(instance1, instance2, length)
+     20         distance = 0
+     21         for x in range(length):
+—> 22                 distance += pow(float(instance1[x] – instance2[x]), 2)
+     23         return math.sqrt(distance)
+     24 
+TypeError: unsupported operand type(s) for -: ‘str’ and ‘str’
+Can you please help.
+Thank you
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 10, 2016 at 2:21 pm
+	                #
+	                
+
+				
+
+		   		
+
+				It is not clear, it might be a copy-paste error from the post?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Dev
+	                July 11, 2016 at 12:40 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you for your answer, 
+as if i can’t do the subtraction here is the error message 
+TypeError: unsupported operand type(s) for -: ‘str’ and ‘str’
+and i copy/past the code directly from the tutorial
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                temi Noah
+	                July 14, 2016 at 12:10 am
+	                #
+	                
+
+				
+
+		   		
+
+				am so happy to be able to extend my gratitude to you.Have searched for good books to explain machine learning(KNN) but those i came across was not as clear and simple as this brilliant and awesome step by step explanation.Indeed you are a distinguished teacher
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 14, 2016 at 5:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                tejas zarekar
+	                July 24, 2016 at 8:12 pm
+	                #
+	                
+
+				
+
+		   		
+
+				hi Jason, i really want to get into Machine learning. I want to make a big project for my final year of computer engg. which i am currently in. People are really enervating that way  by saying that its too far fetched for a bachelor. I want to prove them wrong. I don’t have much time (6 months from today). I really want to make something useful. Can you send me some links that can help me settle on a project with machine learning? PLZ … TYSM
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                naveen
+	                August 19, 2016 at 3:38 pm
+	                #
+	                
+
+				
+
+		   		
+
+				import numpy as np
+from sklearn import preprocessing, cross_validation, neighbors
+import pandas as pd
+df= np.genfromtxt(‘/home/reverse/Desktop/acs.txt’, delimiter=’,’)
+X= np.array(df[:,1])
+y= np.array(df[:,0])
+X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,y,test_size=0.2)
+clf = neighbors.KNeighborsClassifier()
+clf.fit(X_train, y_train)
+ValueError: Found arrays with inconsistent numbers of samples: [  1 483]
+Then I tried to reshape using this code:  df.reshape((483,1))
+Again i am getting this error   “ValueError: total size of new array must be unchanged”
+ Advance thanks ….
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Carolina
+	                October 16, 2016 at 5:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason,
+great tutorial, very easy to follow. Thanks!
+One question though. You wrote:
+“Additionally, we want to control which fields to include in the distance calculation. Specifically, we only want to include the first 4 attributes. One approach is to limit the euclidean distance to a fixed length, ignoring the final dimension.”
+Can you explain in more detail what you mean here? Why is the final dimension ignored when we want to include all 4 attributes?
+Thanks a lot,
+Caroline
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 17, 2016 at 10:25 am
+	                #
+	                
+
+				
+
+		   		
+
+				The gist of the paragraph is that we only want to calculate distance on input variables and exclude the output variable.
+The reason is when we have new data, we will not have the output variable, only input variables. Our job will be to find the k most similar instances to the new data and discover the output variable to predict.
+In the specific case, the iris dataset has 4 input variables and the 5th is the class. We only want to calculate distance using the first 4 variables.
+I hope that makes things clearer.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Pranav Gundewar
+	                October 17, 2016 at 7:09 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason! The steps u showed are great. Do you any article regarding the same in matlab.
+Thank you.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 18, 2016 at 5:53 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Pranav, 
+Sorry I don’t have Matlab examples at this stage.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Sara
+	                October 18, 2016 at 7:16 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Best algorithm tutorial I have ever seen! Thanks a lot!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 19, 2016 at 9:18 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Sara, I’m glad to hear that.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Nivedita
+	                November 13, 2016 at 9:47 am
+	                #
+	                
+
+				
+
+		   		
+
+				Detailed explanation given and I am able to understand the algorithm/code well! Trying to implement the same with my own data set (.csv file). 
+loadDataset(‘knn_test.csv’, split, trainingSet, testSet)
+Able to execute and get the output for small dataset (with 4-5 rows and columns in the csv file).
+When I try the same code for a bigger data set with 24 columns (inputs) and 12,000 rows (samples) in the csv file, I get the following error:
+TypeError: unsupported operand type(s) for -: ‘str’ and ‘str’
+The following lines are indicated in the error message:
+distance += pow((instance1[x] – instance2[x]), 2)
+dist = euclideanDistance(testInstance, trainingSet[x], length)
+neighbors = getNeighbors(trainingSet, testSet[x], k)
+main()
+Any help or suggestion is appreciated. Thank in advance.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 14, 2016 at 7:34 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Nivedita.
+Perhaps the loaded data needs to be converted from strings into numeric values?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Nivedita
+	                November 15, 2016 at 4:00 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you for the reply Jason. There are no strings / no-numeric values in the data set. It is a csv file with 24 columns(inputs) and 12,083 rows(samples). 
+Any other advice? 
+Help is appreciated.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 15, 2016 at 7:58 am
+	                #
+	                
+
+				
+
+		   		
+
+				Understood Nivedita, but confirm that the loaded data is stored in memory as numeric values. Print your arrays to screen and/or use type(value) on specific values in each column.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Vedhavyas
+	                November 13, 2016 at 11:51 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Implemented this in Golang.
+Check it out at – https://github.com/vedhavyas/machine-learning/tree/master/knn
+Any feedback is much appreciated.
+Also planning to implement as many algorithms as possible in Golang
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 14, 2016 at 7:43 am
+	                #
+	                
+
+				
+
+		   		
+
+				Well done Vedhavyas.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Baris
+	                November 20, 2016 at 11:02 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for your great effort and implementation but I think that you need to add normalization step before the eucledian distance calculation.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 22, 2016 at 6:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great suggestion, thanks Baris.
+In this case, all input variables have the same scale. But, I agree, normalization is an important step when the scales of the input variables different – and often even when they don’t.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Sisay
+	                November 22, 2016 at 2:38 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great article! It would be even fuller if you add some comments in the code; previewing the data and its structure; and a step on normalization although this dataset does not require one.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 22, 2016 at 7:06 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great suggestion, thanks Sisay.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                fery
+	                November 24, 2016 at 2:09 pm
+	                #
+	                
+
+				
+
+		   		
+
+				hello, i”ve some error like this:
+Traceback (most recent call last):
+  File “C:/Users/FFA/PycharmProjects/Knn/first.py”, line 80, in
+    main()
+  File “C:/Users/FFA/PycharmProjects/Knn/first.py”, line 65, in main
+    loadDataset(‘iris.data’, split, trainingSet, testSet)
+  File “C:/Users/FFA/PycharmProjects/Knn/first.py”, line 10, in loadDataset
+    dataset = list(lines)
+_csv.Error: iterator should return strings, not bytes (did you open the file in text mode?)
+ what’s wrong ? how to solve the error ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 25, 2016 at 9:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Change this line:
+
+
+		
+		
+			
+			
+			
+			
+with open(filename, 'rb') as csvfile:
+			
+				
+					1
+				with open(filename, 'rb') as csvfile:
+			
+		
+
+
+to this:
+
+
+		
+		
+			
+			
+			
+			
+with open(filename, 'r') as csvfile:
+			
+				
+					1
+				with open(filename, 'r') as csvfile:
+			
+		
+
+
+See if that makes a difference.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Osman
+	                November 24, 2017 at 1:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				i have the same problème, i changed previous line but it didn’t work anyway !!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                _ary
+	                November 28, 2016 at 1:02 am
+	                #
+	                
+
+				
+
+		   		
+
+				how do i can plot  result data set calssifier using matplotlib, thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 28, 2016 at 8:45 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great question, sorry I don’t have an example at hand. 
+I would suggest using a simple 2d dataset and use a scatterplot.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Rayan
+	                November 29, 2016 at 12:25 pm
+	                #
+	                
+
+				
+
+		   		
+
+				hello,
+iris.data site link is unreachable. Could you reupload to other site please ? Thank you
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 30, 2016 at 7:50 am
+	                #
+	                
+
+				
+
+		   		
+
+				Sorry, the UCI Machine Learning Repository that hosts the datasets appears to be down at the moment.
+There is a back-up for the website with all the datasets here:
+http://mlr.cs.umass.edu/ml/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Gabriela
+	                November 29, 2016 at 9:08 pm
+	                #
+	                
+
+				
+
+		   		
+
+				One of the best articles I have ever read! Everything is so perfectly explained … One BIG THANK YOU!!!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 30, 2016 at 7:55 am
+	                #
+	                
+
+				
+
+		   		
+
+				I’m so glad to hear that Gabriela.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Abdallah yaghi
+	                December 16, 2016 at 2:50 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great tutorial, worked very well with python3  had to change the iteritems in the getResponse method to .items()
+line 63 & 64:
+ print (“Train set: ” + repr(len(trainingSet)))
+	print (“Test set: ” + repr(len(testSet)))
+generally great tutorial , Thank  you 🙂
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                December 16, 2016 at 5:49 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Abdallah.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aditya
+	                January 14, 2017 at 5:24 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+first of all, Thanks for this great informative tutorial.
+secondly, as compared to your accuracy of ~98%, i am getting an accuracy of around ~65% for every value of k. Can you tell me if this is fine and if not what general mistake i might be doing?
+Thanks 🙂
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 15, 2017 at 5:27 am
+	                #
+	                
+
+				
+
+		   		
+
+				Sorry to hear that.
+Perhaps a different version of Python (3 instead of 2.7?), or perhaps a copy-paste error?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                JingLee
+	                January 19, 2017 at 5:43 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, Jason, this article is awesome, it really gave me clear insight of KNN, and it’s so readable. just want to thank you for your incredible work. Awesome!!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 19, 2017 at 7:38 am
+	                #
+	                
+
+				
+
+		   		
+
+				I’m glad you found it useful!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Meaz
+	                February 7, 2017 at 1:09 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+Thanks for your article.. ?
+I have something to ask you..
+Is the accuracy of coding indicates the accuracy of the classification of both groups ? What if want to see the accuracy of classification of true positives ? How to coding ?
+Thanks before
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 7, 2017 at 10:19 am
+	                #
+	                
+
+				
+
+		   		
+
+				Yes Meaz, accuracy is on the whole problem or both groups.
+You can change it to report on the accuracy of one group or another, I do not have an off the cuff snippet of code for you though.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Neeraj
+	                February 9, 2017 at 12:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				Super Article!
+After reading tones of articles in which by second paragraph I am lost, this article is like explaining Pythagoras theorem to someone who landed on Algebra!
+Please keep doing this Jason
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 9, 2017 at 7:25 am
+	                #
+	                
+
+				
+
+		   		
+
+				I’m glad to hear it Neeraj.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Afees
+	                February 25, 2017 at 8:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				This is a great tutorial, keep it up. I am trying to use KNN to generate epsilon for my DBSCAN algorithm. My data set is a time series. It only has one feature which is sub-sequenced into different time windows. I am wondering if there is a link where I can get  a clear cut explanation like this for such a problem.Do you think KNN can predict epsilon since each of my row has a unique ID not setosa etc in the iris data set.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 26, 2017 at 5:27 am
+	                #
+	                
+
+				
+
+		   		
+
+				I don’t know Afees, i would recommend try it and see.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ahmad
+	                March 7, 2017 at 12:46 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason
+I am working on a similar solution in R but i am facing problems during training of knn
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 7, 2017 at 9:36 am
+	                #
+	                
+
+				
+
+		   		
+
+				What problem are you seeing Ahmad?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                koray
+	                March 7, 2017 at 10:20 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you very much, it really helped me to understand the concept of knn.
+But when i run this clock i get an error, and i couldn’t solve it. Could you please help
+import csv
+import random
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+	with open(filename, ‘rb’) as csvfile:
+	    lines = csv.reader(csvfile)
+	    dataset = list(lines)
+	    for x in range(len(dataset)):
+	        for y in range(4):
+	            dataset[x][y] = float(dataset[x][y])
+	        if random.random() < split:
+	            trainingSet.append(dataset[x])
+	        else:
+	            testSet.append(dataset[x])
+trainingSet=[]
+testSet=[]
+loadDataset('iris.data', 0.66, trainingSet, testSet)
+print 'Train: ' + repr(len(trainingSet))
+print 'Test: ' + repr(len(testSet))
+IndexError                                Traceback (most recent call last)
+ in ()
+     15 trainingSet=[]
+     16 testSet=[]
+—> 17 loadDataset(‘/home/emre/SWE546_DataMining/iris’, 0.66, trainingSet, testSet)
+     18 print ‘Train: ‘ + repr(len(trainingSet))
+     19 print ‘Test: ‘ + repr(len(testSet))
+ in loadDataset(filename, split, trainingSet, testSet)
+      7             for x in range(len(dataset)):
+      8                 for y in range(4):
+—-> 9                     dataset[x][y] = float(dataset[x][y])
+     10                 if random.random() < split:
+     11                     trainingSet.append(dataset[x])
+IndexError: list index out of range
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                koray
+	                March 7, 2017 at 10:37 am
+	                #
+	                
+
+				
+
+		   		
+
+				solved it thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 8, 2017 at 9:39 am
+	                #
+	                
+
+				
+
+		   		
+
+				Glad to hear it.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Carol
+	                July 11, 2017 at 11:20 am
+	                #
+	                
+
+				
+
+		   		
+
+				How did you solve it?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ruben
+	                March 12, 2017 at 1:04 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi jason,
+I am getting error of syntax in return math.sqrt(distance) and also in undefined variables in main()
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 12, 2017 at 8:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				Sorry to hear that, what errors exactly?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hardik Patil
+	                March 14, 2017 at 10:17 pm
+	                #
+	                
+
+				
+
+		   		
+
+				How should I take testSet from user as input and then print my prediction as output?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Boris
+	                March 18, 2017 at 10:34 am
+	                #
+	                
+
+				
+
+		   		
+
+				AWESOME POST! I cant describe how much this has helped me understand the algorithm so I can write my own C# version. Thank you so much!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 19, 2017 at 6:06 am
+	                #
+	                
+
+				
+
+		   		
+
+				I’m glad to here!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mark Stevens
+	                March 23, 2017 at 10:26 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hello,
+I have encountered a problem where I need to detect and recognize an object ( in my case a logo ) in an image. My images are some kind of scanned documents that contains mostly text, signatutes and logos. I am interested in localizing the logo and recognizing which logo is it.
+My problem seems easier than most object recognition problems since the logo always comes in  the same angle only the scale and position that changes. Any help on how to proceed is welcome as I’m out of options right now.
+Thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 24, 2017 at 7:55 am
+	                #
+	                
+
+				
+
+		   		
+
+				Sound great Mark.
+I expect CNNs to do well on this problem and some computer vision methods may help further.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Thomas
+	                March 26, 2017 at 3:18 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason, I have folowed through your tutorial and now I am trying to change it to run one of my own files instead of the iris dataset. I keep getting the error:
+    lines = csv.reader(csvfile)
+NameError: name ‘csv’ is not defined
+All i have done is change lines 62-64 from:
+loadDataset(‘iris.data’, split, trainingSet, testSet)
+	print ‘Train set: ‘ + repr(len(trainingSet))
+	print ‘Test set: ‘ + repr(len(testSet))
+To:
+loadDataset(‘fvectors.csv’, split, trainingSet, testSet)
+	print( ‘Train set: ‘ + repr(len(trainingSet)))
+	print( ‘Test set: ‘ + repr(len(testSet)))
+I have also tried to it with fvectors instead of fvectors.csv but that doesnt work either. DO you have any idea what is going wrong?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 26, 2017 at 6:15 am
+	                #
+	                
+
+				
+
+		   		
+
+				It looks like your python environment might not be installed correctly.
+Consider trying this tutorial:
+http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Thomas
+	                March 27, 2017 at 1:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason, id missed an import, a silly mistake. But now i get this error:
+_csv.Error: iterator should return strings, not bytes (did you open the file in text mode?)
+Any ideas?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Thomas
+	                March 27, 2017 at 1:48 am
+	                #
+	                
+
+				
+
+		   		
+
+				I got that fixed by changing 
+with open(‘fvectors.csv’, ‘rb’) as csvfile:
+to
+with open(‘fvectors.csv’, ‘rt’) as csvfile:
+but now i get this error.
+dataset[x][y] = float(dataset[x][y])
+ValueError: could not convert string to float:
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Thomas
+	                March 27, 2017 at 2:07 am
+	                #
+	                
+
+				
+
+		   		
+
+				It appears to not like my headers or labels for the data but are the labels not essential for the predicted vs actual part of the code
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 27, 2017 at 7:57 am
+	                #
+	                
+
+				
+
+		   		
+
+				Nice.
+Double check you have the correct data file.
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 27, 2017 at 7:57 am
+	                #
+	                
+
+				
+
+		   		
+
+				Consider opening the file in ASCII format open(filename, ‘rt’). This might work better in Python 3.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Nalini
+	                March 29, 2017 at 4:19 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason
+thanks a lot for such a wonderful tutorial for KNN.
+when i run this code i found the error as
+distance += pow((instance1[x] – instance2[x]), 2)
+TypeError: unsupported operand type(s) for -: ‘str’ and ‘str’
+can u help me f or clearing  this error
+Thank u
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Akhilesh Joshi
+	                November 23, 2017 at 4:20 am
+	                #
+	                
+
+				
+
+		   		
+
+				distance += pow((float(instance1[x]) – float(instance2[x])), 2)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                subrina
+	                April 14, 2017 at 5:20 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, i have some zipcode point (Tzip) with lat/long. but these points may/maynot fall inside real zip polygon (truezip). i want to do a k nearest neighbor to see the k neighbors of a Tzip point has which majority zipcode. i mean if 3 neighbors of Tzip 77339 says 77339,77339,77152.. then majority voting will determine the class as 77339. i want  Tzip and truezip as nominal variable. can i try your code for that? i am very novice at python…thanks in advance.
+tweetzip,   lat,                     long,        truezip
+77339,    73730.689,    -990323        77339
+77339,    73730.699,    -990341        77339
+77339,    73735.6,        -990351        77152
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                April 14, 2017 at 8:56 am
+	                #
+	                
+
+				
+
+		   		
+
+				Perhaps, you may need to tweak it for your example. 
+Consider using KNN from sklearn, much less code would be required:
+http://machinelearningmastery.com/spot-check-classification-machine-learning-algorithms-python-scikit-learn/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                subrina
+	                April 24, 2017 at 5:49 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for your reply. i tried to use sklearn as you suggeested. But as for line ‘kfold=model_selection.KFold(n_splits=10,random_state=seed)’   it showed an error ‘seed is not defined’.
+Also i think (not sure if i am right) it also take all the variable as numeric..but i want to calculate nearest neighbor distance using 2 numeric variable (lat/long) and get result along each row.
+what should i do?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aditya
+	                April 14, 2017 at 4:30 pm
+	                #
+	                
+
+				
+
+		   		
+
+				def getNeighbors(trainingSet, testInstance, k):
+	distances = []
+	length = len(testInstance)-1
+	for x in range(len(trainingSet)):
+		dist = euclideanDistance(testInstance, trainingSet[x], length)
+		distances.append((trainingSet[x], dist))
+	distances.sort(key=operator.itemgetter(1))
+	neighbors = []
+	for x in range(k):
+		neighbors.append(distances[x][0])
+	return neighbors
+in this fuction either “length = len(testInstance)-1” -1 shouldn’t be there or the
+testInstance = [5, 5, 5] should include a character item at its last index??
+Am I correct?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                April 15, 2017 at 9:33 am
+	                #
+	                
+
+				
+
+		   		
+
+				Yes, I believe so.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aditya
+	                April 17, 2017 at 11:46 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                keerti
+	                April 22, 2017 at 12:12 am
+	                #
+	                
+
+				
+
+		   		
+
+				plz anyone has dataset related to human behaviour please please share me
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                April 22, 2017 at 9:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				Consider searching kaggle and the uci machine learning repository.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                gary
+	                April 22, 2017 at 10:43 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hello, can you tell me at getResponce what exactly are you doing line by line?Cause I do this in Java and cant figure out what exactly I have to do.
+thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Lubna
+	                April 24, 2017 at 2:37 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+I am trying to run your code in Anaconda Python —–Spyder….
+I have landed in errors 
+(1)  AttributeError: ‘dict’ object has no attribute ‘iteritems’
+(2)  filename = ‘iris.data.csv’
+     with open(filename, ‘rb’) as csvfile:
+Initially while loading and opening the data file , it showed an error like
+Error: iterator should return strings, not bytes (did you open the file in text mode?) 
+when i changed rb to rt , it works….i don’t whether it will create problem later…
+Please response ASAP
+Thanks
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                April 24, 2017 at 5:36 am
+	                #
+	                
+
+				
+
+		   		
+
+				The first error may be caused because the example was developed for Python 2.7 and you are using Python 3. I hope to update the examples for Python 3 in the future.
+Yes, In Python 3, change to ‘rt’ top open as a text file.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ivan
+	                May 31, 2017 at 4:55 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, for python 3
+just replace this line(47):
+sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+with this line:
+sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+it is in def getResponse(neighbors) function
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                June 2, 2017 at 12:42 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Ivan.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                VV
+	                April 26, 2017 at 2:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				I didn’t find anything about performance in this article. Is it so that the performance is really bad?
+let’s say we have a training set of 100,000 entries, and test set of 1000. Then the euclidean distance should be calculated 10e8 times? Any workaround for this ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                April 26, 2017 at 6:24 am
+	                #
+	                
+
+				
+
+		   		
+
+				Yes, you can use more efficient distance measures (e.g. drop the sqrt) or use efficient data structures to track distances (e.g. kd-trees/balls)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Vipin GS
+	                June 4, 2017 at 3:37 am
+	                #
+	                
+
+				
+
+		   		
+
+				Nice !! Thank you 🙂
+If you are using Python 3,
+Use 
+1.#instead of rb
+with open(filename, ‘r’) as csvfile: 
+2. #instead of iteritems.
+sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                June 4, 2017 at 7:54 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Vipin!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mayukh Sarkar
+	                June 27, 2017 at 9:32 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hello Jason,
+   Nice Article. I understand a lot about the KNN under the hood. But one thing though. In scikit learn we use KNN from training to predict in 2 step. 
+ Step 1: Fitting the classifier
+ Step 2: Predicting
+In Fitting section we didn’t pass the test data. Only train data is passed and hence we can see where it is training and where it is testing. With respect to your other blog on Naive Bayes implementation, the part which was calculating mean and std can be considered as fitting/training part while the part which was using Gaussian Normal Distribtuion can be considered as testing/prediction part. 
+However in this implementation I can not see that distinction. Can you please tell me which part should be considered as training and which part is testing. The reason I am asking this question is because it is always imporatant to correalte with scikit-learn flow so that we get a better idea.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                June 28, 2017 at 6:23 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great question.
+There is no training in knn as there is no model. The dataset is the model.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mayukh Sarkar
+	                June 28, 2017 at 5:15 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the reply…Is it the same for even scikit learn ? What exactly happens when we fit the model for KNN in Scikit Learn then?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                June 29, 2017 at 6:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Yes it is the same. 
+Nothing I expect. Perhaps store the dataset in an efficient structure for searching (e.g. kdtree).
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mayukh Sarkar
+	                July 5, 2017 at 5:37 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks..That’s seems interesting..BTW..I really like your approach..Apart from your e-books what materials (video/books) you think I may need to excel in deep learning and NLP. I want to switch my career as a NLP engineer.
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 6, 2017 at 10:24 am
+	                #
+	                
+
+				
+
+		   		
+
+				Practice on a lot of problems and develop real and usable skills.
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Mayukh Sarkar
+	                July 6, 2017 at 4:18 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Where do you think I can get best problems that would create real and usable skills? Kaggle?? or somewhere else?
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 9, 2017 at 10:25 am
+	                #
+	                
+
+				
+
+		   		
+
+				See this post:
+http://machinelearningmastery.com/get-started-with-kaggle/
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ron
+	                July 10, 2017 at 10:55 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great post.  Why aren’t you normalizing the data?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 11, 2017 at 10:26 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great question. Because all features in the iris data have the same units.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Golam Sarwar
+	                July 13, 2017 at 4:10 pm
+	                #
+	                
+
+				
+
+		   		
+
+				HI Jason,
+    In one of your e-book ‘machine_learning_mastery_with_python’ Chapter – 11 (Spot-Check Classification Algorithms), you have explained KNN by using scikit learn KNeighborsClassifier class. I would like to know the difference between the detailed one what you’ve explained here and the KNeighborsClassifier class. It might be a very basic question for ML practitioner as I’m very new in ML and trying to understand the purposes of different approaches. 
+Thanks
+Golam Sarwar
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                July 13, 2017 at 5:01 pm
+	                #
+	                
+
+				
+
+		   		
+
+				The tutorial here is to help understand how the kNN method works.
+To use it in practice, I would strongly encourage you to use the implementation in a library like sklearn. 
+The main reasons are to avoid bugs and for performance. Learn more here:
+http://machinelearningmastery.com/dont-implement-machine-learning-algorithms/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Golam Sarwar
+	                July 13, 2017 at 5:16 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks…..
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Ahmed rebai
+	                August 21, 2017 at 8:08 pm
+	                #
+	                
+
+				
+
+		   		
+
+				nice explication and great tutorial , i hope that you have other blogs about other classification algorithms like this
+thanks …. Jason
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                August 22, 2017 at 6:38 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks.
+I do, use the blog search.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                SS
+	                September 3, 2017 at 11:23 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason,
+Nice explanation !!
+Can you please show us the implementation of the same (KNN) algorithm in Java  also ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                September 4, 2017 at 4:34 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the suggestion, perhaps in the future.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Chard
+	                September 7, 2017 at 12:51 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Jason
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                September 7, 2017 at 12:59 pm
+	                #
+	                
+
+				
+
+		   		
+
+				You’re welcome.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Barrys
+	                September 26, 2017 at 7:16 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason,
+Is it normal to get different accuracy, FP, TP, FN, TN on every different try? I am using same data.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                September 26, 2017 at 3:00 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Yes, see this post for an explanation of why to expect this in machine learning:
+https://machinelearningmastery.com/randomness-in-machine-learning/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                barrys
+	                September 29, 2017 at 10:23 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks Jason. you can add below explanation to the post to make it more clear: 
+I’ve discovered that the different accuracy is caused by the below line in the loadDataset function:
+	        if random.random()  randomized.csv
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Barrys
+	                September 26, 2017 at 7:19 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi,
+I am using that function instead of getAccuracy. It gives TP, TN, FP, FN.
+def getPerformance(testSet, predictions):
+	tp = 0
+	tn = 0
+	fp = 0
+	fn = 0
+	for x in range(len(testSet)):
+		if testSet[x][-1] == predictions[x]:
+			if predictions[x] == “yes”:
+				tp += 1
+			else:
+				tn += 1
+		else:
+			if predictions[x] == “yes”:
+				fp += 1
+			else:
+				fn += 1
+	performance = [ ((tp/float(len(testSet))) * 100.0), ((tn/float(len(testSet))) * 100.0), ((fp/float(len(testSet))) * 100.0), ((fn/float(len(testSet))) * 100.0) ]
+	return performance
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                larry guidarelli
+	                December 30, 2017 at 4:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				HI Barrys,  
+What is the following line of code checking for –> if predictions[x] == ‘yes’
+Seems as if it always is false….
+if predictions[x] == “yes”:
+ tp += 1
+else:
+ tn += 1
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Swati Gupta
+	                October 9, 2017 at 1:42 pm
+	                #
+	                
+
+				
+
+		   		
+
+				This is the best tutorial entry I have seen on any blog post about any topic. It is very easy to follow. The code is correct and not outdated. I love the way everything is structured. It kind of follows the TDD approach where it first builds on the production code step by step, testing each step on the way.  Kudos to you for the great work! This is indeed helpful.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 9, 2017 at 4:47 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hanane
+	                October 25, 2017 at 5:59 am
+	                #
+	                
+
+				
+
+		   		
+
+				i have a probleme in reading from the dataset can you tell me wher is the problem?
+import pandas as pd
+import numpy as np from sklearn import preprocessing, neighbors from sklearn.model_selection import train_test_split import pandas as pd
+df = np.read_txt(‘C:\Users\sms\Downloads\NSLKDD-Dataset-master\NSLKDD-Dataset-master\KDDTrain22Percent.arff’) df.replace(‘?’ , -99999, inplace=True) df.drop([‘class’], 1, inplace=True)
+x = np.array(df.drop([‘class’],1)) y = np.array(df[‘class’])
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2)
+clf = neighbors.KNieghborsClassifier() clf.fit(x_train, y_train)
+accuracy = clf.score(x_test, y_test) print(accuracy)
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 25, 2017 at 6:54 am
+	                #
+	                
+
+				
+
+		   		
+
+				What is the problem?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                SHEKINA
+	                November 16, 2017 at 3:03 am
+	                #
+	                
+
+				
+
+		   		
+
+				plz upload python code for feature selection using metaheuristic firefly algorithm
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 16, 2017 at 10:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the suggestion.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Akhilesh Joshi
+	                November 23, 2017 at 4:43 am
+	                #
+	                
+
+				
+
+		   		
+
+				
+
+		
+		
+			
+			
+			
+			
+#python 3 implementation
+
+import random
+import csv
+
+split = 0.66
+
+with open('iris-data.txt') as csvfile:
+    lines = csv.reader(csvfile)
+    dataset = list(lines)
+
+random.shuffle(dataset)
+
+div = int(split * len(dataset))
+train = dataset [:div]
+test = dataset [div:]
+
+
+import math
+# square root of the sum of the squared differences between the two arrays of numbers
+def euclideanDistance(instance1, instance2, length):
+	distance = 0
+	for x in range(length):
+		#print(instance1[x])
+		distance += pow((float(instance1[x]) - float(instance2[x])), 2)
+	return math.sqrt(distance)
+
+
+
+import operator
+#distances = []
+def getNeighbors(trainingSet, testInstance, k):
+	distances = []
+	length = len(testInstance)-1
+	for x in range(len(trainingSet)):
+		dist = euclideanDistance(testInstance, trainingSet[x], length)
+		distances.append((trainingSet[x], dist))
+	distances.sort(key=operator.itemgetter(1))
+	neighbors = []
+	for x in range(k):
+		neighbors.append(distances[x][0])
+	return neighbors
+
+  
+classVotes = {}
+def getResponse(neighbors):
+	#classVotes = {}
+	for x in range(len(neighbors)):
+		response = neighbors[x][-1]
+		if response in classVotes:
+			classVotes[response] += 1
+		else:
+			classVotes[response] = 1
+	sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+	return sortedVotes[0][0]
+
+
+def getAccuracy(testSet, predictions):
+	correct = 0
+	for x in range(len(testSet)):
+		#print(predictions[x])
+		if testSet[x][-1] == predictions[x]:
+			correct += 1
+	return (correct/float(len(testSet))) * 100.0
+
+predictions=[]
+
+k = 3
+
+for x in range(len(test)):
+    #print(len(test[x]))
+    neighbors = getNeighbors(train, test[x], k)
+    #print("N",neighbors)
+    result = getResponse(neighbors)
+    #print("R",result)
+    predictions.append(result)
+    #print(predictions)
+    print('> predicted=' + repr(result) + ', actual=' + repr(test[x][-1]))
+
+accuracy = getAccuracy(test, predictions)
+print('Accuracy: ' + repr(accuracy) + '%')
+			
+				
+					123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081
+				#python 3 implementation import randomimport csv split = 0.66 with open('iris-data.txt') as csvfile:    lines = csv.reader(csvfile)    dataset = list(lines) random.shuffle(dataset) div = int(split * len(dataset))train = dataset [:div]test = dataset [div:]  import math# square root of the sum of the squared differences between the two arrays of numbersdef euclideanDistance(instance1, instance2, length):	distance = 0	for x in range(length):		#print(instance1[x])		distance += pow((float(instance1[x]) - float(instance2[x])), 2)	return math.sqrt(distance)   import operator#distances = []def getNeighbors(trainingSet, testInstance, k):	distances = []	length = len(testInstance)-1	for x in range(len(trainingSet)):		dist = euclideanDistance(testInstance, trainingSet[x], length)		distances.append((trainingSet[x], dist))	distances.sort(key=operator.itemgetter(1))	neighbors = []	for x in range(k):		neighbors.append(distances[x][0])	return neighbors   classVotes = {}def getResponse(neighbors):	#classVotes = {}	for x in range(len(neighbors)):		response = neighbors[x][-1]		if response in classVotes:			classVotes[response] += 1		else:			classVotes[response] = 1	sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)	return sortedVotes[0][0]  def getAccuracy(testSet, predictions):	correct = 0	for x in range(len(testSet)):		#print(predictions[x])		if testSet[x][-1] == predictions[x]:			correct += 1	return (correct/float(len(testSet))) * 100.0 predictions=[] k = 3 for x in range(len(test)):    #print(len(test[x]))    neighbors = getNeighbors(train, test[x], k)    #print("N",neighbors)    result = getResponse(neighbors)    #print("R",result)    predictions.append(result)    #print(predictions)    print('> predicted=' + repr(result) + ', actual=' + repr(test[x][-1])) accuracy = getAccuracy(test, predictions)print('Accuracy: ' + repr(accuracy) + '%')
+			
+		
+
+
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 23, 2017 at 10:39 am
+	                #
+	                
+
+				
+
+		   		
+
+				Nice, I added some pre tags for you.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Leonardo
+	                November 24, 2017 at 2:56 am
+	                #
+	                
+
+				
+
+		   		
+
+				How can can I return no response for an unbiased random response?
+I’m using this code to classify random images as letters. I have a dataset of letters for it.
+For example, I have a random image that is not a letter but when I use this code to classify I get a letter in response. How can I tell that this image is not a letter? According to my dataset. Should I modify the code to check the result I get in “sortedVotes[0][1]”?
+Thank you.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 24, 2017 at 9:50 am
+	                #
+	                
+
+				
+
+		   		
+
+				Perhaps you can include “non-letters” in the training dataset also?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Leonardo
+	                November 26, 2017 at 1:35 am
+	                #
+	                
+
+				
+
+		   		
+
+				But what if I don’t have this type of data?
+Thank you.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 26, 2017 at 7:32 am
+	                #
+	                
+
+				
+
+		   		
+
+				You may have to invent or contrive it to get the results you are seeking.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Aditya
+	                December 1, 2017 at 7:29 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, I want this in java language, can you help me out with this?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                December 2, 2017 at 8:53 am
+	                #
+	                
+
+				
+
+		   		
+
+				You could port it to Java.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Chan
+	                December 19, 2017 at 11:44 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, How can i plot the output of the labelled data?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                December 20, 2017 at 5:44 am
+	                #
+	                
+
+				
+
+		   		
+
+				What type of plot would you like?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                PS Narayanan
+	                January 2, 2018 at 5:26 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Please do Rotation forest (with LDA and PCA) in python.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 3, 2018 at 5:30 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the suggestion.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Vinay
+	                January 11, 2018 at 1:45 am
+	                #
+	                
+
+				
+
+		   		
+
+				Great explanation thinking of where to start ML but this tutorial cleared my  doubt and I  feeling now I have been confident and can apply this algorithm to any problem thanks to you
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 11, 2018 at 5:51 am
+	                #
+	                
+
+				
+
+		   		
+
+				I’m glad to hear that.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                yuvaraj
+	                January 24, 2018 at 3:04 pm
+	                #
+	                
+
+				
+
+		   		
+
+				HI Jason , I seem to be getting the below error. can you please confirm whats that I need to change. quite new to python
+import csv
+import random
+def loadDataset(filename, split, trainingSet=[] , testSet=[]):
+	with open(filename, ‘rt’) as csvfile:
+	    lines = csv.reader(csvfile)
+	    dataset = list(lines)
+	    for x in range(len(dataset)-1):
+	        for y in range(4):
+	            dataset[x][y] = float(dataset[x][y])
+	        if random.random() < split:
+	            trainingSet.append(dataset[x])
+	        else:
+	            testSet.append(dataset[x])
+trainingSet=[]
+testSet=[]
+loadDataset('iris.data',0.66, trainingSet, testSet)
+print ('Train: ' + repr(len(trainingSet)))
+print ('Test: ' + repr(len(testSet)))
+Traceback (most recent call last):
+  File "”, line 17, in
+    loadDataset(‘iris.data’,0.66, trainingSet, testSet)
+  File “”, line 9, in loadDataset
+    dataset[x][y] = float(dataset[x][y])
+ValueError: could not convert string to float: ‘5.1,3.5,1.4,0.2,Iris-setosa’
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Nazneen
+	                February 4, 2018 at 4:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				@ yuvaraj I just tried your code out (with the correct indentations) and it works perfectly for me with the given data set..
+for x in range(len(dataset)-1):
+    for y in range(4):
+        dataset[x][y] = float(dataset[x][y])
+These lines intend to convert dataset[x][0] dataset[x][1] dataset[x][2] dataset[x][3] from type str to type float so that they can be used for calculating the euclidean distance. You cannot convert ‘Iris-setosa’ to type float.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hugues Laliberte
+	                February 7, 2018 at 4:17 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi Jason,
+i’m running your code above on my dataset, it has 40’000 lines, 10 features and 1 binary class. 
+It takes much more time to run it (i have actually not let it finish yet, after 5-10 minutes…) compared to your 6 models code here:
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+This last code runs much much faster on  the same dataset, it takes just a few seconds on a Macbook pro.
+Is this normal ? Or maybe something i’m doing wrong…
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hugues Laliberte
+	                February 7, 2018 at 10:51 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I let it run today and it took about an hour, accuracy 0.96. why is the other code so much faster ? It does not run on all the data ?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 8, 2018 at 8:27 am
+	                #
+	                
+
+				
+
+		   		
+
+				It might be a hardware or environment issue?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Hugues Laliberte
+	                February 8, 2018 at 5:11 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Not sure. But you confirm the code on this page runs on all the data, not just a subset, especially the KNN code ?
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+It runs so fast.
+thanks for all this work really, i’ve learned a lot.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 8, 2018 at 8:23 am
+	                #
+	                
+
+				
+
+		   		
+
+				You could try running the code on less data.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Abien Fred Agarap
+	                February 19, 2018 at 3:45 am
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, Dr. Brownlee
+Perhaps instead of using is, let’s use the == operator since is asks for identity, and not equality. I’ve stumbled upon this error myself when trying out your tutorial. Nice work btw. Thank you!
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 19, 2018 at 9:09 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Alessandro Pedrini
+	                March 5, 2018 at 5:44 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Thank you so much Jason. one of the best tutorial about the KNN !!
+One thing..in the GetResponse function the command .iteritems() doesn’t existi anymore in Python3…instead is .items()
+Thank you again
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 6, 2018 at 6:09 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks for the note.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Nandini
+	                March 12, 2018 at 11:40 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I have trained my data using knn,with neighbours no : 3, i have calculate distane for predicted data.i got smaller and larger values as distance.
+How to calculate acceptance distance for knn, how to calculate the maximum limit for distance in knn.
+Please suggest any procedure to calculate maximum limit for distance in knn
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 13, 2018 at 6:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				Perhaps estimate these values using a test dataset.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                nandini
+	                March 13, 2018 at 3:32 pm
+	                #
+	                
+
+				
+
+		   		
+
+				i got very huge values a distance but it’s predicted as nearest neighbors,that is reason i wish to find the maximum acceptance distance in knn .
+is there any procedure available for calculate maximum acceptance distance in knn.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                March 14, 2018 at 6:16 am
+	                #
+	                
+
+				
+
+		   		
+
+				There may be, I’m not across it. Perhaps check papers on google scholar.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+		 		
+		Leave a Reply Click here to cancel reply.			
+				Comment Name (required) 
+Email (will not be published) (required) 
+Website
+ 
+
+			
+			
+	     
+            
+                
+            
+Welcome to Machine Learning Mastery
+Hi, I'm Jason Brownlee, Ph.D.
+
+My goal is to make practitioners like YOU awesome at applied machine learning.
+Read More
+
+			
+Code Algorithms From Scratch in Python
+Discover how to code top machine learning algorithms from first principles with Python.
+Code Machine Learning Algorithms From Scratch Today!
+
+
+
+		
+		 		
+
+            Popular
+
+            
+
+            
+
+	            
+                                
+				Your First Machine Learning Project in Python Step-By-Step
+		June 10, 2016
+		
+	
+				Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras
+		July 21, 2016
+		
+	
+				Multivariate Time Series Forecasting with LSTMs in Keras
+		August 14, 2017
+		
+	
+				How to Setup a Python Environment for Machine Learning and Deep Learning with Anaconda
+		March 13, 2017
+		
+	
+				Develop Your First Neural Network in Python With Keras Step-By-Step
+		May 24, 2016
+		
+	
+				Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras
+		July 26, 2016
+		
+	
+				Time Series Forecasting with the Long Short-Term Memory Network in Python
+		April 7, 2017
+		
+	
+				Regression Tutorial with the Keras Deep Learning Library in Python
+		June 9, 2016
+		
+	
+				Multi-Class Classification Tutorial with the Keras Deep Learning Library
+		June 2, 2016
+		
+	
+				How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras
+		August 9, 2016
+		
+	
+                                                                
+            
+
+        
+
+                 
+
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

@@ -1,0 +1,102 @@
+Instant Interactive Visualization with d3 + ggplot2
+
+        
+
+        
+
+
+          
+  It’s often easier to understand a chart than a table. So why is it still so hard to make a simple data graphic, and why am I still bombarded by mind-numbing reams of raw numbers?
+
+  (Yeah, I love ggplot2 to death. But sometimes I want a little more interaction, and sometimes all I want is to drag-and-drop and be done.)
+
+  So I’ve been experimenting with a small, ggplot2-inspired d3 app.
+
+  Simply drop a file, and bam! Instant scatterplot:
+
+  
+
+  But wait – that’s only 2 dimensions. You can add some more through color, size, and groups:
+
+  
+
+  (Click here to play with the data yourself.)
+
+  And you can easily switch which variables are getting plotted, and see all the information associated with each point.
+
+  
+
+  (Same dataset, different aesthetic assignments.)
+
+  I’m thinking of adding more kinds of charts, support for categorical variables, more interactivity (sliders to interact with other dimensions?!), and making the UI even easier (e.g., simplify column naming). In the meantime, the code is here on Github, and tips and suggestions are welcome!
+    
+
+        
+
+      
+    
+
+  
+	      
+	        
+	          Edwin Chen	          
+	          
+
+	        
+	        
+	                      	          
+	          
+	            Hybrid CEO. Our customers include companies like Airbnb, Dropbox, Expedia, Pandora, and Pinterest, who use us to power their personalization platforms and run millions of human/AI tasks every month. Hit me up if you're interested!	            
+	          
+	          
+	          Previously: math and linguistics at MIT, speech recognition at MSR, quant trading at Clarium, ads at Twitter, data science at Dropbox, stats/ML at Google.
+            
+            
+            
+              I work on AI, human computation, and data.
+                        
+            
+            
+              hello[æ]echen.me
+            
+            	          
+	          
+              Quora
+              Twitter
+              Github
+              
+              Atom / RSS
+            
+          
+
+          
+              Recent Posts
+                Moving Beyond CTR: Better Recommendations Through Human Evaluation  
+                Propensity Modeling, Causal Inference, and Discovering Drivers of Growth  
+                Product Insights for Airbnb  
+                Exploring LSTMs  
+                Improving Twitter Search with Real-Time Human Computation  
+                Edge Prediction in a Social Graph: My Solution to Facebook's User Recommendation Contest on Kaggle  
+                Soda vs. Pop with Twitter  
+                Infinite Mixture Models with Nonparametric Bayes and the Dirichlet Process  
+                Instant Interactive Visualization with d3 + ggplot2  
+                Movie Recommendations and More via MapReduce and Scalding  
+                Quick Introduction to ggplot2  
+                Introduction to Conditional Random Fields  
+                Winning the Netflix Prize: A Summary  
+                Stuff Harvard People Like  
+                Information Transmission in a Social Network: Dissecting the Spread of a Quora Post  
+            
+          
+        
+
+
+        
+       
+        
+        
+	
+        
+                
+                Proudly powered by Pelican, which takes
+                great advantage of Python.

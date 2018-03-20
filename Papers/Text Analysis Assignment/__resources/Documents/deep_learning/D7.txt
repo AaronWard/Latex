@@ -1,0 +1,1 @@
+Altogether, LSTMs can not only tweak their weights, but retain, delete, transform and otherwise control the inflow and outflow of their stored data according to the quirks of their training. Most importantly, LSTMs can cling to important error information for long enough to keep gradients relatively steep and thus training periods relatively short.

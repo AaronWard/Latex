@@ -1,0 +1,115 @@
+Instance-based learning			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				In machine learning, instance-based learning (sometimes called memory-based learning[1]) is a family of learning algorithms that, instead of performing explicit generalization, compares new problem instances with instances seen in training, which have been stored in memory.
+It is called instance-based because it constructs hypotheses directly from the training instances themselves.[2] This means that the hypothesis complexity can grow with the data:[2] in the worst case, a hypothesis is a list of n training items and the computational complexity of classifying a single new instance is O(n). One advantage that instance-based learning has over other methods of machine learning is its ability to adapt its model to previously unseen data. Instance-based learners may simply store a new instance or throw an old instance away.
+Examples of instance-based learning algorithm are the k-nearest neighbor algorithm, kernel machines and RBF networks.[3]:ch. 8 These store (a subset of) their training set; when predicting a value/class for a new instance, they compute distances or similarities between this instance and the training instances to make a decision.
+To battle the memory complexity of storing all training instances, as well as the risk of overfitting to noise in the training set, instance reduction algorithms have been proposed.[4]
+Gagliardi[5] applies this family of classifiers in medical field as second-opinion diagnostic tools and as tools for the knowledge extraction phase in the process of knowledge discovery in databases. One of these classifiers (called Prototype exemplar learning classifier (PEL-C) is able to extract a mixture of abstracted prototypical cases (that are syndromes) and selected atypical clinical cases.
+See also[edit]
+Analogical modeling
+References[edit]
+
+^ Walter Daelemans; Antal van den Bosch (2005). Memory-Based Language Processing. Cambridge University Press. ^ a b Stuart Russell and Peter Norvig (2003). Artificial Intelligence: A Modern Approach, second edition, p. 733. Prentice Hall. ISBN 0-13-080302-2^ Tom Mitchell (1997). Machine Learning. McGraw-Hill. ^ D. Randall Wilson; Tony R. Martinez (2000). "Reduction techniques for instance-based learning algorithms". Machine Learning. Kluwer. ^ Gagliardi, F (2011). "Instance-based classifiers applied to medical databases: Diagnosis and knowledge extraction". Artificial Intelligence in Medicine. 52 (3): 123–139. doi:10.1016/j.artmed.2011.04.002. 
+
+This artificial intelligence-related article is a stub. You can help Wikipedia by expanding it.
+
+vte
+
+
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instance-based_learning&oldid=798310995"					
+				Categories: Machine learningArtificial intelligence stubsHidden categories: All stub articles				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			Languages
+			
+								РусскийУкраїнська
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 1 September 2017, at 04:55.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

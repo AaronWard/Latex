@@ -1,0 +1,461 @@
+Curse of dimensionality			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces (often with hundreds or thousands of dimensions) that do not occur in low-dimensional settings such as the three-dimensional physical space of everyday experience. The expression was coined by Richard E. Bellman when considering problems in dynamic optimization.[1][2]
+There are multiple phenomena referred to by this name in domains such as numerical analysis, sampling, combinatorics, machine learning, data mining, and databases. The common theme of these problems is that when the dimensionality increases, the volume of the space increases so fast that the available data become sparse. This sparsity is problematic for any method that requires statistical significance. In order to obtain a statistically sound and reliable result, the amount of data needed to support the result often grows exponentially with the dimensionality. Also, organizing and searching data often relies on detecting areas where objects form groups with similar properties; in high dimensional data, however, all objects appear to be sparse and dissimilar in many ways, which prevents common data organization strategies from being efficient.
+These effects are also used for simplification of machine learning algorithms in high dimension that is blessing of dimensionality. The blessings of dimensionality and the curse of dimensionality are recognised as two complementary influential principles in high-dimensional data analysis.[3]
+
+
+
+Contents
+
+1 In different domains
+1.1 Combinatorics1.2 Sampling1.3 Optimization1.4 Machine learning1.5 Distance functions1.6 Nearest neighbor search
+1.6.1 k-nearest neighbor classification
+1.7 Anomaly detection
+2 See also3 References
+
+
+In different domains[edit]
+Combinatorics[edit]
+In some problems, each variable can take one of several discrete values, or the range of possible values is divided to give a finite number of possibilities. Taking the variables together, a huge number of combinations of values must be considered. This effect is also known as the combinatorial explosion. Even in the simplest case of 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  
+ binary variables, the number of possible combinations already is 
+  
+    
+      
+        O
+        (
+        
+          2
+          
+            d
+          
+        
+        )
+      
+    
+    {\displaystyle O(2^{d})}
+  
+, exponential in the dimensionality. Naively, each additional dimension doubles the effort needed to try all combinations.
+Sampling[edit]
+There is an exponential increase in volume associated with adding extra dimensions to a mathematical space. For example, 102=100 evenly spaced sample points suffice to sample a unit interval (a "1-dimensional cube") with no more than 10−2=0.01 distance between points; an equivalent sampling of a 10-dimensional unit hypercube with a lattice that has a spacing of 10−2=0.01 between adjacent points would require 1020[=(102)10] sample points. In general, with a spacing distance of 10−n the 10-dimensional hypercube appears to be a factor of 10n(10-1)[=(10n)10/(10n)] "larger" than the 1-dimensional hypercube, which is the unit interval. In the above example n=2: when using a sampling distance of 0.01 the 10-dimensional hypercube appears to be 1018 "larger" than the unit interval. This effect is a combination of the combinatorics problems above and the distance function problems explained below.
+Optimization[edit]
+When solving dynamic optimization problems by numerical backward induction, the objective function must be computed for each combination of values. This is a significant obstacle when the dimension of the "state variable" is large.
+Machine learning[edit]
+In machine learning problems that involve learning a "state-of-nature" from a finite number of data samples in a high-dimensional feature space with each feature having a range of possible values, typically an enormous amount of training data is required to ensure that there are several samples with each combination of values. A typical rule of thumb is that there should be at least 5 training examples for each dimension in the representation.[4] With a fixed number of training samples, the predictive power of a classifier or regressor first increases as number of dimensions/features used is increased but then decreases,[5] which is known as Hughes phenomenon[6] or peaking phenomena.[4]
+Distance functions[edit]
+When a measure such as a Euclidean distance is defined using many coordinates, there is little difference in the distances between different pairs of samples.
+One way to illustrate the "vastness" of high-dimensional Euclidean space is to compare the proportion of an inscribed hypersphere with radius 
+  
+    
+      
+        r
+      
+    
+    {\displaystyle r}
+  
+ and dimension 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  
+, to that of a hypercube with edges of length 
+  
+    
+      
+        2
+        r
+      
+    
+    {\displaystyle 2r}
+  
+. The volume of such a sphere is 
+  
+    
+      
+        
+          
+            
+              2
+              
+                r
+                
+                  d
+                
+              
+              
+                π
+                
+                  d
+                  
+                    /
+                  
+                  2
+                
+              
+            
+            
+              d
+              
+              Γ
+              (
+              d
+              
+                /
+              
+              2
+              )
+            
+          
+        
+      
+    
+    {\displaystyle {\frac {2r^{d}\pi ^{d/2}}{d\;\Gamma (d/2)}}}
+  
+, where 
+  
+    
+      
+        Γ
+      
+    
+    {\displaystyle \Gamma }
+  
+ is the gamma function, while the volume of the cube is 
+  
+    
+      
+        (
+        2
+        r
+        
+          )
+          
+            d
+          
+        
+      
+    
+    {\displaystyle (2r)^{d}}
+  
+. As the dimension 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  
+ of the space increases, the hypersphere becomes an insignificant volume relative to that of the hypercube. This can clearly be seen by comparing the proportions as the dimension 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  
+ goes to infinity:
+
+  
+    
+      
+        
+          
+            
+              V
+              
+                h
+                y
+                p
+                e
+                r
+                s
+                p
+                h
+                e
+                r
+                e
+              
+            
+            
+              V
+              
+                h
+                y
+                p
+                e
+                r
+                c
+                u
+                b
+                e
+              
+            
+          
+        
+        =
+        
+          
+            
+              π
+              
+                d
+                
+                  /
+                
+                2
+              
+            
+            
+              d
+              
+                2
+                
+                  d
+                  −
+                  1
+                
+              
+              Γ
+              (
+              d
+              
+                /
+              
+              2
+              )
+            
+          
+        
+        →
+        0
+      
+    
+    {\displaystyle {\frac {V_{hypersphere}}{V_{hypercube}}}={\frac {\pi ^{d/2}}{d2^{d-1}\Gamma (d/2)}}\rightarrow 0}
+  
+ as 
+  
+    
+      
+        d
+        →
+        ∞
+      
+    
+    {\displaystyle d\rightarrow \infty }
+  
+.
+Furthermore, the distance between the center and the corners is 
+  
+    
+      
+        r
+        
+          
+            d
+          
+        
+      
+    
+    {\displaystyle r{\sqrt {d}}}
+  
+, which increases without bound for fixed r. In this sense, nearly all of the high-dimensional space is "far away" from the centre. To put it another way, the high-dimensional unit hypercube can be said to consist almost entirely of the "corners" of the hypercube, with almost no "middle".
+This also helps to understand the chi-squared distribution. Indeed, the (non-central) chi-squared distribution associated to a random point in the interval [-1, 1] is the same as the distribution of the length-squared of a random point in the d-cube. By the law of large numbers, this distribution concentrates itself in a narrow band around d times the standard deviation squared (σ2) of the original derivation. This illuminates the chi-squared distribution and also illustrates that most of the volume of the d-cube concentrates near the surface of a sphere of radius √dσ.
+A further development of this phenomenon is as follows. Any fixed distribution on ℝ induces a product distribution on points in ℝd. For any fixed n, it turns out that the minimum and the maximum distance between a random reference point Q and a list of n random data points P1,...,Pn become indiscernible compared to the minimum distance:[7]
+
+  
+    
+      
+        
+          lim
+          
+            d
+            →
+            ∞
+          
+        
+        E
+        
+          (
+          
+            
+              
+                
+                  dist
+                  
+                    max
+                  
+                
+                ⁡
+                (
+                d
+                )
+                −
+                
+                  dist
+                  
+                    min
+                  
+                
+                ⁡
+                (
+                d
+                )
+              
+              
+                
+                  dist
+                  
+                    min
+                  
+                
+                ⁡
+                (
+                d
+                )
+              
+            
+          
+          )
+        
+        →
+        0
+      
+    
+    {\displaystyle \lim _{d\to \infty }E\left({\frac {\operatorname {dist} _{\max }(d)-\operatorname {dist} _{\min }(d)}{\operatorname {dist} _{\min }(d)}}\right)\to 0}
+  
+.
+This is often cited as distance functions losing their usefulness (for the nearest-neighbor criterion in feature-comparison algorithms, for example) in high dimensions. However, recent research has shown this to only hold in the artificial scenario when the one-dimensional distributions ℝ are independent and identically distributed.[8] When attributes are correlated, data can become easier and provide higher distance contrast and the signal-to-noise ratio was found to play an important role, thus feature selection should be used.[8]
+Nearest neighbor search[edit]
+The effect complicates nearest neighbor search in high dimensional space. It is not possible to quickly reject candidates by using the difference in one coordinate as a lower bound for a distance based on all the dimensions.[9][10]
+However, it has recently been observed that the mere number of dimensions does not necessarily result in difficulties,[11] since relevant additional dimensions can also increase the contrast. In addition, for the resulting ranking it remains useful to discern close and far neighbors. Irrelevant ("noise") dimensions, however, reduce the contrast in the manner described above. In time series analysis, where the data are inherently high-dimensional, distance functions also work reliably as long as the signal-to-noise ratio is high enough.[12]
+k-nearest neighbor classification[edit]
+Another effect of high dimensionality on distance functions concerns k-nearest neighbor (k-NN) graphs constructed from a data set using a distance function. As the dimension increases, the indegree distribution of the k-NN digraph becomes skewed with a peak on the right because of the emergence of a disproportionate number of hubs, that is, data-points that appear in many more k-NN lists of other data-points than the average. This phenomenon can have a considerable impact on various techniques for classification (including the k-NN classifier), semi-supervised learning, and clustering,[13] and it also affects information retrieval.[14]
+Anomaly detection[edit]
+In a recent survey, Zimek et al. identified the following problems when searching for anomalies in high-dimensional data:[8]
+Concentration of scores and distances: derived values such as distances become numerically similarIrrelevant attributes: in high dimensional data, a significant number of attributes may be irrelevantDefinition of reference sets: for local methods, reference sets are often nearest-neighbor basedIncomparable scores for different dimensionalities: different subspaces produce incomparable scoresInterpretability of scores: the scores often no longer convey a semantic meaningExponential search space: the search space can no longer be systematically scannedData snooping bias: given the large search space, for every desired significance a hypothesis can be foundHubness: certain objects occur more frequently in neighbor lists than others.
+Many of the analyzed specialized methods tackle one or another of these problems, but there remain many open research questions.
+See also[edit]
+
+
+
+This "see also" section may contain an excessive number of suggestions. Please ensure that only the most relevant links are given, that they are not red links, and that any links are not already in this article. (April 2017) (Learn how and when to remove this template message)
+
+
+Bellman equationBackwards inductionCluster analysisClustering high-dimensional dataCombinatorial explosionConcentration of measureDimension reductionModel Order ReductionDynamic programmingFourier-related transformsHigh-dimensional spaceLinear least squaresMultilinear PCAMultilinear subspace learningPrincipal component analysisQuasi-randomSingular value decompositionStereologyTime seriesWavelet
+
+References[edit]
+
+^ Richard Ernest Bellman; Rand Corporation (1957). Dynamic programming. Princeton University Press. ISBN 978-0-691-07951-6. ,
+Republished: Richard Ernest Bellman (2003). Dynamic Programming. Courier Dover Publications. ISBN 978-0-486-42809-3. ^ Richard Ernest Bellman (1961). Adaptive control processes: a guided tour. Princeton University Press. ^ Donoho DL. (2000). High-dimensional data analysis: The curses and blessings of dimensionality. AMS Math Challenges Lecture, 1, 32 pp.^ a b Koutroumbas, Sergios Theodoridis, Konstantinos (2008). Pattern Recognition - 4th Edition. Burlington. Retrieved 8 January 2018. ^ Trunk, G. V. (July 1979). "A Problem of Dimensionality: A Simple Example". IEEE Transactions on Pattern Analysis and Machine Intelligence. PAMI-1 (3): 306–307. doi:10.1109/TPAMI.1979.4766926. ^ Hughes, G.F. (January 1968). "On the mean accuracy of statistical pattern recognizers". IEEE Transactions on Information Theory. 14 (1): 55–63. doi:10.1109/TIT.1968.1054102. ^ Beyer, K.; Goldstein, J.; Ramakrishnan, R.; Shaft, U. (1999). "When is "Nearest Neighbor" Meaningful?". Proc. 7th International Conference on Database Theory - ICDT'99. LNCS. 1540: 217–235. doi:10.1007/3-540-49257-7_15. ISBN 978-3-540-65452-0. ^ a b c Zimek, A.; Schubert, E.; Kriegel, H.-P. (2012). "A survey on unsupervised outlier detection in high-dimensional numerical data". Statistical Analysis and Data Mining. 5 (5): 363–387. doi:10.1002/sam.11161. ^ Marimont, R.B.; Shapiro, M.B. (1979). "Nearest Neighbour Searches and the Curse of Dimensionality". IMA J Appl Math. 24 (1): 59–70. doi:10.1093/imamat/24.1.59. ^ Chávez, Edgar; Navarro, Gonzalo; Baeza-Yates, Ricardo; Marroquín, José Luis (2001). "Searching in Metric Spaces". ACM Computing Surveys. 33 (3): 273–321. CiteSeerX 10.1.1.100.7845 . doi:10.1145/502807.502808. ^ Houle, M. E.; Kriegel, H. P.; Kröger, P.; Schubert, E.; Zimek, A. (2010). Can Shared-Neighbor Distances Defeat the Curse of Dimensionality? (PDF). Scientific and Statistical Database Management. Lecture Notes in Computer Science. 6187. p. 482. doi:10.1007/978-3-642-13818-8_34. ISBN 978-3-642-13817-1. ^ Bernecker, T.; Houle, M. E.; Kriegel, H. P.; Kröger, P.; Renz, M.; Schubert, E.; Zimek, A. (2011). Quality of Similarity Rankings in Time Series. Symposium on Spatial and Temporal Databases. Lecture Notes in Computer Science. 6849. p. 422. doi:10.1007/978-3-642-22922-0_25. ISBN 978-3-642-22921-3. ^ Radovanović, Miloš; Nanopoulos, Alexandros; Ivanović, Mirjana (2010). "Hubs in space: Popular nearest neighbors in high-dimensional data" (PDF). Journal of Machine Learning Research. 11: 2487–2531. ^ Radovanović, M.; Nanopoulos, A.; Ivanović, M. (2010). On the existence of obstinate results in vector space models. 33rd international ACM SIGIR conference on Research and development in information retrieval - SIGIR '10. p. 186. doi:10.1145/1835449.1835482. ISBN 9781450301534. 
+
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Curse_of_dimensionality&oldid=825308537"					
+				Categories: Numerical analysisDynamic programmingMachine learningHidden categories: Articles with excessive see also sections from April 2017Pages using div col with deprecated parameters				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			Languages
+			
+								DeutschEspañolفارسیFrançais日本語Русский中文
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 12 February 2018, at 17:45.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

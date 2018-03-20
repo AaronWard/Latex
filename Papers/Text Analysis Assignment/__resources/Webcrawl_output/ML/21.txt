@@ -1,0 +1,276 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Need help with machine learning? Take the FREE Crash-Course.
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+      
+    
+	    
+    
+    	    
+		
+            
+                        
+            	
+			
+	
+	
+		About Jason Brownlee
+		Jason Brownlee, Ph.D. is a machine learning specialist who teaches developers how to get results with modern machine learning methods via hands-on tutorials.			
+	
+
+Author Archive | Jason Brownlee
+
+
+
+	
+	A Gentle Introduction to Sparse Matrices for Machine Learning	
+By Jason Brownlee on March 14, 2018  in Linear Algebra  
+	
+Matrices that contain mostly zero values are called sparse, distinct from matrices where most of the values are non-zero, called dense. Large sparse matrices are common in general and especially in applied machine learning, such as in data that contains counts, data encodings that map categories to counts, and even in whole subfields of machine […]
+	
+	
+	
+		Continue Reading   0	
+
+
+	
+	A Gentle Introduction to Broadcasting with NumPy Arrays	
+By Jason Brownlee on March 12, 2018  in Linear Algebra  
+	
+Arrays with different sizes cannot be added, subtracted, or generally be used in arithmetic. A way to overcome this is to duplicate the smaller array so that it is the dimensionality and size as the larger array. This is called array broadcasting and is available in NumPy when performing array arithmetic, which can greatly reduce […]
+	
+	
+	
+		Continue Reading   0	
+
+
+	
+	10 Examples of Linear Algebra in Machine Learning	
+By Jason Brownlee on March 9, 2018  in Linear Algebra  
+	
+Linear algebra is a sub-field of mathematics concerned with vectors, matrices, and linear transforms. It is a key foundation to the field of machine learning, from notations used to describe the operation of algorithms to the implementation of algorithms in code. Although linear algebra is integral to the field of machine learning, the tight relationship […]
+	
+	
+	
+		Continue Reading   9	
+
+
+	
+	No Bullshit Guide To Linear Algebra Review	
+By Jason Brownlee on March 7, 2018  in Linear Algebra  
+	
+There are many books that provide an introduction to the field of linear algebra. Most are textbooks targeted at undergraduate students and are full of theoretical digressions that are barely relevant and mostly distracting to a beginner or practitioner to the field. In this post, you will discover the book “” that provides a gentle […]
+	
+	
+	
+		Continue Reading   2	
+
+
+	
+	How to Solve Linear Regression Using Linear Algebra	
+By Jason Brownlee on March 5, 2018  in Linear Algebra  
+	
+Linear regression is a method for modeling the relationship between one or more independent variables and a dependent variable. It is a staple of statistics and is often considered a good introductory machine learning method. It is also a method that can be reformulated using matrix notation and solved using matrix operations. In this tutorial, […]
+	
+	
+	
+		Continue Reading   2	
+
+
+	
+	How to Calculate the Principal Component Analysis from Scratch in Python	
+By Jason Brownlee on March 2, 2018  in Linear Algebra  
+	
+An important machine learning method for dimensionality reduction is called Principal Component Analysis. It is a method that uses simple matrix operations from linear algebra and statistics to calculate a projection of the original data into the same number or fewer dimensions. In this tutorial, you will discover the Principal Component Analysis machine learning method […]
+	
+	
+	
+		Continue Reading   8	
+
+
+	
+	A Gentle Introduction to Expected Value, Variance, and Covariance with NumPy	
+By Jason Brownlee on February 28, 2018  in Linear Algebra  
+	
+Fundamental statistics are useful tools in applied machine learning for a better understanding your data. They are also the tools that provide the foundation for more advanced linear algebra operations and machine learning methods, such as the covariance matrix and principal component analysis respectively. As such, it is important to have a strong grip on […]
+	
+	
+	
+		Continue Reading   0	
+
+
+	
+	A Gentle Introduction to Singular-Value Decomposition for Machine Learning	
+By Jason Brownlee on February 26, 2018  in Linear Algebra  
+	
+Matrix decomposition, also known as matrix factorization, involves describing a given matrix using its constituent elements. Perhaps the most known and widely used matrix decomposition method is the Singular-Value Decomposition, or SVD. All matrices have an SVD, which makes it more stable than other methods, such as the eigendecomposition. As such, it is often used […]
+	
+	
+	
+		Continue Reading   8	
+
+
+	
+	Linear Algebra Cheat Sheet for Machine Learning	
+By Jason Brownlee on February 23, 2018  in Linear Algebra  
+	
+All of the Linear Algebra Operations that You Need to Use in NumPy for Machine Learning. The Python numerical computation library called NumPy provides many linear algebra functions that may be useful as a machine learning practitioner. In this tutorial, you will discover the key functions for working with vectors and matrices that you may […]
+	
+	
+	
+		Continue Reading   8	
+
+
+	
+	Top Resources for Learning Linear Algebra for Machine Learning	
+By Jason Brownlee on February 21, 2018  in Linear Algebra  
+	
+How to Get Help with Linear Algebra for Machine Learning? Linear algebra is a field of mathematics and an important pillar of the field of machine learning. It can be a challenging topic for beginners, or for practitioners who have not looked at the topic in decades. In this post, you will discover how to […]
+	
+	
+	
+		Continue Reading   0	
+
+1
+2
+…
+57
+Next →                    
+            
+                
+            
+Welcome to Machine Learning Mastery
+Hi, I'm Jason Brownlee, Ph.D.
+
+My goal is to make practitioners like YOU awesome at applied machine learning.
+Read More
+
+			
+Need More Help? …take the next step
+You can be productive very quickly by taking a systematic approach to machine learning designed for practitioners, not academics.
+It is top-down and results-first
+with step-by-step tutorials and projects.
+No math. No theory. Nothing hidden.
+It’s time to get serious.
+Start Now!
+
+
+		
+		 		
+
+            Popular
+
+            
+
+            
+
+	            
+                                
+				Your First Machine Learning Project in Python Step-By-Step
+		June 10, 2016
+		
+	
+				Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras
+		July 21, 2016
+		
+	
+				Multivariate Time Series Forecasting with LSTMs in Keras
+		August 14, 2017
+		
+	
+				How to Setup a Python Environment for Machine Learning and Deep Learning with Anaconda
+		March 13, 2017
+		
+	
+				Develop Your First Neural Network in Python With Keras Step-By-Step
+		May 24, 2016
+		
+	
+				Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras
+		July 26, 2016
+		
+	
+				Time Series Forecasting with the Long Short-Term Memory Network in Python
+		April 7, 2017
+		
+	
+				Regression Tutorial with the Keras Deep Learning Library in Python
+		June 9, 2016
+		
+	
+				Multi-Class Classification Tutorial with the Keras Deep Learning Library
+		June 2, 2016
+		
+	
+				How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras
+		August 9, 2016
+		
+	
+                                                                
+            
+
+        
+
+                 
+    
+		         
+
+		       
+
+    
+			
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

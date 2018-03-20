@@ -1,0 +1,1 @@
+Explore the basics behind convolutional neural networks (CNNs) in this MATLAB® Tech Talk. Broadly, CNNs are a common deep learning architecture – but what exactly is a CNN? This video breaks down this sometimes complicated concept into easy-to-understand parts. You’ll learn about 3 concepts: local receptive fields, shared weights and biases, and activation and pooling.

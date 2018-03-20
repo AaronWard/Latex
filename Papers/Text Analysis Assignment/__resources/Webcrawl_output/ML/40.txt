@@ -1,0 +1,733 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Want help with algorithms? Take the FREE Mini-Course.
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                               
+
+	
+	Learning Vector Quantization for Machine Learning	
+By Jason Brownlee on April 18, 2016  in Machine Learning Algorithms  
+	
+
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+				A downside of K-Nearest Neighbors is that you need to hang on to your entire training dataset.
+The Learning Vector Quantization algorithm (or LVQ for short) is an artificial neural network algorithm that lets you choose how many training instances to hang onto and learns exactly what those instances should look like.
+In this post you will discover the Learning Vector Quantization algorithm. After reading this post you will know:
+The representation used by the LVQ algorithm that you actually save to a file.The procedure that you can use to make predictions with a learned LVQ model.How to learn an LVQ model from training data.The data preparation to use to get the best performance from the LVQ algorithm.Where to look for more information on LVQ.
+This post was written for developers and assumes no background in statistics or mathematics. The post focuses on how the algorithm works and how to use it for predictive modeling problems.
+If you have any questions on LVQ, leave a comment and I will do my best to answer.
+Let’s get started.
+Learning Vector Quantization for Machine LearningPhoto by Holly Victoria Norval, some rights reserved.
+LVQ Model Representation
+The representation for LVQ is a collection of codebook vectors.
+LVQ was developed and is best understood as a classification algorithm. It supports both binary (two-class) and multi-class classification problems.
+A codebook vector is a list of numbers that have the same input and output attributes as your training data. For example, if your problem is a binary classification with classes 0 and 1, and the inputs width, length height, then a codebook vector would be comprised of all four attributes: width, length, height and class.
+The model representation is a fixed pool of codebook vectors, learned from the training data. They look like training instances, but the values of each attribute have been adapted based on the learning procedure.
+In the language of neural networks, each codebook vector may be called a neuron, each attribute on a codebook vector is called a weight and the collection of codebook vectors is called a network.
+Get your FREE Algorithms Mind Map
+Sample of the handy machine learning algorithms mind map.
+I've created a handy mind map of 60+ algorithms organized by type.
+Download it, print it and use it. 
+Download For Free
+Also get exclusive access to the machine learning algorithms email mini-course.
+
+ 
+ 
+Making Predictions with an LVQ Model
+Predictions are made using the LVQ codebook vectors in the same way as K-Nearest Neighbors.
+Predictions are made for a new instance (x) by searching through all codebook vectors for the K most similar instances and summarizing the output variable for those K instances. For classification this is the mode (or most common) class value.
+Typically predictions are made with K=1, and the codebook vector that matches is called the Best Matching Unit (BMU).
+To determine which of the K instances in the training dataset are most similar to a new input a distance measure is used. For real-valued input variables, the most popular distance measure is Euclidean distance. Euclidean distance is calculated as the square root of the sum of the squared differences between a new point (x) and an existing point (xi) for each attribute j.
+EuclideanDistance(x, xi) = sqrt( sum( (xj – xij)^2 ) )
+Learning an LVQ Model From Data
+The LVQ algorithm learns the codebook vectors from the training data.
+You must choose the number of codebook vectors to use, such as 20 or 40. You can find the best number of codebook vectors to use by testing different configurations on your training dataset.
+The learning algorithm starts with a pool of random codebook vectors. These could be randomly selected instances from the training data, or randomly generated vectors with the same scale as the training data. Codebook vectors have the same number of input attributes as the training data. They also have an output class variable.
+The instances in the training dataset are processed one at a time. For a given training instance, the most similar codebook vector is selected from the pool.
+If the codebook vector has the same output as the training instance, the codebook vector is moved closer to the training instance. If it does not match, it is moved further away. The amount that the vector is moved is controlled by an algorithm parameter called the learning_rate.
+For example, the input variable (x) of a codebook vector is moved closer to the training input value (t) by the amount in the learning_rate if the classes match as follows:
+x = x + learning_rate * (t – x)
+The opposite case of moving the input variables of a codebook variable away from a training instance is calculated as:
+x = x – learning_rate * (t – x)
+This would be repeated for each input variable.
+Because one codebook vector is selected for modification for each training instance the algorithm is referred to as a winner-take-all algorithm or a type of competitive learning.
+This process is repeated for each instance in the training dataset. One iteration of the training dataset is called an epoch. The process is completed for a number of epochs that you must choose (max_epoch), such as 200.
+You must also choose an initial learning rate (such as alpha=0.3). The learning rate is decreased with the epoch, starting at the large value you specify at epoch 1 which makes the most change to the codebook vectors and finishing with a small value near zero on the last epoch, making very minor changes to the codebook vectors.
+The learning rate for each epoch is calculated as:
+learning_rate = alpha * (1 – (epoch/max_epoch))
+Where learning_rate is the learning rate for the current epoch (0 to max_epoch-1), alpha is the learning rate specified to the algorithm at the start of the training run and max_epoch is the total number of epochs to run the algorithm also specified at the start of the run.
+The intuition for the learning process is that the pool of codebook vectors is a compression of the training dataset to the points that best characterize the separation of the classes.
+Data Preparation for LVQ
+Generally, it is a good idea to prepare data for LVQ in the same way as you would prepare it for K-Nearest Neighbors.
+Classification: LVQ is a classification algorithm that works for both binary (two-class) and multi-class classification algorithms. The technique has been adapted for regression.Multiple-Passes: Good technique with LVQ involves performing multiple passes of the training dataset over the codebook vectors (e.g. multiple learning runs). The first with a higher learning rate to settle the pool codebook vectors and the second run with a small learning rate to fine tune the vectors.Multiple Best Matches: Extensions of LVQ select multiple best matching units to modify during learning, such as one of the same class and one of a different class which are drawn toward and away from a training sample respectively. Other extensions use a custom learning rate for each codebook vector. These extensions can improve the learning process.Normalize Inputs: Traditionally, inputs are normalized (rescaled) to values between 0 and 1. This is to avoid one attribute from dominating the distance measure. If the input data is normalized, then the initial values for the codebook vectors can be selected as random values between 0 and 1.Feature Selection: Feature selection that can reduce the dimensionality of the input variables can improve the accuracy of the method. LVQ suffers from the same curse of dimensionality in making predictions as K-Nearest Neighbors.
+Further Reading
+The technique was developed by Kohonen who wrote the seminal book on LVQ and the sister method Self-Organizing Maps called: Self-Organizing Maps.
+
+I highly recommend this book if you are interested in LVQ.
+Learning Vector Quantization on Wikipedia.Learning Vector Quantization chapter from my book Nature Inspired Algorithms.LVQ_PAK the official software implementation of LVQ by Kohonen.LVQ as plug-in for WEKA (that I created years ago).
+Summary
+In this post you discovered the LVQ algorithm. You learned:
+The representation for LVQ is a small pool of codebook vectors, smaller than the training dataset.The codebook vectors are used to make predictions using the same technique as K-Nearest Neighbors.The codebook vectors are learned from the training dataset by moving them closer when they are good match and further away when they are a bad match.The codebook vectors are a compression of the training data to best separate the classes.Data preparation traditionally involves normalizing the input values to the range between 0 and 1.
+Do you have any questions about this post or the LVQ algorithm? Leave a comment and ask your question and I will do my best to answer it.
+
+			
+
+Frustrated With Machine Learning Math?
+
+See How Algorithms Work in Minutes
+…with just arithmetic and simple examples
+Discover how in my new Ebook: Master Machine Learning Algorithms
+It covers explanations and examples of 10 top algorithms, like:Linear Regression, k-Nearest Neighbors, Support Vector Machines and much more…
+Finally, Pull Back the Curtain on Machine Learning Algorithms
+Skip the Academics. Just Results.
+Click to learn more.
+
+
+
+		
+
+
+				
+					
+						
+							
+							Share on TwitterTweet
+						
+											
+				
+								
+					
+						
+							
+							Share on Facebook
+							Share
+						
+											
+				
+				
+				
+					
+						
+							Share on LinkedIn
+							Share
+						
+											
+				
+								
+					
+						
+							
+							Share on Google Plus
+							Share
+						
+											
+				
+					
+	
+
+	
+	
+		About Jason Brownlee
+		Jason Brownlee, Ph.D. is a machine learning specialist who teaches developers how to get results with modern machine learning methods via hands-on tutorials.				
+			
+				View all posts by Jason Brownlee →			
+		
+			
+	
+
+
+
+	        
+	             K-Nearest Neighbors for Machine Learning
+	            Support Vector Machines for Machine Learning 
+	            
+	        
+
+				 	14 Responses to Learning Vector Quantization for Machine Learning
+		 	
+
+	      	
+
+					                
+	            
+		      	
+
+	                aloo masala
+	                October 18, 2016 at 5:29 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Hi, 
+nice and readable post. If I am correct, then the update rule should use ‘learning_rate’ instead of the initial value ‘alpha’. In the current form ‘learning_rate’ is decreased but never applied. Or replace ‘learning_rate’ by ‘alpha’ and introduce something like ‘alpha0’ in the update formula of the learning rate.
+Please delete  or do not publish this post. 
+Best
+aloo
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                October 19, 2016 at 9:17 am
+	                #
+	                
+
+				
+
+		   		
+
+				Alpha is a fixed parameter and learning rate is what is used to update the weights.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                aloo masala
+	                October 19, 2016 at 7:01 pm
+	                #
+	                
+
+				
+
+		   		
+
+				The update rule of codebook vector x uses the fixed parameter alpha rather than the adaptive learning_rate parameter.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 7, 2016 at 7:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				Thanks aloo masala, I have updated the example.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                aloo masala
+	                November 19, 2016 at 7:52 am
+	                #
+	                
+
+				
+
+		   		
+
+				You are welcome. Now you can delete my comments.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Tom Anderson
+	                November 29, 2016 at 6:30 pm
+	                #
+	                
+
+				
+
+		   		
+
+				Kohonen has recently self-published a book on this topic. “MATLAB Implementations and Applications of the Self-Organizing Map”
+Although its examples are using MATLAB, I think this may be a good option for self-study, since it’s free!
+http://docs.unigrafia.fi/publications/kohonen_teuvo/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                November 30, 2016 at 7:53 am
+	                #
+	                
+
+				
+
+		   		
+
+				Cool, I had not seen this. Thanks Tom.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                Declan Lange
+	                January 14, 2017 at 6:27 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I’ve got a network trained with weights being initialised (this is in Java), what’s the best way to feed in a new data set/vector and find the best matching dataset to it? 
+Thanks,
+Declan
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 15, 2017 at 5:29 am
+	                #
+	                
+
+				
+
+		   		
+
+				Sorry, I don’t understand your question Declan. Perhaps you could restate it?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Declan Lange
+	                January 15, 2017 at 2:27 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I have a network with training sets that have a vector and a name (classification name) in it, i’m trying to get a new vector, that has no name, and determine what it’s closest to.
+I’m trying to make a prediction using a new data set to predict what it’s most similar to.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                January 16, 2017 at 10:38 am
+	                #
+	                
+
+				
+
+		   		
+
+				You might find this post useful:
+http://machinelearningmastery.com/implement-learning-vector-quantization-scratch-python/
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Declan Lange
+	                January 16, 2017 at 6:52 pm
+	                #
+	                
+
+				
+
+		   		
+
+				I took a look at the post, and have tried to implement a similar thing to your first test. It trains the vectors and such correctly, but i’m not sure how i can test a new dataset that hasn’t been classified against it?
+
+				
+	                
+	                    	                
+
+				
+
+			
+
+	
+
+
+
+
+
+	      	
+
+					                
+	            
+		      	
+
+	                xenomorph
+	                February 14, 2017 at 11:28 am
+	                #
+	                
+
+				
+
+		   		
+
+				Do people really use LVQ and locally weighted learning in practice, in 2017?
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+	      	
+
+					                
+	            
+		      	
+
+	                Jason Brownlee
+	                February 15, 2017 at 11:31 am
+	                #
+	                
+
+				
+
+		   		
+
+				I like to throw LVQ in the mix when spot checking algorithms on a problem and go with it if it products good results or results similar to a kNN.
+
+				
+	                
+	                    Reply	                
+
+				
+
+			
+
+	
+
+		 		
+		Leave a Reply Click here to cancel reply.			
+				Comment Name (required) 
+Email (will not be published) (required) 
+Website
+ 
+
+			
+			
+	     
+            
+                
+            
+Welcome to Machine Learning Mastery
+Hi, I'm Jason Brownlee, Ph.D.
+
+My goal is to make practitioners like YOU awesome at applied machine learning.
+Read More
+
+Understand Machine Learning Algorithms!			
+Sick of all the advanced math?
+Need step-by-step explainations for top algorithms?
+Want worked examples in spreadsheets?
+
+Finally Understand Machine Learning Algorithms! 
+
+
+
+		
+		 		
+
+            Popular
+
+            
+
+            
+
+	            
+                                
+				Your First Machine Learning Project in Python Step-By-Step
+		June 10, 2016
+		
+	
+				Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras
+		July 21, 2016
+		
+	
+				Multivariate Time Series Forecasting with LSTMs in Keras
+		August 14, 2017
+		
+	
+				How to Setup a Python Environment for Machine Learning and Deep Learning with Anaconda
+		March 13, 2017
+		
+	
+				Develop Your First Neural Network in Python With Keras Step-By-Step
+		May 24, 2016
+		
+	
+				Sequence Classification with LSTM Recurrent Neural Networks in Python with Keras
+		July 26, 2016
+		
+	
+				Time Series Forecasting with the Long Short-Term Memory Network in Python
+		April 7, 2017
+		
+	
+				Regression Tutorial with the Keras Deep Learning Library in Python
+		June 9, 2016
+		
+	
+				Multi-Class Classification Tutorial with the Keras Deep Learning Library
+		June 2, 2016
+		
+	
+				How to Grid Search Hyperparameters for Deep Learning Models in Python With Keras
+		August 9, 2016
+		
+	
+                                                                
+            
+
+        
+
+                 
+
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

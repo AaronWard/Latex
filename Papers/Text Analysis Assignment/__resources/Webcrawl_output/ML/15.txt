@@ -1,0 +1,413 @@
+Minkowski distance			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance.
+Definition[edit]
+The Minkowski distance of order p between two points
+
+  
+    
+      
+        X
+        =
+        (
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            n
+          
+        
+        )
+        
+           and 
+        
+        Y
+        =
+        (
+        
+          y
+          
+            1
+          
+        
+        ,
+        
+          y
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          y
+          
+            n
+          
+        
+        )
+        ∈
+        
+          
+            R
+          
+          
+            n
+          
+        
+      
+    
+    {\displaystyle X=(x_{1},x_{2},\ldots ,x_{n}){\text{ and }}Y=(y_{1},y_{2},\ldots ,y_{n})\in \mathbb {R} ^{n}}
+  
+
+is defined as:
+
+  
+    
+      
+        D
+        
+          (
+          
+            X
+            ,
+            Y
+          
+          )
+        
+        =
+        
+          
+            (
+            
+              
+                ∑
+                
+                  i
+                  =
+                  1
+                
+                
+                  n
+                
+              
+              
+                |
+              
+              
+                x
+                
+                  i
+                
+              
+              −
+              
+                y
+                
+                  i
+                
+              
+              
+                
+                  |
+                
+                
+                  p
+                
+              
+            
+            )
+          
+          
+            1
+            
+              /
+            
+            p
+          
+        
+      
+    
+    {\displaystyle D\left(X,Y\right)=\left(\sum _{i=1}^{n}|x_{i}-y_{i}|^{p}\right)^{1/p}}
+  
+
+For 
+  
+    
+      
+        p
+        ≥
+        1
+      
+    
+    {\displaystyle p\geq 1}
+  
+, the Minkowski distance is a metric as a result of the Minkowski inequality. When 
+  
+    
+      
+        p
+        <
+        1
+      
+    
+    {\displaystyle p<1}
+  
+, the distance between (0,0) and (1,1) is 
+  
+    
+      
+        
+          2
+          
+            1
+            
+              /
+            
+            p
+          
+        
+        >
+        2
+      
+    
+    {\displaystyle 2^{1/p}>2}
+  
+, but the point (0,1) is at a distance 1 from both of these points. Since this violates the triangle inequality, for 
+  
+    
+      
+        p
+        <
+        1
+      
+    
+    {\displaystyle p<1}
+  
+ it is not a metric.
+Minkowski distance is typically used with p being 1 or 2, which correspond to the Manhattan distance and the Euclidean distance, respectively. In the limiting case of p reaching infinity, we obtain the Chebyshev distance:
+
+  
+    
+      
+        
+          lim
+          
+            p
+            →
+            ∞
+          
+        
+        
+          
+            
+              (
+              
+                
+                  ∑
+                  
+                    i
+                    =
+                    1
+                  
+                  
+                    n
+                  
+                
+                
+                  |
+                
+                
+                  x
+                  
+                    i
+                  
+                
+                −
+                
+                  y
+                  
+                    i
+                  
+                
+                
+                  
+                    |
+                  
+                  
+                    p
+                  
+                
+              
+              )
+            
+            
+              
+                1
+                p
+              
+            
+          
+        
+        =
+        
+          max
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          |
+        
+        
+          x
+          
+            i
+          
+        
+        −
+        
+          y
+          
+            i
+          
+        
+        
+          |
+        
+        .
+        
+      
+    
+    {\displaystyle \lim _{p\to \infty }{\left(\sum _{i=1}^{n}|x_{i}-y_{i}|^{p}\right)^{\frac {1}{p}}}=\max _{i=1}^{n}|x_{i}-y_{i}|.\,}
+  
+
+Similarly, for p reaching negative infinity, we have:
+
+
+
+
+
+See also[edit]
+Lp space
+External links[edit]
+Simple IEEE 754 implementation in C++
+NPM JavaScript Package/Module
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Minkowski_distance&oldid=820658119"					
+				Categories: Normed spacesMetric geometryHermann Minkowski				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			Languages
+			
+								CatalàItalianoPolskiРусскийTürkçeУкраїнська中文
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 15 January 2018, at 21:54.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

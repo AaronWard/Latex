@@ -1,0 +1,583 @@
+Taxicab geometry			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				
+
+
+
+Taxicab geometry versus Euclidean distance: In taxicab geometry, the red, yellow, and blue paths all have the shortest length of 12. In Euclidean geometry, the green line has length 
+  
+    
+      
+        6
+        
+          
+            2
+          
+        
+        ≈
+        8.49
+      
+    
+    {\displaystyle 6{\sqrt {2}}\approx 8.49}
+  
+, and is the unique shortest path.
+
+
+A taxicab geometry, considered by Hermann Minkowski in 19th-century Germany, is a form of geometry in which the usual distance function or metric of Euclidean geometry is replaced by a new metric in which the distance between two points is the sum of the absolute differences of their Cartesian coordinates.
+The taxicab metric is also known as rectilinear distance, L1 distance or 
+  
+    
+      
+        
+          ℓ
+          
+            1
+          
+        
+      
+    
+    {\displaystyle \ell _{1}}
+  
+ norm (see Lp space), snake distance, city block distance, Manhattan distance or Manhattan length, with corresponding variations in the name of the geometry.[1] The latter names allude to the grid layout of most streets on the island of Manhattan, which causes the shortest path a car could take between two intersections in the borough to have length equal to the intersections' distance in taxicab geometry.
+
+
+
+Contents
+
+1 Formal definition2 Properties
+2.1 Circles
+3 Applications
+3.1 Measures of distances in chess3.2 Compressed sensing3.3 Differences of frequency distributions
+4 See also5 Notes6 References7 External links
+
+
+Formal definition[edit]
+The taxicab distance, 
+  
+    
+      
+        
+          d
+          
+            1
+          
+        
+      
+    
+    {\displaystyle d_{1}}
+  
+, between two vectors 
+  
+    
+      
+        
+          p
+        
+        ,
+        
+          q
+        
+      
+    
+    {\displaystyle \mathbf {p} ,\mathbf {q} }
+  
+ in an n-dimensional real vector space with fixed Cartesian coordinate system, is the sum of the lengths of the projections of the line segment between the points onto the coordinate axes. More formally,
+
+  
+    
+      
+        
+          d
+          
+            1
+          
+        
+        (
+        
+          p
+        
+        ,
+        
+          q
+        
+        )
+        =
+        ‖
+        
+          p
+        
+        −
+        
+          q
+        
+        
+          ‖
+          
+            1
+          
+        
+        =
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        
+          |
+        
+        
+          p
+          
+            i
+          
+        
+        −
+        
+          q
+          
+            i
+          
+        
+        
+          |
+        
+        ,
+      
+    
+    {\displaystyle d_{1}(\mathbf {p} ,\mathbf {q} )=\|\mathbf {p} -\mathbf {q} \|_{1}=\sum _{i=1}^{n}|p_{i}-q_{i}|,}
+  
+
+where 
+  
+    
+      
+        (
+        
+          p
+        
+        ,
+        
+          q
+        
+        )
+      
+    
+    {\displaystyle (\mathbf {p} ,\mathbf {q} )}
+  
+ are vectors
+
+  
+    
+      
+        
+          p
+        
+        =
+        (
+        
+          p
+          
+            1
+          
+        
+        ,
+        
+          p
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          p
+          
+            n
+          
+        
+        )
+        
+           and 
+        
+        
+          q
+        
+        =
+        (
+        
+          q
+          
+            1
+          
+        
+        ,
+        
+          q
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          q
+          
+            n
+          
+        
+        )
+        
+      
+    
+    {\displaystyle \mathbf {p} =(p_{1},p_{2},\dots ,p_{n}){\text{ and }}\mathbf {q} =(q_{1},q_{2},\dots ,q_{n})\,}
+  
+
+For example, in the plane, the taxicab distance between 
+  
+    
+      
+        (
+        
+          p
+          
+            1
+          
+        
+        ,
+        
+          p
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle (p_{1},p_{2})}
+  
+ and 
+  
+    
+      
+        (
+        
+          q
+          
+            1
+          
+        
+        ,
+        
+          q
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle (q_{1},q_{2})}
+  
+ is 
+  
+    
+      
+        
+          |
+        
+        
+          p
+          
+            1
+          
+        
+        −
+        
+          q
+          
+            1
+          
+        
+        
+          |
+        
+        +
+        
+          |
+        
+        
+          p
+          
+            2
+          
+        
+        −
+        
+          q
+          
+            2
+          
+        
+        
+          |
+        
+        .
+      
+    
+    {\displaystyle |p_{1}-q_{1}|+|p_{2}-q_{2}|.}
+  
+
+Properties[edit]
+Taxicab distance depends on the rotation of the coordinate system, but does not depend on its reflection about a coordinate axis or its translation. Taxicab geometry satisfies all of Hilbert's axioms (a formalization of Euclidean geometry) except for the side-angle-side axiom, as two triangles with equally "long" two sides and an identical angle between them are typically not congruent unless the mentioned sides happen to be parallel.
+Circles[edit]
+
+
+
+
+Circles in discrete and continuous taxicab geometry
+
+
+A circle is a set of points with a fixed distance, called the radius, from a point called the center. In taxicab geometry, distance is determined by a different metric than in Euclidean geometry, and the shape of circles changes as well. Taxicab circles are squares with sides oriented at a 45° angle to the coordinate axes. The image to the right shows why this is true, by showing in red the set of all points with a fixed distance from a center, shown in blue. As the size of the city blocks diminishes, the points become more numerous and become a rotated square in a continuous taxicab geometry. While each side would have length 
+  
+    
+      
+        
+          
+            2
+          
+        
+        r
+      
+    
+    {\displaystyle {\sqrt {2}}r}
+  
+ using a Euclidean metric, where r is the circle's radius, its length in taxicab geometry is 2r. Thus, a circle's circumference is 8r. Thus, the value of a geometric analog to 
+  
+    
+      
+        π
+      
+    
+    {\displaystyle \pi }
+  
+ is 4 in this geometry. The formula for the unit circle in taxicab geometry is 
+  
+    
+      
+        
+          |
+        
+        x
+        
+          |
+        
+        +
+        
+          |
+        
+        y
+        
+          |
+        
+        =
+        1
+      
+    
+    {\displaystyle |x|+|y|=1}
+  
+ in Cartesian coordinates and
+
+  
+    
+      
+        r
+        =
+        
+          
+            1
+            
+              
+                |
+              
+              sin
+              ⁡
+              θ
+              
+                |
+              
+              +
+              
+                |
+              
+              cos
+              ⁡
+              θ
+              
+                |
+              
+            
+          
+        
+      
+    
+    {\displaystyle r={\frac {1}{|\sin \theta |+|\cos \theta |}}}
+  
+
+in polar coordinates.
+A circle of radius 1 (using this distance) is the von Neumann neighborhood of its center.
+A circle of radius r for the Chebyshev distance (L∞ metric) on a plane is also a square with side length 2r parallel to the coordinate axes, so planar Chebyshev distance can be viewed as equivalent by rotation and scaling to planar taxicab distance. However, this equivalence between L1 and L∞ metrics does not generalize to higher dimensions.
+Whenever each pair in a collection of these circles has a nonempty intersection, there exists an intersection point for the whole collection; therefore, the Manhattan distance forms an injective metric space.
+Applications[edit]
+Measures of distances in chess[edit]
+In chess, the distance between squares on the chessboard for rooks is measured in taxicab distance; kings and queens use Chebyshev distance, and bishops use the taxicab distance (between squares of the same color) on the chessboard rotated 45 degrees, i.e., with its diagonals as coordinate axes. To reach from one square to another, only kings require the number of moves equal to the distance; rooks, queens and bishops require one or two moves (on an empty board, and assuming that the move is possible at all in the bishop's case).
+Compressed sensing[edit]
+In solving an underdetermined system of linear equations, the regularisation term for the parameter vector is expressed in terms of the 
+  
+    
+      
+        ℓ
+        1
+      
+    
+    {\displaystyle \ell 1}
+  
+-norm (taxicab geometry) of the vector.[2] This approach appears in the signal recovery framework called compressed sensing.
+Differences of frequency distributions[edit]
+Taxicab geometry can be used to assess the differences in discrete frequency distributions. For example, in RNA splicing positional distributions of hexamers, which plot the probability of each hexamer appearing at each given nucleotide near a splice site, can be compared with L1-distance. Each position distribution can be represented as a vector where each entry represents the likelihood of the hexamer starting at a certain nucleotide. A large L1-distance between the two vectors indicates a significant difference in the nature of the distributions while a small distance denotes similarly shaped distributions. This is equivalent to measuring the area between the two distribution curves because the area of each segment is the absolute difference between the two curves' likelihoods at that point. When summed together for all segments, it provides the same measure as L1-distance.[3]
+See also[edit]
+Normed vector spaceMetricOrthogonal convex hullHamming distanceFifteen puzzleRandom walkManhattan wiring
+Notes[edit]
+
+
+^ Manhattan distance^ For most large underdetermined systems of linear equations the minimal 
+  
+    
+      
+        ℓ
+        1
+      
+    
+    {\displaystyle \ell 1}
+  
+-norm solution is also the sparsest solution; See Donoho, David L (2006). "For most large underdetermined systems of linear equations the minimal 
+  
+    
+      
+        ℓ
+        1
+      
+    
+    {\displaystyle \ell 1}
+  
+-norm solution is also the sparsest solution". Communications on pure and applied mathematics. 59: 797–829. doi:10.1002/cpa.20132. ^ Lim, Kian Huat; Ferraris, Luciana; Filloux, Madeleine E.; Raphael, Benjamin J.; Fairbrother, William G. (5 July 2011). "Using positional distribution to identify splicing elements and predict pre-mRNA processing defects in human genes". Proceedings of the National Academy of Sciences of the United States of America. 108 (27): 11093–11098. doi:10.1073/pnas.1101135108. PMC 3131313 . PMID 21685335. Retrieved 7 June 2016. 
+
+
+References[edit]
+Eugene F. Krause (1987). Taxicab Geometry. Dover. ISBN 0-486-25202-7. 
+External links[edit]
+Weisstein, Eric W. "Taxicab Metric". MathWorld. Manhattan distance. Paul E. Black, Dictionary of Algorithms and Data Structures, NISTTaxi! - AMS column about Taxicab geometry
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Taxicab_geometry&oldid=824339270"					
+				Categories: Digital geometryMetric geometryMathematical chess problemsNorms (mathematics)Similarity and distance measures				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			Languages
+			
+								AfrikaansالعربيةCatalàČeštinaDeutschEspañolفارسیFrançais한국어ItalianoעבריתമലയാളംNederlands日本語PortuguêsРусскийSvenskaУкраїнськаTiếng Việt中文
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 6 February 2018, at 19:30.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

@@ -1,0 +1,402 @@
+Skip to content
+
+	
+
+		
+			
+		
+
+		Search
+		
+			
+				
+					Search for:
+					
+				
+				
+					 
+
+		
+
+			
+							Hi! I am Nagdev
+							A personal Blog to express my free thoughts in the inner webs
+			
+					
+			Facebook  LinkedIn  ResearchGate  		
+	
+		 
+	 
+
+	
+		
+			Menu
+			
+				HomeAboutResearchDownloadsPhotographyContact			
+
+			Open Search
+		 
+	 
+
+
+
+	
+					
+
+				
+					
+						
+						
+					
+				
+
+				
+	
+
+	
+
+		Sound Analytics in R for Animal Sound Classification using Vector Machine			
+									
+									
+							 
+					
+				I am a regular user of Shazam app. If you are not aware of Shazam, this app basically recognizes the music, who the artist is and where you can get the music in real time. All you have to do is start the app when you are listening to music on the radio or elsewhere.... Continue Reading →		
+			
+				Advertisements
+						
+		
+			
+				
+		
+			
+		
+						
+				
+		
+			
+					
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		R-Package for ROC/ MROC Algorithm			
+									
+									
+							 
+					
+				Its been over a year and I finally got some time this weekend to put together the algorithm that I proposed in 2016 called Modified Rank Order Clustering (MROC) as R-package. Interestingly, I did not plan on building this but, to take my mind off of ALICE (Autonomous Learning Integrated Computational Ensemble) that I've been working... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		Why I love R- programming?			
+									
+									
+							 
+					
+				R is one if the underdogs in the programming language. It's highly likely that one would use R unless you are a statistician or a data scientist. I have been using R for over a year and it's been one of the best journeys in programming. Although I have a computer science background, I was... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		The Beginning of the End!…. The United Airlines Case			
+									
+									
+							 
+					
+				Having worked in the manufacturing industry for few years now, I have learned a few things here and there about workplace etiquette. One lesson that sticks out is “the customer always comes first”. Every day that I walk on the production floor, everyone has one mission and that is to keep the customer happy. They... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				2	
+
+
+	 
+
+	
+
+	
+
+	
+
+		The Day I Stopped Using Mainstream Social Media..			
+									
+									
+							 
+					
+				  This is one of those issues people would not talk about it and one of the most neglected issues today. I wanted to put myself out there and tell my story to the world. I have always been a social media buff. I am definitely not arguing about that. It was one night when I... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		Gradtalks in 3 Minutes : Nagdev Amruthnath			
+									
+									
+							 
+					
+				Some of you have been asking me regarding my research on? Thanks to GSA of Western Michigan University, for making a 3 minute on my research and sharing it to the world. I am proud to talk about my vision and my work in creating hundreds of jobs along with making current jobs lot easier and save millions... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		
+			
+				  I have been a heavy Microsoft Excel user. I use it to create my project schedules, do reports, data analysis and run simulations. One of the most neglected aspects in any industry is data visualization. It can be as simple as bar chart or complex 2-D scatter plots. Recently, I was working on preparing... Continue Reading →			
+
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		Not this again Mac!!!			
+									
+									
+							 
+					
+				Working in IT for quite some time now, I have deployed quite a number of macs. MacBook Pro, MacBook Air, and iMac are one of the overpriced and best-designed products out there in the market. With all my experience over the years, if I ever could afford a mac, I would definitely* buy one. That... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		root@kali:~# Sudo apt–get install Security-and-Privacy			
+									
+									
+							 
+					
+				  As an Information Technology (IT) Engineer working as an IT Tech, I frequently hear about network security and privacy. Day to day, I handle gigabytes of data backups and see the vulnerabilities that appear when the data is connected to network. This data can be as simple as my client’s grocery list file. Compromising... Continue Reading →			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		What’s the Perfect Blend?			
+									
+									
+							 
+					
+				This is the excerpt for your very first post.			
+		
+			Featured post
+	
+	
+					
+				Featured			
+				0	
+
+
+	 
+
+	
+
+	
+
+	
+
+		ProModel “ODM: RDB file could not be created”			
+									
+									
+							 
+					
+				I recently came across an issue with my ProModel Simulation software with an error message "ODM: RDB file could not be created". I Probably spent an entire day trying to resolve the issue. I tried restarting my computer Reinstalled the software Researched on this issue over the internet I also posted my issue on StackOverflow and... Continue Reading →			
+		
+	
+	
+					
+				
+					February 20, 2017				
+			
+				5	
+
+
+	 
+
+	
+			 
+			
+	
+		Posts navigation
+		Older posts
+				
+	 
+ 
+
+
+	
+		
+
+			
+				
+					
+						Instagram
+
+
+
+
+
+					
+				
+
+			 
+
+			
+				
+					
+						Blog Stats		1,683 hits
+		Archives		January 2018November 2017June 2017April 2017February 2017January 2017November 2016
+							 
+				
+
+			 
+
+			
+				
+					
+						Follow me on TwitterMy Tweets					 
+				
+
+			 
+
+		 
+	 
+
+
+	
+		
+
+			
+				WordPress.com.
+				
+							
+
+			
+				Up ↑
+			
+		 
+	 
+
+		
+		
+
+
+
+
+	
+
+		
+	
+
+
+
+	
+		
+			
+			Post to
+			
+
+			
+				Cancel

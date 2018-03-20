@@ -1,0 +1,1070 @@
+Skip to content
+    
+
+    
+    
+    
+
+
+
+        
+  
+    
+      
+        
+      
+
+    
+
+    
+        
+          
+                
+                  Features
+              
+                
+                  Business
+              
+                
+                  Explore
+              
+                    
+                      Marketplace
+              
+                
+                  Pricing
+              
+        
+
+      
+          
+            
+  
+    
+        /echen
+      
+        
+    
+
+
+          
+
+        
+            
+              Sign in
+                or
+                Sign up
+            
+        
+      
+    
+  
+
+
+  
+
+  
+
+    
+
+
+
+
+  
+      
+      
+        
+
+
+
+  
+
+    
+      
+        
+          
+        
+        
+          echen
+          
+
+  
+    
+      
+        Follow
+      
+    
+  
+
+        
+      
+    
+
+      
+
+      
+
+  
+    Edwin Chen
+    echen
+  
+
+
+
+
+  
+    
+        Block or report user
+    
+
+    
+      
+        Report or block echen
+      
+
+      
+        
+          
+              Hide content and notifications from this user.
+              Block user
+        
+
+        
+          Contact Support about this user's behavior.
+          
+            Report abuse
+        
+      
+    
+  
+
+
+
+
+
+      San Francisco
+
+    http://blog.echen.me
+
+
+
+  
+
+  
+
+
+    
+      
+        
+          Overview
+        
+        
+           Repositories
+           
+             36
+           
+        
+
+
+        
+          Stars
+          
+            36
+          
+        
+        
+          Followers
+          
+            1.5k
+          
+        
+        
+          Following
+          
+            1
+          
+        
+      
+    
+
+    
+        
+
+  
+  
+      Popular repositories
+    
+    
+  
+
+    
+      
+        
+            
+           restricted-boltzmann-machines
+            
+        
+
+
+        Restricted Boltzmann Machines in Python.
+
+        
+              
+            Python
+            
+              
+              656
+            
+            
+              
+              295
+            
+        
+      
+    
+      
+        
+            
+           ggplot2-tutorial
+            
+        
+
+
+        Quick introduction to ggplot2 (no knowledge of R assumed)
+
+        
+              
+            R
+            
+              
+              235
+            
+            
+              
+              81
+            
+        
+      
+    
+      
+        
+            
+           dirichlet-process
+            
+        
+
+
+        Introduction to Nonparametric Bayes, Infinite Mixture Models, and the Dirichlet Process (+ McDonald's)
+
+        
+              
+            R
+            
+              
+              221
+            
+            
+              
+              67
+            
+        
+      
+    
+      
+        
+            
+           link-prediction
+            
+        
+
+
+        Solution to Facebook's link prediction contest on Kaggle.
+
+        
+              
+            Scala
+            
+              
+              190
+            
+            
+              
+              67
+            
+        
+      
+    
+      
+        
+            
+           scaldingale
+            
+        
+
+
+        Movie recommendations and more in MapReduce and Scalding
+
+        
+              
+            Scala
+            
+              
+              116
+            
+            
+              
+              24
+            
+        
+      
+    
+      
+        
+            
+           minifolds
+            
+        
+
+
+        ggplot2-inspired d3 app to make instant interactive visualizations
+
+        
+              
+            CoffeeScript
+            
+              
+              55
+            
+            
+              
+              13
+            
+        
+      
+    
+
+
+
+  
+
+    
+      89 contributions
+      in the last year
+    
+
+    
+      
+          
+  
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+          
+          
+          
+      
+      
+          
+          
+          
+          
+      
+      Mar
+      Apr
+      May
+      Jun
+      Jul
+      Aug
+      Sep
+      Oct
+      Nov
+      Dec
+      Jan
+      Feb
+    Sun
+    Mon
+    Tue
+    Wed
+    Thu
+    Fri
+    Sat
+  
+
+
+      
+      
+        
+
+
+          
+            Learn how we count contributions.
+        
+        
+          Less
+          
+          More
+        
+      
+
+    
+
+
+
+  
+  
+        
+          2018
+        
+      
+        
+          2017
+        
+      
+        
+          2016
+        
+      
+        
+          2015
+        
+      
+        
+          2014
+        
+      
+        
+          2013
+        
+      
+        
+          2012
+        
+      
+        
+          2011
+        
+      
+        
+          2010
+        
+      
+        
+          2009
+        
+      
+
+
+
+  
+    Contribution activity
+      
+        
+          Jump to
+        
+
+        
+          
+              
+                First pull request
+              
+              
+                First issue
+              
+              
+                First repository
+              
+              
+                Joined GitHub
+              
+          
+        
+      
+  
+
+  
+    
+  
+  
+    
+        March 2018
+    
+
+    
+      
+          echen has no activity yet for this period.
+      
+    
+  
+
+
+  
+  
+    
+      February
+      
+      2018
+    
+
+      
+        
+          
+        
+        
+          
+            Created 10
+            commits in
+            1
+            repository
+          
+          
+            
+              
+            
+            
+              
+            
+          
+        
+        
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+    
+
+    
+      Show more activity
+    
+
+  
+    Seeing something unexpected? Take a look at the
+    GitHub profile guide.
+  
+
+
+
+
+  
+
+
+
+
+    
+  
+
+
+      
+      
+  
+
+      
+
+  
+    © 2018 GitHub, Inc.TermsPrivacySecurityStatusHelp
+
+    
+      
+
+    Contact GitHubAPITrainingShopBlogAbout
+  
+
+
+
+
+  
+    
+    
+      
+    
+    You can't perform that action at this time.
+  
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    You signed in with another tab or window. Reload to refresh your session.
+    You signed out in another tab or window. Reload to refresh your session.

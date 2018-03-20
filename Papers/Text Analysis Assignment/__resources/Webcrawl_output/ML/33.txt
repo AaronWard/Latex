@@ -1,0 +1,1064 @@
+Euclidean distance			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				In mathematics, the Euclidean distance or Euclidean metric is the "ordinary" straight-line distance between two points in Euclidean space. With this distance, Euclidean space becomes a metric space. The associated norm is called the Euclidean norm. Older literature refers to the metric as Pythagorean metric. A generalized term for the Euclidean norm is the L2 norm or L2 distance.
+
+
+
+Contents
+
+1 Definition
+1.1 One dimension1.2 Two dimensions1.3 Three dimensions1.4 n dimensions1.5 Squared Euclidean distance
+2 See also3 References
+
+
+Definition[edit]
+The Euclidean distance between points p and q is the length of the line segment connecting them (
+  
+    
+      
+        
+          
+            
+              
+                p
+              
+              
+                q
+              
+            
+            ¯
+          
+        
+      
+    
+    {\displaystyle {\overline {\mathbf {p} \mathbf {q} }}}
+  
+).
+In Cartesian coordinates, if p = (p1, p2,..., pn) and q = (q1, q2,..., qn) are two points in Euclidean n-space, then the distance (d) from p to q, or from q to p is given by the Pythagorean formula:
+
+
+
+  
+    
+      
+        
+          
+            
+              
+                
+                  d
+                
+                (
+                
+                  p
+                
+                ,
+                
+                  q
+                
+                )
+                =
+                
+                  d
+                
+                (
+                
+                  q
+                
+                ,
+                
+                  p
+                
+                )
+              
+              
+                
+                =
+                
+                  
+                    (
+                    
+                      q
+                      
+                        1
+                      
+                    
+                    −
+                    
+                      p
+                      
+                        1
+                      
+                    
+                    
+                      )
+                      
+                        2
+                      
+                    
+                    +
+                    (
+                    
+                      q
+                      
+                        2
+                      
+                    
+                    −
+                    
+                      p
+                      
+                        2
+                      
+                    
+                    
+                      )
+                      
+                        2
+                      
+                    
+                    +
+                    ⋯
+                    +
+                    (
+                    
+                      q
+                      
+                        n
+                      
+                    
+                    −
+                    
+                      p
+                      
+                        n
+                      
+                    
+                    
+                      )
+                      
+                        2
+                      
+                    
+                  
+                
+              
+            
+            
+              
+              
+                
+                =
+                
+                  
+                    
+                      ∑
+                      
+                        i
+                        =
+                        1
+                      
+                      
+                        n
+                      
+                    
+                    (
+                    
+                      q
+                      
+                        i
+                      
+                    
+                    −
+                    
+                      p
+                      
+                        i
+                      
+                    
+                    
+                      )
+                      
+                        2
+                      
+                    
+                  
+                
+                .
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\begin{aligned}\mathrm {d} (\mathbf {p} ,\mathbf {q} )=\mathrm {d} (\mathbf {q} ,\mathbf {p} )&={\sqrt {(q_{1}-p_{1})^{2}+(q_{2}-p_{2})^{2}+\cdots +(q_{n}-p_{n})^{2}}}\\[8pt]&={\sqrt {\sum _{i=1}^{n}(q_{i}-p_{i})^{2}}}.\end{aligned}}}
+  
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+(1)
+
+
+The position of a point in a Euclidean n-space is a Euclidean vector. So, p and q are Euclidean vectors, starting from the origin of the space, and their tips indicate two points. The Euclidean norm, or Euclidean length, or magnitude of a vector measures the length of the vector:
+
+  
+    
+      
+        
+          ‖
+          
+            p
+          
+          ‖
+        
+        =
+        
+          
+            
+              p
+              
+                1
+              
+              
+                2
+              
+            
+            +
+            
+              p
+              
+                2
+              
+              
+                2
+              
+            
+            +
+            ⋯
+            +
+            
+              p
+              
+                n
+              
+              
+                2
+              
+            
+          
+        
+        =
+        
+          
+            
+              p
+            
+            ⋅
+            
+              p
+            
+          
+        
+        ,
+      
+    
+    {\displaystyle \left\|\mathbf {p} \right\|={\sqrt {p_{1}^{2}+p_{2}^{2}+\cdots +p_{n}^{2}}}={\sqrt {\mathbf {p} \cdot \mathbf {p} }},}
+  
+
+where the last equation involves the dot product.
+A vector can be described as a directed line segment from the origin of the Euclidean space (vector tail), to a point in that space (vector tip). If we consider that its length is actually the distance from its tail to its tip, it becomes clear that the Euclidean norm of a vector is just a special case of Euclidean distance: the Euclidean distance between its tail and its tip.
+The distance between points p and q may have a direction (for example, from p to q), so it may be represented by another vector, given by
+
+  
+    
+      
+        
+          q
+        
+        −
+        
+          p
+        
+        =
+        (
+        
+          q
+          
+            1
+          
+        
+        −
+        
+          p
+          
+            1
+          
+        
+        ,
+        
+          q
+          
+            2
+          
+        
+        −
+        
+          p
+          
+            2
+          
+        
+        ,
+        ⋯
+        ,
+        
+          q
+          
+            n
+          
+        
+        −
+        
+          p
+          
+            n
+          
+        
+        )
+        .
+      
+    
+    {\displaystyle \mathbf {q} -\mathbf {p} =(q_{1}-p_{1},q_{2}-p_{2},\cdots ,q_{n}-p_{n}).}
+  
+
+In a three-dimensional space (n=3), this is an arrow from p to q, which can be also regarded as the position of q relative to p. It may be also called a displacement vector if p and q represent two positions of the same point at two successive instants of time.
+The Euclidean distance between p and q is just the Euclidean length of this distance (or displacement) vector:
+
+
+
+  
+    
+      
+        
+          ‖
+          
+            
+              q
+            
+            −
+            
+              p
+            
+          
+          ‖
+        
+        =
+        
+          
+            (
+            
+              q
+            
+            −
+            
+              p
+            
+            )
+            ⋅
+            (
+            
+              q
+            
+            −
+            
+              p
+            
+            )
+          
+        
+        .
+      
+    
+    {\displaystyle \left\|\mathbf {q} -\mathbf {p} \right\|={\sqrt {(\mathbf {q} -\mathbf {p} )\cdot (\mathbf {q} -\mathbf {p} )}}.}
+  
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+(2)
+
+
+which is equivalent to equation 1, and also to:
+
+  
+    
+      
+        
+          ‖
+          
+            
+              q
+            
+            −
+            
+              p
+            
+          
+          ‖
+        
+        =
+        
+          
+            
+              
+                ‖
+                
+                  p
+                
+                ‖
+              
+              
+                2
+              
+            
+            +
+            
+              
+                ‖
+                
+                  q
+                
+                ‖
+              
+              
+                2
+              
+            
+            −
+            2
+            
+              p
+            
+            ⋅
+            
+              q
+            
+          
+        
+        .
+      
+    
+    {\displaystyle \left\|\mathbf {q} -\mathbf {p} \right\|={\sqrt {\left\|\mathbf {p} \right\|^{2}+\left\|\mathbf {q} \right\|^{2}-2\mathbf {p} \cdot \mathbf {q} }}.}
+  
+
+One dimension[edit]
+In the context of Euclidean geometry, a metric is established in one dimension by fixing two points on a line, and choosing one to be the origin. The length of the line segment between these points defines the unit of distance and the direction from the origin to the second point is defined as the positive direction. This line segment may be translated along the line to build longer segments whose lengths correspond to multiples of the unit distance. In this manner real numbers can be associated to points on the line (as the distance from the origin to the point) and these are the Cartesian coordinates of the points on what may now be called the real line. As an alternate way to establish the metric, instead of choosing two points on the line, choose one point to be the origin, a unit of length and a direction along the line to call positive. The second point is then uniquely determined as the point on the line that is at a distance of one positive unit from the origin.
+The distance between any two points on the real line is the absolute value of the numerical difference of their coordinates. It is common to identify the name of a point with its Cartesian coordinate. Thus if x and y are two points on the real line, then the distance between them is given by:
+
+  
+    
+      
+        
+          
+            (
+            x
+            −
+            y
+            
+              )
+              
+                2
+              
+            
+          
+        
+        =
+        
+          |
+        
+        x
+        −
+        y
+        
+          |
+        
+        .
+      
+    
+    {\displaystyle {\sqrt {(x-y)^{2}}}=|x-y|.}
+  
+
+In one dimension, there is a single homogeneous, translation-invariant metric (in other words, a distance that is induced by a norm), up to a scale factor of length, which is the Euclidean distance. In higher dimensions there are other possible norms.
+Two dimensions[edit]
+
+
+
+
+Euclidean distance in R2
+
+
+In the Euclidean plane, if p = (p1, p2) and q = (q1, q2) then the distance is given by
+
+  
+    
+      
+        
+          d
+        
+        (
+        
+          p
+        
+        ,
+        
+          q
+        
+        )
+        =
+        
+          
+            (
+            
+              q
+              
+                1
+              
+            
+            −
+            
+              p
+              
+                1
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            (
+            
+              q
+              
+                2
+              
+            
+            −
+            
+              p
+              
+                2
+              
+            
+            
+              )
+              
+                2
+              
+            
+          
+        
+        .
+      
+    
+    {\displaystyle \mathrm {d} (\mathbf {p} ,\mathbf {q} )={\sqrt {(q_{1}-p_{1})^{2}+(q_{2}-p_{2})^{2}}}.}
+  
+
+This is equivalent to the Pythagorean theorem.
+Alternatively, it follows from (2) that if the polar coordinates of the point p are (r1, θ1) and those of q are (r2, θ2), then the distance between the points is
+
+  
+    
+      
+        
+          
+            
+              r
+              
+                1
+              
+              
+                2
+              
+            
+            +
+            
+              r
+              
+                2
+              
+              
+                2
+              
+            
+            −
+            2
+            
+              r
+              
+                1
+              
+            
+            
+              r
+              
+                2
+              
+            
+            cos
+            ⁡
+            (
+            
+              θ
+              
+                1
+              
+            
+            −
+            
+              θ
+              
+                2
+              
+            
+            )
+          
+        
+        .
+      
+    
+    {\displaystyle {\sqrt {r_{1}^{2}+r_{2}^{2}-2r_{1}r_{2}\cos(\theta _{1}-\theta _{2})}}.}
+  
+
+Three dimensions[edit]
+In three-dimensional Euclidean space, the distance is
+
+  
+    
+      
+        d
+        (
+        p
+        ,
+        q
+        )
+        =
+        
+          
+            (
+            
+              p
+              
+                1
+              
+            
+            −
+            
+              q
+              
+                1
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            (
+            
+              p
+              
+                2
+              
+            
+            −
+            
+              q
+              
+                2
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            (
+            
+              p
+              
+                3
+              
+            
+            −
+            
+              q
+              
+                3
+              
+            
+            
+              )
+              
+                2
+              
+            
+          
+        
+        .
+      
+    
+    {\displaystyle d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+(p_{3}-q_{3})^{2}}}.}
+  
+
+n dimensions[edit]
+In general, for an n-dimensional space, the distance is
+
+  
+    
+      
+        d
+        (
+        p
+        ,
+        q
+        )
+        =
+        
+          
+            (
+            
+              p
+              
+                1
+              
+            
+            −
+            
+              q
+              
+                1
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            (
+            
+              p
+              
+                2
+              
+            
+            −
+            
+              q
+              
+                2
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            ⋯
+            +
+            (
+            
+              p
+              
+                i
+              
+            
+            −
+            
+              q
+              
+                i
+              
+            
+            
+              )
+              
+                2
+              
+            
+            +
+            ⋯
+            +
+            (
+            
+              p
+              
+                n
+              
+            
+            −
+            
+              q
+              
+                n
+              
+            
+            
+              )
+              
+                2
+              
+            
+          
+        
+        .
+      
+    
+    {\displaystyle d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{i}-q_{i})^{2}+\cdots +(p_{n}-q_{n})^{2}}}.}
+  
+
+Squared Euclidean distance[edit]
+The standard Euclidean distance can be squared in order to place progressively greater weight on objects that are farther apart. In this case, the equation becomes
+
+  
+    
+      
+        
+          d
+          
+            2
+          
+        
+        (
+        p
+        ,
+        q
+        )
+        =
+        (
+        
+          p
+          
+            1
+          
+        
+        −
+        
+          q
+          
+            1
+          
+        
+        
+          )
+          
+            2
+          
+        
+        +
+        (
+        
+          p
+          
+            2
+          
+        
+        −
+        
+          q
+          
+            2
+          
+        
+        
+          )
+          
+            2
+          
+        
+        +
+        ⋯
+        +
+        (
+        
+          p
+          
+            i
+          
+        
+        −
+        
+          q
+          
+            i
+          
+        
+        
+          )
+          
+            2
+          
+        
+        +
+        ⋯
+        +
+        (
+        
+          p
+          
+            n
+          
+        
+        −
+        
+          q
+          
+            n
+          
+        
+        
+          )
+          
+            2
+          
+        
+        .
+      
+    
+    {\displaystyle d^{2}(p,q)=(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{i}-q_{i})^{2}+\cdots +(p_{n}-q_{n})^{2}.}
+  
+
+Squared Euclidean Distance is not a metric as it does not satisfy the triangle inequality, however, it is frequently used in optimization problems in which distances only have to be compared.
+It is also referred to as quadrance within the field of rational trigonometry.
+See also[edit]
+Chebyshev distance measures distance assuming only the most significant dimension is relevant.Euclidean distance matrixHamming distance identifies the difference bit by bit of two stringsMahalanobis distance normalizes based on a covariance matrix to make the distance metric scale-invariant.Manhattan distance measures distance following only axis-aligned directions.MetricMinkowski distance is a generalization that unifies Euclidean distance, Manhattan distance, and Chebyshev distance.Pythagorean additionHaversine distance giving great-circle distances between two points on a sphere from their longitudes and latitudes.Vincenty's formulae well known as "Vincent distance"
+References[edit]
+Deza, Elena; Deza, Michel Marie (2009). Encyclopedia of Distances. Springer. p. 94. "Cluster analysis". March 2, 2011. 
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Euclidean_distance&oldid=828966201"					
+				Categories: Metric geometryLengthSimilarity and distance measures				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			Languages
+			
+								العربيةBosanskiCatalàČeštinaDeutschΕλληνικάEspañolEsperantoفارسی한국어ItalianoNederlands日本語PortuguêsRomânăРусскийSicilianuSimple EnglishСрпски / srpskiSrpskohrvatski / српскохрватскиSuomiதமிழ்ไทยTürkçeУкраїнськаTiếng Việt中文
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 5 March 2018, at 21:04.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

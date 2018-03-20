@@ -1,0 +1,152 @@
+Nonparametric statistics			
+				From Wikipedia, the free encyclopedia				
+								
+					Jump to:					navigation, 					search
+				
+				Nonparametric statistics is the branch of statistics that is not based solely on parameterized families of probability distributions (common examples of parameters are the mean and variance). Nonparametric statistics is based on either being distribution-free or having a specified distribution but with the distribution's parameters unspecified. Nonparametric statistics includes both descriptive statistics and statistical inference.
+
+
+
+Contents
+
+1 Definitions2 Applications and purpose3 Non-parametric models4 Methods5 See also6 Notes7 General references
+
+
+Definitions[edit]
+The statistician Larry Wasserman has said that "it is difficult to give a precise definition of nonparametric inference".[1] The term "nonparametric statistics" has been imprecisely defined in the following two ways, among others.
+
+The first meaning of nonparametric covers techniques that do not rely on data belonging to any particular distribution. These include, among others:
+distribution free methods, which do not rely on assumptions that the data are drawn from a given probability distribution. As such it is the opposite of parametric statistics. It includes nonparametric descriptive statistics, statistical models, inference and statistical tests.nonparametric statistics (in the sense of a statistic over data, which is defined to be a function on a sample that has no dependency on a parameter), whose interpretation does not depend on the population fitting any parameterised distributions. Order statistics, which are based on the ranks of observations, are one example of such statistics and these play a central role in many nonparametric approaches.
+The following discussion is taken from Kendall's.[2]
+
+Statistical hypotheses concern the behavior of observable random variables.... For example, the hypothesis (a) that a normal distribution has a specified mean and variance is statistical; so is the hypothesis (b) that it has a given mean but unspecified variance; so is the hypothesis (c) that a distribution is of normal form with both mean and variance unspecified; finally, so is the hypothesis (d) that two unspecified continuous distributions are identical.
+It will have been noticed that in the examples (a) and (b) the distribution underlying the observations was taken to be of a certain form (the normal) and the hypothesis was concerned entirely with the value of one or both of its parameters. Such a hypothesis, for obvious reasons, is called parametric.
+Hypothesis (c) was of a different nature, as no parameter values are specified in the statement of the hypothesis; we might reasonably call such a hypothesis non-parametric. Hypothesis (d) is also non-parametric but, in addition, it does not even specify the underlying form of the distribution and may now be reasonably termed distribution-free. Notwithstanding these distinctions, the statistical literature now commonly applies the label "non-parametric" to test procedures that we have just termed "distribution-free", thereby losing a useful classification.
+
+The second meaning of non-parametric covers techniques that do not assume that the structure of a model is fixed. Typically, the model grows in size to accommodate the complexity of the data. In these techniques, individual variables are typically assumed to belong to parametric distributions, and assumptions about the types of connections among variables are also made. These techniques include, among others:
+non-parametric regression, which refers to modeling where the structure of the relationship between variables is treated non-parametrically, but where nevertheless there may be parametric assumptions about the distribution of model residuals.non-parametric hierarchical Bayesian models, such as models based on the Dirichlet process, which allow the number of latent variables to grow as necessary to fit the data, but where individual variables still follow parametric distributions and even the process controlling the rate of growth of latent variables follows a parametric distribution.
+
+
+Applications and purpose[edit]
+Non-parametric methods are widely used for studying populations that take on a ranked order (such as movie reviews receiving one to four stars). The use of non-parametric methods may be necessary when data have a ranking but no clear numerical interpretation, such as when assessing preferences. In terms of levels of measurement, non-parametric methods result in "ordinal" data.
+As non-parametric methods make fewer assumptions, their applicability is much wider than the corresponding parametric methods. In particular, they may be applied in situations where less is known about the application in question. Also, due to the reliance on fewer assumptions, non-parametric methods are more robust.
+Another justification for the use of non-parametric methods is simplicity. In certain cases, even when the use of parametric methods is justified, non-parametric methods may be easier to use. Due both to this simplicity and to their greater robustness, non-parametric methods are seen by some statisticians as leaving less room for improper use and misunderstanding.
+The wider applicability and increased robustness of non-parametric tests comes at a cost: in cases where a parametric test would be appropriate, non-parametric tests have less power. In other words, a larger sample size can be required to draw conclusions with the same degree of confidence.
+Non-parametric models[edit]
+Non-parametric models differ from parametric models in that the model structure is not specified a priori but is instead determined from data. The term non-parametric is not meant to imply that such models completely lack parameters but that the number and nature of the parameters are flexible and not fixed in advance.
+A histogram is a simple nonparametric estimate of a probability distribution.Kernel density estimation provides better estimates of the density than histograms.Nonparametric regression and semiparametric regression methods have been developed based on kernels, splines, and wavelets.Data envelopment analysis provides efficiency coefficients similar to those obtained by multivariate analysis without any distributional assumption.KNNs classify the unseen instance based on the K points in the training set which are nearest to it.A support vector machine (with a Gaussian kernel) is a nonparametric large-margin classifier.
+Methods[edit]
+Non-parametric (or distribution-free) inferential statistical methods are mathematical procedures for statistical hypothesis testing which, unlike parametric statistics, make no assumptions about the probability distributions of the variables being assessed. The most frequently used tests include
+
+Analysis of similaritiesAnderson–Darling test: tests whether a sample is drawn from a given distributionStatistical bootstrap methods: estimates the accuracy/sampling distribution of a statisticCochran's Q: tests whether k treatments in randomized block designs with 0/1 outcomes have identical effectsCohen's kappa: measures inter-rater agreement for categorical itemsFriedman two-way analysis of variance by ranks: tests whether k treatments in randomized block designs have identical effectsKaplan–Meier: estimates the survival function from lifetime data, modeling censoringKendall's tau: measures statistical dependence between two variablesKendall's W: a measure between 0 and 1 of inter-rater agreementKolmogorov–Smirnov test: tests whether a sample is drawn from a given distribution, or whether two samples are drawn from the same distributionKruskal–Wallis one-way analysis of variance by ranks: tests whether > 2 independent samples are drawn from the same distributionKuiper's test: tests whether a sample is drawn from a given distribution, sensitive to cyclic variations such as day of the weekLogrank test: compares survival distributions of two right-skewed, censored samplesMann–Whitney U or Wilcoxon rank sum test: tests whether two samples are drawn from the same distribution, as compared to a given alternative hypothesis.McNemar's test: tests whether, in 2 × 2 contingency tables with a dichotomous trait and matched pairs of subjects, row and column marginal frequencies are equalMedian test: tests whether two samples are drawn from distributions with equal mediansPitman's permutation test: a statistical significance test that yields exact p values by examining all possible rearrangements of labelsRank products: detects differentially expressed genes in replicated microarray experimentsSiegel–Tukey test: tests for differences in scale between two groupsSign test: tests whether matched pair samples are drawn from distributions with equal mediansSpearman's rank correlation coefficient: measures statistical dependence between two variables using a monotonic functionSquared ranks test: tests equality of variances in two or more samplesTukey–Duckworth test: tests equality of two distributions by using ranksWald–Wolfowitz runs test: tests whether the elements of a sequence are mutually independent/randomWilcoxon signed-rank test: tests whether matched pair samples are drawn from populations with different mean ranks
+
+See also[edit]
+Parametric statisticsResampling (statistics)CDF-based nonparametric confidence intervalInformation field theory
+Notes[edit]
+
+
+^ Wasserman (2007), p.1^ Stuart A., Ord J.K, Arnold S. (1999), Kendall's Advanced Theory of Statistics: Volume 2A—Classical Inference and the Linear Model, sixth edition, §20.2–20.3 (Arnold).
+
+
+General references[edit]
+Bagdonavicius, V., Kruopis, J., Nikulin, M.S. (2011). "Non-parametric tests for complete data", ISTE & WILEY: London & Hoboken. ISBN 978-1-84821-269-5.Corder, G. W.; Foreman, D. I. (2014). Nonparametric Statistics: A Step-by-Step Approach. Wiley. ISBN 978-1118840313. Gibbons, Jean Dickinson; Chakraborti, Subhabrata (2003). Nonparametric Statistical Inference, 4th Ed. CRC Press. ISBN 0-8247-4052-1.Hettmansperger, T. P.; McKean, J. W. (1998). Robust Nonparametric Statistical Methods. Kendall's Library of Statistics. 5 (First ed.). London: Edward Arnold. New York: John Wiley & Sons. ISBN 0-340-54937-8. MR 1604954.  also ISBN 0-471-19479-4.Hollander M., Wolfe D.A., Chicken E. (2014). Nonparametric Statistical Methods, John Wiley & Sons.Sheskin, David J. (2003) Handbook of Parametric and Nonparametric Statistical Procedures. CRC Press. ISBN 1-58488-440-1Wasserman, Larry (2007). All of Nonparametric Statistics, Springer. ISBN 0-387-25145-6.
+
+
+
+
+
+
+					
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Nonparametric_statistics&oldid=819200684"					
+				Categories: Nonparametric statisticsStatistical inferenceRobust statisticsMathematical and quantitative methods (economics)				
+							
+		
+		
+			Navigation menu
+			
+									
+						Personal tools
+						Not logged inTalkContributionsCreate accountLog in
+					
+									
+										
+						Namespaces
+						ArticleTalk
+					
+										
+												
+						
+							Variants
+						
+						
+							
+						
+					
+									
+				
+										
+						Views
+						ReadEditView history
+					
+										
+						
+						More
+						
+							
+						
+					
+										
+						
+							Search
+						
+						
+							
+															
+						
+					
+									
+			
+			
+				
+						
+			Navigation
+			
+								Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store
+							
+		
+			
+			Interaction
+			
+								HelpAbout WikipediaCommunity portalRecent changesContact page
+							
+		
+			
+			Tools
+			
+								What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page
+							
+		
+			
+			Print/export
+			
+								Create a bookDownload as PDFPrintable version
+							
+		
+			
+			In other projects
+			
+								Wikimedia Commons
+							
+		
+			
+			Languages
+			
+								العربيةCatalàDeutschEestiEspañolEuskaraفارسیFrançais한국어ItalianoעבריתLatviešuNederlands日本語PolskiPortuguêsBasa SundaSuomiTürkçe中文
+				Edit links			
+		
+				
+		
+				
+						 This page was last edited on 8 January 2018, at 01:21.Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+						Privacy policyAbout WikipediaDisclaimersContact WikipediaDevelopersCookie statementMobile view

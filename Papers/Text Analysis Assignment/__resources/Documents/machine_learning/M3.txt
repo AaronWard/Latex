@@ -1,0 +1,1 @@
+A decision tree can be used in either a predictive manner or a descriptive manner. In either instance they are constructed the same way and are always used to visualize all possible outcomes and decision points that occur chronologically. Decision trees are most commonly used in the financial world for areas such as loan approval, portfolio management, and spending. 

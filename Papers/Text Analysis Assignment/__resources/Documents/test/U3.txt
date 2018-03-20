@@ -1,0 +1,2 @@
+ln this tutorial process a Decision Tree is used for regression. The 'Polynominal' data set with a numerical target Attribute is used as a label. Before training the model the data set is split into a training and a test set. Afterwards the regressed values are compared with the label values to obtain a performance measure using the Performance (Regression) Operator.
+

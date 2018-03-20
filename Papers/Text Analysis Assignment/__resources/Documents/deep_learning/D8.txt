@@ -1,0 +1,1 @@
+Invented by Geoff Hinton, a Restricted Boltzmann machine is an algorithm useful for dimensionality reduction, classification, regression, collaborative filtering, feature learning and topic modeling. (For more concrete examples of how neural networks like RBMs can be employed, please see our page on use cases).

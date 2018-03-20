@@ -1,0 +1,486 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Need help with machine learning? Take the FREE Crash-Course.
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                             
+
+	
+		Start Here With Machine Learning	
+
+	
+	    
+Do You Need Help Getting Started with
+Applied Machine Learning?
+This is The Step-by-Step Guide that You’ve Been Looking For!
+
+Hi, Jason here. I’m the guy behind Machine Learning Mastery.
+My goal is to help you get started, make progress and kick butt with machine learning.
+I teach a top-down and results-first approach designed for developers and engineers.
+This is unlike most academic textbooks and university courses.
+Access my best free tutorials on the blog or take the next step with my paid training material.
+You may be feeling overwhelmed. You may have a lot of questions.
+I created this page for you. It is your starting point.
+Take your time. Bookmark this page. Find the answers to your questions.
+
+Table of Contents
+What do you need help with? Here are some quick links:
+How Do I Get Started?Applied Machine Learning ProcessLinear AlgebraMachine Learning AlgorithmsStudy Machine Learning AlgorithmsWeka Machine LearningPython Machine LearningR Machine LearningDeep LearningLong Short-Term Memory (LSTM)Natural Language ProcessingXGBoostTime Series ForecastingFrequently Asked Questions (FAQ)Need More Help?
+
+
+How Do I Get Started?
+The most common question I’m asked is: “how do I get started?”
+My best advice for getting started in machine learning is broken down into a 5-step process:
+Step 1: Adjust Mindset. Believe you can practice and apply machine learning.
+What is Holding you Back From Your Machine Learning Goals?Why Get Into Machine Learning?Find Your Machine Learning Tribe
+Step 2: Pick a Process. Use a systemic process to work through problems.
+Applied Machine Learning Process
+Step 3: Pick a Tool. Select a tool for your level and map it onto your process.
+Beginners: Weka Workbench.Intermediate: Python Ecosystem.Advanced: R Platform.Best Programming Language for Machine Learning
+Step 4: Practice on Datasets. Select datasets to work on and practice the process.
+Practice Machine Learning with Small In-Memory DatasetsTour of Real-World Machine Learning ProblemsWork on Machine Learning Problems That Matter To You
+Step 5: Build a Portfolio. Gather results and demonstrate your skills.
+Build a Machine Learning PortfolioGet Paid To Apply Machine LearningMachine Learning For Money
+
+For more on this top-down approach, see:
+The Machine Learning Mastery MethodMachine Learning for Programmers
+Many of my students have used this approach to go on and do well in Kaggle competitions and get jobs as Machine Learning Engineers and Data Scientists.
+
+Applied Machine Learning Process
+The benefit of machine learning are the predictions and the models that make predictions.
+To have skill at applied machine learning means knowing how to consistently and reliably deliver high-quality predictions on problem after problem. You need to follow a systematic process.
+Below is a 5-step process that you can follow to consistently achieve above average results on predictive modeling problems:
+Step 1: Define your problem.
+How to Define Your Machine Learning Problem
+Step 2: Prepare your data.
+How to Prepare Data For Machine LearningHow to Identify Outliers in your DataImprove Model Accuracy with Data Pre-ProcessingDiscover Feature EngineeringAn Introduction to Feature SelectionTactics to Combat Imbalanced Classes in Your Machine Learning DatasetData Leakage in Machine Learning
+Step 3: Spot-check algorithms.
+How to Evaluate Machine Learning AlgorithmsWhy you should be Spot-Checking Algorithms on your Machine Learning ProblemsHow To Choose The Right Test Options When Evaluating Machine Learning AlgorithmsA Data-Driven Approach to Choosing Machine Learning Algorithms
+Step 4: Improve results.
+How to Improve Machine Learning ResultsMachine Learning Performance Improvement Cheat SheetHow To Improve Deep Learning Performance
+Step 5: Present results.
+How to Use Machine Learning ResultsHow to Train a Final Machine Learning ModelHow To Deploy Your Predictive Model To Production
+
+For a good summary of this process, see the posts:
+Applied Machine Learning ProcessHow to Use a Machine Learning Checklist to Get Accurate Predictions
+
+Linear Algebra
+Linear algebra is an important foundation area of mathematics required for achieving a deeper understanding of machine learning algorithms.
+Below is the 3 step process that you can use to get up-to-speed with linear algebra for machine learning, fast.
+Step 1: Discover what Linear Algebra is.
+A Gentle Introduction to Linear Algebra
+Step 2: Discover why Linear Algebra is important for machine learning.
+5 Reasons to Learn Linear Algebra for Machine LearningLinear Algebra for Machine Learning
+Step 3: Dive into Linear Algebra topics.
+Linear Algebra for Machine Learning Mini-Course (soon)Linear Algebra for Machine Learning (my book)
+
+You can see all linear algebra posts here. Below is a selection of some of the most popular tutorials.
+
+Linear Algebra in Python
+Introduction to N-Dimensional Arrays in PythonHow to Index, Slice and Reshape NumPy Arrays
+Matrices
+Introduction to Matrices and Matrix ArithmeticIntroduction to Matrix Types in Linear Algebra
+ 
+Vectors
+Introduction to VectorsIntroduction to Vector Norms
+Matrix Factorization
+Introduction to Matrix FactorizationIntroduction to Eigendecomposition
+
+
+Machine Learning Algorithms
+Machine learning is about machine learning algorithms.
+You need to know what algorithms are available for a given problem, how they work, and how to get the most out of them.
+Here’s how to get started with machine learning algorithms:
+Step 1: Discover the different types of machine learning algorithms.
+A Tour of Machine Learning Algorithms
+Step 2: Discover the foundations of machine learning algorithms.
+How Machine Learning Algorithms WorkParametric and Nonparametric AlgorithmsSupervised and Unsupervised AlgorithmsThe Bias-Variance Trade-OffOverfitting and Underfitting With Algorithms
+Step 3: Discover how top machine learning algorithms work.
+Machine Learning Algorithms Mini-CourseMaster Machine Learning Algorithms (my book)
+
+You can see all machine learning algorithm posts here. Below is a selection of some of the most popular tutorials.
+
+Linear Algorithms
+Gradient DescentLinear RegressionLogistic RegressionLinear Discriminant Analysis
+ 
+Nonlinear Algorithms
+Classification And Regression TreesNaive BayesK-Nearest NeighborsLearning Vector QuantizationSupport Vector MachinesBagging and Random ForestBoosting and AdaBoost
+
+
+Study Machine Learning Algorithms
+Machine learning algorithms make up a big part of applied machine learning.
+There is a lot of benefit in studying machine learning algorithms and learning how to get the most out of them.
+Below is a simple 5-step process that you can use to study and learn any machine learning algorithm.
+Step 1: Create lists of machine learning algorithms
+Take Control By Creating Targeted Lists of Machine Learning Algorithms
+Step 2: Research machine learning algorithms
+How to Research a Machine Learning Algorithm
+Step 3: Create your own algorithm descriptions
+How to Learn a Machine Learning Algorithm6 Questions To Understand Any Machine Learning Algorithm
+Step 4: Investigate algorithm behavior
+How To Investigate Machine Learning Algorithm BehaviorHow to Build an Intuition for Machine Learning Algorithms
+Step 5: Implement machine learning algorithms
+Stop Coding Machine Learning Algorithms From ScratchHow to Implement a Machine Learning AlgorithmBenefits of Implementing Machine Learning Algorithms From ScratchUnderstand Machine Learning Algorithms By Implementing Them From Scratch
+
+For a detailed overview of this approach see the post:
+Understand Machine Learning Algorithms Without the Background in Mathematics
+
+Weka Machine Learning
+Weka is a platform that you can use to get started in applied machine learning.
+It has a graphical user interface meaning that no programming is required and it offers a suite of state of the art algorithms.
+Here’s how you can get started with Weka:
+Step 1: Discover the features of the Weka platform.
+What is the Weka Machine Learning Workbench
+Step 2: Discover how to get around the Weka platform.
+How to Download and Install the Weka Machine Learning WorkbenchA Tour of the Weka Machine Learning Workbench
+Step 3: Discover how to deliver results with Weka.
+How to Run Your First Classifier in WekaApplied Machine Learning With Weka Mini-CourseMachine Learning Mastery With Weka (my book)
+
+You can see all Weka machine learning posts here. Below is a selection of some of the most popular tutorials.
+
+Prepare Data in Weka
+How To Load CSV Machine Learning Data in WekaHow to Better Understand Your Machine Learning Data in WekaHow to Normalize and Standardize Your Machine Learning Data in WekaHow To Handle Missing Values In Machine Learning Data With WekaHow to Perform Feature Selection With Machine Learning Data in Weka
+ 
+Weka Algorithm Tutorials
+How to Use Machine Learning Algorithms in WekaHow To Estimate The Performance of Machine Learning Algorithms in WekaHow To Use Regression Machine Learning Algorithms in WekaHow To Use Classification Machine Learning Algorithms in WekaHow to Tune Machine Learning Algorithms in Weka
+
+
+Python Machine Learning
+Python is one of the fastest growing platforms for applied machine learning.
+You can use the same tools like pandas and scikit-learn in the development and operational deployment of your model.
+Below are the steps that you can use to get started with Python machine learning:
+Step 1: Discover Python for machine learning
+A Gentle Introduction to Scikit-Learn: A Python Machine Learning Library
+Step 2: Discover the ecosystem for Python machine learning.
+Crash Course in Python for Machine Learning DevelopersPython Ecosystem for Machine LearningPython is the Growing Platform for Applied Machine Learning
+Step 3: Discover how to work through problems using machine learning in Python.
+Your First Machine Learning Project in Python Step-By-StepPython Machine Learning Mini-CourseMachine Learning Mastery With Python (my book)
+
+You can see all Python machine learning posts here. Below is a selection of some of the most popular tutorials.
+
+Prepare Data in Python
+How To Load Machine Learning Data in PythonUnderstand Your Machine Learning Data With Descriptive Statistics in PythonVisualize Machine Learning Data in Python With PandasHow To Prepare Your Data For Machine Learning in Python with Scikit-LearnFeature Selection For Machine Learning in Python
+ 
+Machine Learning in Python
+Evaluate the Performance of Machine Learning AlgorithmsMetrics To Evaluate Machine Learning Algorithms in PythonSpot-Check Classification Machine Learning Algorithms in Python with scikit-learnSpot-Check Regression Machine Learning Algorithms in Python with scikit-learnHow To Compare Machine Learning Algorithms in Python with scikit-learn
+
+
+R Machine Learning
+R is a platform for statistical computing and is the most popular platform among professional data scientists.
+It’s popular because of the large number of techniques available, and because of excellent interfaces to these methods such as the powerful caret package.
+Here’s how to get started with R machine learning:
+Step 1: Discover the R platform and why it is so popular.
+What is RUse R For Machine LearningSuper Fast Crash Course in R
+Step 2: Discover machine learning algorithms in R.
+How To Get Started With Machine Learning Algorithms in R
+Step 3: Discover how to work through problems using machine learning in R.
+Your First Machine Learning Project in R Step-By-StepR Machine Learning Mini-CourseMachine Learning Mastery With R (my book)
+
+You can see all R machine learning posts here. Below is a selection of some of the most popular tutorials.
+
+Data Preparation in R
+How To Load Your Machine Learning Data Into RBetter Understand Your Data in R Using Descriptive StatisticsBetter Understand Your Data in R Using VisualizationFeature Selection with the Caret R PackageGet Your Data Ready For Machine Learning in R with Pre-Processing
+ 
+Applied Machine Learning in R
+How to Evaluate Machine Learning Algorithms with RSpot Check Machine Learning Algorithms in RTune Machine Learning Algorithms in RHow to Build an Ensemble Of Machine Learning Algorithms in RCompare The Performance of Machine Learning Algorithms in R
+
+
+Deep Learning
+Deep learning is a fascinating and powerful field.
+State-of-the-art results are coming from the field of deep learning and it is a sub-field of machine learning that cannot be ignored.
+Here’s how to get started with deep learning:
+Step 1: Discover what deep learning is all about.
+What is Deep Learning?8 Inspirational Applications of Deep Learning
+Step 2: Discover the best tools and libraries.
+Introduction to the Python Deep Learning Library TheanoIntroduction to the Python Deep Learning Library TensorFlowIntroduction to Python Deep Learning with Keras
+Step 3: Discover how to work through problems and deliver results.
+Develop Your First Neural Network in Python With Keras Step-By-StepApplied Deep Learning in Python Mini-CourseDeep Learning With Python (my book)
+
+You can see all deep learning posts here. Below is a selection of some of the most popular tutorials.
+
+Background
+Crash Course On Multi-Layer Perceptron Neural NetworksCrash Course in Convolutional Neural Networks for Machine LearningCrash Course in Recurrent Neural Networks for Deep Learning
+Multilayer Perceptrons
+5 Step Life-Cycle for Neural Network Models in KerasHow to Grid Search Hyperparameters for Deep Learning Models in Python With KerasSave and Load Your Keras Deep Learning ModelsDisplay Deep Learning Model Training History in KerasDropout Regularization in Deep Learning Models With Keras
+ 
+Convolutional Neural Networks
+Handwritten Digit Recognition using Convolutional Neural Networks in Python with KerasObject Recognition with Convolutional Neural Networks in the Keras Deep Learning LibraryPredict Sentiment From Movie Reviews Using Deep Learning
+Recurrent Neural Networks
+Time Series Prediction with LSTM Recurrent Neural Networks in Python with KerasUnderstanding Stateful LSTM Recurrent Neural Networks in Python with KerasText Generation With LSTM Recurrent Neural Networks in Python with Keras
+
+
+Long Short-Term Memory (LSTM)
+Long Short-Term Memory (LSTM) Recurrent Neural Networks are designed for sequence prediction problems and are a state-of-the-art deep learning technique for challenging prediction problems.
+Here’s how to get started with LSTMs in Python:
+Step 1: Discover the promise of LSTMs.
+The Promise of Recurrent Neural Networks for Time Series Forecasting
+Step 2: Discover where LSTMs are useful.
+Making Predictions with SequencesA Gentle Introduction to Long Short-Term Memory Networks by the ExpertsIntroduction to Models for Sequence Prediction
+Step 3: Discover how to use LSTMs on your project.
+The 5 Step Life-Cycle for Long Short-Term Memory Models in KerasLSTM Mini-CourseLong Short-Term Memory Networks With Python (my book)
+
+You can see all LSTM posts here. Below is a selection of some of the most popular tutorials using LSTMs in Python with the Keras deep learning library.
+
+Data Preparation for LSTMs
+How to Reshape Input Data for Long Short-Term Memory NetworksHow to One Hot Encode Sequence DataHow to Remove Trends and Seasonality with a Difference TransformHow to Scale Data for Long Short-Term Memory NetworksHow to Prepare Sequence Prediction for Truncated BPTTHow to Handle Missing Timesteps in Sequence Prediction Problems
+LSTM Behaviour
+A Gentle Introduction to Backpropagation Through TimeDemonstration of Memory with a Long Short-Term Memory NetworkHow to Use the TimeDistributed Layer for Long Short-Term Memory NetworksHow to use an Encoder-Decoder LSTM to Echo Sequences of Random IntegersAttention in Long Short-Term Memory Recurrent Neural Networks
+ 
+Modeling with LSTMs
+Generative Long Short-Term Memory NetworksStacked Long Short-Term Memory NetworksEncoder-Decoder Long Short-Term Memory NetworksCNN Long Short-Term Memory NetworksDiagnose Overfitting and Underfitting of LSTM ModelsHow to Make Predictions with Long Short-Term Memory Models
+LSTM for Time Series
+On the Suitability of LSTMs for Time Series ForecastingTime Series Forecasting with the Long Short-Term Memory NetworkMulti-step Time Series Forecasting with Long Short-Term Memory NetworksMultivariate Time Series Forecasting with LSTMs in Keras
+
+
+Natural Language Processing
+Working with text data is hard because of the messy nature of natural language.
+Text is not “solved” but to get state-of-the-art results on challenging NLP problems, you need to adopt deep learning methods
+Here’s how to get started with deep learning for natural language processing:
+Step 1: Discover what deep learning for NLP is all about.
+What is Natural Language Processing?What is Deep Learning?Promise of Deep Learning for Natural Language Processing
+Step 2: Discover standard datasets for NLP.
+7 Applications of Deep Learning for Natural Language ProcessingDatasets for Natural Language Processing
+Step 3: Discover how to work through problems and deliver results.
+Crash-Course in Deep Learning for Natural Language ProcessingDeep Learning for Natural Language Processing (my book)
+
+You can see all deep learning for NLP posts here. Below is a selection of some of the most popular tutorials.
+
+Bag-of-Words Model
+What is the Bag-of-Words Model?How to Prepare Text Data for Machine Learning with scikit-learnHow to Develop a Bag-of-Words Model for Predicting Sentiment
+ 
+Word Embeddings
+What are Word Embeddings?How to Develop Word Embeddings in Python with GensimHow to Use Word Embedding Layers for Deep Learning with Keras
+
+
+XGBoost
+XGBoost is a highly optimized implementation of gradient boosted decision trees.
+It is popular because it is being used by some of the best data scientists in the world to win machine learning competitions.
+Here’s how to get started with XGBoost:
+Step 1: Discover the Gradient Boosting Algorithm.
+A Gentle Introduction to the Gradient Boosting Algorithm for Machine Learning
+Step 2: Discover XGBoost.
+A Gentle Introduction to XGBoost for Applied Machine Learning
+Step 3: Discover how to get good at delivering results with XGBoost.
+How to Develop Your First XGBoost Model in Python with scikit-learnXGBoost With Python Mini-CourseXGBoost With Python (my book)
+
+You can see all XGBoosts posts here. Below is a selection of some of the most popular tutorials.
+
+XGBoost Basics
+Data Preparation for Gradient Boosting with XGBoost in PythonHow to Evaluate Gradient Boosting Models with XGBoost in PythonAvoid Overfitting By Early Stopping With XGBoost In PythonFeature Importance and Feature Selection With XGBoost in Python
+ 
+XGBoost Tuning
+How to Configure the Gradient Boosting AlgorithmTune Learning Rate for Gradient Boosting with XGBoost in PythonStochastic Gradient Boosting with XGBoost and scikit-learn in PythonHow to Tune the Number and Size of Decision Trees with XGBoost in PythonHow to Best Tune Multithreading Support for XGBoost in Python
+
+
+Time Series Forecasting
+Time series forecasting is an important topic in business applications.
+Many datasets contain a time component, but the topic of time series is rarely covered in much depth from a machine learning perspective.
+Here’s how to get started with Time Series Forecasting:
+Step 1: Discover Time Series Forecasting.
+What Is Time Series Forecasting?
+Step 2: Discover Time Series as Supervised Learning.
+Time Series Forecasting as Supervised Learning
+Step 3: Discover how to get good at delivering results with Time Series Forecasting.
+Python Environment for Time Series ForecastingTime Series Forecasting With Python Mini-CourseTime Series Forecasting With Python (my book)
+
+You can see all Time Series Forecasting posts here. Below is a selection of some of the most popular tutorials.
+
+Data Preparation Tutorials
+7 Time Series Datasets for Machine LearningHow to Load and Explore Time Series Data in PythonHow to Normalize and Standardize Time Series Data in PythonBasic Feature Engineering With Time Series Data in PythonHow To Backtest Machine Learning Models for Time Series Forecasting
+ 
+Forecasting Tutorials
+How to Make Baseline Predictions for Time Series Forecasting with PythonHow to Check if Time Series Data is Stationary with PythonHow to Create an ARIMA Model for Time Series Forecasting with PythonHow to Grid Search ARIMA Model Hyperparameters with PythonHow to Work Through a Time Series Forecast Project
+
+
+Frequently Asked Questions (FAQ)
+This section lists frequently asked questions and my best answers.
+
+What programming language should I use for machine learning?
+The specific programming language or platform does not matter.
+I strongly believe that the best thing to focus on is how to work through machine learning problems end-to-end (learn more).That being said, I think if you’re not a strong programmer, that Weka is the best place to start because you can work through problems without writing a line of code (learn more).I think Python is excellent for developing models that can run in production, it is a growing platform (learn more).I think R might be the most powerful platform, but it requires learning a new programming language. I think the sweet spot for R is one-off projects and R&D projects (learn more).
+Also, this post might help:
+Best Programming Language for Machine Learning
+If pressed to answer, I would recommend that you start with Python (learn more).
+How do I get a job without a degree?
+I teach a top-down and results-first approach to machine learning.
+This means that you very quickly learn how to work through predictive modeling problems and deliver results.
+As part of this process, I teach a method of developing a portfolio of completed projects. This demonstrates your skill and gives you a platform from which to take on ever more challenging projects.
+It is this ability to deliver results and the projects that demonstrate that you can deliver results is what will get you a position.
+Business only use credentials as a shortcut, they want results more than anything else.
+Here’s more information on the portfolio approach:
+Build a Machine Learning Portfolio
+Here’s more information on why you don’t need a degree:
+What if I Don’t Have a Degree?
+Can you be my mentor or coach?
+Thanks for asking.
+I would love to help, but I just don’t have the capacity.
+I do offer a structured and top-down approach to machine learning self-study. You can learn more about it here:
+How to Get Started With Machine Learning
+I am happy to continue to answer any machine learning questions you might have by email (one question at a time please).
+Why do you focus on Python for machine learning?
+I like to use different tools depending on the project.
+Recently I have been focusing more attention on Python-based tools and libraries.
+Recently, it seems that Python may be emerging as a dominant platform. Skills in Python for machine learning are in great demand. I am just serving this need.
+See the post:
+Python is the Growing Platform for Applied Machine Learning
+Can you answer a question about a blog post?
+Yes.
+Please ask your question in the comments of the blog post.
+Why don’t you have a post or book on […]?
+I will get to it eventually I hope.
+Until then, contact me and let me know about the topic you want me to cover.
+What should I do if I’ve found an error?
+Great!
+Please contact me so that I can correct it.
+What mathematical background do I need for machine learning?
+I’m not your guy.
+My mission is to help you get started and get good at applied machine learning using a “learn by doing” philosophy. I teach using a top-down and results-first approach.
+If you want the bottom-up theory-first approach to machine learning, I would recommend a textbook or a multi-year graduate program. It is a path to theoretical machine learning and academia.
+That being said, it is generally recognized that eventually, you will need to know your away around the intersection of these fields:
+Linear AlgebraStatisticsProbability
+Don’t make the beginners mistake of thinking you need to start here. Read this:
+Machine Learning for ProgrammersThe Machine Learning Mastery Method
+Also, read this post:
+What If I Am Not Good At Mathematics
+What is your background?
+I have a bunch of degrees in computer science and artificial intelligence and I have worked many years in the tech industry in teams where your code has to work and be maintainable.
+Academia was a bad fit for me, but I loved to research and to write. I think of myself as a good engineer that really wants to help other people get started and get good at machine learning, without wasting years of their life “getting ready to get started“.
+More about my belief and my mission to help you be awesome at machine learning.
+ 
+What machine learning project should I work on?
+My best advice is to work on problems or with technology that most interests you.
+Here are some more specific suggestions:
+Consider working through a standard machine learning dataset:
+Practice Machine Learning with Datasets from the UCI Machine Learning Repository7 Time Series Datasets for Machine Learning
+Consider working on some more advanced datasets from competitive machine learning:
+Tour of Real-World Machine Learning Problems10 Challenging Machine Learning Time Series Forecasting Problems
+Consider working on problems that matter to you:
+Work on Machine Learning Problems That Matter To You
+Consider devising your own projects:
+4 Self-Study Machine Learning Projects
+What research topic should I work on?
+I don’t know.
+My focus is on industrial machine learning.
+I think the best person to talk to about research topics is your research advisor.
+Best of luck with your project.
+Can I use your code in my own project?
+Yes, but understand that it was developed and provided for educational purposes.
+I take no responsibility for the code, what it might do or how you might use it.
+Can you do some consulting?
+No.
+Sorry, I no longer have the capacity.
+It takes too much time and mental space away from writing new tutorials and books, which is the most effective way I can help the most people.
+Can you recommend someone?
+No.
+Sorry, I want to stay away from the whole recruiting thing.
+From what I have experienced, the great people are always fully engaged. Your job is to find them and offer them something more interesting.
+Can you help me with my project?
+No.
+Sorry, I don’t have the capacity to get involved in your project at the level you need or at a level to do a good job.
+I am happy to answer any specific questions you have about machine learning.
+Can you read, review, collaborate or help with my research paper?
+No.
+I no longer consider myself an academic. I cannot give you expert academic advice.
+I am happy to answer any specific questions you have about machine learning.
+What school, university, or course should I take?
+I don’t know.
+My focus is industrial machine learning, I no longer have an opinion on schools and courses.
+If it looks good to you, go for it.
+Remember, you do not need a higher degree to do very well in applied machine learning.
+Can you read, review or debug my code?
+No.
+I’m eager to help, but I just don’t have the capacity to debug code for you.
+I am happy to make some suggestions:
+Consider aggressively cutting the code back to the minimum required. This will help you isolate the problem and focus on it.Consider cutting the problem back to just one or a few simple examples.Consider finding other similar code examples that do work and slowly modify them to meet your needs. This might expose your misstep.Consider posting your question and code to StackOverflow.
+Can you help me setup or debug my development environment?
+No.
+I’m eager to help, but I just don’t have the capacity.
+My material is generally intended for those that know their way around their own workstation and know how to install software.
+Check these tutorials for setting up your environment:
+How to Setup a Python Environment for Machine Learning and Deep Learning with AnacondaHow to Install a Python 3 Environment on Mac OS X for Machine Learning and Deep LearningHow to Create a Linux Virtual Machine For Machine Learning Development With Python 3
+Consider posting your question and issue to StackOverflow.
+
+
+Need More Help?
+I’m here to help you become awesome at applied machine learning.
+If you still have questions and need help, you have some options:
+Ebooks: I sell a catalog of Ebooks that show you how to get results with machine learning, fast.
+Machine Learning Mastery EBook Catalog
+Blog: I write a lot about applied machine learning on the blog, try the search feature.
+Machine Learning Mastery Blog
+Contact: You can contact me with your question, but one question at a time please.
+Machine Learning Mastery Contact
+
+	
+	
+
+     
+            
+                
+            
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

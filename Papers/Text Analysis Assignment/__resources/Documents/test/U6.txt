@@ -1,0 +1,1 @@
+For example, the first hidden node has value 1 with p = 0.354 and in this case has a 0 value. Notice the third hidden node has p = 0.602 so you’d expect the node value to be 1, but because node values are stochastic, there’s a chance the node value can be 0 as shown.

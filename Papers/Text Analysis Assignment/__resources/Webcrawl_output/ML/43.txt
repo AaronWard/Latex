@@ -1,0 +1,536 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+	    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                             
+
+	
+		Master Machine Learning Algorithms	
+
+	
+	    Master Machine Learning Algorithms
+Finally Pull Back The Curtain And See How They Work With
+Clear Descriptions, Step-By-Step Tutorials and Working Examples in Spreadsheeds
+
+
+ 
+
+
+$37 USD
+You must understand the algorithms to get good (and be recognized as being good) at machine learning.
+In this mega Ebook is written in the friendly Machine Learning Mastery style that you’re used to, finally cut through the math and learn exactly how machine learning algorithms work, then implement them from scratch, step-by-step.
+Clear Descriptions and Step-By-Step Tutorials
+Ebook with 163 pages in PDF format.10 top algorithms described with clear descriptions.12 step-by-step tutorials with worked examples.16 spreadsheets with working implementations.
+No Fancy Math and Nowhere for Details to Hide
+Convinced?
+Click to jump straight to the packages.
+
+
+
+ Jason’s book is the best that exists to turn reasonably intelligent individuals with basic programming skills (any language) into sharp machine learning developers.
+Howard Schneider Physician
+
+
+
+
+
+
+
+
+You Learn Best By Implementing Algorithms From Scratch
+…But You Need Help With The First Step: The Math
+Developers Learn Fast By Trying Things Out…
+I’m a developer and I feel like I don’t really understand something until I can implement it from scratch. I need to understand each piece of it in order to understand the whole. The same thing applies to machine learning algorithms.
+If you are anything like me, you will not feel comfortable about machine learning algorithms until you can implement them from scratch, step-by-step.
+The Math Can Really Slow You Down (…and Sap Your Motivation)
+The problem is, machine learning algorithms are not like other algorithms you may have implemented like sorting. They are always described using complex mathematics with a mixture of probability, statistics and linear algebra.
+You need to be able to get past the mathematical descriptions in order to implement the algorithms from scratch, but you don’t have the time to spend 3 years studying mathematics to get there.
+You Really Need Clear Worked Examples (…step-by-step with real numbers)
+Machine learning algorithms would be much easier to understand if someone simplified the math and gave clear worked examples showing how real numbers get plugged into the equations and what numbers to expect as outputs. With clear inputs and outputs we as developers can reproduce and understand the math.
+Even better would be to have worked examples that actually perform all of the calculation required to learn a model from a small sample dataset, and all of the calculations required to make predictions from the learned model.
+Master Machine Learning Algorithms is for Developers
+….with NO Background in Math
+ …and LOTS of Interest in Machine Learning
+Introducing the “Master Machine Learning Algorithms” Ebook. This Ebook was carefully designed to provide a gentle introduction of the procedures to learn models from data and make predictions from data 10 popular and useful supervised machine learning algorithms used for predictive modeling.
+Each algorithm includes a one or more step-by-step tutorials explaining exactly how to plug in numbers into each equation and what numbers to expect as output. These tutorials will guide you step-by-step through the processes for creating models from training data and making predictions.
+More than that, each tutorial is designed to be completed in a spreadsheet. Spreadsheets are the simplest way to automate calculations and anyone can use a spreadsheet, from beginners, to professional developers to hard core programmers.
+If you can understand how a machine learning algorithm works in a spreadsheet then you really know how it works. You can then implement it in any programming language you wish or use your newfound knowledge and understanding to achieve better performance from the algorithms in practice.
+
+Everything You Need To Know About 10 Top Machine Learning Algorithms
+You Will Get:
+6 Import Background Lessons
+11 Clear Algorithm Descriptions
+12 Step-By-Step Algorithm Tutorials
+This ebook was written around two themes designed to help you understand machine learning algorithms as quickly as possible.
+These two parts are Algorithm Descriptions and Algorithm Tutorials:
+Algorithm Descriptions: Discover exactly what each algorithm is and generally how it works from a high-level.
+Algorithm Tutorials: Climb inside each machine learning algorithm and work through a case study to see how it learns and makes predictions.
+
+1. Algorithm Descriptions
+Here is an overview of the linear, nonlinear and ensemble algorithm descriptions:
+Algorithm 1: Gradient Descent.Algorithm 2: Linear Regression.Algorithm 3: Logistic Regression.Algorithm 4: Linear Discriminant Analysis.Algorithm 5: Classification and Regression Trees.Algorithm 6: Naive Bayes.Algorithm 7: K-Nearest Neighbors.Algorithm 8: Learning Vector Quantization.Algorithm 9: Support Vector Machines.Algorithm 10: Bagged Decision Trees and Random Forest.Algorithm 11: Boosting and AdaBoost.
+2. Algorithm Tutorials
+Here is an overview of the step-by-step algorithm tutorials:
+Tutorial 1: Simple Linear Regression using Statistics.Tutorial 2: Simple Linear Regression with Gradient Descent.Tutorial 3: Logistic Regression with Gradient Descent.Tutorial 4: Linear Discriminant Analysis using Statistics.Tutorial 5: Classification and Regression Trees with Gini.Tutorial 6: Naive Bayes for Categorical Data.Tutorial 7: Gaussian Naive Bayes for Real-Valued Data.Tutorial 8: K-Nearest Neighbors for Classification.Tutorial 9: Learning Vector Quantization for Classification.Tutorial 10: Support Vector Machines with Gradient Descent.Tutorial 11: Bagged Classification and Regression Trees.Tutorial 12: AdaBoost for Classification.
+Each tutorial was designed to be completed in about 30 minutes by the average developer.
+ 
+Master Machine Learning Algorithms Table of Contents
+
+
+Here’s Everything You’ll Get In…
+Master Machine Learning Algorithms
+
+Algorithm Tutorials and Spreadsheets
+A digital download that contains everything you need, including:
+
+Clear algorithm descriptions that help you to understand the principles that underlie each technique.The step-by-step algorithm tutorials show you exactly how each model learns.Spreadsheets showing all the examples and calculations from the book, giving you working models to use, learn from and extend.Real worked examples so that you can see exactly the numbers in and the numbers out, there’s nowhere for the details to hide.Digital Ebook in PDF format so that you can have the book open side-by-side with the spreadsheets and see exactly how each model works.The grounding needed to understand algorithm behavior so that you can choose which algorithm to use and diagnose issues.
+
+
+Important foundation principles for all machine learning algorithms, including:
+
+The statistical and computer science terms used to describe data, and what they all mean (with pictures).The fundamental problem that all machine learning algorithms solve and why it’s important.The breakdown of algorithms as parametric and nonparametric and when to use each.The important distinction between supervised and unsupervised techniques, and why you should just focus on one.The modeling error introduced by bias and variance and how to balance them.The poor algorithm performance that caused by overfitting and underfitting, and the techniques to identify and mitigate both.
+
+
+Resources you need to go deeper, when you need to, including:
+
+Top machine learning textbooks to deepen your foundation of machine learning algorithms, if you crave more.The best forums and question-and-answer websites, places where you can ask your challenging questions and actually get a response.
+
+
+ 
+Linear and Nonlinear Algorithms
+Get the most from linear algorithms, the starting point for most projects, including:
+
+The important functions in Excel, so that there is nothing holding you back from understanding how machine learning algorithms work.Tips to get the most out of gradient descent, the core of many algorithms.A clever shortcut you can use to greatly simplify linear regression.The application of gradient descent to linear and logistic regression for fast and robust learning, and the specific numbers calculated at each step in the process.The linear algorithm to use for classifications with more than two classes when logistic regression just won’t do.
+
+
+Get better performance with more advanced nonlinear algorithms including:
+
+The procedure for building up a decision tree, and carefully explained cost function you need to know to make it work.The Bayes Theorem and the clever simplification that lets you harness the power of probability for predictive modeling.The simple little technique that lets you use Bayesian probability on your real-valued data.The simple but powerful nearest neighbor method and the problem that can trip you up when you have a lot of data features.A clever simplification of nearest neighbors that uses learning rather than “a big dumb database of observations”.The simple principle behind the wildly used Support Vector Machines method and how it translates into a real predictive modeling algorithm.
+
+
+Combine the predictions from many models with ensemble algorithms, including:
+
+The interesting bootstrap method for estimating quantities and how it can be easily applied as the basis for the Random Forest algorithm, perhaps the most popular machine learning algorithm used today.The idea of creating models to fix the mistakes of other models and how this can be scaled up to achieve impressive results.
+
+
+
+What More Do You Need?
+
+Take a Sneak Peek Inside The Ebook
+Below are some snapshots of select pages from the Ebook. Click to enlarge.
+
+
+
+
+
+
+
+
+
+
+
+
+BONUS: Machine Learning Algorithm Spreadsheets
+…you also get 16 fully working spreadsheets
+
+Each machine learning algorithm tutorial pressented in the book is standalone, meaning that you can dive in anywhere and pickup where you left off anytime.
+You get 16 Excel spreadsheets, one for each machine learning algorithm tutorial in the book.
+This means that you can follow along and compare your answers to a known working implementation of each algorithm in the provided spreadsheets.
+This helps a lot to speed up you progress when working through the detail of an algorithm.
+ 
+Master Machine Learning Algorithms Spreadsheets
+
+
+About The Author
+Hi, I'm Jason Brownlee.
+I live in Australia with my wife and son and love to write and code.
+I have a computer science background as well as a Masters and Ph.D. degree in Artificial Intelligence.
+I’ve written books on algorithms, won and ranked in the top 10% in machine learning competitions, consulted for startups and spent a long time working on systems for forecasting tropical cyclones. (yes I have written tons of code that runs operationally)
+I get a lot of satisfaction helping developers get started and get really good at machine learning.
+I teach an unconventional top-down and results-first approach to machine learning where we start by working through tutorials and problems, then later wade into theory as we need it.
+I'm here to help if you ever have any questions. I want you to be awesome at machine learning.
+
+
+Get Your Sample Chapter
+Want to take a closer look at the Ebook? Download a free sample chapter PDF.
+Enter your email address and your sample chapter will be sent to your inbox.
+Click Here to Download Your Sample Chapter
+
+ 
+
+Check Out What Customers Are Saying:
+
+
+
+
+ Machine Learning Mastery is a perfect blend of math, statistics, and computer science contexts packaged in a practical approach to learning the key points of Machine Learning. This is a great book for more than curious Engineers and Manager types who want a clear, rich, and fact-filled summary of the field of Machine Learning.
+Doug Schmidt Chief Enterprise Architect at Pearson PLC
+
+
+
+
+
+
+
+
+
+ This book is exactly what it claims to be. I’ve tried many courses, books and tutorials on machine learning before and the math notation has always been a barrier. This book doesn’t avoid the notation, but presents it in a way that programmers will not only understand, bit also realise they’ve been speaking the same language all along.
+Machine learning is difficult to comprehend, but this book reduces the challenge down to simple study and practice that any programmer should be able to handle without having to also learn or re-learn mathmatics.
+Tom Elders Technical Director at Applied Works
+
+
+
+
+
+
+
+
+
+
+
+ Nice to have crisp content of all the algorithms nicely explained in the guide. Approach towards application is the best part of it. I wish I’d got this guide earlier & have a head on start with ML algorithms.
+Thanks Jason for expediting my journey towards ML !!
+Tushar Saxena Business Analyst @ Flipkart
+
+
+
+
+
+
+
+
+
+ This is a well written and well thought through book.  There is enough information to write machine learning algorithms in any programming language from scratch.
+I found this to be a quick read and greatly enhanced my understanding of machine learning algorithms.
+Robert Chumley Sr. Technical Consultant at Cetrest Corporation
+
+
+
+
+
+
+
+You're Not Alone in Choosing Machine Learning MasteryTrusted by Over 10,000 Practitioners
+...including employees from companies like:
+ 
+      
+    
+ 
+...students and faculty from universities like:
+ 
+     
+      
+ 
+and many thousands more...
+
+ Absolutely No Risk with...100% Money Back Guarantee
+Plus, as you should expect of any great product on the market, every Machine Learning Mastery Ebookcomes with the surest sign of confidence: my gold-standard 100% money-back guarantee.
+
+100% Money-Back Guarantee
+If you're not happy with your purchase of any of the Machine Learning Mastery Ebooks,just email me within 90 days of buying, and I'll give you your money back ASAP.
+No waiting. No questions asked. No risk.
+ 
+
+
+Get Started With Machine Learning Algorithms Today
+Choose Your Package:
+
+
+
+Basic Package
+You will get:
+Master Machine Learning Algorithms
+(including bonus spreadsheets)
+Buy Now for $37
+(a great deal!)
+
+ 
+
+Beginner Bundle
+TOP SELLER
+You get the 2-book set:
+Master Machine Learning AlgorithmsMachine Learning Mastery With Weka
+(includes all bonus spreadsheets)
+Buy Now for $49
+(that is a 33% discount)
+
+ 
+
+Super Bundle
+You get the complete 11-Ebook set:
+Linear Algebra for Machine LearningMaster Machine Learning AlgorithmsML Algorithms From ScratchMachine Learning Mastery With WekaMachine Learning Mastery With RMachine Learning Mastery With PythonTime Series Forecasting With PythonDeep Learning With PythonDeep Learning for NLPLSTM Networks With PythonXGBoost With Python
+(includes all bonus source code)
+Buy Now for $287
+(save a massive $120)
+
+
+All prices are in US Dollars (USD).
+(1) Click the button.    (2) Enter your details.   (3) Download immediately.
+
+Secure Payment Processing With SSL Encryption
+
+
+Are you a Student, Teacher or Retiree?
+Contact me about a discount.
+ 
+ 
+Do you have any Questions?
+See the FAQ.
+
+
+What Are Skills in Machine Learning Worth?
+
+Your boss asks you:
+Hey, can you build a predictive model for this?
+Imagine you had the skills and confidence to say:"YES!"...and follow through.
+I have been there. It feels great!
+How much is that worth to you?
+The industry is demanding skills in machine learning.The market wants people that can deliver results, not write academic papers.
+Business knows what these skills are worth and are paying sky-high starting salaries.
+A Data Scientists Salary Begins at:$100,000 to $150,000.A Machine Learning Engineers Salary is Even Higher.
+What Are Your Alternatives?
+You made it this far.You're ready to take action.
+But, what are your alternatives? What options are there?
+(1) A Theoretical Textbook for $100+ ...it's boring, math-heavy and you'll probably never finish it.
+(2) An On-site Boot Camp for $10,000+ ...it's full of young kids, you must travel and it can take months.
+(3) A Higher Degree for $100,000+ ...it's expensive, takes years, and you'll be an academic.
+OR...
+For the Hands-On Skills You Get...And the Speed of Results You See...And the Low Price You Pay...
+Machine Learning Mastery Ebooks are Amazing Value!
+And they work. That's why I offer the money-back guarantee.
+
+You're A Professional
+
+
+The field moves quickly,...how long can you wait?
+You think you have all the time in the world, but...
+New methods are devised and algorithms change.New books get released and prices increase.New graduates come along and jobs get filled.
+Right Now is the Best Time to make your start.
+
+
+Bottom-up is Slow and Frustrating,...don't you want a faster way?
+Can you really go on another day, week or month...
+Scraping ideas and code from incomplete posts.Skimming theory and insight from short videos.Parsing Greek letters from academic textbooks.
+Targeted Training is your Shortest Path to a result.
+
+Professionals Use Training To Stay On Top Of Their FieldGet The Training You Need!
+You don't want to fall behind or miss the opportunity.
+
+
+Frequently Asked Questions
+
+
+Why doesn't my payment work?
+I am sorry to hear that you're having difficulty.
+Some ideas:
+Perhaps you can double check that your details are correct, just in case of a typo?Perhaps you could try a different payment method, such as PayPal or Credit Card?Perhaps you could try my alternative secure payment processor, click here?Perhaps you're able to talk to your bank, just in case they blocked the transaction?
+If you're still having difficulty, please contact me and I can help investigate further.
+Can I get your books for free?
+No.
+Sorry, I don’t give away free copies of my books.
+You can access all of my best free material on my blog.
+Can I get a hard copy of your book?
+No.
+Sorry, I don't have hard copies by design.
+The books are written for immediate use, rather than references to sit on the shelf.
+My students like to have the PDF open on their screen next to their editor so they can copy-paste code.
+Also, the books are updated often to reflect changes to APIs. The field is moving very fast.
+I hope that helps explain the rationale.
+Are there Kindle or ePub versions of the books?
+No.
+Sorry, just PDF Ebooks.
+This is by design and I put a lot of thought into it. My rationale is as follows:
+I use LaTeX to layout the text and code to give a professional look and I am afraid that EBook readers would mess this up.The increase in supported formats would create a maintenance headache that would take a large amount of time away from updating the books and working on new books.Most critically, reading on an e-reader or iPad is antithetical to the book-open-next-to-code-editor approach the PDF format was chosen to support.
+My materials are playbooks intended to be open on the computer, next to a text editor and a command line. They are not reference texts to be read away from the computer.
+Will I get free updates to the books?
+Yes.
+All updates are free.
+Books are usually updated once every month or two to fix bugs, typos and keep abreast of API changes.
+Contact me anytime and check if there have been updates. Let me know what version of the book you have (version is listed on the copyright page).
+How do I get access to any bonuses?
+After you complete your purchase you will receive an email with a link to download your bundle.
+The download will include the book or books and any bonus material.
+Is there any digital rights management (DRM)?
+No.
+Can I print the PDF for my personal use?
+Yes.
+In what order should I read your books?
+My best advice is to pick a topic that most interests you and start there.
+Can I get a customized bundle of books?
+No.
+Sorry, I cannot create custom bundles of books for you, it would create a maintenance nightmare for me. I’m sure you can understand.
+You can see the full catalog of my books and bundles here.
+Can I get an evaluation copy of your books?
+No.
+Sorry, I no longer distribute evaluation copies of my books due to some past abuse of the privilege.
+If you are a teacher or lecturer, I’m happy to offer you a student discount.
+Contact me and ask for the discount.
+Can I get an invoice for my purchase?
+Yes.
+Email me with the details of your order (order number or email address used to make the purchase) and details you would like to appear on the invoice (your name, company name and address).
+I will create a PDF invoice for you and email it back.
+How long do books take to ship?
+There are no physical books, therefore no shipping is required.
+All books are EBooks that you can download immediately after you complete your purchase.
+Do you ship to my country?
+There are no physical books, therefore no shipping is required.
+All books are EBooks that you can download immediately after you complete your purchase.
+I support purchases from any country via PayPal or Credit Card.
+Can I have a discount?
+I do offer a discount to students, teachers, and retirees.
+Note: I only offer discounts on individual books, not on the bundles. This is because the bundles are already heavily discounted.
+If you are a student, teacher or a retiree please contact me and ask for the discount.
+Do you have any sales, deals, or coupons?
+No.
+I generally don't do sales.
+If I do have a special, such as around the launch of a new book, I only offer it to past customers and subscribers on my email list.
+I do offer book bundles that offer a discount for a collection of related books.
+Can I get a refund?
+Yes.
+I am sorry to hear that you want a refund.
+Please contact me directly with your purchase details (order number or email address used to make the purchase) and I will organize a refund.
+
+
+Will you help me if I have questions?
+Yes. 
+Please contact me anytime with questions about machine learning or the books.
+One question at a time please.
+Also, each book has a final chapter on getting more help and further reading and points to resources that you can use to get more help.
+Do I need to be a good programmer?
+No.
+Not at all.
+My material requires that you have a programmers mindset of thinking in procedures and learning by doing.
+You do not need to be an excellent programmer to read and learn about machine learning algorithms.
+How much math do I need to know?
+No background in statistics, probability or linear algebra is required.
+I teach using a top-down and results-first approach to machine learning. You will learn by doing, not learn by theory.
+There are no derivations.
+Any questions presented are explained in full and are only provided to make the explanation clearer, not more confusing.
+How much machine learning do I need to know?
+Only a little.
+If you are a reader of my blog posts, then you know enough to get started.
+I do my best to lead you through what you need to know, step-by-step.
+How long will the book take me to complete?
+I recommend reading one chapter per day.
+Some students finish the book in a weekend.
+Most students finish the book in a few weeks by working through it during nights and weekends.
+How are your books different to other books?
+My books are playbooks. Not textbooks.
+They have no deep explanations of theory, just working examples that are laser-focused on the information that you need to know to bring machine learning to your project.
+My books are not for everyone, they are carefully designed for practitioners that need to get results, fast.
+How are your books different from the blog?
+The books are a concentrated and more convenient version of what I put on the blog.
+I design my books to be a combination of lessons and projects to teach you how to use a specific machine learning tool or library and then apply it to real predictive modeling problems.
+The books get updated with bug fixes, updates for API changes and the addition of new chapters, and these updates are totally free.
+I do put some of the book chapters on the blog as examples, but they are not tied to the surrounding chapters or the narrative that a book offers and do not offer the standalone code files.
+With each book, you also get all of the source code files used in the book that you can use as recipes to jump-start your own predictive modeling problems.
+How are the 2 algorithms books different?
+The book “Master Machine Learning Algorithms” is for programmers and non-programmers alike that learn through worked examples. It teaches you how 10 top machine learning algorithms work, with worked examples in arithmetic, not code (and spreadsheets) that show how each model learns and makes predictions.
+The book “Machine Learning Algorithms From Scratch” is for programmers that learn by writing code to understand. It provides step-by-step tutorials on how to implement top algorithms as well as how to load data, evaluate models and more. It has less on how the algorithms work, instead focusing exclusively on how to implement each in code.
+The two books can support each other.
+Is there a team or company-wide license?
+No.
+Due to abuse of the privilege, I only support purchases by individuals.
+Is there a license for libraries?
+No.
+Sorry, I only support purchases by individuals.
+Do you have videos?
+No.
+I only have tutorial lessons and projects in text format.
+This is by design. I used to have video content and I found the completion rate much lower.
+I want you to put the material into practice. I have found that text-based tutorials are the best way of achieving this.
+After reading and working through the tutorials you are far more likely to apply what you have learned.
+What operating systems are supported?
+Linux, Mac OS X and Windows.
+Can you be my mentor or coach?
+No.
+Thanks for asking. I would love to help, but I just don't have the capacity.
+I try to help as many people as possible through my blog and books.
+Can I purchase from Amazon (or elsewhere)?
+No.
+My books can only be purchased from my website.
+The reason is that I am a small business and I want a direct relationship with you, my customer, so that I can offer personal support and send out updates about your book and new stuff I am working on.
+I hope you can understand my rationale.
+What if my download link expires?
+It is possible that your link to download your purchase will expire after a few days.
+This is a security precaution.
+Please contact me and I will resend you purchase receipt with an updated download link.
+Can I use your code in my own project?
+Yes.
+But, understand that all code was developed and provided for educational purposes only and that I take no responsibility for it, what it might do or how you might use it.
+
+Do you have another question?
+Please contact me.
+
+	
+	
+
+     
+            
+                
+            
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

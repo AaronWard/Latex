@@ -1,0 +1,1 @@
+Many explanations of robotics focus on the similarities between organic systems and robots – but this approach fails to recognise that we as humans have a far better understanding of how robots work than how we work ourselves. AI almost by definition must take a computational approach to the world – and we should also teach pupils when to leave the computation to the computers.

@@ -1,0 +1,1 @@
+A robot is a programmable machine that physically interacts with the world around it and is capable of carrying out a complex series of actions autonomously or semi-autonomously

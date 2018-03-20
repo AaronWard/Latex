@@ -1,0 +1,115 @@
+Navigation
+
+	
+
+		
+
+Machine Learning Mastery
+Making developers awesome at machine learning
+
+	    
+	        			
+
+Start Here
+     
+Blog
+     
+Books
+     
+About
+     
+Contact
+
+		
+    
+        
+        
+    
+    
+			Need help with machine learning? Take the FREE Crash-Course.
+
+			    
+	
+	
+	
+
+	
+	
+
+		Home
+
+	Empty Menu	
+		
+
+	
+
+	Return to Content
+
+
+       
+    
+	    
+    
+    	    
+
+            
+                                             
+
+	
+		About	
+
+	
+	    Hello, my name is Jason Brownlee, Ph.D.
+I’m a husband, father and professional developer. I also have a few higher degrees in Artificial Intelligence and I’ve worked on machine learning systems for defense, startups and severe weather forecasting.
+I started this community because I am passionate about helping professional developers to get started and confidently apply machine learning to address complex problems.
+Overwhelmed
+I know what it is like to feel overwhelmed by the vast amounts of blogs, courses, books, papers and software tools available.
+It is difficult to know where to start and how to know which resources are worth the effort.
+It is easy to feel confused by the theoretical and mathematical introductions to machine learning algorithms and thinking that there must be an easier path.
+That is why I am here to help you learn and understand machine learning, and wield machine learning algorithms confidently to solve complex problems.
+Interested Amateur
+It wasn’t that long ago that I was a developer and then a professional software engineer interested in machine learning.
+I read blogs and websites and did not understand the theory or the mathematics that I believed I had to before I could apply the algorithms.
+I desperately wanted to get started applying machine learning but I was hung up on the theory and the academic side and I could not move forward.
+Self-Study Small Projects
+I knew the solution and was using it effectively, but it took me years to see it for what it was.
+As a professional software developer, it is part of my job to stay on top of tools, techniques, APIs and programming languages. Like many developers, I do this by designing and executing small projects on the side that use a tool or technique in order for me to learn it through applying it.
+I was using this methodology to teach myself machine learning on the side and I even used this strategy to get me through two higher degrees, that I now realize I didn’t need to get.
+Learn from my Missteps
+It was difficult when my interest in machine learning was kindled.
+There were a few sites out there, but nothing that I felt spoke to me as first an interested programmer and later, a professional programmer. I spent hundreds of dollars on thick academic textbooks that I could not understand or appreciate until many years later.
+Machine learning is described in academic language from books, papers, and even websites. I felt (I now believe wrongly) that I had to get higher degrees to figure this stuff out. I quit my job and went back to school to earn a Masters and Ph.D. degrees.
+I completed my research work leveraging the skills I already had as a professional developer: designing and executing small projects in order to learn and master skills.
+Apply Machine Learning Algorithms
+I turned full circle and happily became a professional programmer again. I got to solve complex problems for real users that are interested and excited about the solutions.
+I can confidently wield machine learning algorithms to solve problems at work, for clients, and even for myself when participating in competitions or creating my own software.
+Today I spend my days working with developers to get started and really kick ass in applied machine learning.
+Your First Step
+And now I want to help you to get the same results. The first step is simple.
+Sign-up to my email newsletter and immediately receive for FREE cheat sheet to get better results on your next machine learning project.
+Just click the button below.
+SEND IT
+
+	
+	
+
+     
+            
+                
+            
+		         
+
+		
+    
+	
+	
+
+		
+		
+			© 2018 Machine Learning Mastery. All Rights Reserved. 		
+
+		
+			
+Privacy | 
+Contact |
+About

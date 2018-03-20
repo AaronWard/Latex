@@ -1,0 +1,11 @@
+
+The model representation used by KNN.How a model is learned using KNN (hint, it’s not).How to make predictions using KNNThe many names for KNN including how different fields refer to it.How to prepare your data to get the most from KNN.Where to look to learn more about the KNN algorithm.
+This post was written for developers and assumes no background in statistics or mathematics. The focus is on how the algorithm works and how to use it for predictive modeling problems. If you have any questions, leave a comment and I will do my best to answer.
+Let’s get started.
+K-Nearest Neighbors for Machine LearningPhoto by Valentin Ottone, some rights reserved.
+KNN Model Representation
+The model representation for KNN is the entire training dataset.
+It is as simple as that.
+KNN has no model other than storing the entire dataset, so there is no learning required.
+Efficient implementations can store the data using complex data structures like k-d trees to make look-up and matching of new patterns during prediction efficient.
+Because the entire training dataset is stored, you may want to think carefully about the consistency of your training data.

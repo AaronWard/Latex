@@ -1,0 +1,339 @@
+Movie Recommendations and More via MapReduce and Scalding
+
+        
+
+        
+
+
+          
+  Scalding is an in-house MapReduce framework that Twitter recently open-sourced. Like Pig, it provides an abstraction on top of MapReduce that makes it easy to write big data jobs in a syntax that’s simple and concise. Unlike Pig, Scalding is written in pure Scala – which means all the power of Scala and the JVM is already built-in. No more UDFs, folks!
+
+  This is going to be an in-your-face introduction to Scalding, Twitter’s (Scala + Cascading) MapReduce framework.
+
+  In 140: instead of forcing you to write raw map and reduce functions, Scalding allows you to write natural code like
+  
+  
+
+  Not much different from the Ruby you’d write to compute tweet distributions over small data? Exactly.
+
+  Two notes before we begin:
+
+  This Github repository contains all the code used.For a gentler introduction to Scalding, see this Getting Started guide on the Scalding wiki.
+
+
+  Movie Similarities
+
+  Imagine you run an online movie business, and you want to generate movie recommendations. You have a rating system (people can rate movies with 1 to 5 stars), and we’ll assume for simplicity that all of the ratings are stored in a TSV file somewhere.
+
+  Let’s start by reading the ratings into a Scalding job.
+
+  
+
+  You want to calculate how similar pairs of movies are, so that if someone watches The Lion King, you can recommend films like Toy Story. So how should you define the similarity between two movies?
+
+  One way is to use their correlation:
+
+  For every pair of movies A and B, find all the people who rated both A and B.Use these ratings to form a Movie A vector and a Movie B vector.Calculate the correlation between these two vectors.Whenever someone watches a movie, you can then recommend the movies most correlated with it.
+
+
+  Let’s start with the first two steps.
+
+  
+
+  Before using these rating pairs to calculate correlation, let’s stop for a bit.
+
+  Since we’re explicitly thinking of movies as vectors of ratings, it’s natural to compute some very vector-y things like norms and dot products, as well as the length of each vector and the sum over all elements in each vector. So let’s compute these:
+
+  
+
+  To summarize, each row in vectorCalcs now contains the following fields:
+
+  movie, movie2numRaters, numRaters2: the total number of people who rated each moviesize: the number of people who rated both movie and movie2dotProduct: dot product between the movie vector (a vector of ratings) and the movie2 vector (also a vector of ratings)ratingSum, rating2sum: sum over all elements in each ratings vectorratingNormSq, rating2Normsq: squared norm of each vector
+
+
+  So let’s go back to calculating the correlation between movie and movie2. We could, of course, calculate correlation in the standard way: find the covariance between the movie and movie2 ratings, and divide by their standard deviations.
+
+  But recall that we can also write correlation in the following form:
+
+  $Corr(X, Y) = \frac{n \sum xy - \sum x \sum y}{\sqrt{n \sum x^2 - (\sum x)^2} \sqrt{n \sum y^2 - (\sum y)^2}}$
+
+  (See the Wikipedia page on correlation.)
+
+  Notice that every one of the elements in this formula is a field in vectorCalcs! So instead of using the standard calculation, we can use this form instead:
+
+  
+
+
+  And that’s it! To see the full code, check out the Github repository here.
+
+  Book Similarities
+
+  Let’s run this code over some real data. Unfortunately, I didn’t have a clean source of movie ratings available, so instead I used this dataset of 1 million book ratings.
+
+  I ran a quick command, using the handy scald.rb script that Scalding provides…
+
+  
+
+
+
+  …and here’s a sample of the top output I got:
+
+  
+
+  As we’d expect, we see that
+
+  Harry Potter books are similar to other Harry Potter booksLord of the Rings books are similar to other Lord of the Rings booksTom Clancy is similar to John GrishamChick lit (Summer Sisters, by Judy Blume) is similar to chick lit (Bridget Jones)
+
+
+  Just for fun, let’s also look at books similar to The Great Gatsby:
+
+  
+
+  (Schoolboy memories, exactly.)
+
+  More Similarity Measures
+
+  Of course, there are lots of other similarity measures we could use besides correlation.
+
+  Cosine Similarity
+
+  Cosine similarity is a another common vector-based similarity measure.
+
+  
+
+
+
+  Correlation, Take II
+
+  We can also also add a regularized correlation, by (say) adding N virtual movie pairs that have zero correlation. This helps avoid noise if some movie pairs have very few raters in common (for example, The Great Gatsby had an unlikely raw correlation of 1 with many other books, due simply to the fact that those book pairs had very few ratings).
+
+  
+
+
+
+  Jaccard Similarity
+
+  Recall that one of the lessons of the Netflix prize was that implicit data can be quite useful – the mere fact that you rate a James Bond movie, even if you rate it quite horribly, suggests that you’d probably be interested in similar action films. So we can also ignore the value itself of each rating and use a set-based similarity measure like Jaccard similarity.
+
+  
+  
+
+  Incorporation
+
+  Finally, let’s add all these similarity measures to our output.
+
+  
+  
+
+  Book Similarities Revisited
+
+  Let’s take another look at the book similarities above, now that we have these new fields.
+
+  Here are some of the top Book-Crossing pairs, sorted by their shrunk correlation:
+
+  
+
+  Notice how regularization affects things: the Dark Tower pair has a pretty high raw correlation, but relatively few ratings (reducing our confidence in the raw correlation), so it ends up below the others.
+
+  And here are books similar to The Great Gatsby, this time ordered by cosine similarity:
+
+  
+
+  Input Abstraction
+
+  So our code right now is tied to our specific ratings.tsv input. But what if we change the way we store our ratings, or what if we want to generate similarities for something entirely different?
+
+  Let’s abstract away our input. We’ll create a VectorSimilarities class that represents input data in the following format:
+
+  
+  
+
+
+  Whenever we want to define a new input format, we simply subclass VectorSimilarities and provide a concrete implementation of the input method.
+
+  Book-Crossings
+
+  For example, here’s a class I could have used to generate the book recommendations above:
+
+  
+  
+
+
+  The input method simply reads from a TSV file and lets the VectorSimilarities superclass do all the work. Instant recommendations, BOOM.
+
+  Song Similarities with Twitter + iTunes
+
+  But why limit ourselves to books? We do, after all, have Twitter at our fingertips…
+
+  rated Born This Way by Lady GaGa 5 stars itun.es/iSg92N #iTunes— gggf (@GalMusic92) February 8, 2012
+
+
+  
+
+
+  Since iTunes lets you send a tweet whenever you rate a song, we can use these to generate music recommendations!
+
+  Again, we create a new class that overrides the abstract input defined in VectorSimilarities…
+
+  
+  
+
+
+  …and snap! Here are some songs you might like if you recently listened to Beyoncé:
+
+  
+
+  And some recommended songs if you like Lady Gaga:
+
+  
+
+  GG Pandora.
+
+  Location Similarities with Foursquare Check-ins
+
+  But what if we don’t have explicit ratings? For example, we could be a news site that wants to generate article recommendations, and maybe we only have user visits on each story.
+
+  Or what if we want to generate restaurant or tourist recommendations, when all we know is who visits each location?
+
+  I’m at Empire State Building (350 5th Ave., btwn 33rd & 34th St., New York) 4sq.com/zZ5xGd— Simon Ackerman (@SimonAckerman) February 8, 2012
+
+
+  
+
+
+  Let’s finally make Foursquare check-ins useful. (I kid, I kid.)
+
+  Instead of using an explicit rating given to us, we can simply generate a dummy rating of 1 for each check-in. Correlation doesn’t make sense any more, but we can still pay attention to a measure like Jaccard simiilarity.
+
+  So we simply create a new class that scrapes tweets for Foursquare check-in information…
+
+  
+  
+
+
+  …and bam! Here are locations similar to the Empire State Building:
+
+  
+
+  Here are places you might want to check out, if you check-in at Bergdorf Goodman:
+
+  
+
+  And here’s where to go after the Statue of Liberty:
+
+  
+
+  Power of Twitter, yo.
+
+  RottenTomatoes Similarities
+
+  UPDATE: I found some movie data after all…
+
+  My review for ‘How to Train Your Dragon’ on Rotten Tomatoes: 4 1/2 stars >bit.ly/xtw3d3— Benjamin West (@BenTheWest) February 21, 2012
+
+
+  So let’s use RottenTomatoes tweets to recommend movies! Here’s the code for a class that searches for RottenTomatoes tweets:
+
+  
+  
+
+  And here are the most similar movies discovered:
+
+  
+
+  We see that
+
+  Lord of the Rings, Harry Potter, and Star Wars movies are similar to other Lord of the Rings, Harry Potter, and Star Wars moviesBig science fiction blockbusters (Avatar) are similar to big science fiction blockbusters (Inception)People who like one Justin Timberlake movie (Bad Teacher) also like other Justin Timberlake Movies (In Time). Similarly with Michael Fassbender (A Dangerous Method, Shame)Art house movies (The Tree of Life) stick together (Tinker Tailor Soldier Spy)
+
+
+  Let’s also look at the movies with the most negative correlation:
+
+  
+
+  (The more you like loud and dirty popcorn movies (Thor) and vamp romance (Twilight), the less you like arthouse? SGTM.)
+
+  Next Steps
+
+  Hopefully I gave you a taste of the awesomeness of Scalding. To learn even more:
+
+  Check out Scalding on Github.Read this Getting Started Guide on the Scalding wiki.Run through this code-based introduction, complete with Scalding jobs that you can run in local mode.Browse the API reference, which also contains many code snippets illustrating different Scalding functions (e.g., map, filter, flatMap, groupBy, count, join).And all the code for this post is here.
+
+
+  Watch out for more documentation soon, and you should most definitely follow @Scalding on Twitter for updates or to ask any questions.
+
+  Mad Props
+
+  And finally, a huge shoutout to Argyris Zymnis, Avi Bryant, and Oscar Boykin, the mastermind hackers who have spent (and continue spending!) unimaginable hours making Scalding a joy to use.
+
+  @argyris, @avibryant, @posco: Thanks for it all. #awesomejobguys #loveit
+    
+
+        
+
+      
+    
+
+  
+	      
+	        
+	          Edwin Chen	          
+	          
+
+	        
+	        
+	                      	          
+	          
+	            Hybrid CEO. Our customers include companies like Airbnb, Dropbox, Expedia, Pandora, and Pinterest, who use us to power their personalization platforms and run millions of human/AI tasks every month. Hit me up if you're interested!	            
+	          
+	          
+	          Previously: math and linguistics at MIT, speech recognition at MSR, quant trading at Clarium, ads at Twitter, data science at Dropbox, stats/ML at Google.
+            
+            
+            
+              I work on AI, human computation, and data.
+                        
+            
+            
+              hello[æ]echen.me
+            
+            	          
+	          
+              Quora
+              Twitter
+              Github
+              
+              Atom / RSS
+            
+          
+
+          
+              Recent Posts
+                Moving Beyond CTR: Better Recommendations Through Human Evaluation  
+                Propensity Modeling, Causal Inference, and Discovering Drivers of Growth  
+                Product Insights for Airbnb  
+                Exploring LSTMs  
+                Improving Twitter Search with Real-Time Human Computation  
+                Edge Prediction in a Social Graph: My Solution to Facebook's User Recommendation Contest on Kaggle  
+                Soda vs. Pop with Twitter  
+                Infinite Mixture Models with Nonparametric Bayes and the Dirichlet Process  
+                Instant Interactive Visualization with d3 + ggplot2  
+                Movie Recommendations and More via MapReduce and Scalding  
+                Quick Introduction to ggplot2  
+                Introduction to Conditional Random Fields  
+                Winning the Netflix Prize: A Summary  
+                Stuff Harvard People Like  
+                Information Transmission in a Social Network: Dissecting the Spread of a Quora Post  
+            
+          
+        
+
+
+        
+       
+        
+        
+	
+        
+                
+                Proudly powered by Pelican, which takes
+                great advantage of Python.

@@ -1,0 +1,36 @@
+Pelican Development Blog 
+                documentationnews
+        
+        
+    
+    Pelican Static Site Generator, Powered by Python
+    
+    Pelican is a static site generator, written in Python, that requires no
+database or server-side logic.
+Some of the features include:
+Write your content in reStructuredText, Markdown, or AsciiDoc formatsCompletely static output is easy to host anywhereThemes that can be customized via Jinja templatesPublish content in multiple languagesAtom/RSS feedsCode syntax highlightingImport from WordPress, Dotclear, RSS feeds, and other servicesModular plugin system and corresponding plugin repository
+... and many other features.
+
+Next Steps
+Learn more about the Pelican static site generator via:
+Pelican newsthe extensive documentationsource code on GitHubPelican on Twitter
+
+
+
+        
+                
+                        links
+                        PelicanPython.orgJinja2
+                
+                
+                        follow
+                        atom feedtwittergithub
+                
+        
+
+        
+                
+                Proudly powered by Pelican, which takes great advantage of Python.
+                
+
+                The theme is by Smashing Magazine, thanks!
