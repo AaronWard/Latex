@@ -23,7 +23,7 @@ In terms of a cost benefit analysis, this project deems relatively efficient due
 \subsection*{Project plan}
 There are a number of steps taken in relation to this project.
 \begin{itemize}
-	\item Initially, Three categories are decided on. Two topics should be relatively similar, and the last on will be unrelated. In this case, they are based on Deep Learning, Machine Learning and robitics.
+	\item Initially, Three categories are decided on. Two topics should be relatively similar, and the last on will be unrelated. In this case, they are based on Deep Learning, Machine Learning and robotics.
 	\item Thirteen texts are sourced online for each category. Ten shall be used for training datasets and three shall be used for testing. Web crawling will be implemented using RapidMiner for three of those texts. The steps taken will be documented 
 	\item These source articles will be downloaded into their respective folders based on their class label.
 	\item A word cloud will be creating to visualise the frequently occurring terms.
@@ -83,8 +83,8 @@ Lastly, we see the terms generated for the robotics category. Evidently, these w
 \end{figure}
 
 
-Not only do these word clouds help determine predictive words, but also provide certain words that are not useful for the mining objects,also known as stop words. Certain stop words in these figures are "I'm", "thing",  "makes" for example. These words can be ambiguous depending on the sentiment of the article being read or just common English phrases, therefore they should not be included in the working model. \\
-Furthermore, potential synonyms can be found in these word clouds. To reduce dimensionality, it is beneficial to specify words that may hold the same meaning. For instance, it can be seen that in the category of robotics, the terms "robot" and "robotics" are in interchangeable, therefore they can be classes as synonyms of one another. Another example of this could be the phase "neural network" and "ANN", which the latter is a acronym for "neural network" therefore that can also be classed as a synonym.
+Not only do these word clouds help determine predictive words, but also provide certain words that are not useful for the mining objects, also known as stop words. Certain stop words in these figures are "I'm", "thing",  "makes" for example. These words can be ambiguous depending on the sentiment of the article being read or just common English phrases, therefore they should not be included in the working model. \\
+Furthermore, potential synonyms can be found in these word clouds. To reduce dimensionality, it is beneficial to specify words that may hold the same meaning. For instance, it can be seen that in the category of robotics, the terms "robot" and "robotics" are in interchangeable, therefore they can be classes as synonyms of one another. Another example of this could be the phrase "neural network" and "ANN", which the latter is an acronym for "neural network" therefore that can also be classed as a synonym.
 
 \newpage
 
@@ -134,11 +134,11 @@ Furthermore, the word "humanoid", a descriptive term that is used in the phrase 
 \newpage 
 
 \textbf{Generate N-Grams}\\
-Experimentation was conducted on using N-Gram generation instead of tokenizing because of certain combinations of words like "artificial neural network" or "restricted boltzmann machine". Initially, the \textbf{Generate N-Grams (Characters)} operator was used and the length was set to 25 as there are 25 characters in the phrase \textit{artifical neural network}. Upon evaluation it was noted that there were 365 attributes in the dataset, along with certain phrases that did not seem predictive or relevant to the categories of the documents. Therefore N-gram generation will not be used through the remaining phases of this project.
+Experimentation was conducted on using N-Gram generation instead of tokenizing because of certain combinations of words like "artificial neural network" or "restricted boltzmann machine". Initially, the \textbf{Generate N-Grams (Characters)} operator was used and the length was set to 25 as there are 25 characters in the phrase \textit{artificial neural network}. Upon evaluation it was noted that there were 365 attributes in the dataset, along with certain phrases that did not seem predictive or relevant to the categories of the documents. Therefore N-gram generation will not be used through the remaining phases of this project.
 
 
 \subsection*{Creating a Document Vector}
-The previous section focuses mostly on the terms that appear in the documents. This section will dwell on the cardinality of the terms within the documents. A document vector will be generated, which will be the data for the clustering and classification algorithms to be trained on. Firstly, a cross validation building block with a decision tree operator was added in order test the accuracy of different vector types, in this case: \textbf{Term Occurance} and \textbf{TD-IDF}. \\ 
+The previous section focuses mostly on the terms that appear in the documents. This section will dwell on the cardinality of the terms within the documents. A document vector will be generated, which will be the data for the clustering and classification algorithms to be trained on. Firstly, a cross validation building block with a decision tree operator was added in order test the accuracy of different vector types, in this case: \textbf{Term Occurrence} and \textbf{TD-IDF}. \\ 
 
 
 \subsubsection*{TD-IDF}
@@ -180,10 +180,10 @@ Overall, it is evident that term occurrence using the absolute pruning method pr
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Modeling}
+\section*{Modelling}
 
-\subsection*{Modeling techniques}
-To test the data that has been prepared two approaches will be taken. Firstly, two clustering algorithms will be used to see if they can identify groups in which the documents resides. It will be evaluated whether or not does the cosine numerical measure improve accuracy of the model and seen whether minimum or maximum linkage is better suited for the dataset that has been generated. Additionally, two classification algorithms applied and evaluated on which returned the most better results on the testing documents.
+\subsection*{Modelling techniques}
+To test the data that has been prepared two approaches will be taken. Firstly, two clustering algorithms will be used to see if they can identify groups in which the documents reside. It will be evaluated whether or not does the cosine numerical measure improve accuracy of the model and seen whether minimum or maximum linkage is better suited for the dataset that has been generated. Additionally, two classification algorithms applied and evaluated on which returned the most better results on the testing documents.
 In terms of algorithms, for clustering K-Means and Agglomerative Clustering algorithms shall be used. For classification, K-NN and naive bays shall be used. 
 \subsection*{Clustering}
 \subsubsection*{K-Means}
@@ -232,31 +232,75 @@ Complete linkage was then applied to the model, this did not make any increase o
 \subsubsection*{Classification}
 This section deals with classification of the document vector. Two models shall be used to assess the accuracy. Ideally, a support vector machine would be used, as it is known to be the most accurate of predictive models, but as it only supports a binary class input and we have three, K-NN and Naive Bayes shall be used.
 \subsection*{K-NN}
+On of the classification algorithms used was K-NN. The reason why this classifier is beneficial is because it requires no training in order to achieve it's function. However, it may require time adjusting parameters to find an optimal point to find the most accuracy.
+Firstly, the cross validation operator was used. Within this, K-NN was implemented with \textbf{CosineSimilarity} within a cross validation building block. The model performed relatively well, with a 93.33\% accuracy rate, only misclassifying 2 documents as deep learning.
 
-\subsection*{Niave Bayes}
 
-\subsection*{Test Design}
-%e.g. split documents into training set and test set
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.7]{__resources/knn1.JPG}
+		\caption{K-NN Accuracy}
+		\label{stop}
+	\end{center}
+\end{figure} 
 
-\subsection*{Build and Assess the Model}
+This process was repeated numerous times changing the value of K in an incremental manner. This went on until K was equal to 6, where the accuracy decreased until 90.00\%. This drop fluctuated up and down with the accuracy becoming worse gradually. Therefore, the optimal point to keep is at 5. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Naive Bayes}
+Secondly, The Naive Bayes algorithm was utilized. The beneficial factors of this algorithm is that it has minimal training time.   This deems as a good classifier as it received initially 93\% accuracy rate. Upon further explanation with the cross validation parameters, an optimal point was found with the number of folds applied. At three folds for validation, the accuracy was increased to 96.67\%. 
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.7]{__resources/bayes1.JPG}
+		\caption{Niave Bayes Accuracy}
+		\label{stop}
+	\end{center}
+\end{figure}
 
 \section*{Evaluation}
+The following section will review and evaluate the results and performance of the techniques used within this project in respects to the goals of the business and data mining objectives.
 
 \subsection*{Clustering}
 \subsubsection*{Subjective Evaluation}
-\subsubsection*{Objective Evaluation}
-%Assessment of data mining reults with
-%respect to original business objectives
+Upon inspection on the clustering techniques applied in the project, it is evident that the agglomerative clustering model accurately grouped the documents into their respective fields, which can be seen in Figure 10.
+Additionally, using a parallel plot we can see a high term count for the descriptive terms in their respective clusters, which can be seen below in Figure 13
 
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.7]{__resources/cluster-eval.JPG}
+		\caption{Parallel Plot For Agglomerative Clustering}
+		\label{stop}
+	\end{center}
+\end{figure}
+\newpage
+
+\subsubsection*{Objective Evaluation}
+To evaluate the K-Means model, The Davies Bouldin operator will be applied to evaluate the intercluster distance. As can be seen below, the \textbf{Performance (Cluster Distance Performance)} operator was applied. This returned a result: Davies Bouldin: -1.829.
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.9]{__resources/db.JPG}
+		\caption{Parallel Plot For Agglomerative Clustering}
+		\label{stop}
+	\end{center}
+\end{figure}
+
+\newpage
 \subsection*{Classification}
+It was desired to apply an ROC to these models but as they don't have a binary class label i was unable to do so. Therefore, the confusion matrices will be used to evaluate their performance.
+As can be seen within the figures 11 and 12, the two classifiers gained fairly accurate results, with K-NN having an overall accuracy or 93.33\% and the Naive Bayes model resulting in an accuracy of 96.67\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Project review}
-
-\subsection*{Project deployment}
-%Generate document vectors for new
-%documents, and run the model.
+\section*{Conclusion and Project review}
+In conclusion, the business and data mining objective have been met to: mine unstructured data using Rapid Miner, Web crawl for documents on a given category, preprocess the mined data and apply that data to multiple clustering and classification algorithms. 
+The models were successful in grouping by category and identifying the classes in which the documents should classed. 
 
 
