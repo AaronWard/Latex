@@ -2,4 +2,7 @@
 \BOOKMARK [0][-]{Doc-Start}{List of Figures}{}% 2
 \BOOKMARK [0][-]{chapter*.1}{Regular Expression Parser}{}% 3
 \BOOKMARK [0][-]{chapter*.6}{Appendices}{}% 4
-\BOOKMARK [1][-]{section.0.1}{Sources Code}{chapter*.6}% 5
+\BOOKMARK [1][-]{section.0.1}{Parser}{chapter*.6}% 5
+\BOOKMARK [1][-]{section.0.2}{ParserButtonListener}{chapter*.6}% 6
+\BOOKMARK [1][-]{section.0.3}{ValidateInput}{chapter*.6}% 7
+\BOOKMARK [1][-]{section.0.4}{PrintBracket}{chapter*.6}% 8
