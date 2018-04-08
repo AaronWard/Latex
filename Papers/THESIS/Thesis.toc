@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Analyzing and Detecting Employee's Emotion for Amelioration of Organizations}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Deep Learning for Video Classiﬁcation and Captioning}{4}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Image-Based Video Classiﬁcation using CNN's and LSTM's}{5}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Deep Learning for Video Classification and Captioning}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Image-Based Video Classification using CNN's and LSTM's}{5}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Subject independent facial expression recognition with robust face detection using a convolutional neural network}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Neuromarketing - The Art and Science of Marketing and Neurosciences Enabled by IoT Technologies}{7}{section.2.4}
 \contentsline {section}{\numberline {2.5}Facial expression recognition with Convolutional Neural Networks: Coping with few data and the training sample order}{8}{section.2.5}
@@ -32,33 +32,33 @@
 \contentsline {section}{\numberline {3.5}Concluding Objective}{21}{section.3.5}
 \contentsline {chapter}{\numberline {4}System Design}{22}{chapter.4}
 \contentsline {section}{\numberline {4.1}Machine Learning Model}{22}{section.4.1}
-\contentsline {section}{\numberline {4.2}Data Preparation}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Training}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}Deployment}{23}{section.4.4}
-\contentsline {section}{\numberline {4.5}Concluding Remarks of System Architecture Design}{24}{section.4.5}
-\contentsline {chapter}{\numberline {5}Implementation}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementing the Machine Learning Model}{26}{section.5.1}
-\contentsline {section}{\numberline {5.2}Deploying the Trained Model}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementing the Node.JS Application}{26}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Database Integration}{26}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Result Weighting Algorithm}{26}{section.5.4}
-\contentsline {section}{\numberline {5.5}Integrating Third Party Services}{26}{section.5.5}
-\contentsline {section}{\numberline {5.6}Concluding Remarks of Implementation}{26}{section.5.6}
-\contentsline {chapter}{\numberline {6}Testing and Evaluation}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Testing Model with Testing Data}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}API Testing}{27}{section.6.2}
-\contentsline {section}{\numberline {6.3}Testing Model with New Data}{27}{section.6.3}
-\contentsline {section}{\numberline {6.4}Concluding Remarks of Testing and Evaluation}{27}{section.6.4}
-\contentsline {chapter}{\numberline {7}Results and Discussion}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Results}{28}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Model Accuracy}{28}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Usability}{28}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Discussion}{28}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{29}{chapter.8}
-\contentsline {section}{\numberline {8.1}Conclusion}{29}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Further Work}{29}{subsection.8.1.1}
-\contentsline {chapter}{Bibliography}{30}{subsection.8.1.1}
-\contentsline {chapter}{Appendices}{33}{chapter*.8}
-\contentsline {section}{\numberline {A} Code Snippets }{33}{section.0.1}
-\contentsline {section}{\numberline {B} Screen shots }{33}{section.0.2}
-\contentsline {section}{\numberline {C} Neural Network Diagram }{33}{section.0.3}
+\contentsline {section}{\numberline {4.2}Data Preparation}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}Training}{22}{section.4.3}
+\contentsline {section}{\numberline {4.4}Deployment}{22}{section.4.4}
+\contentsline {section}{\numberline {4.5}Concluding Remarks of System Architecture Design}{22}{section.4.5}
+\contentsline {chapter}{\numberline {5}Implementation}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data Understanding}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Data Preparation and Preprocessing}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementing the Machine Learning Model}{23}{section.5.3}
+\contentsline {section}{\numberline {5.4}Deploying the Trained Model}{23}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementing the Node.JS Application}{23}{section.5.5}
+\contentsline {section}{\numberline {5.6}Deploying the Node.JS Application}{23}{section.5.6}
+\contentsline {section}{\numberline {5.7}Concluding Remarks of Implementation}{23}{section.5.7}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Testing Model with Testing Data}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}API Testing}{24}{section.6.2}
+\contentsline {section}{\numberline {6.3}Testing Model with New Data}{24}{section.6.3}
+\contentsline {section}{\numberline {6.4}Concluding Remarks of Testing and Evaluation}{24}{section.6.4}
+\contentsline {chapter}{\numberline {7}Results and Discussion}{25}{chapter.7}
+\contentsline {section}{\numberline {7.1}Results}{25}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Model Accuracy}{25}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Usability}{25}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Discussion}{25}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{26}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusion}{26}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Further Work}{26}{subsection.8.1.1}
+\contentsline {chapter}{Bibliography}{27}{subsection.8.1.1}
+\contentsline {chapter}{Appendices}{30}{chapter*.8}
+\contentsline {section}{\numberline {A} Code Snippets }{30}{section.0.1}
+\contentsline {section}{\numberline {B} Screen shots }{30}{section.0.2}
+\contentsline {section}{\numberline {C} Neural Network Diagram }{30}{section.0.3}
