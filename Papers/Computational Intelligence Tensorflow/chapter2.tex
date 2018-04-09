@@ -1,13 +1,9 @@
 \prefacesection{Assignment}
 
 \section*{Design of Network}
-% 2 input
-% one layer
-% .01 initally
-%
 Initially, the design of the network will consist of two input nodes for the two values contained in the training dataset. The learning rate will be set to 0.01 because it said that is a good rate to begin training at (https://www.youtube.com/watch?v=jWT-AX9677k). This will rate will be reduced after each number of runs. On the output layer, only one output node will be made to output the predicted value.
 The network shall also contain one hidden layer. This will consist of two nodes but will be increased incrementally to evaluate the optimal number.
-The goal of this network is see what is the optimum network topology to reduce the error in the shortest amount of time. 
+The goal of this network is see what is the optimum network topology is to reduce the error in the shortest amount of time. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -21,10 +17,6 @@ The goal of this network is see what is the optimum network topology to reduce t
 
 \newpage
 \section*{Network Training}
-% 500 epochs, 1000 epochs, 1000
-% 2 nodes -> 3 nodes -> 4 nodes
-% 0.01, 0.001, 0.0001, 0.00001
-% 0.01, 0.001, 0.0001, 0.00001
 In this section we shall train the network. Each score declared in the tables are an average score over ten runs for each parameter. This process was done incrementally by first deciding a number of epochs, this is followed by a number of hidden layer nodes. And lastly, decreasing the learning rate from 0.01 to 0.0001.
 
 \subsection*{1000 Epochs}
@@ -103,7 +95,7 @@ From these figures it is evident that the 2 node model trained for 1000 epochs a
 Upon inspection of the trained models results, the model was again trained with the optimal parameters specified and saved to disk, but upon evaluating the model with new data, the model did not perform as well as it did when training.
 An average error of 0.02775318, over 10 runs, was the result of using this model. Therefore, further training was implemented. In order reduce the error, the number of nodes and epochs were increased incrementally. These numbers are average results over 10 runs from the evaluation scripts in respect to the newly trained models. All models were trained with the 0.01 learning rate. See Table 5 for results.
 
- \begin{longtable}{|>{}p{5cm}|c|c|}
+ \begin{longtable}{|>{}p{4cm}|c|c|}
 	\hline 
 	Number of Epochs & Nodes & Average Error\\ 
 	\hline 
@@ -118,7 +110,7 @@ An average error of 0.02775318, over 10 runs, was the result of using this model
 	3000 & 7 & 0.0175\\ 
 	\hline
 	3000 & 8 & 0.0125\\ 
-	\hline
+	\hline 
 	\hline
 	4000 & 3 & 0.0256\\ 
 	\hline	
@@ -143,7 +135,7 @@ An average error of 0.02775318, over 10 runs, was the result of using this model
 	\hline	
 	5000 & 7 & 0.0105\\ 
 	\hline
-	\textbf{5000} &\textbf{ 8 }& \textbf{0.0093}\\
+	\textbf{5000} &\textbf{8 }& \textbf{0.0093}\\
 	\hline 
 	\caption{Incremental Experimentation with Parameters}
 \end{longtable}
@@ -152,4 +144,4 @@ As seen from this iterative process in the table above, the most optimal model f
 
 
 \section*{Conclusion}
-In conclusion, the model received two inputs, one hidden layer and one output. The network was trained using 500 examples in the training dataset. The model performed well during training with 3 hidden layer nodes, but failed to reach the minimum tolerable error when fed new data. Therefore, further experimentation was conducted in order to find the optimal number of training epochs, learning rate and nodes that were required in order to reach an error below 0.01 in the evaluation phase. The project was successful in implementation, with an average evaluation error of 0.00093.
+In conclusion, the model received two inputs, one hidden layer and one output. The network was trained using 500 examples in the training dataset. The model performed well during training with 3 hidden layers nodes, but failed to reach the minimum tolerable error when fed new data. Therefore, further experimentation was conducted in order to find the optimal number of training epochs, learning rate and nodes that were required in order to reach an error below 0.01 in the evaluation phase. The project was successful in implementation, with an average evaluation error of 0.00093.
