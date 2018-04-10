@@ -1,7 +1,8 @@
 \chapter{Analysis }
 
-The following section will give an analytic insight to the steps required for designing the proposed software in relation to a business use case, Identify some of the problems that may arise and outline objectives for implementation.
+The following chapter will provide the business background of the project and further justification for such a system to be implemented, an analytic insight to the steps required for designing the proposed software in relation to a business use case, identify some of the problems that may arise and outline objectives for implementation.
 
+\subsection*{Project Background}
 An article by \citeauthor{hague} for the B2B international states that understanding a customers satisfaction rate is important as it can show where is the business is doing well or where it needs improvements. It also can give indication to business owners where a further staff training is needed, or how there may be a need for cultural change. In light of this, seeing your business through the eyes of provides understanding of its downfalls. This in turn prevents more customer churn and can prove to be financially beneficial \citep{hague}. They state that the downfalls of customer service surveys is the that they survey must "ask the right question of the right person". \citeauthor{hague} give two reasons why this is difficult: they may know what to ask the customer in respect to their specific interaction with the business, also they may not have the contact details of the customer to further inquire into satisfaction of the individual. A main reason why customer surveys result may be misleading is the fact that an average of only 10\% percent of online surveys sent to customers are responded to, meaning that these results are not representative of an entire customer base \citep{willott} . Furthermore, surveys are described by \citeauthor{hague} as a "snapshot at one point in time", and do not accurately represent the feelings of the customer during transaction process, and measuring the satisfaction of customers should "be a continuous process".
 
 
@@ -68,14 +69,14 @@ To speed up the process of implementation, a machine learning (ML) should be use
 TensorFlow is an open source ML library developed by the Google Brain team. It can be run on CPUs, GPUs and mobile platforms. For machine learning algorithms, such as gradient descent, TensorFlow provides automatic differentiation which can prove to be very advantageous in comparison to other ML libraries. It also supports multiple languages such as Python, Java and C++ and Go \citep{jain}. Graph visualisation is also supported. Multi-threading is also achievable with the use of TensorFlow \citep{jain}. Higher level wrapper libraries such as Keras can use back-end API's such as TensorFlow provide easier implementation with minimalistic coding but also giving the same efficiency and accuracy \citep{lee_keras}. Scikit Learn is an open source ML library built on top of other libraries such as Matplotlib, SciPy and NumPy. A good feature that Scikit Learn incorporates is the ability of evaluating, chaining and adjusting model hyper parameters \citep{jain}.
 other ML libraries such as Caffe focuses on speed and modularity and is mainly utilized for convolutional neural networks and computer-vision. Another selling point for Caffe is it’s pre-trained models that do not require any coding or training and it supports GPU and CPU computations. A disadvantage of this library is thats it's specifically designed for application implementation, not for research and development \citep{jain}
 
-\section{Data Preparation}
+\section{Dataset}
 For this project, the machine learning model will require a large image dataset. This dataset will be used to train the model on certain facial feature expressions with supervised learning, therefore a labelled dataset is needed. This phase in implementation is the most important part of the project, as the model only as good as the data you train it with.
 
 \subsection{Public Datasets}
-As seen in the literature review, there are many datasets publicly available for use on the Internet that provide labelled data. For example, the CK+ dataset was used by \citeauthor{LOPES} used labelled data to train their model. The dataset included facial expressions such as sadness, surprise, happiness, anger,fear and disgust, which would be are emotional expressions that are ideal for the proposed project.
+As seen in the literature review, there are many datasets publicly available for use on the Internet that provide labeled data. For example, the CK+ dataset was used by \citeauthor{LOPES} used labeled data to train their model. The dataset included facial expressions such as sadness, surprise, happiness, anger, fear and disgust. Which is a considerable approach for training the model
 
 \subsection{Creating a Dataset}
-Creating a dataset is another option for training the model. A number of images could be batch downloaded from image search engines such as Bing and Google, and split into training and testing sets. As for labelling, the name of the folder the type of picture is in will serve as the label for validation.
+Creating a dataset is another option for training the model. A number of images could be batch downloaded from image search engines such as Bing and Google, and split into training and testing sets. As for labeling, the name of the folder the type of picture is in will serve as the label for validation.
 
 \section{Training}
 Training is a vital part of the project and will be the most time consuming. The model will use the chosen data preparation method and use that data as input to the model. There are two ways the model can be trained: Locally and on an Infrastructure as a Service (IaaS).
@@ -93,12 +94,12 @@ Deployment of the trained model is required to serve it as a web service. This m
 In conclusion, this section outlines the objectives for the proposed project sequentially from the initial steps to the end product. The objectives are as follows:
 
 \begin{itemize}
-	\item Build a convolutional neural network for facial expression classification.
+	\item Build a convolutional neural network for facial expression classification using Tensorflow.
 	\item Train the model on a large image data set.
 	\item Save the trained model and deploy it to a Python API.
 	\item Develop a web application that is enabled to record a user's facials expressions and send snapshots of the users face to the Python API in intervals.
 	\item Use image pre-processing API on the web cam images for more accurate predictions.
-	\item Use tone analyzer API for voice sentiment recognition.
-	\item Weigh scores from the train model and tone analyzer accordingly and store them in a database
+	%\item Use tone analyzer API for voice sentiment recognition.
+	%\item Weigh scores from the train model and tone analyzer accordingly and store them in a database
 \end{itemize}
 

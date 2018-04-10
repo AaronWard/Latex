@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -109,6 +109,13 @@ André~Teixeira Lopes, Edilson de~Aguiar, Alberto F.~De Souza, and Thiago
 \newblock \doi{https://doi.org/10.1016/j.patcog.2016.07.026}.
 \newblock URL
   \url{http://www.sciencedirect.com/science/article/pii/S0031320316301753}.
+
+\bibitem[Lucey et~al.(2010)Lucey, Cohn, Kanade, Saragih, Ambadar, and
+  Matthews]{ck}
+Patrick Lucey, Jeffrey~F. Cohn, Takeo Kanade, Jason Saragih, Zara Ambadar, and
+  Iain Matthews.
+\newblock The extended cohn-kanade dataset (ck+): A complete dataset for action
+  unit and emotion-specified expression, 2010.
 
 \bibitem[Matsugu et~al.(2003)Matsugu, Mori, Mitari, and Kaneda]{MATSUGU}
 Masakazu Matsugu, Katsuhiko Mori, Yusuke Mitari, and Yuji Kaneda.

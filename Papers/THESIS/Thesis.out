@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{Algorithm}{section.3.1}% 22
 \BOOKMARK [2][-]{subsection.3.1.2}{Programming Language}{section.3.1}% 23
 \BOOKMARK [2][-]{subsection.3.1.3}{Machine Learning Library}{section.3.1}% 24
-\BOOKMARK [1][-]{section.3.2}{Data Preparation}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Dataset}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.2.1}{Public Datasets}{section.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.2.2}{Creating a Dataset}{section.3.2}% 27
 \BOOKMARK [1][-]{section.3.3}{Training}{chapter.3}% 28
@@ -31,34 +31,39 @@
 \BOOKMARK [1][-]{section.3.4}{Hosting/Deployment}{chapter.3}% 31
 \BOOKMARK [1][-]{section.3.5}{Concluding Objective}{chapter.3}% 32
 \BOOKMARK [0][-]{chapter.4}{System Design}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Machine Learning Model}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.2}{Data Preparation}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.1}{Data Preparation}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.2}{Machine Learning Model}{chapter.4}% 35
 \BOOKMARK [1][-]{section.4.3}{Training}{chapter.4}% 36
 \BOOKMARK [1][-]{section.4.4}{Deployment}{chapter.4}% 37
 \BOOKMARK [1][-]{section.4.5}{Concluding Remarks of System Architecture Design}{chapter.4}% 38
 \BOOKMARK [0][-]{chapter.5}{Implementation}{}% 39
 \BOOKMARK [1][-]{section.5.1}{Data Understanding}{chapter.5}% 40
 \BOOKMARK [1][-]{section.5.2}{Data Preparation and Preprocessing}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.3}{Implementing the Machine Learning Model}{chapter.5}% 42
-\BOOKMARK [1][-]{section.5.4}{Deploying the Trained Model}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.5}{Implementing the Node.JS Application}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 46
-\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 47
-\BOOKMARK [1][-]{section.6.1}{Testing Model with Testing Data}{chapter.6}% 48
-\BOOKMARK [1][-]{section.6.2}{API Testing}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 50
-\BOOKMARK [1][-]{section.6.4}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 51
-\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 52
-\BOOKMARK [1][-]{section.7.1}{Results}{chapter.7}% 53
-\BOOKMARK [2][-]{subsection.7.1.1}{Model Accuracy}{section.7.1}% 54
-\BOOKMARK [2][-]{subsection.7.1.2}{Usability}{section.7.1}% 55
-\BOOKMARK [1][-]{section.7.2}{Discussion}{chapter.7}% 56
-\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 57
-\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 58
-\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 59
-\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 60
-\BOOKMARK [0][-]{chapter*.8}{Appendices}{}% 61
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.8}% 62
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.8}% 63
-\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.8}% 64
+\BOOKMARK [2][-]{subsection.5.2.1}{Image Extraction}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Gray Scaling}{section.5.2}% 43
+\BOOKMARK [2][-]{subsection.5.2.3}{Facial Cropping}{section.5.2}% 44
+\BOOKMARK [2][-]{subsection.5.2.4}{Data Augmentation}{section.5.2}% 45
+\BOOKMARK [2][-]{subsection.5.2.5}{Data Splitting}{section.5.2}% 46
+\BOOKMARK [1][-]{section.5.3}{Implementing the Machine Learning Model}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.4}{Deploying the Trained Model}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.5}{Implementing the Node.JS Application}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 51
+\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 52
+\BOOKMARK [1][-]{section.6.1}{Testing Model with Testing Data}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.2}{API Testing}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.4}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 56
+\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 57
+\BOOKMARK [1][-]{section.7.1}{Results}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.1.1}{Model Accuracy}{section.7.1}% 59
+\BOOKMARK [2][-]{subsection.7.1.2}{Usability}{section.7.1}% 60
+\BOOKMARK [1][-]{section.7.2}{Discussion}{chapter.7}% 61
+\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 62
+\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 63
+\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 64
+\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 65
+\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 66
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 67
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 68
+\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.9}% 69

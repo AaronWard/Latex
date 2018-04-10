@@ -1,41 +1,46 @@
 \chapter{System Design}
-%The following chapter will explain the design process for the prototype for the project. The components of the project is broken into four parts: Machine Learning Algorithm on what algorithm and ML library was used, Data Preparation for insight into the data utilised, Training for explanation on the approach for training the model and Deployment for the process in which the model was deployed for production. Lastly, the overall system architecture will be explained.
-
-////******* This will be later updated for the final design *******///
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%Add photo of UI design here
-%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Machine Learning Model}
-
-%For designing the model, the Keras machine learning library with the TensorFlow backend was used in order to easily create a convolutional neural network. The network consists of two convolution layers, two MaxPooling layers and a fully-connected layer. The model has two outputs nodes that provide classification of two emotions: happy or sad. The model used supervised learning, with labels for the images it was training on, which will be brought forward in the following section.\\
-
-%Building a Convolutional Neural Network in Keras
+The following chapter will briefly explain the design process for the project. The components of the project are broken into four parts: Data Preparation for insight into the data utilized and how it will be prepared, A section on what algorithm and machine learning library will be used, an explanation on the approach for training the model and a Deployment section for the process in which the model was deployed for production. Lastly, the overall system architecture and flow of objectives will be explained.
 
 \section{Data Preparation}
-%As stated by \citeauthor*{LOPES} that there is a scarcity of public datasets with for facial expression images, therefore a dataset was created for created by bulk downloading images from Google Images on searches such as "Happy Human face" and "Person Frowning". These images where split into a 30/70 split. The training data consisted of 70\% of the images and the remaining 30\% was used in testing. Within these these training and test sets are folders titles \textbf{happy} and \textbf{sad}. These folder names where used as labels during the training phase of the prototype.
+As stated by \citeauthor*{LOPES} that there is a scarcity of public datasets with for facial expression images, therefore the Cohn-Kanade+ (CK+) dataset shall be used as it provides a wide range of emotions to train the model on. However, in the emotion of disgust and contempt will be omitted from the project as it does not fit the nature of the use case, and they bear too much resemblance to the anger images. Instead, a neutral emotion class will implemented.
+The dataset will be preprocessed to reduce dimensionality, and synthetic samples will be generated via data augmentation to increase the size of the dataset. The dataset will then be divided into training and testing sets using split validation. 
+
+\section{Machine Learning Model}
+For designing the model, the Tensorflow Machine Learning library by Google will be used to design a convolutional neural network. 
+The network consists of three convolution layers, three max pooling layers and a fully-connected layer. The model has six outputs nodes that provide classification for each emotion in the dataset. The model uses supervised learning, with labels for the images it was training on, which will be brought forward in the following section.\\
 
 \section{Training}
-
-%Due to insufficient hardware, the approach of cloud training was needed in order to train the model. The Python code and the dataset were pushed to a containerized TensorFlow environment on the FloydHub cloud platform. The output of the trained weights is saved to a \textit{.h5} file and the trained model is JSON file.
-
-%pushing to floydhub
-%saving the model to a h5 file
+Due to insufficient hardware, the approach of cloud training is needed in order to train the model. The Python code and the dataset are pushed to a containerized TensorFlow environment on the FloydHub cloud platform. The output of the trained model is saved to a Tensorflow \textit{.ckpt} file.
 
 \section{Deployment}
-%In order to deploy the trained model to production, a Python API was developed using the Flask package, which provides many libraries to run python code on a server. The API is hosted on Heroku PaaS as they provide an easy-to-use and free basice tier service for hosting Python apps. The trained weights and model files are also deployed with the API. These are read in and initialised from their respective files when the API successfully build and deploys. The API accepts 'POST' requests and takes the image as input. The image is then fed into the model and a classification of \textbf{Happy} or \textbf{Sad} is made, this is then returns to the original sender.
+In order to deploy the trained model to production, a Python API was developed using the Flask package, which provides many libraries to run python code on a server. The API is hosted on Heroku PaaS as they provide an easy-to-use and free basic tier service for hosting Python applications. The trained model files are also deployed with the API. These model is read and initialized from the respective files when the API successfully build and deploys. The API accepts 'POST' requests and takes the image as input. The image is then fed into the model and a classification is made, this is then returns to the original sender.
 
-%Secondly, a Node.JS web app was developed in order to display how this model can be used in production. The application was also deployed to heroku. The application uses the clients webcam in order to record their face. This takes snapshots of the users face and sends the images to the Python API in two second intervals. The application then receives the response from the API and displays it to the screen in the format of \textit{'Emotion Detected: Happy'} for example. The web app is simple in design but more features will be added in the final implementation, which will be explained in the system architecture section.
-%Creating the Survey App in node
-%Creating a python API 
+Secondly, a Node.JS web app was developed in order to display how this model can be used in production. The application was also deployed to Heroku. The application uses the clients web cam in order to record their face. This takes snapshots of the users face and sends the images to the Python API in one second intervals. The application then receives the response from the API and displays it to the screen. 
+See Figure \ref{ui} for a general design of the user interface for the node application.
+
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.35]{__resources/mockup_annotated.jpg}
+		\caption{User Interface Design For Web Application}
+		\label{ui}
+	\end{center}
+\end{figure}
 
 
 \section{Concluding Remarks of System Architecture Design}
-%Figure \ref{proto} illustrates a logical topology of final project. The primary component such as a web application that records the users face and the model deployment have already been achieved.\\
+In summary, the system architecture will be considered in two parts: Training and deployment. Firstly,the data preparation and neural network scripts shall be written on a local machine. These scripts and dataset will be uploaded to a Tensorflow environment for training on the Flyodhub cloud service. Upon completion of training, the model will be saved and pushed to the \textit{model-serve} GitHub repository that is integrated with the Heroku PaaS. This repository consists of a Python Flask API to accept POST requests. The Node.js web application shall also be deployed to the Heroku for easy user access. This shall send requests to the model API for classification of images of the user.
+Please refer to Figure \ref{arch} to see an illustrated tolopogy of the system.
 
-%However, further functionalities such as image preprocessing of the captured images is needed for more accurate classifications. Also, a tone analysis feature should be implemented to reach the over all goal of the project.
-%In conclusion, it can be noted that 1/2 of the project is achieved within this prototype.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/arch.png}
+		\caption{System Architecture of Training and Deployment}
+		\label{arch}
+	\end{center}
+\end{figure}
 
