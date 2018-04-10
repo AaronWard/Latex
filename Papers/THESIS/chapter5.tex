@@ -20,7 +20,7 @@ It should be noted that the figure above is not a full image sequence and the so
 A number of preprocessing steps were taken in order to prepare the images for training the network. These steps were required to ensure maximum possible accuracy and minimal training time as the nature of working with neural networks can be computationally expensive when accompanied with large files such as images. The steps are as follows: Image extraction, Gray scaling, Facial Cropping, Data Augmentation and Data Splitting.
 
 \subsection{Image Extraction}
-Due to the structure of the image sequence within the datasets, it is undesirable to used all images within each sequence as that do accurately resemble the facial expression it is used to represent. Therefore, for each sequence the last four images were extracted from their directory and relocated to a new directory under the category of facial expression they represent. As stated in the system design, images for disgust and contempt are omitted from this new dataset.
+Due to the structure of the image sequence within the datasets, it is undesirable to used all images within each sequence as that do accurately resemble the facial expression it is used to represent. Therefore, for each sequence the last four images were extracted from their directory and relocated to a new directory under the category of facial expression they represent. As stated in the system design, images for disgust and contempt are omitted from this new dataset. Furthermore, because there is now class for a neutral facial expression, the first four images from a sequence in each subject was extracted.
 
 \subsection{Gray Scaling}
 The CK+ dataset consist of a majority of gray images. However, the extended version of this dataset contains some images sequences with coloured images. When working neural networks, it is significantly more computationally expensive to process a coloured image over a gray one due to the number of colour channels. To mitigate this, a Python script was created to traverse through each image of the newly extracted dataset to convert all images to grayscale using the PILLOW library. \\
@@ -29,7 +29,6 @@ The CK+ dataset consist of a majority of gray images. However, the extended vers
 from PIL import Image
 import numpy as np
 import os, os.path
-
 img_path = '<DATASET_DIRECTORY>' 
 
 def grayify(file_name):
@@ -67,12 +66,11 @@ def facecrop(image):
 		cv2.imwrite(fname+"_cropped_"+ext, sub_face)
 	return
 
-
 list = os.listdir(<DIRECTORY_NAME>)
 for file in list:
 	facecrop(<DIRECTORY_NAME> + '/' + file)
 \end{lstlisting}
-
+\newpage
 This was done for all images, however, some images were not correctly cropped due to noise in the image causing it to misclassify the facial region. Some examples of this might be only half the face being cropped into the new image or just the subjects shoulder being visible. These worthless images were manually deleted after the newly cropped images were evaluated. Please refer to Figure \ref{crop}for example of the facial cropping.
 
 \begin{figure}[ht]
@@ -84,15 +82,114 @@ This was done for all images, however, some images were not correctly cropped du
 		\label{crop}
 	\end{center}
 \end{figure}
+\newpage
 
 
+\subsection{Image Increasing Through Data Augmentation}
+Upon inspection of the dataset, in regards to the number of images for certain facial expressions, it was noted that there was an insufficient amount of images to train the network. This can be seen in table \ref{table: count}. 
+\begin{table}
+	\begin{tabular}{ |p{9cm}||p{3cm}|}
+		\hline
+		\textbf{Facial Expression} & \textbf{Cardinality}\\
+		\hline
+		\hline
+		Anger & 601 \\
+		\hline
+		Fear & 427	\\
+		\hline
+		Happy & 883\\
+		\hline
+		Neutral & 668\\
+		\hline
+		Sad & 641	\\
+		\hline
+		Surprise  & 639	\\
+		\hline
+		\textbf{Total}  & \textbf{3879}	\\
+		\hline
+	\end{tabular}
+	\caption{Initial Image Count}
+	\label{table: count}
+\end{table}
 
-\subsection{Data Augmentation}
+The initial step to increase the size of the data set was to flipped versions of all the images. Not only does this double the size of the dataset, but helps the network to better handle facial variance when dealing with new unseen data. Also, it will decrease the chance of under-fitting while training the model. Following this step, a check was done on the class balance. Using the Matplotlib Python library, the balance of each class was plotted by counting each image in accordance to it's respective label, as seen in Figure \ref{imbal}
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/implementation/imbalance.jpg}
+		\caption{Class Imbalance}
+		\label{imbal}
+	\end{center}
+\end{figure}\newpage
+As seen above, expression 'Anger' and 'Fear' are under represented while 'Happy' is overly represented, relative to the rest of the dataset. How this problem was addressed was to create synthetic sample images from the existing ones by the means of skewing and augmenting the images. This can be seen in Figure \ref{augm}, where the top row displays the original cropped images. Beneath, are the slightly skewing images. This was implemented using a Python library called Augmentor, which allows you to specify the directory and number of altered samples you would like, and it randomly picks images within the directory, creating an entirely new back of images that have been stretched to a degree.
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/implementation/augmented-images.png}
+		\caption{Class Imbalance}
+		\label{augm}
+	\end{center}
+\end{figure}
+\newpage
+
+This was done for all classes to increase the number of samples in the dataset, until a number of 1750 images are present for each class. This amounts to a total number of 10500 images in total across the entire dataset.  The class balance can be seen in the bar chart illustration in Figure \ref{bal}, which has been plotted using the Matplotlib library. In conclusion, an additional 6,621 images have been created from the original dataset.
+
+
+\begin{figure}[ht]
+	\begin{center}
+		\advance\leftskip-3cm
+		\advance\rightskip-3cm
+		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/balance.jpg}
+		\caption{Class Balance}
+		\label{bal}
+	\end{center}
+\end{figure}
+
+\newpage
+
 % show bad imbalance 
 %flipping + synthethic examples
 % show balance
 \subsection{Data Splitting}
+The last step in the the preparation phase was to apply split validation to the dataset. The dataset was split into training and testings sets at a rate of 80/20 - meaning 80\% of the dataset will be used for training and 20\% will be used for testing the model. Please see the Python code below showing how this was achieved.
 
+\begin{lstlisting}[language=Python, frame=single]
+import os, os.path
+import math
+from PIL import Image
+
+old_path = 'C:/Users/aaron/Desktop/Cropped Dataset/happy/'
+
+new_train_path ='C:/Users/aaron/Desktop/data/training/happy/'
+new_test_path = 'C:/Users/aaron/Desktop/data/testing/happy/'
+
+#Load the directory and traverse over all the image files
+list = os.listdir(old_path)
+
+# define the size of the first 80 percent of images
+num_files = len(list)
+num_training_files = num_files * .8
+num_training_files = math.ceil(num_training_files)
+
+num_testing_file = num_files * .2
+num_testing_file = math.ceil(num_testing_file)
+
+#Add the first 80 percent to the training folder
+for img in list[1:num_training_files]: 
+	i = Image.open(old_path + img)
+	i.save(new_train_path+img)
+
+
+#Add the remaining 20 percent to the training folder
+for img in list[num_training_files:]:
+	i = Image.open(old_path + img)
+	i.save(new_test_path+img)
+
+
+\end{lstlisting}
 
 \section{Implementing the Machine Learning Model}
 % Image images

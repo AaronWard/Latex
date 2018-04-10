@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  10 APR 2018 19:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  11 APR 2018 00:06
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -654,7 +654,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 44--53
+Underfull \hbox (badness 10000) in paragraph at lines 45--54
 
  []
 
@@ -672,7 +672,7 @@ Chapter 3.
 
 
 ] [16]
-<__resources/research/top_lang.jpg, id=604, 755.82375pt x 553.06625pt>
+<__resources/research/top_lang.jpg, id=612, 755.82375pt x 553.06625pt>
 File: __resources/research/top_lang.jpg Graphic file (type jpg)
 
 <use __resources/research/top_lang.jpg>
@@ -697,14 +697,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
 
 
-] [23] <__resources/mockup_annotated.jpg, id=660, 1537.745pt x 754.82pt>
+] [23] <__resources/mockup_annotated.jpg, id=668, 1537.745pt x 754.82pt>
 File: __resources/mockup_annotated.jpg Graphic file (type jpg)
 
 <use __resources/mockup_annotated.jpg>
 Package pdftex.def Info: __resources/mockup_annotated.jpg used on input line 26
 .
 (pdftex.def)             Requested size: 538.21881pt x 264.19096pt.
- [24 <./__resources/mockup_annotated.jpg>] <__resources/arch.png, id=666, 874.2
+ [24 <./__resources/mockup_annotated.jpg>] <__resources/arch.png, id=674, 874.2
 6625pt x 457.71pt>
 File: __resources/arch.png Graphic file (type png)
 
@@ -716,7 +716,7 @@ Package pdftex.def Info: __resources/arch.png used on input line 41.
 
  (chapter5.tex
 Chapter 5.
-<__resources/DATASET/sequence.png, id=677, 694.595pt x 189.70876pt>
+<__resources/DATASET/sequence.png, id=685, 694.595pt x 189.70876pt>
 File: __resources/DATASET/sequence.png Graphic file (type png)
 
 <use __resources/DATASET/sequence.png>
@@ -735,27 +735,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 33.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 33.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 32.
  [28] [29]
-<__resources/DATASET/crop.png, id=738, 442.65375pt x 191.71625pt>
+<__resources/DATASET/crop.png, id=744, 442.65375pt x 191.71625pt>
 File: __resources/DATASET/crop.png Graphic file (type png)
 
 <use __resources/DATASET/crop.png>
-Package pdftex.def Info: __resources/DATASET/crop.png used on input line 82.
+Package pdftex.def Info: __resources/DATASET/crop.png used on input line 80.
 (pdftex.def)             Requested size: 398.38467pt x 172.54301pt.
-) [30 <./__resources/DATASET/crop.png>]
+ [30 <./__resources/DATASET/crop.png>]
+<__resources/implementation/imbalance.jpg, id=752, 642.4pt x 481.8pt>
+File: __resources/implementation/imbalance.jpg Graphic file (type jpg)
+
+<use __resources/implementation/imbalance.jpg>
+Package pdftex.def Info: __resources/implementation/imbalance.jpg used on input
+ line 121.
+(pdftex.def)             Requested size: 385.44298pt x 289.08221pt.
+ [31]
+<__resources/implementation/augmented-images.png, id=758, 703.62875pt x 322.203
+75pt>
+File: __resources/implementation/augmented-images.png Graphic file (type png)
+ <use __resources/implementation/augmented-images.png>
+Package pdftex.def Info: __resources/implementation/augmented-images.png used o
+n input line 131.
+(pdftex.def)             Requested size: 422.18051pt x 193.32373pt.
+ [32 <./__resources/implementation/imbalance.jpg>]
+<__resources/implementation/balance.jpg, id=765, 642.4pt x 481.8pt>
+File: __resources/implementation/balance.jpg Graphic file (type jpg)
+
+<use __resources/implementation/balance.jpg>
+Package pdftex.def Info: __resources/implementation/balance.jpg used on input l
+ine 145.
+(pdftex.def)             Requested size: 321.19922pt x 240.8994pt.
+ [33 <./__resources/implementation/augmented-images.png>] [34 <./__resources/im
+plementation/balance.jpg>])
+[35] [36]
 \openout2 = `chapter6.aux'.
 
-
-(chapter6.tex
+ (chapter6.tex
 Chapter 6.
-) [31
+) [37
 
 
 
@@ -764,7 +789,7 @@ Chapter 6.
 
  (chapter7.tex
 Chapter 7.
-) [32
+) [38
 
 
 
@@ -773,7 +798,7 @@ Chapter 7.
 
  (chapter8.tex
 Chapter 8.
-) [33
+) [39
 
 
 
@@ -889,7 +914,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--56
 l . com /
  []
 
-[34
+[40
 
 
 ]
@@ -956,7 +981,7 @@ uthType =
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-[35]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 145--150
 []\OT1/ptm/m/n/12 Adarsh Verma.  Most pop-u-lar pro-gram-ming lan-guages for ma
 -chine learn-
@@ -980,10 +1005,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--156
 com / customer-[]surveys /
  []
 
-) [36]
+) [42]
 \openout2 = `appendix.aux'.
 
- (appendix.tex [37
+ (appendix.tex [43
 
 
 ])
@@ -994,18 +1019,25 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
 (chapter5.aux) (chapter6.aux) (chapter7.aux) (chapter8.aux) (appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F7160C1775FB62CF9F07DBF0D87DAF3F;4989.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: 01E387488D8BEB145C29787DD27D95F2;5010
+(rerunfilecheck)             After:  B699358D62166F1037AE8A3CE54351F6;5014.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
  ) 
 Here is how much of TeX's memory you used:
- 9447 strings out of 493333
- 132519 string characters out of 3139194
- 267047 words of memory out of 3000000
- 12533 multiletter control sequences out of 15000+200000
+ 9517 strings out of 493333
+ 133862 string characters out of 3139194
+ 266335 words of memory out of 3000000
+ 12560 multiletter control sequences out of 15000+200000
  27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,10n,44p,1704b,1368s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,44p,1566b,1744s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
@@ -1013,9 +1045,9 @@ e1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/c
 ourier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (48 pages, 686135 bytes).
+Output written on Thesis.pdf (54 pages, 921019 bytes).
 PDF statistics:
- 879 PDF objects out of 1000 (max. 8388607)
- 185 named destinations out of 1000 (max. 500000)
- 578 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 959 PDF objects out of 1000 (max. 8388607)
+ 224 named destinations out of 1000 (max. 500000)
+ 593 words of extra memory for PDF output out of 10000 (max. 10000000)
 

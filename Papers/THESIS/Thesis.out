@@ -42,7 +42,7 @@
 \BOOKMARK [2][-]{subsection.5.2.1}{Image Extraction}{section.5.2}% 42
 \BOOKMARK [2][-]{subsection.5.2.2}{Gray Scaling}{section.5.2}% 43
 \BOOKMARK [2][-]{subsection.5.2.3}{Facial Cropping}{section.5.2}% 44
-\BOOKMARK [2][-]{subsection.5.2.4}{Data Augmentation}{section.5.2}% 45
+\BOOKMARK [2][-]{subsection.5.2.4}{Image Increasing Through Data Augmentation}{section.5.2}% 45
 \BOOKMARK [2][-]{subsection.5.2.5}{Data Splitting}{section.5.2}% 46
 \BOOKMARK [1][-]{section.5.3}{Implementing the Machine Learning Model}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.4}{Deploying the Trained Model}{chapter.5}% 48
