@@ -45,7 +45,7 @@ for file in list:
 \end{lstlisting}
 
 \subsection{Facial Cropping}
-Following the gray scaling of all images, dimensionality reduction was implemented on the images. This was done by cropping each image down to only the facial surface area. This is done to reduce the noise of the data and to remove any features in the backgrounds that may be learned by the network that do not represent the facial expression. To do this, a Python script was written that reads in all the images from the dataset and crop the region of the image that contains the subject faces. This was done using the OpenCV library 
+Following the gray scaling of all images, dimensionality reduction was implemented on the images. This was done by cropping each image down to only the facial surface area. This is done to reduce the noise of the data and to remove any features in the backgrounds that may be learned by the network that do not represent the facial expression. To do this, a Python script was written that reads in all the images from the dataset and crop the region of the image that contains the subject faces. This was done using the OpenCV library.
 
 \begin{lstlisting}[language=Python, frame=single]
 def facecrop(image):
@@ -88,7 +88,7 @@ This was done for all images, however, some images were not correctly cropped du
 \subsection{Image Increasing Through Data Augmentation}
 Upon inspection of the dataset, in regards to the number of images for certain facial expressions, it was noted that there was an insufficient amount of images to train the network. This can be seen in table \ref{table: count}. 
 \begin{table}
-	\begin{tabular}{ |p{9cm}||p{3cm}|}
+	\begin{tabular}{ |p{10cm}||p{3cm}|}
 		\hline
 		\textbf{Facial Expression} & \textbf{Cardinality}\\
 		\hline
@@ -154,7 +154,7 @@ This was done for all classes to increase the number of samples in the dataset, 
 %flipping + synthethic examples
 % show balance
 \subsection{Data Splitting}
-The last step in the the preparation phase was to apply split validation to the dataset. The dataset was split into training and testings sets at a rate of 80/20 - meaning 80\% of the dataset will be used for training and 20\% will be used for testing the model. Please see the Python code below showing how this was achieved.
+The last step in the the preparation phase was to apply split validation to the dataset. The dataset was split into training and testings sets at a divide of 80/20 - meaning 80\% of the dataset will be used for training (1400 images per class) and 20\% will be used for testing the model (350 images per). Please see the Python code below showing how this was achieved.
 
 \begin{lstlisting}[language=Python, frame=single]
 import os, os.path
@@ -187,11 +187,14 @@ for img in list[1:num_training_files]:
 for img in list[num_training_files:]:
 	i = Image.open(old_path + img)
 	i.save(new_test_path+img)
-
-
 \end{lstlisting}
 
 \section{Implementing the Machine Learning Model}
+
+
+
+
+
 % Image images
 % preprocessing
 % Create comptation graph
