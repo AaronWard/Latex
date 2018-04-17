@@ -47,23 +47,25 @@
 \BOOKMARK [1][-]{section.5.3}{Implementing the Machine Learning Model}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.4}{Deploying the Trained Model}{chapter.5}% 48
 \BOOKMARK [1][-]{section.5.5}{Implementing the Node.JS Application}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 51
-\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 52
-\BOOKMARK [1][-]{section.6.1}{Testing Model with Testing Data}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.2}{API Testing}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.4}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 56
-\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 57
-\BOOKMARK [1][-]{section.7.1}{Results}{chapter.7}% 58
-\BOOKMARK [2][-]{subsection.7.1.1}{Model Accuracy}{section.7.1}% 59
-\BOOKMARK [2][-]{subsection.7.1.2}{Usability}{section.7.1}% 60
-\BOOKMARK [1][-]{section.7.2}{Discussion}{chapter.7}% 61
-\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 62
-\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 63
-\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 64
-\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 65
-\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 66
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 67
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 68
-\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.9}% 69
+\BOOKMARK [2][-]{subsection.5.5.1}{Facial Tracking With a Users Webcam}{section.5.5}% 50
+\BOOKMARK [2][-]{subsection.5.5.2}{Facial Sentiment Analysis}{section.5.5}% 51
+\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 53
+\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 54
+\BOOKMARK [1][-]{section.6.1}{Testing Model with Testing Data}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.2}{API Testing}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.4}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 58
+\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 59
+\BOOKMARK [1][-]{section.7.1}{Results}{chapter.7}% 60
+\BOOKMARK [2][-]{subsection.7.1.1}{Model Accuracy}{section.7.1}% 61
+\BOOKMARK [2][-]{subsection.7.1.2}{Usability}{section.7.1}% 62
+\BOOKMARK [1][-]{section.7.2}{Discussion}{chapter.7}% 63
+\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 64
+\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 65
+\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 66
+\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 67
+\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 68
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 69
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 70
+\BOOKMARK [1][-]{section.0.3}{ Neural Network Diagram }{chapter*.9}% 71

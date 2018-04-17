@@ -1,9 +1,9 @@
 \prefacesection{Assignment}
 
 \section*{Design of Network}
-Initially, the design of the network will consist of two input nodes for the two values contained in the training dataset. The learning rate will be set to 0.01 because it said that is a good rate to begin training at (https://www.youtube.com/watch?v=jWT-AX9677k). This will rate will be reduced after each number of runs. On the output layer, only one output node will be made to output the predicted value.
+Initially, the design of the network will consist of two input nodes for the two values contained in the training dataset. The learning rate will be set to 0.01 because it said that is a good rate to begin training at (https://www.youtube.com/watch?v=jWT-AX9677k). This rate will be reduced after each number of runs. On the output layer, only one output node will be made to output the predicted value.
 The network shall also contain one hidden layer. This will consist of two nodes but will be increased incrementally to evaluate the optimal number.
-The goal of this network is see what is the optimum network topology is to reduce the error in the shortest amount of time. 
+The goal of this network is see what the optimum network topology is to reduce the error in the shortest amount of time. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -40,7 +40,7 @@ In the table 1 it can be seen that although the training time is low, the error 
 
 
 \subsubsection*{3 Hidden Layer Nodes}
-The three node model performed significantly better than the previous, with a low error score of 0.0098 on the learning rate 0.01, so this model can be taken into consideration for the evaluation model. However, the other scores did not meet the tolerable error score as the learning rate was decreased, as seen in Table 2.\\
+The three node model performed significantly better than the previous, with a low error score of 0.0098 on the learning rate 0.01, so this model can be taken into consideration saving and evaluation. However, the other scores did not meet the tolerable error score as the learning rate was decreased, as seen in Table 2.\\
  \begin{longtable}{|>{\raggedright\arraybackslash}p{3cm}|c|c|c|c|}
 	\hline 
 	Learning rate & Cost & Error & Time \\ 
@@ -89,11 +89,11 @@ Secondly, an extra node was added to the model. It can be noted from Table 4 tha
 \end{longtable}
 
 
-From these figures it is evident that the 2 node model trained for 1000 epochs and the 3 node model trained for 2000 epochs performed the best. Although the training time is shorter with 2 node network that was trained for 1000 epochs, the latter has a better accuracy. Also to take into consideration, there is only an average of 1.22 second training difference, which is not a high cost to pay. Therefore, the model with 3 hidden layer nodes that, trained for 2000 epochs, and the learning rate set to 0.01 shall be used for evaluation.
+From these figures it is evident that the 2 node model that was trained for 1000 epochs and the 3 node model that was trained for 2000 epochs performed the best. Although the training time is shorter with 2 node network, the latter has a better accuracy. It should also be taken into consideration that there is only an average of 1.22 second training time difference, which is not a high cost to pay. Therefore, the model with 3 hidden layer nodes that, trained for 2000 epochs, and the learning rate set to 0.01 shall be used for evaluation.
 
 \section*{Network Evaluation}
 Upon inspection of the trained models results, the model was again trained with the optimal parameters specified and saved to disk, but upon evaluating the model with new data, the model did not perform as well as it did when training.
-An average error of 0.02775318, over 10 runs, was the result of using this model. Therefore, further training was implemented. In order reduce the error, the number of nodes and epochs were increased incrementally. These numbers are average results over 10 runs from the evaluation scripts in respect to the newly trained models. All models were trained with the 0.01 learning rate. See Table 5 for results.
+An average overall error of 0.02775318, over 10 runs, was the result of using this model. Therefore, further training was implemented. In order to reduce the error, the number of nodes and epochs were increased incrementally. These numbers are average results over 10 runs from the evaluation scripts in respect to the newly trained models. All models were trained with the 0.01 learning rate as it proved to provide the best results. See Table 5 for results.
 
  \begin{longtable}{|>{}p{4cm}|c|c|}
 	\hline 
@@ -144,4 +144,4 @@ As seen from this iterative process in the table above, the most optimal model f
 
 
 \section*{Conclusion}
-In conclusion, the model received two inputs, one hidden layer and one output. The network was trained using 500 examples in the training dataset. The model performed well during training with 3 hidden layers nodes, but failed to reach the minimum tolerable error when fed new data. Therefore, further experimentation was conducted in order to find the optimal number of training epochs, learning rate and nodes that were required in order to reach an error below 0.01 in the evaluation phase. The project was successful in implementation, with an average evaluation error of 0.00093.
+In conclusion, the model received two inputs, one hidden layer and one output. The network was trained using 500 examples in the training dataset. The model performed well during training with 3 hidden layers nodes, but failed to reach the minimum tolerable error when given new data. Therefore, further experimentation was conducted in order to find the optimal number of training epochs, learning rate and nodes that were required in order to reach an error below 0.01 in the evaluation phase. The project was successful in implementation, with an average evaluation error of 0.00093.

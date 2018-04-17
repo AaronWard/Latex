@@ -44,26 +44,28 @@
 \contentsline {subsection}{\numberline {5.2.3}Facial Cropping}{29}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Image Increasing Through Data Augmentation}{31}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5}Data Splitting}{34}{subsection.5.2.5}
-\contentsline {section}{\numberline {5.3}Implementing the Machine Learning Model}{36}{section.5.3}
-\contentsline {section}{\numberline {5.4}Deploying the Trained Model}{36}{section.5.4}
-\contentsline {section}{\numberline {5.5}Implementing the Node.JS Application}{36}{section.5.5}
-\contentsline {section}{\numberline {5.6}Deploying the Node.JS Application}{36}{section.5.6}
-\contentsline {section}{\numberline {5.7}Concluding Remarks of Implementation}{36}{section.5.7}
-\contentsline {chapter}{\numberline {6}Testing and Evaluation}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Testing Model with Testing Data}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}API Testing}{37}{section.6.2}
-\contentsline {section}{\numberline {6.3}Testing Model with New Data}{37}{section.6.3}
-\contentsline {section}{\numberline {6.4}Concluding Remarks of Testing and Evaluation}{37}{section.6.4}
-\contentsline {chapter}{\numberline {7}Results and Discussion}{38}{chapter.7}
-\contentsline {section}{\numberline {7.1}Results}{38}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Model Accuracy}{38}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Usability}{38}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Discussion}{38}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{39}{chapter.8}
-\contentsline {section}{\numberline {8.1}Conclusion}{39}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Further Work}{39}{subsection.8.1.1}
-\contentsline {chapter}{Bibliography}{40}{subsection.8.1.1}
-\contentsline {chapter}{Appendices}{43}{chapter*.9}
-\contentsline {section}{\numberline {A} Code Snippets }{43}{section.0.1}
-\contentsline {section}{\numberline {B} Screen shots }{43}{section.0.2}
-\contentsline {section}{\numberline {C} Neural Network Diagram }{43}{section.0.3}
+\contentsline {section}{\numberline {5.3}Implementing the Machine Learning Model}{35}{section.5.3}
+\contentsline {section}{\numberline {5.4}Deploying the Trained Model}{39}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementing the Node.JS Application}{39}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Facial Tracking With a Users Webcam}{40}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Facial Sentiment Analysis}{43}{subsection.5.5.2}
+\contentsline {section}{\numberline {5.6}Deploying the Node.JS Application}{43}{section.5.6}
+\contentsline {section}{\numberline {5.7}Concluding Remarks of Implementation}{43}{section.5.7}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{44}{chapter.6}
+\contentsline {section}{\numberline {6.1}Testing Model with Testing Data}{44}{section.6.1}
+\contentsline {section}{\numberline {6.2}API Testing}{44}{section.6.2}
+\contentsline {section}{\numberline {6.3}Testing Model with New Data}{44}{section.6.3}
+\contentsline {section}{\numberline {6.4}Concluding Remarks of Testing and Evaluation}{44}{section.6.4}
+\contentsline {chapter}{\numberline {7}Results and Discussion}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Results}{45}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Model Accuracy}{45}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Usability}{45}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Discussion}{45}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusion and Further Work}{46}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusion}{46}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Further Work}{46}{subsection.8.1.1}
+\contentsline {chapter}{Bibliography}{47}{subsection.8.1.1}
+\contentsline {chapter}{Appendices}{50}{chapter*.9}
+\contentsline {section}{\numberline {A} Code Snippets }{50}{section.0.1}
+\contentsline {section}{\numberline {B} Screen shots }{50}{section.0.2}
+\contentsline {section}{\numberline {C} Neural Network Diagram }{50}{section.0.3}
