@@ -14,7 +14,7 @@ As stated in the system design, the dataset that will be used is the Cohn-Kanade
 	\end{center}
 \end{figure}
 
-It should be noted that the figure above is not a full image sequence and the some transitional images have been omitted. Moreover, it should also be known that there are inconsistencies in the dataset, such as many subject not having image sequences for each certain emotions and label data missing for some images. This is acknowledged in the \textit{README} file created by Lucey et al. that is contained within the dataset, where it is declared "\textit{IF THERE IS NO FILE IT MEANS THAT THERE IS NO EMOTION LABEL (sorry to be explicit but this will avoid confusion)}". 
+It should be noted that the figure above is not a full image sequence and the some transitional images have been omitted. Moreover, it should also be known that there are inconsistencies in the dataset, such as a number subject not having image sequences for each certain emotions and label data missing for some images. This is acknowledged in the \textit{README} file created by Lucey et al. that is contained within the dataset, where it is declared "\textit{IF THERE IS NO FILE IT MEANS THAT THERE IS NO EMOTION LABEL (sorry to be explicit but this will avoid confusion)}". 
 
 \section{Data Preparation and Preprocessing}
 A number of preprocessing steps were taken in order to prepare the images for training the network. These steps were required to ensure maximum possible accuracy and minimal training time as the nature of working with neural networks can be computationally expensive when accompanied with large files such as images. The steps are as follows: Image extraction, Gray scaling, Facial Cropping, Data Augmentation and Data Splitting.
@@ -191,7 +191,7 @@ for img in list[num_training_files:]:
 
 \section{Implementing the Machine Learning Model}
 
-When implementing the machine learning model with Tensorflow, the initial step used is to import all the libraries that deemed necessary for preprocessing and training. These include Tensorflow, Numpy, Skimage and the os packages. Secondly, the image data was import with it's respective labels. A lists are used to store the image RGB data for every image in the dataset. This means we have a list of lists in our program. Secondly, for each image in a directory under a certain class, a label of that class is added to the labels list. Refer code below to see how this was implemented.
+When implementing the machine learning model with Tensorflow, the initial step used is to import all the libraries that deemed necessary for preprocessing and training. These include Tensorflow, Numpy, Skimage, PIL etc. Secondly, the image data was import with it's respective labels. A list is used to store the image RGB data for every image in the dataset. Secondly, for each image in a directory under a certain class, a label of that class is added to the labels list. Refer code below to see how this was implemented.
 
 \begin{lstlisting}[language=Python, frame=single]
 def load_data(TRAINING_DIR):
@@ -218,22 +218,19 @@ for d in directories:
 
 images, labels = load_data(TRAINING_DIR)
 \end{lstlisting}
-
-
-Following the importation of the images and labels, some further preprocessing steps are done. In this case, each image in the list of images are sub sampled from their original sizes down to a 50x50 pixel size. This was done to reduce the dimensionality of the images for the network to better handle the input data. This was done using the \textbf{Skimage} library. The list images were traversed and resized using the tranform function. 
+Following this, shuffling of the data is performed, this is done to prevent overfitting of the model. Then further preprocessing steps are taken. In this case, each image in the list of images are sub sampled from their original sizes down to a 50x50 pixel size. This was done with the Skimage library to reduce the dimensionality of the images for the network to better handle the input data. The list images were traversed and resized using the tranform function. 
 \begin{lstlisting}[frame=single]
 images = [transform.resize(image,(50, 50))
 	for image in images]
 \end{lstlisting}
-After basic data imports, defining the computation graph for Tensorflow is required.
-Tensorflow placeholder were then declared for later use when tensors need to be fed to the Tensorflow session, along with another few initial variables such as number of epochs, the batch size, dropout rate etc.  After this, the structure of the network was defined. 
-The network consists of 3 convolution layers with an activation function of Relu, 3 max-pooling. The input from the image value is multiplied by the random weight assigned to each node, and the bias is added (both of which are have been defined in Python dictionaries). This structure is done for all 3 convolution/max-pooling layers, as seen in Figure \ref{map}.
+After basic data imports, defining the computation graph for Tensorflow is required. Tensorflow placeholder were then declared for later use when tensors need to be fed to the TensorFlow session, along with another few initial variables such as number of epochs, the batch size, dropout rate etc. When all the main variables needed for TensorFlow are made, the structure of the network was mad. This was done using the tf.slim library, which a TensorFlow package that allows you to define layers in a network easily. 
 
+In total there are 10 convolution layers with 5 MaxPooling layers. The convolution layer is used to extract features within the image while pooling reduces the dimensionality of the feature maps, but retains majority of the useful data.
 \begin{figure}[ht]
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/map.png}
+		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/map.jpg}
 		\caption{Feature Map of CNN}
 		\label{map}
 	\end{center}
@@ -243,58 +240,48 @@ Lastly, a fully connected layer is defined, which will be used to produce a pred
 
 
 \begin{lstlisting}[language=python, frame=single]
-conv1 = tf.nn.relu(conv2d(x, weights['weights_conv1'])
-		 + biases['bias_conv1'])
-conv1 = maxpool2d(conv1)
-
-conv2 = tf.nn.relu(conv2d(conv1, weights['weights_conv2'])
-		 + biases['bias_conv2'])
-conv2 = maxpool2d(conv2)
-
-conv3 = tf.nn.relu(conv2d(conv2, weights['weights_conv3']) 
-		+ biases['bias_conv3'])
-conv3 = maxpool2d(conv3)
-
-fully_con = tf.reshape(conv3, [-1, 7*7*256])
-fully_con = tf.nn.relu(tf.matmul(fully_con,
-	 weights['weights_fully_con'])
- 	 + biases['bias_fully_con'])
- 
-fc = tf.nn.dropout(fully_con, keep_rate) # Apply dropout
-
-output = tf.matmul(fully_con, weights['weights_out']) 
-		+ biases['bias_out']
-return output
+	net = slim.conv2d(net, 32, 3)
+	net = slim.conv2d(net, 64, 3)
+	net = slim.conv2d(net, 64, 3)
+	net = slim.max_pool2d(net, 3, stride = 1 )
+	net = slim.conv2d(net, 96, 3)
+	net = slim.conv2d(net, 96, 3)
+	net = slim.max_pool2d( net, 2, stride = 2)
+	
+	net = slim.conv2d(net, 128, 3)
+	net = slim.conv2d(net, 128, 3)
+	net = slim.max_pool2d( net, 2, stride = 2)
+	
+	net = slim.conv2d(net, 128, 3)
+	net = slim.conv2d(net, 128, 3)
+	net = slim.max_pool2d(net, 2, stride = 2)
+	
+	net = slim.conv2d(net, 128, 3)
+	net = slim.max_pool2d(net, 2, stride = 1)
+	
+	net = slim.dropout(net, keep_prob = keep_rate
+		, is_training = is_training )
 \end{lstlisting}
 
-Following the structure set up of the network, a function is defined that runs the Tensorflow session, which takes the \textbf{x} placeholder as a parameter. The session is ran by first initializing all the Tensorflow variables, then iterated through
-the number of epochs and feed the image data and labels using feed\_dict.
-The loss/cost and accuracy is evaluated and printed to the console.\\
+Following the structure set up of the network, a function is defined that runs the Tensorflow session, which takes the \textbf{x} placeholder as a parameter.
+Within this function we define the loss function used within the network which is softmax with cross entropy. Also the Adam optimizer is used for back propagating through the network and adjusting the weights. A learning rate of 0.002 was chosen for the final implementation after showing in experimentation that this reduced the loss the most. 
 
 \begin{lstlisting}[language=python, frame=single]
-def train_network(x):
-  saver = tf.train.Saver()
-  pred = convolutional_network(x)
-  loss = tf.reduce_mean(
-  tf.nn.sparse_softmax_cross_entropy_with_logits(labels
-   = y, logits = pred))
- 
-  train_op = tf.train.AdamOptimizer(learning_rate=0.01)
-          .minimize(loss)
+loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits
+    (labels = y, logits = output))
+total_losses = tf.losses.get_total_loss
+	( add_regularization_losses=True ) + loss
 
-  with tf.Session() as sess:
-	# Initialize all the variables
-	sess.run(tf.global_variables_initializer())
-
-  print("RUNNING SESSION...")
-  for epoch in range(num_epochs):
-    _, loss_value = sess.run([train_op, loss], 
-               feed_dict={x: images, y: labels})
-                   
-  print('Epoch:', epoch+1, "of", num_epochs, '-Loss:',
-  		 loss_value)
-  	....
+update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+with tf.control_dependencies(update_ops):
+train_op = tf.train.AdamOptimizer( learning_rate=0.002 )
+			.minimize( total_losses )
 \end{lstlisting}
+
+
+When the session is ran, the TensorFlow variables are initialized and the training begins. 
+The list of images and labels are segmented into batches of size 100 to prevent an OOM error, as loading all the images into memory can cause an overflow. The images and labels are fed into the TensorFlow runtime environment for training. After each epoch, the accumulated loss and batch accuracy is calculated and printed to the screen.
+After the network have been trained for the specified number of epochs, it evaluated the accuracy on the test data and a TensorFlow \textit{.CKPT} model file is saved to disk.
 
 % Image images
 % preprocessing
@@ -303,6 +290,8 @@ def train_network(x):
 
 \section{Deploying the Trained Model}
 % 1 - Flask API
+
+/***********************************/
 
 \section{Implementing the Node.JS Application}
 To develop a web application for the user to interact with, Node.JS was used to implement a simple one page application that accesses the users webcam. Firstly, a javascript webserver was created using the Express npm module, which provides functions for routing and serving html pages. A port is initially set using either port 5000 for local development, or a randomly allocated port for deployment. 
@@ -364,8 +353,9 @@ After is is known where the users face is positioned in the shot, the cropped ar
 	\end{center}
 \end{figure}
 
+\newpage
 
-\subsection{Facial Sentiment Analysis} 
+%\subsection{Facial Sentiment Analysis} 
 
 % 1 - Create Node/express application
 % 2 - Implement webcam canvas
@@ -377,13 +367,14 @@ After is is known where the users face is positioned in the shot, the cropped ar
 % 1 - Github
 % 2 - Heroku integration
 
-
-
+For deploying the web application, the Heroku PaaS of service was used. Using GitHub integrations, whenever a new version of the application was pushed to the remote repository a new build was commenced. If the build was successful, the application would be live for use at \textit{https://survenet.herokuapp.com}.
 
 %\subsection{Database Integration
-
 %\section{Result Weighting Algorithm}
-
 %\section{Integrating Third Party Services}
-
 \section{Concluding Remarks of Implementation}
+
+In summary, many data preprocessing steps were taken to ensure the best possible result of the model. These include gray scaling, facial cropping, data increase by creating flipped copies and image augmentation. These steps were taken to ensure the best possible results when evaluating the model. Secondly, the data was split into training and testing sets. A fully working TensorFlow model was created in python and trained on the FloydHub could training platform. A facial tracking web application was built for recording the used face and deployed to the heroku PaaS. 
+
+
+

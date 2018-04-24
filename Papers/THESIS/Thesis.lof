@@ -14,5 +14,9 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Feature Map of CNN}}{37}{figure.5.6}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Webcam Feed with Facial Tracking and Cropping}}{42}{figure.5.7}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Loss Function Values}}{45}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Accuracy Values}}{46}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Confusion Matrix Heatmap}}{47}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Single Predictions on Non-preprocessed Images}}{49}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
