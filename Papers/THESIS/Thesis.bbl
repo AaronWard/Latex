@@ -1,15 +1,9 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Abdulkader et~al.(2017)Abdulkader, Lakshmiratan, and Zhang]{DeepText}
-Ahmad Abdulkader, Aparna Lakshmiratan, and Joy Zhang.
-\newblock Introducing deeptext: Facebook's text understanding engine, 2017.
-\newblock URL
-  \url{https://code.facebook.com/posts/181565595577955/introducing-deeptext-facebook-s-text-understanding-engine/}.
 
 \bibitem[Arthmann and Li(2017)]{arthmann}
 Christopher Arthmann and I-Ping Li.
@@ -88,6 +82,12 @@ Rashmi Jain.
 \newblock URL
   \url{http://blog.hackerearth.com/powerful-programming-languages-for-machine-learning}.
 
+\bibitem[Kaasschieter(2017)]{capg}
+Reinoud Kaasschieter.
+\newblock Quality data, a must have for ai, Oct 2017.
+\newblock URL
+  \url{https://www.capgemini.com/2017/10/quality-data-a-must-have-for-ai/}.
+
 \bibitem[Kirkpatrick(2017)]{keith}
 Keith Kirkpatrick.
 \newblock Ai in contact centers: Artificial intelligence technologies are being
@@ -128,6 +128,15 @@ Masakazu Matsugu, Katsuhiko Mori, Yusuke Mitari, and Yuji Kaneda.
   \url{http://www.sciencedirect.com/science/article/pii/S0893608003001151}.
 \newblock Advances in Neural Networks Research: IJCNN '03.
 
+\bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and
+  Salakhutdinov]{JMLR}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock \emph{Journal of Machine Learning Research}, 15:\penalty0 1929--1958,
+  2014.
+\newblock URL \url{http://jmlr.org/papers/v15/srivastava14a.html}.
+
 \bibitem[Subhashini and Niveditha(2015)]{SUBHASHINI}
 R.~Subhashini and P.R. Niveditha.
 \newblock Analyzing and detecting employee's emotion for amelioration of
@@ -147,6 +156,11 @@ Adarsh Verma.
   science, Jan 2017.
 \newblock URL
   \url{https://fossbytes.com/popular-top-programming-languages-machine-learning-data-science/}.
+
+\bibitem[Viola and Jones(2001)]{viola}
+Paul Viola and Michael Jones.
+\newblock Robust real-time object detection.
+\newblock In \emph{International Journal of Computer Vision}, 2001.
 
 \bibitem[Willott(2011)]{willott}
 Lindsay Willott.

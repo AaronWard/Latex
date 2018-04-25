@@ -39,26 +39,27 @@
 \contentsline {section}{\numberline {5.1}Data Understanding}{26}{section.5.1}
 \contentsline {section}{\numberline {5.2}Data Preparation and Preprocessing}{27}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Image Extraction}{27}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Gray Scaling}{28}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Grayscaling}{28}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Facial Cropping}{29}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Image Increasing Through Data Augmentation}{31}{subsection.5.2.4}
-\contentsline {subsection}{\numberline {5.2.5}Data Splitting}{34}{subsection.5.2.5}
-\contentsline {section}{\numberline {5.3}Implementing the Machine Learning Model}{35}{section.5.3}
-\contentsline {section}{\numberline {5.4}Deploying the Trained Model}{39}{section.5.4}
-\contentsline {section}{\numberline {5.5}Implementing the Node.JS Application}{41}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Facial Tracking With a Users Webcam}{42}{subsection.5.5.1}
-\contentsline {section}{\numberline {5.6}Deploying the Node.JS Application}{44}{section.5.6}
-\contentsline {section}{\numberline {5.7}Concluding Remarks of Implementation}{45}{section.5.7}
-\contentsline {chapter}{\numberline {6}Testing, Results and Evaluation}{46}{chapter.6}
-\contentsline {section}{\numberline {6.1}Training Results and Evaluation}{46}{section.6.1}
-\contentsline {section}{\numberline {6.2}Testing Model with Testing Data}{49}{section.6.2}
-\contentsline {section}{\numberline {6.3}Testing Model with New Data}{51}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability Testing}{51}{section.6.4}
-\contentsline {section}{\numberline {6.5}Concluding Remarks of Testing and Evaluation}{52}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusion and Further Work}{54}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusion}{54}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Further Work}{54}{subsection.7.1.1}
-\contentsline {chapter}{Bibliography}{55}{subsection.7.1.1}
-\contentsline {chapter}{Appendices}{58}{chapter*.9}
-\contentsline {section}{\numberline {A} Code Snippets }{58}{section.0.1}
-\contentsline {section}{\numberline {B} Screen shots }{58}{section.0.2}
+\contentsline {subsection}{\numberline {5.2.4}Image Increasing Through Data Augmentation}{32}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Data Splitting}{35}{subsection.5.2.5}
+\contentsline {section}{\numberline {5.3}Implementing the Machine Learning Model}{36}{section.5.3}
+\contentsline {section}{\numberline {5.4}Deploying the Trained Model}{41}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementing the Node.JS Application}{43}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Facial Tracking With a Users Webcam}{43}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Facial Sentiment Analysis}{46}{subsection.5.5.2}
+\contentsline {section}{\numberline {5.6}Deploying the Node.JS Application}{47}{section.5.6}
+\contentsline {section}{\numberline {5.7}Concluding Remarks of Implementation}{47}{section.5.7}
+\contentsline {chapter}{\numberline {6}Testing, Results and Evaluation}{49}{chapter.6}
+\contentsline {section}{\numberline {6.1}Training Results and Evaluation}{49}{section.6.1}
+\contentsline {section}{\numberline {6.2}Testing Model with Testing Data}{52}{section.6.2}
+\contentsline {section}{\numberline {6.3}Testing Model with New Data}{54}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability Testing}{54}{section.6.4}
+\contentsline {section}{\numberline {6.5}Concluding Remarks of Testing and Evaluation}{55}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusion and Further Work}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusion}{57}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Further Work}{58}{subsection.7.1.1}
+\contentsline {chapter}{Bibliography}{59}{subsection.7.1.1}
+\contentsline {chapter}{Appendices}{63}{chapter*.9}
+\contentsline {section}{\numberline {A} Code Snippets }{63}{section.0.1}
+\contentsline {section}{\numberline {B} Screen shots }{63}{section.0.2}

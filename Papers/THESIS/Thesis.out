@@ -39,7 +39,7 @@
 \BOOKMARK [1][-]{section.5.1}{Data Understanding}{chapter.5}% 39
 \BOOKMARK [1][-]{section.5.2}{Data Preparation and Preprocessing}{chapter.5}% 40
 \BOOKMARK [2][-]{subsection.5.2.1}{Image Extraction}{section.5.2}% 41
-\BOOKMARK [2][-]{subsection.5.2.2}{Gray Scaling}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Grayscaling}{section.5.2}% 42
 \BOOKMARK [2][-]{subsection.5.2.3}{Facial Cropping}{section.5.2}% 43
 \BOOKMARK [2][-]{subsection.5.2.4}{Image Increasing Through Data Augmentation}{section.5.2}% 44
 \BOOKMARK [2][-]{subsection.5.2.5}{Data Splitting}{section.5.2}% 45
@@ -47,18 +47,19 @@
 \BOOKMARK [1][-]{section.5.4}{Deploying the Trained Model}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.5}{Implementing the Node.JS Application}{chapter.5}% 48
 \BOOKMARK [2][-]{subsection.5.5.1}{Facial Tracking With a Users Webcam}{section.5.5}% 49
-\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 51
-\BOOKMARK [0][-]{chapter.6}{Testing, Results and Evaluation}{}% 52
-\BOOKMARK [1][-]{section.6.1}{Training Results and Evaluation}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.2}{Testing Model with Testing Data}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.4}{Usability Testing}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.5}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 57
-\BOOKMARK [0][-]{chapter.7}{Conclusion and Further Work}{}% 58
-\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 59
-\BOOKMARK [2][-]{subsection.7.1.1}{Further Work}{section.7.1}% 60
-\BOOKMARK [0][-]{subsection.7.1.1}{Bibliography}{}% 61
-\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 62
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 63
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 64
+\BOOKMARK [2][-]{subsection.5.5.2}{Facial Sentiment Analysis}{section.5.5}% 50
+\BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 52
+\BOOKMARK [0][-]{chapter.6}{Testing, Results and Evaluation}{}% 53
+\BOOKMARK [1][-]{section.6.1}{Training Results and Evaluation}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.2}{Testing Model with Testing Data}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.4}{Usability Testing}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.5}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 58
+\BOOKMARK [0][-]{chapter.7}{Conclusion and Further Work}{}% 59
+\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 60
+\BOOKMARK [2][-]{subsection.7.1.1}{Further Work}{section.7.1}% 61
+\BOOKMARK [0][-]{subsection.7.1.1}{Bibliography}{}% 62
+\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 63
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 64
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 65
