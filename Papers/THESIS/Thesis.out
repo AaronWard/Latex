@@ -49,19 +49,16 @@
 \BOOKMARK [2][-]{subsection.5.5.1}{Facial Tracking With a Users Webcam}{section.5.5}% 49
 \BOOKMARK [1][-]{section.5.6}{Deploying the Node.JS Application}{chapter.5}% 50
 \BOOKMARK [1][-]{section.5.7}{Concluding Remarks of Implementation}{chapter.5}% 51
-\BOOKMARK [0][-]{chapter.6}{Testing and Evaluation}{}% 52
-\BOOKMARK [1][-]{section.6.1}{Training Evaluation}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.6}{Testing, Results and Evaluation}{}% 52
+\BOOKMARK [1][-]{section.6.1}{Training Results and Evaluation}{chapter.6}% 53
 \BOOKMARK [1][-]{section.6.2}{Testing Model with Testing Data}{chapter.6}% 54
 \BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.4}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 56
-\BOOKMARK [0][-]{chapter.7}{Results and Discussion}{}% 57
-\BOOKMARK [1][-]{subsection.7.0.1}{Model Accuracy}{chapter.7}% 58
-\BOOKMARK [2][-]{subsection.7.0.2}{Usability}{subsection.7.0.1}% 59
-\BOOKMARK [1][-]{section.7.1}{Discussion}{chapter.7}% 60
-\BOOKMARK [0][-]{chapter.8}{Conclusion and Further Work}{}% 61
-\BOOKMARK [1][-]{section.8.1}{Conclusion}{chapter.8}% 62
-\BOOKMARK [2][-]{subsection.8.1.1}{Further Work}{section.8.1}% 63
-\BOOKMARK [0][-]{subsection.8.1.1}{Bibliography}{}% 64
-\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 65
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 66
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 67
+\BOOKMARK [1][-]{section.6.4}{Usability Testing}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.5}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 57
+\BOOKMARK [0][-]{chapter.7}{Conclusion and Further Work}{}% 58
+\BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 59
+\BOOKMARK [2][-]{subsection.7.1.1}{Further Work}{section.7.1}% 60
+\BOOKMARK [0][-]{subsection.7.1.1}{Bibliography}{}% 61
+\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 62
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 63
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 64

@@ -290,8 +290,54 @@ After the network have been trained for the specified number of epochs, it evalu
 
 \section{Deploying the Trained Model}
 % 1 - Flask API
+In order to deploy the trained TensorFlow model a python application programming interface was created using the Flask library. Flask is a microframework developed for running python scripts on a server, similar to node.js and express. In the API, routes were set up to handle HTTP POST requests. When image data in the form of Base64 is sent to the server, it is decoded from Base64 and written to disk in the form of a PNG file. This file is then preprocessed to have the same characteristics as the data the model was trained on. The image is converted to grayscale, then resized to be 50x50 pixels and lastly a new dimension is added to the image so that it can be interpreted by TensorFlow trained model. After a classification results is returned from the model, the results is converted to a JSON string and returned to the application from which the request came.
 
-/***********************************/
+\begin{lstlisting}[language=python, frame=single]
+@app.route('/api', methods=["POST"])
+@cross_origin()
+def evaluate():
+
+imageData = request.get_data()
+data_preprocessing(imageData)
+print('1: Image was converted')
+
+image = Image.open('output.jpg')
+image = image.convert('L')
+image = image.resize((50, 50), Image.ANTIALIAS)
+print('Resized and Grayscaled Image') 
+
+image = np.expand_dims(np.array(image), axis = 0)
+classification = sess.run(prediction, feed_dict = 
+	{x: image, is_training : True})  
+	
+# add highest probability result to classes
+classes = np.argmax( classification, axis = 1 )
+
+res = 'undefined'
+if   classes[0] == 0:
+	print('Predicted: Angry')
+	res = 'Angry'
+elif classes[0] == 1:
+	print('Predicted: Fear')
+	res = 'Fear'
+elif classes[0] == 2:
+	print('Predicted: Happy')
+	res = 'Happy'
+elif classes[0] == 3:
+	print('Predicted: neutral')
+	res = 'Neutral'
+elif classes[0] == 4:
+	print('Predicted: sad')
+	res = 'Sad'
+elif classes[0] == 5:
+	print('Predicted: Suprised')
+	res = 'Suprised'
+
+return jsonify(res)
+\end{lstlisting}
+
+For deployment, the Heroku PaaS was used with GitHub integrations. When ever a commit was made to the master branch the API was automatically deployed to the server, a build is made and then the API is ready for use.
+
 
 \section{Implementing the Node.JS Application}
 To develop a web application for the user to interact with, Node.JS was used to implement a simple one page application that accesses the users webcam. Firstly, a javascript webserver was created using the Express npm module, which provides functions for routing and serving html pages. A port is initially set using either port 5000 for local development, or a randomly allocated port for deployment. 
