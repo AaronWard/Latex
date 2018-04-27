@@ -1,5 +1,5 @@
 \chapter{Implementation}
-The following chapter will outline the implementation process of the project and how each component was developed. Firstly, an overview of the dataset used shall be given with information on how the images were preprocessed and augmented for training. A section for the model implementation will be given to describe how the convolutional neural network (CNN) was developed using Tensorflow. This is followed by the deployment process of the Tensorflow Python API. Lastly, the steps in which the Node.JS web application was made shall be touched upon, accompanied by the design and features choices.
+The following chapter will outline the implementation process of the project and how each component was developed. Firstly, an overview of the dataset used shall be given with information on how the images were preprocessed and augmented for training. A section for the model implementation will be given to describe how the convolutional neural network (CNN) was developed using TensorFlow. This is followed by the deployment process of the TensorFlow Python API. Lastly, the steps in which the Node.JS web application was made shall be touched upon, accompanied by the design and features choices.
 
 \section{Data Understanding}
 As stated in the system design, the dataset that will be used is the Cohn-Kanade+ image dataset, which was release in 2000 with the purpose of classifying facial expressions \citep{ck}. The dataset consists of images of 210 subject between the ages of 18 and 50. Each subject is asked to show a facial expression, beginning with a neutral facial expression that eventually lapses to the target emotion. The digital images come in either a 640x490 or 640x480 pixel format. Furthermore, the images either consists of an 8-bit grayscale or 24-bit colour format \citep{ck}. The dataset is made up of 593 image sequences and provides labels for each sequence, ranging between 0 and 6. Refer to Figure \ref{seq} for a summarized illustration of how these sequences are built.
@@ -120,7 +120,7 @@ Upon inspection of the dataset, in regards to the number of images for certain f
 	\label{table: count}
 \end{table}
 
-The initial step to increase the size of the data set was to flipped versions of all the images. Not only does this double the size of the dataset, but helps the network to better handle facial variance when dealing with new unseen data \citep{LOPES}. Also, it will decrease the chance of under-fitting while training the model. Following this step, a check was done on the class balance. Using the Matplotlib Python library, the balance of each class was plotted by counting each image in accordance to it's respective label, as seen in Figure \ref{imbal} which shows the cardinality for each training sample.
+The initial step to increase the size of the data set was to flipped versions of all the images. Not only does this double the size of the dataset, but helps the network to better handle facial variance when dealing with new unseen data \citep{LOPES}. Also, it will decrease the chance of under-fitting while training the model. Following this step, a check was done on the class balance. Using the Matplotlib Python library, the balance of each class was plotted by counting each image in accordance to its respective label, as seen in Figure \ref{imbal} which shows the cardinality for each training sample.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -162,7 +162,7 @@ This was done for all classes to increase the number of samples in the dataset, 
 %flipping + synthethic examples
 % show balance
 \subsection{Data Splitting}
-The last step in the the preparation phase was to apply split validation to the dataset. The dataset was split into training and testings sets at a divide of 80/20 - meaning 80\% of the dataset will be used for training (1400 images per class) and 20\% will be used for testing the model (350 images per class). Please see the Python code below showing how this was achieved.
+The last step in the preparation phase was to apply split validation to the dataset. The dataset was split into training and testing sets at a divide of 80/20 - meaning 80\% of the dataset will be used for training (1400 images per class) and 20\% will be used for testing the model (350 images per class). Please see the Python code below showing how this was achieved.
 
 \begin{lstlisting}[language=Python, frame=single]
 import os, os.path
@@ -199,7 +199,7 @@ for img in list[num_training_files:]:
 
 \section{Implementing the Machine Learning Model}
 
-When implementing the machine learning model with Tensorflow, the initial step used is to import all the libraries that deemed necessary for preprocessing and training. These include Tensorflow, Numpy, Skimage, PIL etc. Secondly, the image data was imported. A list is used to store the image RGB data for every image in the dataset. Secondly, as stated in the data understanding, there is some inconsistency in the dataset such as some images not being labeled. Therefore the class folder in which a certain image is imported from was used as the label, and added to the labels list. Refer code below to see how this was implemented.
+When implementing the machine learning model with TensorFlow, the initial step used is to import all the libraries that deemed necessary for preprocessing and training. These include TensorFlow, Numpy, Skimage, PIL etc. Secondly, the image data was imported. A list is used to store the image RGB data for every image in the dataset. Secondly, as stated in the data understanding, there is some inconsistency in the dataset such as some images not being labeled. Therefore, the class folder in which a certain image is imported from was used as the label, and added to the labels list. Refer code below to see how this was implemented.
 
 \begin{lstlisting}[language=Python, frame=single]
 def load_data(TRAINING_DIR):
@@ -233,7 +233,7 @@ images = [transform.resize(image,(50, 50))
 	for image in images]
 \end{lstlisting}
 
-After the basic data imports and preprocessing, defining the computation graph for Tensorflow is required. Tensorflow placeholder were then declared for later use when tensors need to be fed to the TensorFlow session, along with another few initial variables such as number of epochs, the batch size, dropout rate etc. When all the main variables needed for TensorFlow are made, the structure of the network was mad. This was done using the tf.slim library, which a TensorFlow package that allows you to define layers in a network easily. 
+After the basic data imports and preprocessing, defining the computation graph for TensorFlow is required. TensorFlow placeholder were then declared for later use when tensors need to be fed to the TensorFlow session, along with another few initial variables such as number of epochs, the batch size, dropout rate etc. When all the main variables needed for TensorFlow are made, the structure of the network was mad. This was done using the tf.slim library, which a TensorFlow package that allows you to define layers in a network easily. 
 
 In total there are 10 convolution layers with 5 Max Pooling layers. The convolution layer is used to extract features within the image while pooling reduces the dimensionality of the feature maps, but retains majority of the useful data. Please refer to Figure \ref{map}
 
@@ -241,7 +241,7 @@ In total there are 10 convolution layers with 5 Max Pooling layers. The convolut
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/map.jpg}
+		\includegraphics[keepaspectratio=true,scale=0.48]{__resources/implementation/map.jpg}
 		\caption{Feature Maps of CNN}
 		\label{map}
 	\end{center}
@@ -273,7 +273,7 @@ Lastly, a fully connected layer is defined, which will be used to produce a pred
 		, is_training = is_training )
 \end{lstlisting}
 
-Following the structure set up of the network, a function is defined that runs the Tensorflow session, which takes the \textbf{x} placeholder as a parameter.
+Following the structure set up of the network, a function is defined that runs the TensorFlow session, which takes the \textbf{x} placeholder as a parameter.
 Within this function we define the loss function used within the network which is softmax with cross entropy. Also, the Adam optimizer is used for back propagating through the network and adjusting the weights. The Adam optimization algorithm is said to be a suitable optimizer to use as it is very robust when dealing with high dimensionality \citep{DBLP}. Which, in the case of a CNN, is highly preferable. A learning rate of 0.002 was chosen for the final implementation after showing in experimentation that this reduced the loss the most. 
 
 \begin{lstlisting}[language=python, frame=single]
@@ -355,11 +355,11 @@ elif classes[0] == 5:
 return jsonify(res)
 \end{lstlisting}
 
-For deployment, the Heroku PaaS was used with GitHub integrations. When ever a commit was made to the master branch the API was automatically deployed to the server, a build is made and then the API is ready for use.
+For deployment, the Heroku PaaS was used with GitHub integrations. Whenever a commit was made to the master branch the API was automatically deployed to the server, a build is made and then the API is ready for use.
 
 
 \section{Implementing the Node.JS Application}
-To develop a web application for the user to interact with, Node.JS was used to implement a simple one page application that accesses the users webcam. Firstly, a javascript webserver was created using the Express npm module, which provides functions for routing and serving html pages. A port is initially set using either port 5000 for local development, or a randomly allocated port for a deployment environment. 
+To develop a web application for the user to interact with, Node.JS was used to implement a simple one-page application that accesses the users webcam. Firstly, a Javascript web-server was created using the Express npm module, which provides functions for routing and serving html pages. A port is initially set using either port 5000 for local development, or a randomly allocated port for a deployment environment. 
 
 \begin{lstlisting}[language=python, frame=single]
 	app.set('port', (process.env.PORT || 5000))
@@ -380,7 +380,7 @@ var server = app.listen(app.get('port'), function () {
 
 \subsection{Facial Tracking With a Users Webcam}
 
-The user interface design of the application is very simple. On the left hand side a the page the webcam feed is displayed. This accesses the user's machine's webcam and displays it to the screen using the html \textbf{canvas} element. Canvas is a container for drawing graphics to the page. For facial tracking, a library called Tracking.js was imported. Tracking.js is an open source library created by Eduardo Lundgren for object, colour and face detection using javascript. The reason for this library choice was because other alternatives, such as OpenCV, deemed to be very heavy weight in comparison and API services that have also been considered such as Cloudinary would reduce classification speed as it would be computationally expressive to make multiple requests for facial cropping while using the application. 
+The user interface design of the application is very simple. On the left hand side of the page the webcam feed is displayed. This accesses the user's machine's webcam and displays it to the screen using the html \textbf{canvas} element. Canvas is a container for drawing graphics to the page. For facial tracking, a library called Tracking.js was imported. Tracking.js is an open source library created by Eduardo Lundgren for object, colour and face detection using javascript. The reason for this library choice was because other alternatives, such as OpenCV, deemed to be very heavy weight in comparison and API services that have also been considered such as Cloudinary would reduce classification speed as it would be computationally expressive to make multiple requests for facial cropping while using the application. 
 In light of this, Tracking.js provides a lightweight and quick solution for detecting faces. Using what is known as haar cascades, object classification and detection is made simplified and provides fast calculation speeds \citep{viola}. In terms of the web application, the canvas drawing of the webcam feed is read and interpreted by Tracking.js and the facial features are detected. A yellow square is drawn around the detected facial area.
 
 \begin{lstlisting}[language=python, frame=single]
@@ -393,7 +393,7 @@ tracker.on('track', function(event) {
 context.clearRect(0, 0, canvas.width, canvas.height);
 \end{lstlisting}
 
-One function that tracking.js does not provide is the ability to crop the detected area of the stream. To get around this, Javascript code was developed to mark the area in which the square was being drawn around the users face. In each frame of a users face being detected a new square is drawn to the canvas, so every time that a new square is displayed to the screen, this marks the new coordinates of the area in which is needed for cropping. 
+One function that tracking.js does not provide is the ability to crop the detected area of the stream. To get around this, Javascript code was developed to mark the area in which the square was being drawn around the user's face. In each frame of a user's face being detected a new square is drawn to the canvas, so every time that a new square is displayed to the screen, this marks the new coordinates of the area in which is needed for cropping. 
 
 \begin{lstlisting}[language=python, frame=single]
 rect_width = rect.width; // 
@@ -406,7 +406,7 @@ ctx.drawImage(video, rectX+ 100, rectY +90,
 	 rect_width +70,  rect_height +50, 0, 0, 300, 150);
 \end{lstlisting}
 
-After it is known where the users face is positioned in the shot, the cropped area is displayed in a separate 100x100 pixel canvas area, named ctx, below the feed. To ensure that the trained Tensorflow API does not become overflowed with image data, an interval timing is implemented. This involves setting a timer as to when an image is cropped because it would be disadvantageous and computationally expensive to have every frame to be sent to the API. In this case, the interval is set to 2 seconds. To initiate a session with the model and begin the facial sentiment analysis, a button was added to the UI which begins the analysis. Please refer to the Figure \ref{web} for a screenshot of the facial tracking in action.
+After it is known where the users face is positioned in the shot, the cropped area is displayed in a separate 100x100 pixel canvas area, named ctx, below the feed. To ensure that the trained TensorFlow API does not become overflowed with image data, an interval timing is implemented. This involves setting a timer as to when an image is cropped because it would be disadvantageous and computationally expensive to have every frame to be sent to the API. In this case, the interval is set to 2 seconds. To initiate a session with the model and begin the facial sentiment analysis, a button was added to the UI which begins the analysis. Please refer to the Figure \ref{web} for a screenshot of the facial tracking in action.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -445,7 +445,7 @@ These results are displayed to the screen and are updated constantly after each 
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/good.png}
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/implementation/good.png}
 		\caption{Emotion Classification Metrics when Mostly Happy}
 		\label{good}
 	\end{center}
@@ -458,14 +458,14 @@ Also, when the happiness level of the user reaches below 40\%, is is notified th
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/implementation/bad.png}
+		\includegraphics[keepaspectratio=true,scale=0.6]{__resources/implementation/bad.png}
 		\caption{Emotion Classification Metrics when Mostly Angry}
-		\label{good}
+		\label{bad}
 	\end{center}
 \end{figure}
 \newpage
 
-After 100 iterations of classification, the interaction stops with the model and the user is notified wether or not they have been delivering good or bad customer service.
+After 100 iterations of classification, the interaction stops with the model and the user is notified whether or not they have been delivering good or bad customer service.
 
 
 % 1 - Create Node/express application
@@ -484,7 +484,7 @@ For deploying the web application, the Heroku PaaS of service was used. Using Gi
 %\section{Integrating Third Party Services}
 \section{Concluding Remarks of Implementation}
 
-In summary, many data preprocessing steps were taken. These include grayscaling, facial cropping, data increase by creating flipped copies and image augmentation. These steps were taken to ensure the best possible results when evaluating the model. Secondly, the data was split into training and testing sets. A fully working TensorFlow convolutional neural network was created in Python and trained on the FloydHub could training platform. The model was then deployed to a server for production use. A facial tracking web application was built for recording the used face and deployed to the heroku PaaS. The application can accurately calculate the level of satisfaction displayed with the used facial expression for each class.
+In summary, many data preprocessing steps were taken. These include grayscaling, facial cropping, data increase by creating flipped copies and image augmentation. These steps were taken to ensure the best possible results when evaluating the model. Secondly, the data was split into training and testing sets. A fully working TensorFlow convolutional neural network was created in Python and trained on the FloydHub could training platform. The model was then deployed to a server for production use. A facial tracking web application was built for recording the used face and deployed to the Heroku PaaS. The application can accurately calculate the level of satisfaction displayed with the used facial expression for each class.
 
 
 

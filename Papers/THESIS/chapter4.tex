@@ -6,8 +6,8 @@ As stated by \citeauthor*{LOPES} that there is a scarcity of public datasets wit
 The dataset will be preprocessed to reduce dimensionality, and synthetic samples will be generated via data augmentation to increase the size of the dataset and prevent class imbalance. The dataset will then be divided into training and testing sets using split validation. 
 
 \section{Machine Learning Model}
-For designing the model, the Tensorflow Machine Learning library by Google will be used to design a convolutional neural network. 
-The network consists of several convolution layers,pooling layers and a fully-connected layer. The model has six outputs nodes that provide probabilities of classification for each image fed into the dataset. The model will use supervised learning, with labels for the images it was training on, which will be brought forward in the following section.\\
+For designing the model, the TensorFlow Machine Learning library by Google will be used to design a convolutional neural network. 
+The network consists of several convolution layers, pooling layers and a fully-connected layer. The model has six outputs nodes that provide probabilities of classification for each image fed into the dataset. The model will use supervised learning, with labels for the images it was training on, which will be brought forward in the following section.\\
 
 \section{Training}
 Due to insufficient hardware, the approach of cloud training is needed in order to train the model. The Python code and the dataset are pushed to a containerized TensorFlow environment on the FloydHub cloud platform. The output of the trained model is saved to a Tensorflow \textit{.ckpt} file. This trained model will then be downloaded for further evaluation.
@@ -23,7 +23,7 @@ See Figure \ref{ui} for a general design of the user interface for the node appl
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.35]{__resources/Design/mockup_annotated.jpg}
+		\includegraphics[keepaspectratio=true,scale=0.29]{__resources/Design/mockup_annotated.jpg}
 		\caption{User Interface Design For Web Application}
 		\label{ui}
 	\end{center}
@@ -31,14 +31,12 @@ See Figure \ref{ui} for a general design of the user interface for the node appl
 
 
 \section{Concluding Remarks of System Architecture Design}
-In summary, the system architecture will be considered in two parts: Training and deployment. Firstly, the data preparation and neural network scripts shall be written on a local machine. These scripts and dataset will be uploaded to a Tensorflow environment for training on the Flyodhub cloud service. Upon completion of training, the model will be saved and pushed to the \textit{model-serve} GitHub repository that is integrated with the Heroku PaaS. This repository consists of a Python Flask API to accept POST requests. The Node.js web application shall also be deployed to the Heroku for easy user access. This shall send requests to the model API for classification of images of the user.
-Please refer to Figure \ref{arch} to see an illustrated tolopogy of the system.
-
+In summary, the system architecture will be considered in two parts: Training and deployment. Firstly, the data preparation and neural network scripts shall be written on a local machine. These scripts and dataset will be uploaded to a TensorFlow environment for training on the FlyodHub cloud service. Upon completion of training, the model will be saved and pushed to the \textit{model-serve} GitHub repository that is integrated with the Heroku PaaS. This repository consists of a Python Flask API to accept POST requests. The Node.js web application shall also be deployed to the Heroku for easy user access. This shall send requests to the model API for classification of images of the user. Please refer to Figure \ref{arch} to see an illustrated topology of the system.
 \begin{figure}[ht]
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.55]{__resources/Design/arch.png}
+		\includegraphics[keepaspectratio=true,scale=0.5]{__resources/Design/arch.png}
 		\caption{System Architecture of Training and Deployment}
 		\label{arch}
 	\end{center}

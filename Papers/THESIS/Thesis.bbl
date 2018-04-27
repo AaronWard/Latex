@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,6 +31,13 @@ Jason Brownlee.
 \newblock URL
   \url{https://machinelearningmastery.com/introduction-python-deep-learning-library-keras/}.
 
+\bibitem[Collis(2017)]{collis_2017}
+Jaron Collis.
+\newblock Glossary of deep learning: Bias – deeper learning – medium, Apr
+  2017.
+\newblock URL
+  \url{https://medium.com/deeper-learning/glossary-of-deep-learning-bias-cf49d9c895e2}.
+
 \bibitem[Deshpande(2016)]{adit}
 Adit Deshpande.
 \newblock A beginner's guide to understanding convolutional neural networks.
@@ -47,13 +54,6 @@ Macedo Firmino, Antônio~H Morais, Roberto~M Mendoça, Marcel~R Dantas, Helio~R
   tomography scans: Review and future prospects, Apr 2014.
 \newblock URL
   \url{https://biomedical-engineering-online.biomedcentral.com/articles/10.1186/1475-925X-13-41}.
-
-\bibitem[Gupta et~al.(2017)Gupta, Srivastava, Jain, and Shaikh]{gupta}
-Dishashree Gupta, Pranjal Srivastava, Shubham Jain, and Faizan Shaikh.
-\newblock Architecture of convolutional neural networks (cnns) demystified, Jun
-  2017.
-\newblock URL
-  \url{https://www.analyticsvidhya.com/blog/2017/06/architecture-of-convolutional-neural-networks-simplified-demystified/}.
 
 \bibitem[Hague and Hague(2017)]{hague}
 Paul Hague and Nick Hague.
@@ -128,6 +128,30 @@ Masakazu Matsugu, Katsuhiko Mori, Yusuke Mitari, and Yuji Kaneda.
   \url{http://www.sciencedirect.com/science/article/pii/S0893608003001151}.
 \newblock Advances in Neural Networks Research: IJCNN '03.
 
+\bibitem[Muir(2016)]{muir}
+Dylan~Richard Muir.
+\newblock What is the difference between biological and artificial neural
+  networks?, 2016.
+\newblock URL
+  \url{https://psychology.stackexchange.com/questions/7880/what-is-the-difference-between-biological-and-artificial-neural-networks}.
+
+\bibitem[Nielsen(2015)]{nielsen_2015}
+Michael~A. Nielsen.
+\newblock Neural networks and deep learning, 2015.
+\newblock URL \url{http://neuralnetworksanddeeplearning.com/chap2.html}.
+
+\bibitem[Raschka(2016)]{raschka_2016}
+y~Sebastian Raschka.
+\newblock Kdnuggets, 2016.
+\newblock URL
+  \url{https://www.kdnuggets.com/2016/08/role-activation-function-neural-network.html}.
+
+\bibitem[Smith(2011)]{smith_2011}
+Steven~W. Smith.
+\newblock The scientist and engineer's guide todigital signal processingby
+  steven w. smith, ph.d., 2011.
+\newblock URL \url{http://www.dspguide.com/ch26/2.htm}.
+
 \bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and
   Salakhutdinov]{JMLR}
 Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
@@ -156,6 +180,13 @@ Adarsh Verma.
   science, Jan 2017.
 \newblock URL
   \url{https://fossbytes.com/popular-top-programming-languages-machine-learning-data-science/}.
+
+\bibitem[Vigier(2017)]{vigier_2017}
+Pierre Vigier.
+\newblock \emph{Gradient Descent Visualization}.
+\newblock 2017.
+\newblock URL
+  \url{https://camo.githubusercontent.com/60aa9cbd0909bab77723a43e21bd430039843c81/68747470733a2f2f707669676965722e6769746875622e696f2f6d656469612f696d672f70617274312f74616e67656e745f73706163652e706e67}.
 
 \bibitem[Viola and Jones(2001)]{viola}
 Paul Viola and Michael Jones.

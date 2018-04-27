@@ -1,8 +1,8 @@
 \chapter{Testing, Results and Evaluation}
-The following chapter will cover the steps taken for evaluating the model in terms of performance and accuracy. A number of performance measures are used for determining how well the model handles data that it has not been trained with. These include training evaluation, testing with the testing data and inference with new data. Also, usability testing of the web application will be discussed in detail.
+The following chapter will cover the steps taken for evaluating the model in terms of performance and accuracy. Several performance measures are used for determining how well the model handles data that it has not been trained with. These include training evaluation, testing with the testing data and inference with new data. Also, usability testing of the web application will be discussed in detail.
 
 \section{Training Results and Evaluation}
-During the training of the model, a number of metrics were recorded for evaluation. The loss (often referred to as the cost function) is calculated by measuring the error of the predicted label in comparison to the true label. This is useful for determining the level of optimization being carried out on the network when using back propagation to adjust the weights.
+During the training of the model, a number of metrics were recorded for evaluation. The loss (often referred to as the cost function) is calculated by measuring the error of the predicted label in comparison to the true label. This is useful for determining the level of optimization being carried out on the network when using back propagation to adjust the weights. See below: 
  
 \[H_{y’} (y) := - \sum_{i} y_{i}’ \log (y_i)\]
 
@@ -46,7 +46,7 @@ Intuitively, it is desired to have the highest accuracy possible, but this may n
 \newpage
 
 \section{Testing Model with Testing Data}
-As stated in the implementation chapter, the dataset was split into training and testing sets. out of the 1750 images for each class, 1400 of them were used for training, and the remaining 350 were used for testing the models performance. A python evaluation script was used for loading each set of classes individually and feed them to the trained model. 
+As stated in the implementation chapter, the dataset was split into training and testing sets. out of the 1750 images for each class, 1400 of them were used for training, and the remaining 350 were used for testing the model's performance. A python evaluation script was used for loading each set of classes individually and feed them to the trained model. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -70,7 +70,7 @@ True Positive + False Negative
 }
 \end{equation}
 
-Also, the precision of model can be calculated. The precision is a measure of the the number of true positives classified divided by the sum of true positives and false positives, which can be seen in equation 6.2.2
+Also, the precision of model can be calculated. The precision is a measure of the number of true positives classified divided by the sum of true positives and false positives, which can be seen in equation 6.2.2
 
 \begin{equation}\label{eq:recall}
 Precision = 
@@ -116,14 +116,14 @@ From these equations the scores for recall, precision and accuracy are calculate
 	\end{center}
 \end{table}
 	
-\section{Testing Model with New Data}
-Single inference was performed with images taken from google so see how well the model performed without any of the preprocessing steps. One image was chosen at random for each emotion. From the results seen in Figure \ref{inf}.
+\section{Testing Model with Single Inference}
+Single inference was performed with images taken from Google Images to see how well the model performed without any of the preprocessing steps. One image was chosen at random for each emotion. See Figure \ref{inf}.
 
 \begin{figure}[ht]
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.25]{__resources/Testing/inference.png}
+		\includegraphics[keepaspectratio=true,scale=0.22]{__resources/Testing/inference.png}
 		\caption{Single Predictions on Non-preprocessed Images}
 		\label{inf}
 	\end{center}
@@ -131,8 +131,7 @@ Single inference was performed with images taken from google so see how well the
 
 
 \section{Usability Testing}
-After model was deployed to the web application, some black box testing was performed. For each of the emotion classes, a 30 snapshot test was conducted using the same facial expression to determine how well the model would classify using the data from the web application. These results are percentages of how many times the model classified that certain emotion. Results are shown in Table \ref{table:use}
-
+After model was deployed to the web application, some black box testing was performed. For each of the emotion classes, a 30-snapshot test was conducted using the same facial expression to determine how well the model would classify using the data from the web application. The same facial expression was trailed three times each and the average scores were recorded. These results are percentages of how many times the model classified a certain emotion. Results are shown in Table \ref{table:use}
 
 
 \begin{table}[ht]
@@ -162,14 +161,14 @@ After model was deployed to the web application, some black box testing was perf
 
 
 \section{Concluding Remarks of Testing and Evaluation}
-In conclusion, the training performance evaluation was discussed in regards to the loss and accuracy of the model during the training stage.
-The loss begins at approximately 185 and is deduced to 3.0 at completion training. The final accuracy displayed in Figure \ref{acc} displayed a high score of approximately 98\%.
+In conclusion, the training performance evaluation was discussed in regard to the loss and accuracy of the model during the training stage.
+The loss begins at approximately 185 and is deduced to 3.0 upon the completion of training. The final accuracy displayed in Figure \ref{acc} displayed a high score of approximately 98\%.
 
-Testing was done on the trained model with 350 images per class with a highly correct classification score excluding the neutral class. Recall and precision scores were calculated using the a confusion matrix. The neutral class did not have as high of an accurate classification score as the rest of the classes. A speculated reason for this might be because the facial features of the subject may just naturally appear like other facial features, such as sadness, which was classified 88 times out of 350. Also, it is possible that by the augmented images for this class may have morphed too much, therefore making them appear to look like another class (happy or sad in this case).
+Testing was done on the trained model with 350 images per class with a highly correct classification score excluding the neutral class. Recall and precision scores were calculated using a confusion matrix. The neutral class did not have as high of an accurate classification score as the rest of the classes. A speculated reason for this might be because the facial features of the subject may just naturally appear like other facial features, such as sadness, which was classified 88 times out of 350. Also, it is possible that by the augmented images for this class may have morphed the image too much, therefore making them appear to look like another class (happy or sad in this case).
 
 Inference was performed using randomly selected images sourced from Google images in order to examine how the model performed. In terms predictive performance the classifications were only moderately accurate (classifying 3/6 images correctly), but it should be noted that facial cropping needs to be performed on each image for more accurate results.
 
-Lastly, the usability of the web application in conjunction with the trained and deployed model performed pretty good for some classes. Emotions such as happiness, anger and fear were very well classified when testing. The other three classes however did not have as high as a classification percentage. The worst of which was the neutral class which was classified 0\% of the time during testing, which is evidently correlated with the fact that the model could not extract accurate features for the neutral class while training. Other factors should also be taken into account: Lighting, webcam quality and facial accessories such as glasses may have an affect and skew the results returned from the model as the training data did not have the sufficient images to deal with these conditions.
+Lastly, the usability of the web application in conjunction with the trained and deployed model performed pretty good for some classes. Emotions such as happiness, anger and fear were very well classified when testing, as can be seen in Table \ref{table:use} . The other three classes however did not have as high as a classification percentage. The worst of which was the neutral class which was classified 0\% of the time during testing, which is evidently correlated with the fact that the model could not extract accurate features for the neutral class while training. Other factors should also be taken into account: Lighting, webcam quality and facial accessories such as glasses may have an affect and skew the results returned from the model as the dataset did not have the sufficient image data to deal with these conditions.
 
 
 

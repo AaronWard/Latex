@@ -53,13 +53,15 @@
 \BOOKMARK [0][-]{chapter.6}{Testing, Results and Evaluation}{}% 53
 \BOOKMARK [1][-]{section.6.1}{Training Results and Evaluation}{chapter.6}% 54
 \BOOKMARK [1][-]{section.6.2}{Testing Model with Testing Data}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.3}{Testing Model with New Data}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.3}{Testing Model with Single Inference}{chapter.6}% 56
 \BOOKMARK [1][-]{section.6.4}{Usability Testing}{chapter.6}% 57
 \BOOKMARK [1][-]{section.6.5}{Concluding Remarks of Testing and Evaluation}{chapter.6}% 58
 \BOOKMARK [0][-]{chapter.7}{Conclusion and Further Work}{}% 59
 \BOOKMARK [1][-]{section.7.1}{Conclusion}{chapter.7}% 60
 \BOOKMARK [2][-]{subsection.7.1.1}{Further Work}{section.7.1}% 61
 \BOOKMARK [0][-]{subsection.7.1.1}{Bibliography}{}% 62
-\BOOKMARK [0][-]{chapter*.9}{Appendices}{}% 63
-\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.9}% 64
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.9}% 65
+\BOOKMARK [0][-]{chapter*.11}{Appendices}{}% 63
+\BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.11}% 64
+\BOOKMARK [2][-]{subsection.0.1.1}{TensorFlow Training Script}{section.0.1}% 65
+\BOOKMARK [2][-]{subsection.0.1.2}{TensorFlow Flask API}{section.0.1}% 66
+\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.11}% 67
