@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -87,6 +87,11 @@ Reinoud Kaasschieter.
 \newblock Quality data, a must have for ai, Oct 2017.
 \newblock URL
   \url{https://www.capgemini.com/2017/10/quality-data-a-must-have-for-ai/}.
+
+\bibitem[Kar(2015)]{kar}
+Pathy Kar.
+\newblock Cs231n convolutional neural networks for visual recognition, 2015.
+\newblock URL \url{http://cs231n.github.io/convolutional-networks/#pool}.
 
 \bibitem[Kirkpatrick(2017)]{keith}
 Keith Kirkpatrick.
@@ -192,6 +197,13 @@ Pierre Vigier.
 Paul Viola and Michael Jones.
 \newblock Robust real-time object detection.
 \newblock In \emph{International Journal of Computer Vision}, 2001.
+
+\bibitem[Walia(2017)]{walia_2017}
+Anish~Singh Walia.
+\newblock Types of optimization algorithms used in neural networks and ways to
+  optimize gradient descent, Jun 2017.
+\newblock URL
+  \url{https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f}.
 
 \bibitem[Willott(2011)]{willott}
 Lindsay Willott.

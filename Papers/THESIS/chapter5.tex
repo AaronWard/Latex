@@ -14,7 +14,7 @@ As stated in the system design, the dataset that will be used is the Cohn-Kanade
 	\end{center}
 \end{figure}
 
-It should be noted that the figure above is not a full image sequence and the some transitional images have been omitted. Moreover, it should also be known that there are inconsistencies in the dataset, such as a number subject not having image sequences for each certain emotions and label data missing for some images. This is acknowledged in the \textit{README} file created by Lucey et al. that is contained within the dataset, where it is declared "\textit{IF THERE IS NO FILE IT MEANS THAT THERE IS NO EMOTION LABEL (sorry to be explicit but this will avoid confusion)}". 
+It should be noted that the figure above is not a full image sequence and some transitional images have been omitted. Moreover, it should also be known that there are inconsistencies in the dataset, such as a number subject not having image sequences for each certain emotions and label data missing for some images. This is acknowledged in the \textit{README} file created by Lucey et al. that is contained within the dataset, where it is declared "\textit{IF THERE IS NO FILE IT MEANS THAT THERE IS NO EMOTION LABEL (sorry to be explicit but this will avoid confusion)}". 
 \section{Data Preparation and Preprocessing}
 A number of preprocessing steps were taken in order to prepare the images for training the network. These steps were required to ensure maximum possible performance and minimal training time as the nature of working with neural networks can be computationally expensive when accompanied with large files such as images. The steps are as follows: Image extraction, Grayscaling, Facial Cropping, Data Augmentation and Data Splitting. 
 \subsection{Image Extraction}
@@ -120,7 +120,7 @@ Upon inspection of the dataset, in regards to the number of images for certain f
 	\label{table: count}
 \end{table}
 
-The initial step to increase the size of the data set was to flipped versions of all the images. Not only does this double the size of the dataset, but helps the network to better handle facial variance when dealing with new unseen data \citep{LOPES}. Also, it will decrease the chance of under-fitting while training the model. Following this step, a check was done on the class balance. Using the Matplotlib Python library, the balance of each class was plotted by counting each image in accordance to its respective label, as seen in Figure \ref{imbal} which shows the cardinality for each training sample.
+The initial step to increase the size of the data set was to flipped versions of all the images. Not only does this double the size of the dataset but helps the network to better handle facial variance when dealing with new unseen data \citep{LOPES}. Also, it will decrease the chance of under-fitting while training the model. Following this step, a check was done on the class balance. Using the Matplotlib Python library, the balance of each class was plotted by counting each image in accordance to its respective label, as seen in Figure \ref{imbal} which shows the cardinality for each training sample.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -131,7 +131,7 @@ The initial step to increase the size of the data set was to flipped versions of
 		\label{imbal}
 	\end{center}
 \end{figure}\newpage
-As seen above, expression 'Anger' and 'Fear' are under represented while 'Happy' is overly represented, relative to the rest of the dataset. How this problem was addressed was by creating synthetic sample images from the existing ones by the means of skewing and augmenting the images. This can be seen in Figure \ref{augm}, where the top row displays the original cropped images, and beneath, are the slightly skewing images. This was implemented using a Python library called Augmentor, which allows you to specify the directory and number of altered samples you would like, and it randomly picks images within the directory, creating an entirely new back of images that have been stretched to a degree.
+As seen above, expression 'Anger' and 'Fear' are underrepresented while 'Happy' is overly represented, relative to the rest of the dataset. How this problem was addressed was by creating synthetic sample images from the existing ones by the means of skewing and augmenting the images. This can be seen in Figure \ref{augm}, where the top row displays the original cropped images, and beneath, are the slightly skewing images. This was implemented using a Python library called Augmentor, which allows you to specify the directory and number of altered samples you would like, and it randomly picks images within the directory, creating an entirely new back of images that have been stretched to a degree.
 \begin{figure}[ht]
 	\begin{center}
 		\advance\leftskip-3cm
@@ -241,7 +241,7 @@ In total there are 10 convolution layers with 5 Max Pooling layers. The convolut
 	\begin{center}
 		\advance\leftskip-3cm
 		\advance\rightskip-3cm
-		\includegraphics[keepaspectratio=true,scale=0.48]{__resources/implementation/map.jpg}
+		\includegraphics[keepaspectratio=true,scale=0.45]{__resources/implementation/map.jpg}
 		\caption{Feature Maps of CNN}
 		\label{map}
 	\end{center}
@@ -380,7 +380,7 @@ var server = app.listen(app.get('port'), function () {
 
 \subsection{Facial Tracking With a Users Webcam}
 
-The user interface design of the application is very simple. On the left hand side of the page the webcam feed is displayed. This accesses the user's machine's webcam and displays it to the screen using the html \textbf{canvas} element. Canvas is a container for drawing graphics to the page. For facial tracking, a library called Tracking.js was imported. Tracking.js is an open source library created by Eduardo Lundgren for object, colour and face detection using javascript. The reason for this library choice was because other alternatives, such as OpenCV, deemed to be very heavy weight in comparison and API services that have also been considered such as Cloudinary would reduce classification speed as it would be computationally expressive to make multiple requests for facial cropping while using the application. 
+The user interface design of the application is very simple. On the left-hand side of the page the webcam feed is displayed. This accesses the user's machine's webcam and displays it to the screen using the html \textbf{canvas} element. Canvas is a container for drawing graphics to the page. For facial tracking, a library called Tracking.js was imported. Tracking.js is an open source library created by Eduardo Lundgren for object, colour and face detection using Javascript. The reason for this library choice was because other alternatives, such as OpenCV, deemed to be very heavy weight in comparison and API services that have also been considered such as Cloudinary would reduce classification speed as it would be computationally expressive to make multiple requests for facial cropping while using the application. 
 In light of this, Tracking.js provides a lightweight and quick solution for detecting faces. Using what is known as haar cascades, object classification and detection is made simplified and provides fast calculation speeds \citep{viola}. In terms of the web application, the canvas drawing of the webcam feed is read and interpreted by Tracking.js and the facial features are detected. A yellow square is drawn around the detected facial area.
 
 \begin{lstlisting}[language=python, frame=single]
@@ -425,11 +425,11 @@ After it is known where the users face is positioned in the shot, the cropped ar
 For each of the images sent to the model API, a classification is returned. This classification of facial expression is not only just displayed to screen, but it is used to calculate the percentage of emotions over all. To calculate the relative percentage of a certain emotion, the number of times it is classified is counted, and it is divided by the total number of classifications made. Then this result if multiplied by 100/1. Please see Equation 5.5.1.
 
 \begin{equation}\label{eq:per}
-Class percentage = 
+Class\ percentage\ = 
 \frac{
-	number of classifications
+	number\ of\ classifications
 }{
-	Total number of classifications
+	Total\ number\ of\ classifications
 }
 X   
 \frac{

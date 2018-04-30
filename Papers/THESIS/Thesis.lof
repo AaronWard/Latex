@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Gradient Descent Visualized by \cite {vigier_2017}}}{18}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Graph of Machine Learning or Data Science Languages for 2016 by \cite {verma_2017}}}{19}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Graph of Machine Learning or Data Science Languages for 2016 by \cite {verma_2017}}}{21}{figure.3.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces User Interface Design For Web Application}}{27}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces System Architecture of Training and Deployment}}{28}{figure.4.2}
@@ -22,3 +22,6 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Confusion Matrix Heatmap}}{55}{figure.6.3}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Single Predictions on Non-preprocessed Images}}{57}{figure.6.4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Single Inference with Random Google Image in Jupyter Notebook}}{82}{figure.0.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Screenshot of Web Application}}{83}{figure.0.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces QR Code for Survenet - Scan to View Application}}{83}{figure.0.3}

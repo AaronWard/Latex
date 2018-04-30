@@ -64,4 +64,7 @@
 \BOOKMARK [1][-]{section.0.1}{ Code Snippets }{chapter*.11}% 64
 \BOOKMARK [2][-]{subsection.0.1.1}{TensorFlow Training Script}{section.0.1}% 65
 \BOOKMARK [2][-]{subsection.0.1.2}{TensorFlow Flask API}{section.0.1}% 66
-\BOOKMARK [1][-]{section.0.2}{ Screen shots }{chapter*.11}% 67
+\BOOKMARK [1][-]{section.0.2}{Screen shots}{chapter*.11}% 67
+\BOOKMARK [2][-]{subsection.0.2.1}{Single Inference with Trained Model}{section.0.2}% 68
+\BOOKMARK [2][-]{subsection.0.2.2}{Web Application}{section.0.2}% 69
+\BOOKMARK [2][-]{subsection.0.2.3}{QR Code for Web Application}{section.0.2}% 70

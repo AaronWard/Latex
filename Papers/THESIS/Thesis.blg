@@ -12,7 +12,7 @@ A level-1 auxiliary file: chapter8.aux
 The style file: plainnat.bst
 A level-1 auxiliary file: appendix.aux
 Database file #1: bibliography.bib
-Repeated entry---line 235 of file bibliography.bib
+Repeated entry---line 244 of file bibliography.bib
  : @article{DBLP
  :              ,
 I'm skipping whatever remains of this entry
