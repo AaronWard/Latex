@@ -138,7 +138,7 @@ Dylan~Richard Muir.
 \newblock What is the difference between biological and artificial neural
   networks?, 2016.
 \newblock URL
-  \url{https://psychology.stackexchange.com/questions/7880/what-is-the-difference-between-biological-and-artificial-neural-networks}.
+  \url{https://psychology.stackexchange.com/questions/7880/what-is-the-difference-between-biological\\-and-artificial-neural-networks}.
 
 \bibitem[Nielsen(2015)]{nielsen_2015}
 Michael~A. Nielsen.
@@ -184,14 +184,15 @@ Adarsh Verma.
 \newblock Most popular programming languages for machine learning and data
   science, Jan 2017.
 \newblock URL
-  \url{https://fossbytes.com/popular-top-programming-languages-machine-learning-data-science/}.
+  \url{https://fossbytes.com/popular-top-programming-languages-machine-learning\\
+  -data-science/}.
 
 \bibitem[Vigier(2017)]{vigier_2017}
 Pierre Vigier.
 \newblock \emph{Gradient Descent Visualization}.
 \newblock 2017.
 \newblock URL
-  \url{https://camo.githubusercontent.com/60aa9cbd0909bab77723a43e21bd430039843c81/68747470733a2f2f707669676965722e6769746875622e696f2f6d656469612f696d672f70617274312f74616e67656e745f73706163652e706e67}.
+  \url{https://camo.githubusercontent.com/60aa9cbd0909bab77723a43e21bd430039843c81/68747470733a2f2f7076696\\76965722e6769746875\\622e696f2f6d656469612f696d\\672f70617274312f74616e67\\656e745f73706163652e706e67}.
 
 \bibitem[Viola and Jones(2001)]{viola}
 Paul Viola and Michael Jones.
@@ -203,7 +204,7 @@ Anish~Singh Walia.
 \newblock Types of optimization algorithms used in neural networks and ways to
   optimize gradient descent, Jun 2017.
 \newblock URL
-  \url{https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f}.
+  \url{https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks\\-and-ways-to-optimize-gradient-95ae5d39529f}.
 
 \bibitem[Willott(2011)]{willott}
 Lindsay Willott.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  30 APR 2018 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.9.28)  1 MAY 2018 11:58
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -405,12 +405,6 @@ LaTeX Warning: Label `eq:act' multiply defined.
 
 LaTeX Warning: Label `ui' multiply defined.
 
-
-LaTeX Warning: Label `ui' multiply defined.
-
-
-LaTeX Warning: Label `ui' multiply defined.
-
 ))
 \openout1 = `Thesis.aux'.
 
@@ -712,7 +706,7 @@ File: __resources/research/top_lang.jpg Graphic file (type jpg)
 
 <use __resources/research/top_lang.jpg>
 Package pdftex.def Info: __resources/research/top_lang.jpg used on input line 8
-4.
+1.
 (pdftex.def)             Requested size: 453.49774pt x 331.8423pt.
  [20] [21 <./__resources/research/top_lang.jpg>] [22] [23]) [24]
 \openout2 = `chapter4.aux'.
@@ -728,7 +722,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
 
 
-] <__resources/Design/mockup_annotated.jpg, id=749, 1537.745pt x 754.82pt>
+] <__resources/Design/mockup_annotated.jpg, id=748, 1537.745pt x 754.82pt>
 File: __resources/Design/mockup_annotated.jpg Graphic file (type jpg)
 
 <use __resources/Design/mockup_annotated.jpg>
@@ -736,7 +730,7 @@ Package pdftex.def Info: __resources/Design/mockup_annotated.jpg used on input
 line 26.
 (pdftex.def)             Requested size: 445.93463pt x 218.8922pt.
  [26]
-<__resources/Design/arch.png, id=756, 874.26625pt x 457.71pt>
+<__resources/Design/arch.png, id=755, 874.26625pt x 457.71pt>
 File: __resources/Design/arch.png Graphic file (type png)
 
 <use __resources/Design/arch.png>
@@ -748,7 +742,7 @@ ch.png>]
 
  (chapter5.tex
 Chapter 5.
-<__resources/DATASET/sequence.png, id=771, 694.595pt x 189.70876pt>
+<__resources/DATASET/sequence.png, id=770, 694.595pt x 189.70876pt>
 File: __resources/DATASET/sequence.png Graphic file (type png)
 
 <use __resources/DATASET/sequence.png>
@@ -775,14 +769,14 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 40.
  [31] [32] [33]
-<__resources/DATASET/crop.png, id=834, 442.65375pt x 191.71625pt>
+<__resources/DATASET/crop.png, id=833, 442.65375pt x 191.71625pt>
 File: __resources/DATASET/crop.png Graphic file (type png)
 
 <use __resources/DATASET/crop.png>
 Package pdftex.def Info: __resources/DATASET/crop.png used on input line 88.
 (pdftex.def)             Requested size: 398.38467pt x 172.54301pt.
  [34 <./__resources/DATASET/crop.png>]
-<__resources/implementation/imbalance.jpg, id=844, 642.4pt x 481.8pt>
+<__resources/implementation/imbalance.jpg, id=843, 642.4pt x 481.8pt>
 File: __resources/implementation/imbalance.jpg Graphic file (type jpg)
 
 <use __resources/implementation/imbalance.jpg>
@@ -790,7 +784,7 @@ Package pdftex.def Info: __resources/implementation/imbalance.jpg used on input
  line 129.
 (pdftex.def)             Requested size: 385.44298pt x 289.08221pt.
  [35]
-<__resources/implementation/augmented-images.png, id=850, 703.62875pt x 322.203
+<__resources/implementation/augmented-images.png, id=849, 703.62875pt x 322.203
 75pt>
 File: __resources/implementation/augmented-images.png Graphic file (type png)
  <use __resources/implementation/augmented-images.png>
@@ -798,7 +792,7 @@ Package pdftex.def Info: __resources/implementation/augmented-images.png used o
 n input line 139.
 (pdftex.def)             Requested size: 422.18051pt x 193.32373pt.
  [36 <./__resources/implementation/imbalance.jpg>]
-<__resources/implementation/balance.jpg, id=856, 642.4pt x 481.8pt>
+<__resources/implementation/balance.jpg, id=855, 642.4pt x 481.8pt>
 File: __resources/implementation/balance.jpg Graphic file (type jpg)
 
 <use __resources/implementation/balance.jpg>
@@ -807,7 +801,7 @@ ine 153.
 (pdftex.def)             Requested size: 385.44298pt x 289.08221pt.
  [37 <./__resources/implementation/augmented-images.png>] [38 <./__resources/im
 plementation/balance.jpg>] [39]
-[40] <__resources/implementation/map.jpg, id=931, 1016.79875pt x 372.39125pt>
+[40] <__resources/implementation/map.jpg, id=930, 1016.79875pt x 372.39125pt>
 File: __resources/implementation/map.jpg Graphic file (type jpg)
 
 <use __resources/implementation/map.jpg>
@@ -825,7 +819,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--251
  []
 
 [41 <./__resources/implementation/map.jpg>] [42] [43] [44] [45] [46] [47]
-<__resources/implementation/webapp1.png, id=1081, 873.2625pt x 722.7pt>
+<__resources/implementation/webapp1.png, id=1080, 873.2625pt x 722.7pt>
 File: __resources/implementation/webapp1.png Graphic file (type png)
 
 <use __resources/implementation/webapp1.png>
@@ -833,7 +827,7 @@ Package pdftex.def Info: __resources/implementation/webapp1.png used on input l
 ine 415.
 (pdftex.def)             Requested size: 436.63017pt x 361.3491pt.
  [48 <./__resources/implementation/webapp1.png>]
-<__resources/implementation/good.png, id=1088, 698.61pt x 335.75438pt>
+<__resources/implementation/good.png, id=1087, 698.61pt x 335.75438pt>
 File: __resources/implementation/good.png Graphic file (type png)
 
 <use __resources/implementation/good.png>
@@ -841,7 +835,7 @@ Package pdftex.def Info: __resources/implementation/good.png used on input line
  448.
 (pdftex.def)             Requested size: 419.16924pt x 201.45418pt.
 
-<__resources/implementation/bad.png, id=1090, 733.23938pt x 359.09157pt>
+<__resources/implementation/bad.png, id=1089, 733.23938pt x 359.09157pt>
 File: __resources/implementation/bad.png Graphic file (type png)
 
 <use __resources/implementation/bad.png>
@@ -854,7 +848,7 @@ Package pdftex.def Info: __resources/implementation/bad.png used on input line
 
  (chapter6.tex
 Chapter 6.
-<__resources/Results/loss.jpg, id=1108, 642.4pt x 481.8pt>
+<__resources/Results/loss.jpg, id=1107, 642.4pt x 481.8pt>
 File: __resources/Results/loss.jpg Graphic file (type jpg)
 
 <use __resources/Results/loss.jpg>
@@ -868,7 +862,7 @@ Package pdftex.def Info: __resources/Results/loss.jpg used on input line 11.
 Missing character: There is no Î in font cmr12!
 Missing character: There is no £ in font cmr12!
  [53 <./__resources/Results/loss.jpg>]
-<__resources/Results/accuracy.jpg, id=1119, 642.4pt x 481.8pt>
+<__resources/Results/accuracy.jpg, id=1118, 642.4pt x 481.8pt>
 File: __resources/Results/accuracy.jpg Graphic file (type jpg)
 
 <use __resources/Results/accuracy.jpg>
@@ -876,7 +870,7 @@ Package pdftex.def Info: __resources/Results/accuracy.jpg used on input line 36
 .
 (pdftex.def)             Requested size: 449.67694pt x 337.25769pt.
  [54 <./__resources/Results/accuracy.jpg>] <__resources/Results/confusion.jpg, 
-id=1124, 1003.75pt x 702.625pt>
+id=1123, 1003.75pt x 702.625pt>
 File: __resources/Results/confusion.jpg Graphic file (type jpg)
 
 <use __resources/Results/confusion.jpg>
@@ -884,7 +878,7 @@ Package pdftex.def Info: __resources/Results/confusion.jpg used on input line 5
 1.
 (pdftex.def)             Requested size: 501.87378pt x 351.31163pt.
  [55 <./__resources/Results/confusion.jpg>] [56]
-<__resources/Testing/inference.png, id=1139, 2209.25375pt x 653.44125pt>
+<__resources/Testing/inference.png, id=1138, 2209.25375pt x 653.44125pt>
 File: __resources/Testing/inference.png Graphic file (type png)
 
 <use __resources/Testing/inference.png>
@@ -1058,26 +1052,15 @@ uthType =
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 137--142
-[]\OT1/ptm/m/n/12 Dylan Richard Muir.  What is the dif-fer-ence be-tween bi-o-l
-og-
+Underfull \hbox (badness 2435) in paragraph at lines 137--142
+\OT1/ptm/m/n/12 ral net-works?, 2016.  URL []$\OT1/pcr/m/n/12 https : / / psych
+ology . stackexchange . com /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--142
-\OT1/ptm/m/n/12 i-cal and ar-ti-fi-cial neu-ral net-works?, 2016.  URL []$\OT1/
-pcr/m/n/12 https :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--142
-\OT1/pcr/m/n/12 / / psychology . stackexchange . com / questions / 7880 /
- []
-
-
-Overfull \hbox (96.63194pt too wide) in paragraph at lines 137--142
-\OT1/pcr/m/n/12 what-[]is-[]the-[]difference-[]between-[]biological-[]and-[]art
-ificial-[]neural-[]networks$[]\OT1/ptm/m/n/12 . 
+\OT1/pcr/m/n/12 questions / 7880 / what-[]is-[]the-[]difference-[]between-[]bio
+logical \
  []
 
 
@@ -1087,55 +1070,57 @@ Underfull \hbox (badness 1033) in paragraph at lines 144--147
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 183--188
+Underfull \hbox (badness 10000) in paragraph at lines 183--189
 []\OT1/ptm/m/n/12 Adarsh Verma.  Most pop-u-lar pro-gram-ming lan-guages for ma
 -chine learn-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--188
+Underfull \hbox (badness 10000) in paragraph at lines 183--189
 \OT1/ptm/m/n/12 ing and data sci-ence, Jan 2017.  URL []$\OT1/pcr/m/n/12 https 
 : / / fossbytes . com /
  []
 
 
-Overfull \hbox (38.03197pt too wide) in paragraph at lines 183--188
-\OT1/pcr/m/n/12 popular-[]top-[]programming-[]languages-[]machine-[]learning-[]
-data-[]science/$[]\OT1/ptm/m/n/12 . 
+Underfull \hbox (badness 10000) in paragraph at lines 183--189
+\OT1/pcr/m/n/12 popular-[]top-[]programming-[]languages-[]machine-[]learning \
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--195
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
 []\OT1/ptm/m/n/12 Pierre Vigier.  \OT1/ptm/m/it/12 Gra-di-ent De-scent Vi-su-al
 -iza-tion\OT1/ptm/m/n/12 .  2017.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--195
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
 \OT1/ptm/m/n/12 URL []$\OT1/pcr/m/n/12 https : / / camo . githubusercontent . c
 om /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--195
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
 \OT1/pcr/m/n/12 60aa9cbd0909bab77723a43e21bd430039843c81 /
  []
 
 
-Overfull \hbox (423.3318pt too wide) in paragraph at lines 190--195
-\OT1/pcr/m/n/12 68747470733a2f2f707669676965722e6769746875622e696f2f6d656469612
-f696d672f70617274312f74616e67656e745f73706163652e706e67$[]\OT1/ptm/m/n/12 . 
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
+\OT1/pcr/m/n/12 68747470733a2f2f7076696 \ 76965722e6769746875 \
  []
 
 
-Overfull \hbox (293.03186pt too wide) in paragraph at lines 202--207
+Underfull \hbox (badness 10000) in paragraph at lines 191--196
+\OT1/pcr/m/n/12 622e696f2f6d656469612f696d \ 672f70617274312f74616e67 \
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
 \OT1/pcr/m/n/12 types-[]of-[]optimization-[]algorithms-[]used-[]in-[]neural-[]n
-etworks-[]and-[]ways-[]to-[]optimize-[]gradient-[]95ae5d39529f$[]\OT1/ptm/m/n/1
-2 . 
+etworks \
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--213
+Underfull \hbox (badness 10000) in paragraph at lines 210--214
 \OT1/ptm/m/n/12 URL []$\OT1/pcr/m/n/12 https : / / www . customerthermometer . 
 com / customer-[]surveys /
  []
@@ -1152,7 +1137,7 @@ Overfull \hbox (12.5869pt too wide) in paragraph at lines 41--42
  []
 
 [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81]
-<__resources/Appendix/single.jpg, id=1752, 377.91188pt x 317.68687pt>
+<__resources/Appendix/single.jpg, id=1755, 377.91188pt x 317.68687pt>
 File: __resources/Appendix/single.jpg Graphic file (type jpg)
 
 <use __resources/Appendix/single.jpg>
@@ -1160,7 +1145,7 @@ Package pdftex.def Info: __resources/Appendix/single.jpg used on input line 471
 .
 (pdftex.def)             Requested size: 377.91095pt x 317.68608pt.
  [82 <./__resources/Appendix/single.jpg>]
-<__resources/Appendix/screenshot.png, id=1757, 1444.64719pt x 715.17188pt>
+<__resources/Appendix/screenshot.png, id=1760, 1444.64719pt x 715.17188pt>
 File: __resources/Appendix/screenshot.png Graphic file (type png)
 
 <use __resources/Appendix/screenshot.png>
@@ -1168,7 +1153,7 @@ Package pdftex.def Info: __resources/Appendix/screenshot.png used on input line
  484.
 (pdftex.def)             Requested size: 433.3975pt x 214.5532pt.
 
-<__resources/Appendix/frame.png, id=1758, 1606.0pt x 2085.7925pt>
+<__resources/Appendix/frame.png, id=1761, 1606.0pt x 2085.7925pt>
 File: __resources/Appendix/frame.png Graphic file (type png)
 
 <use __resources/Appendix/frame.png>
@@ -1194,13 +1179,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
  ) 
 Here is how much of TeX's memory you used:
- 10520 strings out of 493333
- 149715 string characters out of 3139194
- 279252 words of memory out of 3000000
- 12903 multiletter control sequences out of 15000+200000
+ 10522 strings out of 493333
+ 149731 string characters out of 3139194
+ 279392 words of memory out of 3000000
+ 12905 multiletter control sequences out of 15000+200000
  27669 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,11n,44p,1821b,1864s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,11n,44p,2054b,1864s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
@@ -1209,9 +1194,9 @@ e1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 rr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (95 pages, 4003214 bytes).
+Output written on Thesis.pdf (95 pages, 4004750 bytes).
 PDF statistics:
- 1974 PDF objects out of 2073 (max. 8388607)
+ 1977 PDF objects out of 2073 (max. 8388607)
  876 named destinations out of 1000 (max. 500000)
  661 words of extra memory for PDF output out of 10000 (max. 10000000)
 

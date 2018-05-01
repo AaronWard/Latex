@@ -18,7 +18,7 @@ It should be noted that the figure above is not a full image sequence and some t
 \section{Data Preparation and Preprocessing}
 A number of preprocessing steps were taken in order to prepare the images for training the network. These steps were required to ensure maximum possible performance and minimal training time as the nature of working with neural networks can be computationally expensive when accompanied with large files such as images. The steps are as follows: Image extraction, Grayscaling, Facial Cropping, Data Augmentation and Data Splitting. 
 \subsection{Image Extraction}
-Due to the structure of the image sequence within the datasets, it is undesirable to used all images within each sequence as that do accurately resemble the facial expression it is used to represent. Therefore, for each sequence the last four images were extracted from their directory and relocated to a new directory under the category of facial expression they represent. As stated in the system design, images for disgust and contempt are omitted from this new dataset. Furthermore, because there is now class for a neutral facial expression, the first four images from a sequence in each subject was extracted.
+Due to the structure of the image sequence within the datasets, it is undesirable to used all images within each sequence as that do accurately resemble the facial expression it is used to represent. Therefore, for each sequence the last four images were extracted from their directory and relocated to a new directory under the category of facial expression they represent. As stated in the system design, images for disgust and contempt are omitted from this new dataset. Furthermore, because there is no class for a neutral facial expression, the first four images from a sequence in each subject was extracted.
 The structure of the image classes for this project are as follows:
 \begin{itemize}
 	\item 0 - Angry
@@ -31,7 +31,7 @@ The structure of the image classes for this project are as follows:
 
 
 \subsection{Grayscaling}
-The CK+ dataset consist of a majority of gray images. However, the extended version of this dataset contains some images sequences with coloured images. When working neural networks, it is significantly more computationally expensive to process a coloured image over a gray one due to the number of colour channels. To mitigate this, a Python script was created to traverse through each image of the newly extracted dataset to convert all images to grayscale using the PILLOW library. \\
+The CK+ dataset consists of a majority of gray images. However, the extended version of this dataset contains some images sequences with coloured images. When working neural networks, it is significantly more computationally expensive to process a coloured image over a gray one due to the number of colour channels. To mitigate this, a Python script was created to traverse through each image of the newly extracted dataset to convert all images to grayscale using the PILLOW library. \\
 
 \begin{lstlisting}[language=Python, frame=single]
 from PIL import Image
@@ -94,7 +94,7 @@ This was done for all images, however, some images were not correctly cropped du
 
 
 \subsection{Image Increasing Through Data Augmentation}
-Upon inspection of the dataset, in regards to the number of images for certain facial expressions, it was noted that there was an insufficient amount of images to train the network. This can be seen in table \ref{table: count}. 
+Upon inspection of the dataset, in regards to the number of images for certain facial expressions, it was noted that there was an insufficient amount of images to train the network. This can be seen in Table \ref{table: count}. 
 \begin{table}[ht]
 	\begin{tabular}{ |p{10cm}||p{3cm}|}
 		\hline
@@ -393,7 +393,7 @@ tracker.on('track', function(event) {
 context.clearRect(0, 0, canvas.width, canvas.height);
 \end{lstlisting}
 
-One function that tracking.js does not provide is the ability to crop the detected area of the stream. To get around this, Javascript code was developed to mark the area in which the square was being drawn around the user's face. In each frame of a user's face being detected a new square is drawn to the canvas, so every time that a new square is displayed to the screen, this marks the new coordinates of the area in which is needed for cropping. 
+One function that Tracking.js does not provide is the ability to crop the detected area of the stream. To get around this, Javascript code was developed to mark the area in which the square was being drawn around the user's face. In each frame of a user's face being detected a new square is drawn to the canvas, so every time that a new square is displayed to the screen, this marks the new coordinates of the area in which is needed for cropping. 
 
 \begin{lstlisting}[language=python, frame=single]
 rect_width = rect.width; // 
@@ -439,7 +439,7 @@ X
 }
 \end{equation}
 
-These results are displayed to the screen and are updated constantly after each image is taken. Furthermore, when the Percentage of happiness is above 40\%, a notice is given that good customer service is being given, as shown in Figure \ref{good}.
+These results are displayed to the screen and are updated constantly after each image is taken. Furthermore, when the percentage of happiness is above 40\%, a notice is given that good customer service is being given, as shown in Figure \ref{good}.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -465,7 +465,7 @@ Also, when the happiness level of the user reaches below 40\%, is is notified th
 \end{figure}
 \newpage
 
-After 100 iterations of classification, the interaction stops with the model and the user is notified whether or not they have been delivering good or bad customer service.
+After 100 iterations of classification, the interaction stops sending frames to the model and the user is notified whether or not they have been delivering good or bad customer service.
 
 
 % 1 - Create Node/express application
@@ -484,7 +484,7 @@ For deploying the web application, the Heroku PaaS of service was used. Using Gi
 %\section{Integrating Third Party Services}
 \section{Concluding Remarks of Implementation}
 
-In summary, many data preprocessing steps were taken. These include grayscaling, facial cropping, data increase by creating flipped copies and image augmentation. These steps were taken to ensure the best possible results when evaluating the model. Secondly, the data was split into training and testing sets. A fully working TensorFlow convolutional neural network was created in Python and trained on the FloydHub could training platform. The model was then deployed to a server for production use. A facial tracking web application was built for recording the used face and deployed to the Heroku PaaS. The application can accurately calculate the level of satisfaction displayed with the used facial expression for each class.
+In summary, many data preprocessing steps were taken. These include grayscaling, facial cropping, data increase by creating flipped copies and image augmentation. These steps were taken to ensure the best possible results when evaluating the model. Secondly, the data was split into training and testing sets. A fully working TensorFlow convolutional neural network was created in Python and trained on the FloydHub could training platform. The model was then deployed to a server for production use. A facial tracking web application was built for recording the used face and deployed to the Heroku PaaS. The application can calculate the level of satisfaction displayed with the used facial expression for each class.
 
 
 
